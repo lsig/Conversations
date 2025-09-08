@@ -1,7 +1,5 @@
 # Project 1
 
-## Group 10
-
 ### Setup
 
 Start with installing uv, uv is a modern python package manager.
