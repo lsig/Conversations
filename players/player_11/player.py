@@ -7,7 +7,7 @@ class Player11(Player):
 		super().__init__(snapshot, conversation_length)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-        do_something()
-        for mb in self.memory_bank:
-            print(f"importance: {mb.importance}")
-        return None
+		do_something()
+		for mb in self.memory_bank:
+			print(f'importance: {mb.importance}')
+		return None
