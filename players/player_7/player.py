@@ -6,4 +6,14 @@ class Player7(Player):
 		super().__init__(snapshot, conversation_length)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
+		max_importance = 0
+		current = None
+		for item in self.memory_bank:
+			if item.importance > max_importance and item not in self.contributed_items:
+				max_importance = item.importance
+				current = item
+		self.contributed_items.append(current)
+		return current
+	
+
 		return None
