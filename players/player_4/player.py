@@ -2,7 +2,7 @@ import openai
 
 from models.player import Item, Player, PlayerSnapshot
 
-openai_api_key_player_4: str = "sk-REDACTED"
+openai_api_key_player_4: str = 'sk-REDACTED'
 
 
 class Player4(Player):
