@@ -32,9 +32,9 @@ class Player4(Player):
 
     def create_prompt(self, preferences: list[int], memory_bank: list[Item], conversation_length:int, history: list[Item]) -> str:
         prompt = f"""
-            There are some players, and every player has a memory bank of newsworthy items that they could contribute to the conversation. Half of the items are about a single subject, while the other half are about two subjects. Every item also has an importance, which is a number uniformly generated between 0 and 1. There are S subjects in total, and each player's memory bank is generated at random. The conversation has a fixed length L, {conversation_length}, that everybody knows in advance.
+            There are some players, and every player has a random memory bank of newsworthy items that they could contribute to the conversation. Every item has an importance. The conversation has a fixed length L, {conversation_length}.
 
-            A conversation is a sequence of items contributed by players. On any turn, each player may propose to share an item. If multiple players attempt to contribute an item, the simulator will do the following: If the player currently talking wants to contribute again, they will be chosen with probability 0.5. If the player currently talking is not chosen, then the simulator will choose a player at random from among those who propose an item and have so far contributed the smallest number of items among that group. That way, each player can (if they wish) contribute approximately as often as other players over the long run. If nobody contributes anything on a given turn, then the sequence is filled by a "pause". If there are three consecutive pauses, then the conversation ends prematurely.
+            On each turn, each player may propose to share an item. If multiple players attempt to contribute an item: If the player currently talking wants to contribute again, they will be chosen with probability 0.5. If the player currently talking is not chosen, then a player at random from among those who propose an item and have so far contributed the smallest number of items among that group will be selected. If nobody contributes anything, then the sequence is filled by a "pause". If there are three consecutive pauses, then the conversation ends prematurely.
 
             The shared goals of a conversation are as follows:
 
