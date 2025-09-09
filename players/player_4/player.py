@@ -1,37 +1,46 @@
-from models.player import Item, Player, PlayerSnapshot
 import openai
 
-openai_api_key_player_4: str = "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"
+from models.player import Item, Player, PlayerSnapshot
+
+openai_api_key_player_4: str = "sk-REDACTED"
+
 
 class Player4(Player):
-    def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
-        super().__init__(snapshot, conversation_length)
-  
-        self.client = openai.OpenAI(api_key=openai_api_key_player_4)
+	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
+		super().__init__(snapshot, conversation_length)
 
-    def propose_item(self, history: list[Item]) -> Item | None:
-        prompt = self.create_prompt(self.preferences, self.memory_bank, self.conversation_length, history)
-        print("Sending prompt!")
-        response = self.client.responses.create(
-            model="gpt-4.1",
-            input=prompt,
-            max_output_tokens=16,
-            
-        )
-        print(f"Received response: {response.output_text}")
-        if response.output_text == "None":
-            return None
-        try:
-            index = int(response.output_text)
-            if 0 <= index < len(self.memory_bank):
-                return self.memory_bank[index]
-            else:
-                return None
-        except ValueError:
-            return None
+		self.client = openai.OpenAI(api_key=openai_api_key_player_4)
 
-    def create_prompt(self, preferences: list[int], memory_bank: list[Item], conversation_length:int, history: list[Item]) -> str:
-        prompt = f"""
+	def propose_item(self, history: list[Item]) -> Item | None:
+		prompt = self.create_prompt(
+			self.preferences, self.memory_bank, self.conversation_length, history
+		)
+		print('Sending prompt!')
+		response = self.client.responses.create(
+			model='gpt-4.1',
+			input=prompt,
+			max_output_tokens=16,
+		)
+		print(f'Received response: {response.output_text}')
+		if response.output_text == 'None':
+			return None
+		try:
+			index = int(response.output_text)
+			if 0 <= index < len(self.memory_bank):
+				return self.memory_bank[index]
+			else:
+				return None
+		except ValueError:
+			return None
+
+	def create_prompt(
+		self,
+		preferences: list[int],
+		memory_bank: list[Item],
+		conversation_length: int,
+		history: list[Item],
+	) -> str:
+		prompt = f"""
             There are some players, and every player has a random memory bank of newsworthy items that they could contribute to the conversation. Every item has an importance. The conversation has a fixed length L, {conversation_length}.
 
             On each turn, each player may propose to share an item. If multiple players attempt to contribute an item: If the player currently talking wants to contribute again, they will be chosen with probability 0.5. If the player currently talking is not chosen, then a player at random from among those who propose an item and have so far contributed the smallest number of items among that group will be selected. If nobody contributes anything, then the sequence is filled by a "pause". If there are three consecutive pauses, then the conversation ends prematurely.
@@ -55,14 +64,14 @@ class Player4(Player):
             You are a player in this game. Your goal is to select an item from your memory bank, or return "None" to pass, in order to achieve the highest conversation quality.
             
             The conversation so far is as follows:
-            {len(history)} items have been proposed in total: {', '.join("[" + "subjects: " + str(item.subjects) + ", importance: " + str(item.importance) + "]" for item in history)}.
+            {len(history)} items have been proposed in total: {', '.join('[' + 'subjects: ' + str(item.subjects) + ', importance: ' + str(item.importance) + ']' for item in history)}.
             
             Your memory bank contains the following items:
-            {', '.join("[" + "id: " + str(item.id) + ", subjects: " + str(item.subjects) + ", importance: " + str(item.importance) + "]" for item in memory_bank)}.
+            {', '.join('[' + 'id: ' + str(item.id) + ', subjects: ' + str(item.subjects) + ', importance: ' + str(item.importance) + ']' for item in memory_bank)}.
             
             Your preferences for subjects are as follows:
-            {', '.join("subject: " + str(subject) + ", rank: " + str(rank) for rank, subject in enumerate(preferences))}
+            {', '.join('subject: ' + str(subject) + ', rank: ' + str(rank) for rank, subject in enumerate(preferences))}
 
             Based on the conversation so far, your memory bank, and your subject preferences, which item will you propose to contribute next? If you do not want to contribute an item, respond with "None". Otherwise, respond with the index of the item you wish to contribute, in your memory bank. Do not return anything other than either "None" or an integer index.
         """
-        return prompt
+		return prompt
