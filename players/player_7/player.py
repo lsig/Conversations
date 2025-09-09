@@ -8,10 +8,21 @@ class Player7(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		max_importance = 0
 		current = None
+
+		subject_count = {subject: 0 for subject in self.preferences}
+		
+		for item in history:
+			for subject in item.subjects:
+				if subject in subject_count:
+					subject_count[subject] += 1
+
 		for item in self.memory_bank:
-			if item.importance > max_importance and item not in self.contributed_items:
-				max_importance = item.importance
-				current = item
+			for subject in item.subjects:
+				if subject in subject_count and subject_count[subject] < 2:
+					if item.importance > max_importance and item not in self.contributed_items:
+						max_importance = item.importance
+						current = item
+
 		self.contributed_items.append(current)
 		return current
 	
