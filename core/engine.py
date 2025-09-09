@@ -1,6 +1,7 @@
 import random
 import uuid
 from collections import Counter
+from dataclasses import asdict
 
 from models.item import Item
 from models.player import Player, PlayerSnapshot
@@ -32,16 +33,16 @@ class Engine:
 		self.snapshots = self.__initialize_snapshots(player_count)
 		self.players = [
 			player(
-				snapshot=self.snapshots[i],
+				snapshot=self.snapshots[id],
 				conversation_length=self.conversation_length,
 			)
-			for i, player in enumerate(players)
+			for id, player in zip(list(self.snapshots.keys()), players, strict=True)
 		]
 
 		self.player_names = {player.id: player.name for player in self.players}
 
-	def __initialize_snapshots(self, player_count) -> list[PlayerSnapshot]:
-		snapshots = []
+	def __initialize_snapshots(self, player_count) -> dict[uuid.UUID, PlayerSnapshot]:
+		snapshots = {}
 
 		for _ in range(player_count):
 			id = uuid.uuid4()
@@ -50,7 +51,7 @@ class Engine:
 
 			snapshot = PlayerSnapshot(id=id, preferences=preferences, memory_bank=memory_bank)
 
-			snapshots.append(snapshot)
+			snapshots[id] = snapshot
 			self.player_contributions[id] = []
 
 		return snapshots
@@ -61,8 +62,8 @@ class Engine:
 	def __generate_items(self) -> tuple[Item, ...]:
 		items: list[Item] = []
 
-		for i in range(self.memory_size):
-			samples = 1 if i < self.memory_size // 2 else 2
+		for _ in range(self.memory_size):
+			samples = 1 if random.random() < 0.5 else 2
 
 			importance = round(random.random(), 2)
 			subjects = tuple(random.sample(self.subjects, samples))
@@ -75,7 +76,11 @@ class Engine:
 	def __get_proposals(self) -> dict[uuid.UUID, Item | None]:
 		proposals = {}
 		for player in self.players:
-			proposals[player.id] = player.propose_item(self.history)
+			proposal = player.propose_item(self.history)
+
+			if proposal and self.snapshots[player.id].item_in_memory_bank(proposal):
+				proposals[player.id] = proposal
+
 		return proposals
 
 	def __select_speaker(
@@ -160,10 +165,10 @@ class Engine:
 		return 0.0
 
 	def __calculate_individual_score(self) -> dict[uuid.UUID, float]:
-		individual_scores: dict[uuid.UUID, float] = {p.id: 0.0 for p in self.snapshots}
+		individual_scores: dict[uuid.UUID, float] = {id: 0.0 for id in self.snapshots}
 
 		for uid, contributed_items in self.player_contributions.items():
-			snapshot = next(s for s in self.snapshots if s.id == uid)
+			snapshot = self.snapshots[uid]
 			preferences = snapshot.preferences
 
 			player_individual_score = 0.0
@@ -227,18 +232,21 @@ class Engine:
 		shared_score = scores['shared']
 		individual_scores = scores['individual']
 
-		player_results = {}
-		for uid in self.player_names:
+		player_results = []
+		for uid, snapshot in self.snapshots.items():
 			total_raw_score = shared_score + individual_scores.get(uid, 0.0)
 			conversation_quality = (
 				total_raw_score / self.conversation_length if self.conversation_length > 0 else 0
 			)
 
-			player_results[uid] = {
+			final_player_data = asdict(snapshot)
+			final_player_data['scores'] = {
 				'total': conversation_quality,
 				'shared': shared_score,
 				'individual': individual_scores.get(uid, 0.0),
 			}
+
+			player_results.append(final_player_data)
 
 		shared_score_breakdown = {
 			'total': scores['shared'],
@@ -282,7 +290,7 @@ class Engine:
 			)
 
 		speaker_id = self.last_player_id
-		snapshot = next((s for s in self.snapshots if s.id == speaker_id), None)
+		snapshot = self.snapshots.get(speaker_id, None)
 		individual_bonus = 0.0
 		if snapshot:
 			preferences = snapshot.preferences
@@ -345,13 +353,12 @@ class Engine:
 				break
 
 		score_data = self.final_scores()
-		scores = {pid: data['total'] for pid, data in score_data['player_scores'].items()}
 
 		output = {
 			'history': self.history,
 			'turn_impact': turn_impact,
 			'score_breakdown': score_data['shared_score_breakdown'],
-			'scores': scores,
+			'scores': score_data,
 		}
 
 		return output
