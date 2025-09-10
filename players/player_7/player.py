@@ -9,11 +9,10 @@ class Player7(Player):
 		current = None
 		max_score = 0
 
-		if history:
-			return random.choice(self.memory_bank)
-
 		subject_count = {subject: 0 for subject in self.preferences}
 		for item in history[-3:]:
+			if item is None:
+				continue
 			for subject in item.subjects:
 				subject_count[subject] += 1
 
