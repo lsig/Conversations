@@ -6,6 +6,7 @@ class Player9(Player):
 		super().__init__(snapshot, conversation_length)
 
 
+
 	def propose_item(self, history: list[Item]) -> Item | None:
 		item_scores = []
 
@@ -102,15 +103,3 @@ class Player9(Player):
 
 		item_scores.sort(key=lambda x: x[1], reverse=True)
 		return item_scores[0][0]
-			
-
-
-			
-			
-			
-
-
-
-			
-			
-		
