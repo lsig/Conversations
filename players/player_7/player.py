@@ -16,17 +16,14 @@ class Player7(Player):
 
 		for item in self.memory_bank:
 			if item in self.contributed_items:
-				continue 
+				continue
 			score = item.importance
 			for subject in item.subjects:
-					if subject_count[subject] > 0:
-						score +=1
+				if subject_count[subject] > 0:
+					score += 1
 			if score > max_score:
 				max_score = score
 				current = item
-			
-		
+
 		self.contributed_items.append(current)
 		return current
-	
-
