@@ -6,25 +6,27 @@ class Player7(Player):
 		super().__init__(snapshot, conversation_length)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		max_importance = 0
 		current = None
+		max_score = 0
 
 		subject_count = {subject: 0 for subject in self.preferences}
-		
-		for item in history:
+		for item in history[-3:]:
 			for subject in item.subjects:
-				if subject in subject_count:
-					subject_count[subject] += 1
+				subject_count[subject] += 1
 
 		for item in self.memory_bank:
+			if item in self.contributed_items:
+				continue 
+			score = item.importance
 			for subject in item.subjects:
-				if subject in subject_count and subject_count[subject] < 2:
-					if item.importance > max_importance and item not in self.contributed_items:
-						max_importance = item.importance
-						current = item
-
+					if subject_count[subject] > 0:
+						score +=1
+			if score > max_score:
+				max_score = score
+				current = item
+			
+		
 		self.contributed_items.append(current)
 		return current
 	
 
-		return None
