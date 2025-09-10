@@ -1,6 +1,6 @@
 from models.player import Item, Player, PlayerSnapshot
 
-class Player1(Player):
+class Player9(Player):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
 		super().__init__(snapshot, conversation_length)
 
