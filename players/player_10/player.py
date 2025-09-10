@@ -22,15 +22,14 @@ class Player10(Player):
 		"""
 		Propose an item from memory bank with maximum turn score impact
 		"""
-		
+
 		best_item = None
 		best_score = float('-inf')
 
-		
 		for item in self.memory_bank:
 			impact = self._calculate_turn_score_impact(item, history)
 			score = impact['total']
-			
+
 			if score > best_score:
 				best_score = score
 				best_item = item
@@ -41,7 +40,7 @@ class Player10(Player):
 	def __calculate_freshness_score(self, i: int, current_item: Item, history: list[Item]) -> float:
 		if i == 0:
 			return 0.0
-		
+
 		# Check if the previous item exists and is not None
 		if i > 0 and i <= len(history) and history[i - 1] is not None:
 			return 0.0
@@ -52,7 +51,6 @@ class Player10(Player):
 		novel_subjects = [s for s in current_item.subjects if s not in prior_subjects]
 
 		return float(len(novel_subjects))
-
 
 	def __calculate_coherence_score(self, i: int, current_item: Item, history: list[Item]) -> float:
 		context_items = []
@@ -96,7 +94,6 @@ class Player10(Player):
 
 		return 0.0
 
-
 	def _calculate_turn_score_impact(self, item: Item | None, history: list[Item]) -> dict:
 		if item is None:
 			return {'total': 0.0}
@@ -105,7 +102,7 @@ class Player10(Player):
 		# If history is empty, this would be the first turn (index 0)
 		# Otherwise, it would be the next turn (current length)
 		turn_idx = len(history)
-		
+
 		impact = {}
 
 		is_repeated = any(
@@ -132,9 +129,7 @@ class Player10(Player):
 		individual_bonus = 0.0
 		preferences = self.preferences
 		bonuses = [
-			1 - preferences.index(s) / len(preferences)
-			for s in item.subjects
-			if s in preferences
+			1 - preferences.index(s) / len(preferences) for s in item.subjects if s in preferences
 		]
 		if bonuses:
 			individual_bonus = sum(bonuses) / len(bonuses)
