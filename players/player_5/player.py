@@ -10,10 +10,8 @@ class Player5(Player):
 		self.memory_bank.sort(key=lambda x: x.importance, reverse=True)
 		self.best = self.memory_bank[0] if self.memory_bank else None
 
-
 	def propose_item(self, history: list[Item]) -> Item | None:
-
-		if(len(self.memory_bank) == 0):
+		if len(self.memory_bank) == 0:
 			return None
 		choice = self.memory_bank[0]
 
@@ -21,7 +19,7 @@ class Player5(Player):
 		if len(history) == 0:
 			self.memory_bank.remove(choice)
 			return choice
-		
+
 		# start with worst
 		choice = self.memory_bank[-1]
 
@@ -36,7 +34,7 @@ class Player5(Player):
 		result = list(itertools.chain(*subjects))
 		count = Counter(result)
 
-		#print("History", history[-1].subjects)
+		# print("History", history[-1].subjects)
 
 		# look for better candidate
 		for item in self.memory_bank:
@@ -44,22 +42,20 @@ class Player5(Player):
 			fail = False
 
 			for subject in item.subjects:
-				#print("subject", subject, "in", history[-1].subjects, "count", count[subject])
+				# print("subject", subject, "in", history[-1].subjects, "count", count[subject])
+				# eliminate subjects mentioned more than twice or exactly beforehand
 				if count[subject] > 2 or subject in history[-1].subjects:
 					fail = True
 					break
-
 
 			if not fail:
 				fail = False
 				# prefer higher importance if available
 				if item.importance > choice.importance:
-					choice = item 
+					choice = item
 
 		# remove chosen item from memory bank
 		if choice in self.memory_bank:
 			self.memory_bank.remove(choice)
 
 		return choice
-
-
