@@ -1,8 +1,6 @@
-from models.player import Item, Player, PlayerSnapshot
 from collections import Counter
-import uuid
-import random
 
+from models.player import Item, Player, PlayerSnapshot
 
 # Creating a player for Group 10
 
