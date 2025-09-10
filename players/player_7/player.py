@@ -1,5 +1,6 @@
+
 from models.player import Item, Player, PlayerSnapshot
-import random
+
 
 class Player7(Player):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
