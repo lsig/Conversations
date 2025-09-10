@@ -1,5 +1,5 @@
 from models.player import Item, Player, PlayerSnapshot
-
+import random
 
 class Player7(Player):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
@@ -8,6 +8,9 @@ class Player7(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		current = None
 		max_score = 0
+
+		if history:
+			return random.choice(self.memory_bank)
 
 		subject_count = {subject: 0 for subject in self.preferences}
 		for item in history[-3:]:
