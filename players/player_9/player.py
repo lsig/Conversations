@@ -102,8 +102,6 @@ class Player1(Player):
 		item_scores.sort(key=lambda x: x[1], reverse=True)
 		return item_scores[0][0]
 			
-			# calculate individual bonus
-			
 
 
 			
