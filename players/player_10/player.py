@@ -8,6 +8,9 @@ from models.item import Item
 from models.player import Player, PlayerSnapshot 
 
 
+# Creating a player for Group 10
+
+
 class Player10(Player):
     """
     Hybrid policy:
