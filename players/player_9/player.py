@@ -12,7 +12,6 @@ class Player9(Player):
 
 		# calculate score for each item
 		for item in self.memory_bank:
-
 			coherence_bonus = 0
 			importance_bonus = item.importance
 			freshness_bonus = 0
