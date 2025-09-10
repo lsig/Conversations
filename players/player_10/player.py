@@ -15,31 +15,31 @@ class Player10(Player):
 	"""
 	Hybrid policy:
 
-	  • Turn 0 (empty history) → Edge-case opener:
-	      - Prefer single-subject item (coherence-friendly for others to echo),
-	        break ties by highest importance, random among top ties.
-	      - If no single-subject items exist, pick highest-importance overall.
+		• Turn 0 (empty history) → Edge-case opener:
+			- Prefer single-subject item (coherence-friendly for others to echo),
+				break ties by highest importance, random among top ties.
+			- If no single-subject items exist, pick highest-importance overall.
 
-	  • If there are already two consecutive pauses → Keepalive:
-	      - Propose a safe, non-repeated item to avoid a 3rd pause ending the game
-	        (spec: "If there are three consecutive pauses, ... ends prematurely").
+		• If there are already two consecutive pauses → Keepalive:
+			- Propose a safe, non-repeated item to avoid a 3rd pause ending the game
+				(spec: "If there are three consecutive pauses, ... ends prematurely").
 
-	  • Immediately after a pause → Freshness maximizer:
-	      - Choose a non-repeated item whose subjects are novel w.r.t. the last
-	        5 non-pause turns before the pause (spec Freshness).
-	      - Prefer 2-subject items with both novel (+2), then 1 novel (+1),
-	        tie-break by importance.
+		• Immediately after a pause → Freshness maximizer:
+			- Choose a non-repeated item whose subjects are novel w.r.t. the last
+				5 non-pause turns before the pause (spec Freshness).
+			- Prefer 2-subject items with both novel (+2), then 1 novel (+1),
+				tie-break by importance.
 
-	  • Otherwise → General scoring (Player10-style):
-	      - Score = importance + coherence + freshness + nonmonotonousness
-	        (individual bonus tracked but not added to total), choose the max.
-	      - If best score < 0, pass.
+		• Otherwise → General scoring (Player10-style):
+			- Score = importance + coherence + freshness + nonmonotonousness
+				(individual bonus tracked but not added to total), choose the max.
+			- If best score < 0, pass.
 
 	Spec rules cited:
-	  - Freshness: post-pause novel subjects (+1 / +2).
-	  - Nonrepetition: repeats have zero importance; also incur -1 nonmonotonousness.
-	  - Nonmonotonousness: subject appearing in each of previous three items → -1.
-	  - Early termination: three consecutive pauses end the conversation.
+		- Freshness: post-pause novel subjects (+1 / +2).
+		- Nonrepetition: repeats have zero importance; also incur -1 nonmonotonousness.
+		- Nonmonotonousness: subject appearing in each of previous three items → -1.
+		- Early termination: three consecutive pauses end the conversation.
 	"""
 
 	# -------- init --------
