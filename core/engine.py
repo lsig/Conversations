@@ -167,12 +167,11 @@ class Engine:
 	def __calculate_individual_score(self) -> dict[uuid.UUID, float]:
 		individual_scores: dict[uuid.UUID, float] = {id: 0.0 for id in self.snapshots}
 
-		for uid, contributed_items in self.player_contributions.items():
-			snapshot = self.snapshots[uid]
+		for snapshot in self.snapshots.values():
 			preferences = snapshot.preferences
 
 			player_individual_score = 0.0
-			for item in contributed_items:
+			for item in self.history:
 				bonuses = [
 					1 - preferences.index(s) / len(preferences)
 					for s in item.subjects
@@ -181,7 +180,7 @@ class Engine:
 				if bonuses:
 					player_individual_score += sum(bonuses) / len(bonuses)
 
-			individual_scores[uid] = player_individual_score
+			individual_scores[snapshot.id] = player_individual_score
 
 		return individual_scores
 
