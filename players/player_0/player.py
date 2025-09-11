@@ -184,8 +184,7 @@ class Player0(Player):
 			# Calculates the individual score of an item
 			bonuses = [1 - (self.preferences.index(s) / len(self.preferences)) for s in current_item.subjects]
 
-			if current_item in self.memory_bank: # remove once TA updated code so that all items contributed impact individual score
-				individual_score += sum(bonuses) / len(bonuses) 
+			individual_score += sum(bonuses) / len(bonuses) 
 
 		# Calculates the total score of the history
 		total_score = coherence_score + freshness_score + importance_score + nonmonotonousness + individual_score
