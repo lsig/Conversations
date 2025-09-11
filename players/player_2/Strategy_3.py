@@ -1,8 +1,9 @@
 import BaseStrategy
 
 from models.item import Item
+from models.player import PlayerSnapshot
 
 
 class Strategy3(BaseStrategy):
-	def propose_item(self, history: list[Item]) -> Item | None:
+	def propose_item(self, snapshot: PlayerSnapshot, history: list[Item]) -> Item | None:
 		pass

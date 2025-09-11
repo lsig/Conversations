@@ -6,13 +6,14 @@ from models.player import Item, Player, PlayerSnapshot
 class Player2(Player):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
 		super().__init__(snapshot, conversation_length)
+		self.snapshot = snapshot
 		self.current_strategy: BaseStrategy = None
 
 		self.choose_strategy()
 
 	def propose_item(self, history: list[Item]) -> Item | None:
 		# Use the strategy to propose item
-		return self.current_strategy.propose_item(history)
+		return self.current_strategy.propose_item(self.snapshot, history)
 
 		# Sort items by importance
 		self.memory_bank.sort(key=lambda i: i.importance)
