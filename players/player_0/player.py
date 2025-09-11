@@ -8,9 +8,9 @@ class Player0(Player):
 
 	'''the important function where all the abstraction occurs!
 
-	1. Calculates what the 'item score' is for each item we currently have in memory bank
+	1. Calculates the delta bewteen the current total score and the total score contributed an item is for each item we have in our memory bank
 	2. Calculate the threshold based on (a portion of our history) <-- the portion part is implemented in function
-	3. Decide to pause or return the best item
+	3. Decide to pause or return the best item (we return the best item if it's score is greater than the threshold)
 	
 	'''
 	def propose_item(self, history: list[Item]) -> Item | None:
@@ -25,7 +25,8 @@ class Player0(Player):
 			return None
 	
 	'''calculates the threshold needed for the player to speak
-	1. Calculate the score received in the past hist_depth turns
+
+	1. Calculate the averagescore received in the past hist_depth turns
 	2. Calculate the ratio between (Memory bank left) and (Length of remaining conversation)/Players 
 	3. Determine the threshold using the two things we calculated in part 1 & 2
 	'''
@@ -79,8 +80,16 @@ class Player0(Player):
 		#part 3 not implemented yet
 
 		threshold = avg_score_per_turn
-		return threshold
-	
+		return max(threshold, 0)
+
+
+	'''Calculates the score impact contributed by an item to the total score
+
+	1. Calculates the total score without the item
+	2. Calculates the total score with the item
+	3. Calculates the delta between the total score with the item and the total score without the item
+	4. Return the delta
+	'''
 	def calculate_item_score(self, item, history: list[Item]) -> tuple[Item, float]:
 		history_score = self.calculate_history_score(history)
 		history_score_with_item = self.calculate_history_score(history + [item])
@@ -88,9 +97,14 @@ class Player0(Player):
 
 		return item, delta
 
-	
+	'''Calculates the total score of a history of items
+
+	1. For each item in the history, calculate the freshness score, coherence score, importance score, and nonmonotonousness score, and individual score with the consideration of repeated items
+	2. Returns the total score
+	'''
 	def calculate_history_score(self, history: list[Item]) -> float:
 
+		# Returns the freshness score of an item
 		def calculate_freshness_score(i: int, current_item: Item) -> float:
 			if i == 0 or history[i - 1] is not None:
 				return 0.0
@@ -102,6 +116,7 @@ class Player0(Player):
 
 			return float(len(novel_subjects))
 
+		# Returns the coherence score of an item
 		def calculate_coherence_score(i: int, current_item: Item) -> float:
 			context_items = []
 
@@ -111,7 +126,7 @@ class Player0(Player):
 				context_items.append(history[j])
 			
 			for j in range(i + 1, min(len(history), i + 4)):
-				if history[j] is None:
+				if history[j] is None or history[j] == current_item:
 					break
 				context_items.append(history[j])
 
@@ -126,6 +141,7 @@ class Player0(Player):
 
 			return score
 
+		# Returns the nonmonotonousness score of an item
 		def calculate_nonmonotonousness_score(i: int, current_item: Item, repeated: bool) -> float:
 			if repeated:
 				return -1.0
@@ -134,15 +150,12 @@ class Player0(Player):
 				return 0.0
 
 			last_three_items = [history[j] for j in range(i - 3, i)]
-			if all(
-				item and any(s in item.subjects for s in current_item.subjects)
-				for item in last_three_items
-			):
+			if all(item and any(s in item.subjects for s in current_item.subjects) for item in last_three_items):
 				return -1.0
 
 			return 0.0
 
-		unique_items = set()
+		unique_items = set() # keeps track of unique items in the history, used to track repeated items
 
 		total_score = 0.0
 		coherence_score = 0.0
@@ -152,12 +165,14 @@ class Player0(Player):
 		individual_score = 0.0
 
 		for i, current_item in enumerate(history):
-			if not current_item:
+
+			if not current_item: # when there is a pause
 				continue
 
-			if current_item.id in unique_items:
+			if current_item.id in unique_items: # if the item is repeated
 				nonmonotonousness += calculate_nonmonotonousness_score(i, current_item, repeated=True)
-			else:
+
+			else: # if the item is not repeated
 				importance_score += current_item.importance
 				coherence_score += calculate_coherence_score(i, current_item)
 				freshness_score += calculate_freshness_score(i, current_item)
@@ -165,12 +180,13 @@ class Player0(Player):
 
 				unique_items.add(current_item.id)
 			
+			# Calculates the individual score of an item
 			bonuses = [1 - (self.preferences.index(s) / len(self.preferences)) for s in current_item.subjects]
 
 			if current_item in self.memory_bank: # remove once TA updated code so that all items contributed impact individual score
 				individual_score += sum(bonuses) / len(bonuses) 
 
-		
+		# Calculates the total score of the history
 		total_score = coherence_score + freshness_score + importance_score + nonmonotonousness + individual_score
 	
 		return total_score
