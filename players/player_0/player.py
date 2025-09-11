@@ -1,10 +1,10 @@
-from models.player import Item, Player, PlayerSnapshot
+from models.player import Item, Player, PlayerSnapshot, GameContext
 from collections import Counter
 
 
 class Player0(Player):
-	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
-		super().__init__(snapshot, conversation_length)
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
+		super().__init__(snapshot, ctx)
 
 	'''the important function where all the abstraction occurs!
 
