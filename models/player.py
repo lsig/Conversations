@@ -15,13 +15,20 @@ class PlayerSnapshot:
 		return item in self.memory_bank
 
 
+@dataclass(frozen=True)
+class GameContext:
+	number_of_players: int
+	conversation_length: int
+
+
 class Player(ABC):
-	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
 		self.id = snapshot.id
 		self.name = type(self).__name__
 		self.preferences = list(snapshot.preferences)
 		self.memory_bank = list(snapshot.memory_bank)
-		self.conversation_length = conversation_length
+		self.conversation_length = ctx.conversation_length
+		self.number_of_players = ctx.number_of_players
 		self.contributed_items = []
 
 	def __str__(self) -> str:
