@@ -5,7 +5,13 @@ class Player0(Player):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
 		super().__init__(snapshot, conversation_length)
 
-	'''the important function where all the abstraction occurs!'''
+	'''the important function where all the abstraction occurs!
+
+	1. Calculates what the 'item score' is for each item we currently have in memory bank
+	2. Calculate the threshold based on (a portion of our history) <-- the portion part is implemented in function
+	3. Decide to pause or return the best item
+	
+	'''
 	def propose_item(self, history: list[Item]) -> Item | None:
 		item_scores = self.calculate_greedy(history) #[item, score]
 		threshold = self.calculate_threshold(history)
@@ -43,7 +49,6 @@ class Player0(Player):
 				_, score = self.calculate_score(item, history)
 				hist_total_score += score
 				count += 1
-				print("His: " + str(score))
 		hist_avg_score = hist_total_score / count
 		return 0
 		#return hist_avg_score
@@ -163,12 +168,17 @@ class Player0(Player):
 		return item, total_bonus
 
 
-	'''Calculate the fitness score using the greedy algorithm! Should be changed for optimization'''
+	'''Calculate the fitness score using the greedy algorithm! Should be changed for optimization
+	
+	1. Takes an entire list of items
+	2. For each item, calculate it's fitness score IF it is picked next
+	3. Return the fitness score of the BEST item
+	
+	'''
 	def calculate_greedy(self, history: list[Item]) -> tuple[Item, float] | None:
 		if not self.memory_bank:
 			return None
 
 		item_scores = [self.calculate_score(item, history) for item in self.memory_bank]
 		item_scores.sort(key=lambda x: x[1], reverse=True)
-		
-		return item_scores[0]
+		return item_scores[0] #returns BEST item with its score
