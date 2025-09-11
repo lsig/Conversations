@@ -23,7 +23,11 @@ class Player0(Player):
 		else:
 			return None
 	
-	'''calculates the average score in the relavant turns'''
+	'''calculates the threshold needed for the player to speak
+	1. Calculate the score received in the past hist_depth turns (I hate that this is a step and not premade for us, you might need to redo this)
+	2. Calculate the ratio between (Memory bank left) and (Length of remaining conversation)/Players 
+	3. Determine the threshold using the two things we calculated in part 1 & 2
+	'''
 	def calculate_threshold(self, history: list[Item]) -> float:
 		num_players = 2 #change this line to whenever the instructor code is updated
 
@@ -50,7 +54,12 @@ class Player0(Player):
 				hist_total_score += score
 				count += 1
 		hist_avg_score = hist_total_score / count
-		return 0
+
+		#part 2 not implemented yet since we don't have access to # of players and stuff
+
+		#part 3 not implemented yet
+		threshold = 0
+		return threshold
 		#return hist_avg_score
 	
 	def calculate_score(self, item, history: list[Item]) -> tuple[Item, float]:
