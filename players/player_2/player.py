@@ -15,4 +15,4 @@ class Player2(Player):
 		last_item = self.memory_bank[-1]
 		if len(history) != 0 and history[-1] == last_item:
 			self.memory_bank.pop()
-		return self.memory_bank[-1]
+		return last_item
