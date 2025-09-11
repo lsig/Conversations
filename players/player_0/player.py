@@ -16,6 +16,7 @@ class Player0(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		item_scores = self.calculate_greedy(history) #[item, score]
 		threshold = self.calculate_threshold(history)
+
 		if not item_scores: #just an edge case in case our memory is empty
 			return None
 	
@@ -67,13 +68,13 @@ class Player0(Player):
 		if history == []:
 			return turn_one_threshold
 
-		recent_history = history[:-hist_depth]
+		history_without_recent = history[:-hist_depth]
 
-		score_without_recent_history = self.calculate_history_score(recent_history)
+		score_without_recent_history = self.calculate_history_score(history_without_recent)
 		total_score = self.calculate_history_score(history)
 
 		score_delta = total_score - score_without_recent_history
-		avg_score_per_turn = score_delta / (len(history) - len(recent_history))
+		avg_score_per_turn = score_delta / (len(history) - len(history_without_recent))
 		
 
 		#part 2 not implemented yet since we don't have access to # of players and stuff
