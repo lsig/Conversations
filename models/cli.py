@@ -16,6 +16,7 @@ DEFAULT_PLAYERS = {
 	'p11': 0,
 	'pr': 0,
 	'pp': 0,
+	'prp': 0,
 }
 
 

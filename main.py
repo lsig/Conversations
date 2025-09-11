@@ -17,6 +17,7 @@ from players.player_8.player import Player8
 from players.player_9.player import Player9
 from players.player_10.player import Player10
 from players.player_11.player import Player11
+from players.random_pause_player import RandomPausePlayer
 from players.random_player import RandomPlayer
 from ui.gui import run_gui
 
@@ -27,6 +28,7 @@ def main():
 	players: list[type[Player]] = (
 		[RandomPlayer] * args.players['pr']
 		+ [PausePlayer] * args.players['pp']
+		+ [RandomPausePlayer] * args.players['prp']
 		+ [Player0] * args.players['p0']
 		+ [Player1] * args.players['p1']
 		+ [Player2] * args.players['p2']

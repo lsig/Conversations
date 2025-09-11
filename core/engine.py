@@ -4,7 +4,7 @@ from collections import Counter
 from dataclasses import asdict
 
 from models.item import Item
-from models.player import Player, PlayerSnapshot
+from models.player import GameContext, Player, PlayerSnapshot
 
 
 class Engine:
@@ -28,13 +28,14 @@ class Engine:
 		self.last_player_id: uuid.UUID | None = None
 		self.turn = 0
 		self.consecutive_pauses = 0
-
 		self.player_contributions: dict[uuid.UUID, list[Item]] = {}
 		self.snapshots = self.__initialize_snapshots(player_count)
 		self.players = [
 			player(
 				snapshot=self.snapshots[id],
-				conversation_length=self.conversation_length,
+				ctx=GameContext(
+					conversation_length=conversation_length, number_of_players=player_count
+				),
 			)
 			for id, player in zip(list(self.snapshots.keys()), players, strict=True)
 		]
@@ -172,6 +173,9 @@ class Engine:
 
 			player_individual_score = 0.0
 			for item in self.history:
+				if not item:
+					continue
+
 				bonuses = [
 					1 - preferences.index(s) / len(preferences)
 					for s in item.subjects
