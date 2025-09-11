@@ -11,6 +11,9 @@ class PlayerSnapshot:
 	preferences: tuple[int, ...]
 	memory_bank: tuple[Item, ...]
 
+	def item_in_memory_bank(self, item: Item):
+		return item in self.memory_bank
+
 
 class Player(ABC):
 	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:
