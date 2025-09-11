@@ -60,7 +60,6 @@ class Player0(Player):
 		#part 3 not implemented yet
 		threshold = 0
 		return threshold
-		#return hist_avg_score
 	
 	def calculate_score(self, item, history: list[Item]) -> tuple[Item, float]:
 		coherence_bonus = 0
