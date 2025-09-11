@@ -25,7 +25,6 @@ class Player5(Player):
 		self.preferences = snapshot.preferences
 
 	def individual_score(self, item: Item) -> float:
-
 		# Individual score based on preference using the code in the game engine
 
 		score = 0
@@ -40,19 +39,17 @@ class Player5(Player):
 
 		return score
 
-	
 	def propose_item(self, history: list[Item]) -> Item | None:
-		
 		self.score_engine = self_engine(
 			players=[],
 			player_count=0,
-			subjects= 0,
-			memory_size= len(self.memory_bank),
+			subjects=0,
+			memory_size=len(self.memory_bank),
 			conversation_length=self.conversation_length,
 			seed=0,
 		)
 
-		self.score_engine.snapshots = [self.snapshot]	
+		self.score_engine.snapshots = [self.snapshot]
 
 		res = []
 
@@ -60,12 +57,10 @@ class Player5(Player):
 			new_history = history + [item]
 			self.score_engine.history = new_history
 			score = self.score_engine._Engine__calculate_scores()
-			res = res + [(item, score['shared']+ self.individual_score(item))]
-
+			res = res + [(item, score['shared'] + self.individual_score(item), score)]
 
 		res.sort(key=lambda x: x[1], reverse=True)
 
-		print("shared", res[0][1])
-		
-		return res[0][0] if res else None
+		# print("shared", res[0][2])
 
+		return res[0][0] if res else None
