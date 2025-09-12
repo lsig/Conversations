@@ -4,7 +4,7 @@ from collections import Counter
 from dataclasses import asdict
 
 from models.item import Item
-from models.player import Player, PlayerSnapshot
+from models.player import GameContext, Player, PlayerSnapshot
 
 
 class Engine:
@@ -28,13 +28,14 @@ class Engine:
 		self.last_player_id: uuid.UUID | None = None
 		self.turn = 0
 		self.consecutive_pauses = 0
-
 		self.player_contributions: dict[uuid.UUID, list[Item]] = {}
 		self.snapshots = self.__initialize_snapshots(player_count)
 		self.players = [
 			player(
 				snapshot=self.snapshots[id],
-				conversation_length=self.conversation_length,
+				ctx=GameContext(
+					conversation_length=conversation_length, number_of_players=player_count
+				),
 			)
 			for id, player in zip(list(self.snapshots.keys()), players, strict=True)
 		]
@@ -47,7 +48,7 @@ class Engine:
 		for _ in range(player_count):
 			id = uuid.uuid4()
 			preferences = self.__generate_preference()
-			memory_bank = self.__generate_items()
+			memory_bank = self.__generate_items(player_id=id)
 
 			snapshot = PlayerSnapshot(id=id, preferences=preferences, memory_bank=memory_bank)
 
@@ -59,7 +60,7 @@ class Engine:
 	def __generate_preference(self) -> tuple[int]:
 		return tuple(random.sample(self.subjects, len(self.subjects)))
 
-	def __generate_items(self) -> tuple[Item, ...]:
+	def __generate_items(self, player_id: uuid.UUID) -> tuple[Item, ...]:
 		items: list[Item] = []
 
 		for _ in range(self.memory_size):
@@ -68,7 +69,9 @@ class Engine:
 			importance = round(random.random(), 2)
 			subjects = tuple(random.sample(self.subjects, samples))
 
-			item = Item(id=uuid.uuid4(), importance=importance, subjects=subjects)
+			item = Item(
+				id=uuid.uuid4(), player_id=player_id, importance=importance, subjects=subjects
+			)
 			items.append(item)
 
 		return tuple(items)
@@ -167,12 +170,14 @@ class Engine:
 	def __calculate_individual_score(self) -> dict[uuid.UUID, float]:
 		individual_scores: dict[uuid.UUID, float] = {id: 0.0 for id in self.snapshots}
 
-		for uid, contributed_items in self.player_contributions.items():
-			snapshot = self.snapshots[uid]
+		for snapshot in self.snapshots.values():
 			preferences = snapshot.preferences
 
 			player_individual_score = 0.0
-			for item in contributed_items:
+			for item in self.history:
+				if not item:
+					continue
+
 				bonuses = [
 					1 - preferences.index(s) / len(preferences)
 					for s in item.subjects
@@ -181,7 +186,7 @@ class Engine:
 				if bonuses:
 					player_individual_score += sum(bonuses) / len(bonuses)
 
-			individual_scores[uid] = player_individual_score
+			individual_scores[snapshot.id] = player_individual_score
 
 		return individual_scores
 
