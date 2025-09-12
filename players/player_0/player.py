@@ -91,8 +91,7 @@ class Player0(Player):
 	3. Calculates the delta between the total score with the item and the total score without the item
 	4. Return the delta
 	'''
-	def calculate_item_score(self, item, history: list[Item]) -> tuple[Item, float]:
-		history_score = self.calculate_history_score(history)
+	def calculate_item_score(self, item, history_score, history: list[Item]) -> tuple[Item, float]:
 		history_score_with_item = self.calculate_history_score(history + [item])
 		delta = history_score_with_item - history_score
 
@@ -184,7 +183,8 @@ class Player0(Player):
 			# Calculates the individual score of an item
 			bonuses = [1 - (self.preferences.index(s) / len(self.preferences)) for s in current_item.subjects]
 
-			individual_score += sum(bonuses) / len(bonuses) 
+			if bonuses:
+				individual_score += sum(bonuses) / len(bonuses) 
 
 		# Calculates the total score of the history
 		total_score = coherence_score + freshness_score + importance_score + nonmonotonousness + individual_score
@@ -204,6 +204,9 @@ class Player0(Player):
 		if not self.memory_bank:
 			return None
 
-		item_scores = [self.calculate_item_score(item, history) for item in self.memory_bank]
+
+		history_score = self.calculate_history_score(history)
+
+		item_scores = [self.calculate_item_score(item, history_score, history) for item in self.memory_bank]
 		item_scores.sort(key=lambda x: x[1], reverse=True)
 		return item_scores[0] #returns BEST item with its score
