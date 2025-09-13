@@ -16,6 +16,7 @@ class CustomEncoder(json.JSONEncoder):
 		if isinstance(obj, Item):
 			return {
 				'id': str(obj.id),
+				'player_id': str(obj.player_id),
 				'importance': obj.importance,
 				'subjects': obj.subjects,
 			}
