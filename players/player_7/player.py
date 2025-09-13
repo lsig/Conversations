@@ -7,15 +7,19 @@ class Player7(Player):
 		super().__init__(snapshot, ctx)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		if history[-1].player_id == self.id:
-			self.contributed_items.append(history[-1])
+		if len(history) >0:
+			if history[-1].player_id == self.id:
+				self.contributed_items.append(history[-1])
 
+			if history[-1] is None:
+				return self.pause(history)
+			else:
+				return self.play(history)
 
 
 	def pause(self, history: list[Item]) -> Item | None:
 		
 		rejected: list[Item] = list()
-		subject = -1
 		
 		# look through preferences in most to least important order
 		for p in self.preferences:
@@ -55,6 +59,7 @@ class Player7(Player):
 					if pref_index < preference_threshold or (pref_index ==highest_pref_index and item.importance > importance):
 						chosen_item = item
 						importance = item.importance
+		return chosen_item if chosen_item else None
 			
 
 		
