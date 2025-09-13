@@ -42,6 +42,7 @@ class Player7(Player):
 		preference_threshold = len(self.preferences) // 2
 		chosen_item = None
 		importance = float('-inf')
+		highest_pref_index = float('inf')
 
 		# look through memory bank, find item in top half of preference list that has been mentioned recently and has highest importance
 		for item in self.memory_bank:
@@ -49,7 +50,9 @@ class Player7(Player):
 				continue
 			for subject in item.subjects:
 				times_mentioned = subject_count[subject]
-				if subject in self.preferences[0:preference_threshold] and times_mentioned in range(0, 3) and item.importance > importance:
+				pref_index = self.preferences.index(subject) # get index of subject in preferences list
+				if times_mentioned in range(0, 3) and subject in self.preferences[0:preference_threshold]:  # noqa: SIM102
+					if pref_index < preference_threshold or (pref_index ==highest_pref_index and item.importance > importance):
 						chosen_item = item
 						importance = item.importance
 			
