@@ -7,29 +7,10 @@ class Player7(Player):
 		super().__init__(snapshot, ctx)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		current = None
-		max_score = 0
+		if history[-1].player_id == self.id:
+			self.contributed_items.append(history[-1])
 
-		subject_count = {subject: 0 for subject in self.preferences}
-		for item in history[-3:]:
-			if item is None:
-				continue
-			for subject in item.subjects:
-				subject_count[subject] += 1
 
-		for item in self.memory_bank:
-			if item in self.contributed_items:
-				continue
-			score = item.importance
-			for subject in item.subjects:
-				if subject_count[subject] > 0:
-					score += 1
-			if score > max_score:
-				max_score = score
-				current = item
-
-		self.contributed_items.append(current)
-		return self.pause(history)
 
 	def pause(self, history: list[Item]) -> Item | None:
 		
@@ -48,3 +29,29 @@ class Player7(Player):
 						rejected.append(item)
 		
 		return rejected[0] if rejected else None
+	
+	def play(self, history: list[Item]) -> Item | None:
+		subject_count = {subject: 0 for subject in self.preferences}
+		# tracks how many times each subject has been mentioned in the last 3 said items
+		for item in history[-3:]:
+			if item is None:
+				continue
+			for subject in item.subjects:
+				subject_count[subject] += 1
+
+		preference_threshold = len(self.preferences) // 2
+		chosen_item = None
+		importance = float('-inf')
+
+		# look through memory bank, find item in top half of preference list that has been mentioned recently and has highest importance
+		for item in self.memory_bank:
+			if item in history:
+				continue
+			for subject in item.subjects:
+				times_mentioned = subject_count[subject]
+				if subject in self.preferences[0:preference_threshold] and times_mentioned in range(0, 3) and item.importance > importance:
+						chosen_item = item
+						importance = item.importance
+			
+
+		
