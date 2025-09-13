@@ -14,8 +14,9 @@ class Player0(Player):
 	
 	'''
 	def propose_item(self, history: list[Item]) -> Item | None:
-		item_scores = self.calculate_greedy(history) #[item, score]
-		threshold = self.calculate_threshold(history)
+		history_score = self.calculate_history_score(history)
+		item_scores = self.calculate_greedy(history_score, history) #[item, score]
+		threshold = self.calculate_threshold(history_score, history)
 
 		if not item_scores: #just an edge case in case our memory is empty
 			return None
@@ -31,7 +32,7 @@ class Player0(Player):
 	2. Calculate the ratio between (Memory bank left) and (Length of remaining conversation)/Players 
 	3. Determine the threshold using the two things we calculated in part 1 & 2
 	'''
-	def calculate_threshold(self, history: list[Item]) -> float:
+	def calculate_threshold(self, history_score, history: list[Item]) -> float:
 		# num_players = 2 #change this line to whenever the instructor code is updated
 
 		# '''
@@ -70,10 +71,9 @@ class Player0(Player):
 
 		history_without_recent = history[:-hist_depth]
 
-		score_without_recent_history = self.calculate_history_score(history_without_recent)
-		total_score = self.calculate_history_score(history)
+		score_without_recent_history = self.calculate_history_score(history_without_recent) 
 
-		score_delta = total_score - score_without_recent_history
+		score_delta = history_score - score_without_recent_history
 		avg_score_per_turn = score_delta / (len(history) - len(history_without_recent))
 		
 
@@ -200,12 +200,9 @@ class Player0(Player):
 	3. Return the fitness score of the BEST item
 	
 	'''
-	def calculate_greedy(self, history: list[Item]) -> tuple[Item, float] | None:
+	def calculate_greedy(self, history_score, history: list[Item]) -> tuple[Item, float] | None:
 		if not self.memory_bank:
 			return None
-
-
-		history_score = self.calculate_history_score(history)
 
 		item_scores = [self.calculate_item_score(item, history_score, history) for item in self.memory_bank]
 		item_scores.sort(key=lambda x: x[1], reverse=True)
