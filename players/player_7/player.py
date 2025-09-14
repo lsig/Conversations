@@ -7,14 +7,16 @@ class Player7(Player):
 		super().__init__(snapshot, ctx)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		if len(history) >0:
+		if len(history) > 0:
 			if history[-1] is not None and history[-1].player_id == self.id:
 				self.contributed_items.append(history[-1])
 
-			if history is None or history[-1] is None:
-				return self.pause(history)
-			else:
-				return self.play(history)
+		# if its first turn or previous was a pause
+		if len(history) == 0 or history[-1] is None:
+			return self.pause(history)
+		else:
+			return self.play(history)
+		
 
 
 	def pause(self, history: list[Item]) -> Item | None:
