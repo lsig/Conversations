@@ -60,6 +60,16 @@ class Player7(Player):
 						chosen_item = item
 						importance = item.importance
 		return chosen_item if chosen_item else None
+		# If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
+		if chosen_item is None:
+			for item in self.memory_bank:
+				if item not in history:
+					if item.importance > importance:
+						chosen_item = item
+						importance = item.importance
+		# Return item with highest importance that is not in history.
+		return chosen_item
+
 			
 
 		
