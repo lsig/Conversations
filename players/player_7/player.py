@@ -8,10 +8,10 @@ class Player7(Player):
 
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if len(history) >0:
-			if history[-1].player_id == self.id:
+			if history[-1] is not None and history[-1].player_id == self.id:
 				self.contributed_items.append(history[-1])
 
-			if history[-1] is None:
+			if history is None or history[-1] is None:
 				return self.pause(history)
 			else:
 				return self.play(history)
