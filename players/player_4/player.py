@@ -90,7 +90,7 @@ class Player4(Player):
 
 		# Total matched frequency across candidate subjects
 		sum_match = sum(counts.get(s, 0) for s in item.subjects)
-		return sum_match/len(item.subjects)
+		return sum_match / len(item.subjects)
 
 	def _preference_tiebreak_key(self, item: Item) -> tuple[int, int, str]:
 		"""
@@ -182,9 +182,9 @@ class Player4(Player):
 		best_score = max(s for s, _ in scored)
 		print(best_score)
 		print(history)
-		if len(history)!=0 and best_score < 1:
+		if len(history) != 0 and best_score < 1:
 			return None
-		
+
 		# All with best score
 		tied = [it for s, it in scored if s == best_score]
 
