@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from players.player_2.BaseStrategy import BaseStrategy
-
 from models.item import Item
 from models.player import Player, PlayerSnapshot
+from players.player_2.BaseStrategy import BaseStrategy
 
 
 class Strategy3(BaseStrategy):

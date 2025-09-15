@@ -1,8 +1,7 @@
-from players.player_2.BaseStrategy import BaseStrategy
-
-
 from models.item import Item
 from models.player import Player
+from players.player_2.BaseStrategy import BaseStrategy
+
 
 class Strategy4(BaseStrategy):
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
@@ -17,7 +16,9 @@ class Strategy4(BaseStrategy):
 
 		# engines monotony check uses the last 3 entries - including pauses
 		last3_entries = history[-3:] if len(history) >= 3 else history[:]
-		last3_entries_all_items = len(last3_entries) == 3 and all(e is not None for e in last3_entries)
+		last3_entries_all_items = len(last3_entries) == 3 and all(
+			e is not None for e in last3_entries
+		)
 
 		# preferences - lower index = higher preference
 		prefs = {s: idx for idx, s in enumerate(player.preferences)}
