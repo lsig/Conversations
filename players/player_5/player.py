@@ -15,7 +15,7 @@ class Player5(Player):
 	CANDIDATE_FRACTION = 0.2  # configure percentage for large banks
 
 	def __init__(
-		self, snapshot: PlayerSnapshot, ctx: GameContext, conversation_length: int = None
+		self, snapshot: PlayerSnapshot, ctx: GameContext
 	) -> None:
 		super().__init__(snapshot, ctx)
 		self.ctx = ctx
@@ -149,8 +149,5 @@ class Player5(Player):
 		# if tied choose randomly so we don't constantly repeat picking the first max
 		best_item = random.choice(highest_candidates)
 
-		# remove after selection
-		if best_item in self.memory_bank:
-			self.memory_bank.remove(best_item)
 
 		return best_item
