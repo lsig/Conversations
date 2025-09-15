@@ -110,6 +110,11 @@ class Player5(Player):
 		recent_subjects = [s for item in history[-3:] for s in item.subjects]
 		count_recent = Counter(recent_subjects)
 
+		# Add freshness bonus after pause
+		last_pause = max((index for index, item in enumerate(history) if item is None), default=-1)
+		history_post_pause = history[last_pause + 1:]
+		subjects_post_pause = {subject for item in history_post_pause if item is not None for subject in item.subjects}
+
 		for item in self.memory_bank:
 			if turns_left <= 3:
 				# lean into more important topics
@@ -128,6 +133,10 @@ class Player5(Player):
 			if any(count_recent[subject] >= 3 for subject in item.subjects):
 				# non-monotnous penalty
 				scores[item] -= 1
+
+			# freshness: count how many subjects of an item hasn't been mentioned since pause
+			new_subject_count = sum(1 for subject in item.subjects if subject not in subjects_post_pause)
+			scores[item] += new_subject_count
 
 		# Pick best
 		#best_item = max(scores.items(), key=lambda x: x[1])[0]
