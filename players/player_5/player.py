@@ -47,6 +47,9 @@ class Player5(Player):
 		return score
 
 	def propose_item(self, history: list[Item]) -> Item | None:
+		if not self.memory_bank:
+			return None
+		
 		# Create a temporary engine for shared scoring
 		self.score_engine = self_engine(
 			players=[],
@@ -64,6 +67,7 @@ class Player5(Player):
 		pref_ranking = []
 		importance_ranking = []
 
+		# NOTE: if player speed is slow likely because of this
 		for item in self.memory_bank:
 			new_history = history + [item]
 			self.score_engine.history = new_history
@@ -99,4 +103,8 @@ class Player5(Player):
 
 		# Pick best
 		best_item = max(scores.items(), key=lambda x: x[1])[0]
+		# remove after selection
+		if best_item in self.memory_bank:
+			self.memory_bank.remove(best_item)
+			
 		return best_item
