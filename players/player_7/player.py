@@ -24,6 +24,12 @@ class Player7(Player):
 		
 		# look through preferences in most to least important order
 		for p in self.preferences:
+			# when history is less than 5, just propose the first item that matches preference and has high importance
+			if len(history) < 5:
+				for item in self.memory_bank:
+					if p in item.subjects and item.importance > 0.5:
+						return item
+					
 			# check history of last 5 items to see if preference has been mentioned recently and if it has skip
 			if p not in history[:-5]:
 				for item in self.memory_bank:
