@@ -22,10 +22,11 @@ class Player2(Player):
 		return self.current_strategy.propose_item(self, history)
 
 	def _choose_strategy(self):
-		if self.subject_num / self.memory_bank_size <= 0.5:
-			self.current_strategy = Strategy1()
-		else:
-			self.current_strategy = Strategy2()
+		self.current_strategy = Strategy1()
+		# if self.subject_num / self.memory_bank_size <= 0.5:
+		# 	self.current_strategy = Strategy1()
+		# else:
+		# 	self.current_strategy = Strategy2()
 
 	def _init_sub_to_item(self):
 		for item in self.memory_bank:
