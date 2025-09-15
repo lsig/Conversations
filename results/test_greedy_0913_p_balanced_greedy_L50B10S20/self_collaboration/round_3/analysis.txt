@@ -1,0 +1,53 @@
+CONVERSATION ANALYSIS REPORT
+============================================================
+
+INDIVIDUAL PLAYER ANALYSIS
+----------------------------------------
+         Player             Quality     Individual  Contributed  Involvement    Num   
+--------------------------------------------------------------------------------------
+ BalancedGreedyPlayer_2      1.3198       3.8000       7.0800       1.0000       5    
+ BalancedGreedyPlayer_1      1.3138       3.5000       7.1800       1.0000       5    
+ BalancedGreedyPlayer_5      1.3108       3.3500       7.0400       0.8000       4    
+ BalancedGreedyPlayer_4      1.2918       2.4000       7.3000       0.8000       4    
+ BalancedGreedyPlayer_8      1.2883       2.2250       6.8100       0.8000       4    
+ BalancedGreedyPlayer_9      1.2873       2.1750       6.3900       0.8000       4    
+ BalancedGreedyPlayer_7      1.2858       2.1000       6.0000       0.6000       3    
+ BalancedGreedyPlayer_10     1.2768       1.6500       2.1100       0.6000       3    
+ BalancedGreedyPlayer_6      1.2698       1.3000       6.1700       0.6000       3    
+ BalancedGreedyPlayer_3      1.2668       1.1500       6.1100       0.6000       3    
+
+
+PLAYER TYPE ANALYSIS
+------------------------------
+ Rank          Type          Count   Avg Qual  Avg Indiv   Avg Cont  Avg Invol   Total 
+---------------------------------------------------------------------------------------
+  1    BalancedGreedyPlayer   10      1.2911     2.3650     6.2190     0.7600     38   
+
+NORMALIZED ATTRIBUTE ANALYSIS BY TYPE:
+---------------------------------------------
+        Type          Importance   Coherence    Freshness   Nonmonotone 
+------------------------------------------------------------------------
+BalancedGreedyPlayer    0.4638       0.3400       0.4400       0.0000   
+
+
+GLOBAL CONVERSATION METRICS
+-----------------------------------
+Conversation Length: 50
+Total Pauses: 12
+Active Turns: 38
+
+OVERALL SCORES:
+  Total Shared Score: 62.1900
+
+NORMALIZED SCORES (per turn):
+  Normalized Total: 1.2438
+  Normalized Importance: 0.4638
+  Normalized Coherence: 0.3400
+  Normalized Freshness: 0.4400
+  Normalized Nonmonotonousness: 0.0000
+
+PLAYER PERFORMANCE SUMMARY:
+  Average Quality Score: 1.2911
+  Best Quality Score: 1.3198
+  Worst Quality Score: 1.2668
+  Quality Score Std Dev: 0.0183

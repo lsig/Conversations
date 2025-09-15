@@ -1,0 +1,6259 @@
+{
+  "history": [
+    {
+      "id": "c59ef8cd-8cf0-4028-ba48-ec56191b4780",
+      "importance": 0.95,
+      "subjects": [
+        7,
+        16
+      ]
+    },
+    {
+      "id": "a083f819-fa15-4027-9b3d-558c4d7ab5d8",
+      "importance": 0.51,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "eab7e66e-947a-43fb-b471-f372fbf4c90a",
+      "importance": 0.81,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+      "importance": 0.18,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "55dd4821-7482-4caf-927e-5a54874a2f55",
+      "importance": 0.84,
+      "subjects": [
+        19
+      ]
+    },
+    {
+      "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+      "importance": 0.34,
+      "subjects": [
+        4
+      ]
+    },
+    {
+      "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+      "importance": 0.79,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "efd1fcd0-076d-48a9-af07-d5b62e207bc8",
+      "importance": 0.85,
+      "subjects": [
+        8
+      ]
+    },
+    {
+      "id": "a1a110d9-a548-4e62-8de9-771a11772335",
+      "importance": 0.15,
+      "subjects": [
+        8
+      ]
+    },
+    {
+      "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+      "importance": 0.95,
+      "subjects": [
+        1
+      ]
+    },
+    {
+      "id": "8138f89e-431a-480a-b540-d7d17464073f",
+      "importance": 0.91,
+      "subjects": [
+        0,
+        5
+      ]
+    },
+    {
+      "id": "5f34ae9a-027b-4d35-958a-c7a776fac231",
+      "importance": 0.57,
+      "subjects": [
+        2,
+        8
+      ]
+    },
+    {
+      "id": "8b6c4a44-2128-4d93-ad3f-d0729c9a0d54",
+      "importance": 0.68,
+      "subjects": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+      "importance": 0.89,
+      "subjects": [
+        16,
+        10
+      ]
+    },
+    {
+      "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+      "importance": 0.39,
+      "subjects": [
+        5
+      ]
+    },
+    {
+      "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+      "importance": 0.95,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+      "importance": 0.86,
+      "subjects": [
+        6
+      ]
+    },
+    {
+      "id": "cf976f9f-3e79-47c0-a55d-6449a46c17d5",
+      "importance": 0.32,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "660b6710-a31b-4529-a644-7c77e317a1be",
+      "importance": 0.78,
+      "subjects": [
+        17
+      ]
+    },
+    {
+      "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+      "importance": 0.18,
+      "subjects": [
+        6
+      ]
+    },
+    {
+      "id": "c8c193cd-7c7e-412a-a99c-107cae26cfe3",
+      "importance": 0.98,
+      "subjects": [
+        11,
+        17
+      ]
+    },
+    {
+      "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+      "importance": 0.89,
+      "subjects": [
+        14,
+        13
+      ]
+    },
+    {
+      "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+      "importance": 0.62,
+      "subjects": [
+        17
+      ]
+    },
+    {
+      "id": "e17bcf76-be56-4660-828d-23078e3dda96",
+      "importance": 0.94,
+      "subjects": [
+        13
+      ]
+    },
+    {
+      "id": "f2bb79c0-b5a7-4f84-8f25-8983ddcc8a2f",
+      "importance": 0.88,
+      "subjects": [
+        10,
+        8
+      ]
+    },
+    {
+      "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+      "importance": 0.82,
+      "subjects": [
+        13,
+        10
+      ]
+    },
+    {
+      "id": "34ffbebf-c4a0-4525-850f-fe39a6f00f15",
+      "importance": 0.95,
+      "subjects": [
+        12,
+        9
+      ]
+    },
+    {
+      "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+      "importance": 0.55,
+      "subjects": [
+        10
+      ]
+    },
+    {
+      "id": "6a709489-147c-4cb7-9043-23acb5a5d975",
+      "importance": 0.19,
+      "subjects": [
+        10
+      ]
+    },
+    {
+      "id": "bb1d09f9-f990-40c1-97e4-fa15334c55b6",
+      "importance": 0.26,
+      "subjects": [
+        12
+      ]
+    },
+    {
+      "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+      "importance": 0.89,
+      "subjects": [
+        18,
+        16
+      ]
+    },
+    {
+      "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+      "importance": 0.68,
+      "subjects": [
+        5
+      ]
+    },
+    {
+      "id": "054cccd3-9c42-4ca2-be6d-84bb6f9dfdf7",
+      "importance": 0.16,
+      "subjects": [
+        5
+      ]
+    },
+    {
+      "id": "ce72cfb6-3983-404f-9c2b-8242bb07829d",
+      "importance": 0.29,
+      "subjects": [
+        9,
+        3
+      ]
+    },
+    {
+      "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+      "importance": 0.85,
+      "subjects": [
+        17,
+        11
+      ]
+    },
+    {
+      "id": "09c34697-5111-453a-b6b4-1654af75fb15",
+      "importance": 0.21,
+      "subjects": [
+        11
+      ]
+    },
+    {
+      "id": "0868a00a-a9b4-4112-8102-5f25ca7be51b",
+      "importance": 0.66,
+      "subjects": [
+        12,
+        17
+      ]
+    },
+    {
+      "id": "64723a38-72c7-4a5f-b49d-098f8672dac8",
+      "importance": 0.73,
+      "subjects": [
+        16,
+        14
+      ]
+    },
+    {
+      "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+      "importance": 0.7,
+      "subjects": [
+        12,
+        17
+      ]
+    },
+    {
+      "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+      "importance": 0.85,
+      "subjects": [
+        15
+      ]
+    },
+    {
+      "id": "edf0b39e-7089-4ab4-8771-1fd161022e6a",
+      "importance": 0.46,
+      "subjects": [
+        11,
+        18
+      ]
+    },
+    {
+      "id": "601232da-b494-4414-906d-da067bf34732",
+      "importance": 0.79,
+      "subjects": [
+        8,
+        15
+      ]
+    },
+    {
+      "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+      "importance": 0.09,
+      "subjects": [
+        11
+      ]
+    },
+    {
+      "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+      "importance": 0.55,
+      "subjects": [
+        11
+      ]
+    },
+    {
+      "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+      "importance": 0.41,
+      "subjects": [
+        9
+      ]
+    },
+    {
+      "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+      "importance": 0.49,
+      "subjects": [
+        6
+      ]
+    },
+    {
+      "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+      "importance": 0.82,
+      "subjects": [
+        6
+      ]
+    },
+    {
+      "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+      "importance": 0.77,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+      "importance": 0.14,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+      "importance": 0.88,
+      "subjects": [
+        10,
+        15
+      ]
+    }
+  ],
+  "turn_impact": [
+    {
+      "turn": 1,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "c59ef8cd-8cf0-4028-ba48-ec56191b4780",
+        "importance": 0.95,
+        "subjects": [
+          7,
+          16
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+          "importance": 0.89,
+          "subjects": [
+            16,
+            10
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "55dd4821-7482-4caf-927e-5a54874a2f55",
+          "importance": 0.84,
+          "subjects": [
+            19
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "eab7e66e-947a-43fb-b471-f372fbf4c90a",
+          "importance": 0.81,
+          "subjects": [
+            4
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "c59ef8cd-8cf0-4028-ba48-ec56191b4780",
+          "importance": 0.95,
+          "subjects": [
+            7,
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "efd1fcd0-076d-48a9-af07-d5b62e207bc8",
+          "importance": 0.85,
+          "subjects": [
+            8
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.95,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.875,
+        "total": -0.050000000000000044
+      }
+    },
+    {
+      "turn": 2,
+      "speaker_id": "42645bd8-17ab-4185-b537-4cdbe2f34789",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "a083f819-fa15-4027-9b3d-558c4d7ab5d8",
+        "importance": 0.51,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+          "importance": 0.18,
+          "subjects": [
+            7
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "a083f819-fa15-4027-9b3d-558c4d7ab5d8",
+          "importance": 0.51,
+          "subjects": [
+            7
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.51,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.4,
+        "total": 0.51
+      }
+    },
+    {
+      "turn": 3,
+      "speaker_id": "42645bd8-17ab-4185-b537-4cdbe2f34789",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "eab7e66e-947a-43fb-b471-f372fbf4c90a",
+        "importance": 0.81,
+        "subjects": [
+          4
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+          "importance": 0.18,
+          "subjects": [
+            7
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "eab7e66e-947a-43fb-b471-f372fbf4c90a",
+          "importance": 0.81,
+          "subjects": [
+            4
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.81,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 1.0,
+        "total": -0.18999999999999995
+      }
+    },
+    {
+      "turn": 4,
+      "speaker_id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+        "importance": 0.18,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+          "importance": 0.18,
+          "subjects": [
+            7
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+          "importance": 0.34,
+          "subjects": [
+            4
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.18,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.65,
+        "total": 1.18
+      }
+    },
+    {
+      "turn": 5,
+      "speaker_id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "55dd4821-7482-4caf-927e-5a54874a2f55",
+        "importance": 0.84,
+        "subjects": [
+          19
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+          "importance": 0.34,
+          "subjects": [
+            4
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "55dd4821-7482-4caf-927e-5a54874a2f55",
+          "importance": 0.84,
+          "subjects": [
+            19
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.84,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.65,
+        "total": -0.16000000000000003
+      }
+    },
+    {
+      "turn": 6,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+        "importance": 0.34,
+        "subjects": [
+          4
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+          "importance": 0.34,
+          "subjects": [
+            4
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.34,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.55,
+        "total": 0.34
+      }
+    },
+    {
+      "turn": 7,
+      "speaker_id": "b303706a-7697-41a8-b148-dd50555eaa96",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+        "importance": 0.79,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+          "importance": 0.79,
+          "subjects": [
+            7
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.79,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.7,
+        "total": 0.79
+      }
+    },
+    {
+      "turn": 8,
+      "speaker_id": "b303706a-7697-41a8-b148-dd50555eaa96",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "efd1fcd0-076d-48a9-af07-d5b62e207bc8",
+        "importance": 0.85,
+        "subjects": [
+          8
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "efd1fcd0-076d-48a9-af07-d5b62e207bc8",
+          "importance": 0.85,
+          "subjects": [
+            8
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.85,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.8,
+        "total": -0.15000000000000002
+      }
+    },
+    {
+      "turn": 9,
+      "speaker_id": "b303706a-7697-41a8-b148-dd50555eaa96",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "a1a110d9-a548-4e62-8de9-771a11772335",
+        "importance": 0.15,
+        "subjects": [
+          8
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "a1a110d9-a548-4e62-8de9-771a11772335",
+          "importance": 0.15,
+          "subjects": [
+            8
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.15,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.8,
+        "total": 0.15
+      }
+    },
+    {
+      "turn": 10,
+      "speaker_id": "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+        "importance": 0.95,
+        "subjects": [
+          1
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.95,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.65,
+        "total": -0.050000000000000044
+      }
+    },
+    {
+      "turn": 11,
+      "speaker_id": "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "8138f89e-431a-480a-b540-d7d17464073f",
+        "importance": 0.91,
+        "subjects": [
+          0,
+          5
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "a98f58ed-58f8-4703-ac06-388750723afc",
+          "importance": 0.36,
+          "subjects": [
+            1
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+          "importance": 0.89,
+          "subjects": [
+            16,
+            10
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "8138f89e-431a-480a-b540-d7d17464073f",
+          "importance": 0.91,
+          "subjects": [
+            0,
+            5
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+          "importance": 0.23,
+          "subjects": [
+            6,
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.91,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": -0.08999999999999997
+      }
+    },
+    {
+      "turn": 12,
+      "speaker_id": "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "5f34ae9a-027b-4d35-958a-c7a776fac231",
+        "importance": 0.57,
+        "subjects": [
+          2,
+          8
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+          "importance": 0.89,
+          "subjects": [
+            16,
+            10
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "5f34ae9a-027b-4d35-958a-c7a776fac231",
+          "importance": 0.57,
+          "subjects": [
+            2,
+            8
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+          "importance": 0.89,
+          "subjects": [
+            14,
+            13
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+          "importance": 0.39,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.57,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": -0.43000000000000005
+      }
+    },
+    {
+      "turn": 13,
+      "speaker_id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "8b6c4a44-2128-4d93-ad3f-d0729c9a0d54",
+        "importance": 0.68,
+        "subjects": [
+          2,
+          5
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "8b6c4a44-2128-4d93-ad3f-d0729c9a0d54",
+          "importance": 0.68,
+          "subjects": [
+            2,
+            5
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "c251611f-abd7-434e-ae1e-a2f95444e7bb",
+          "importance": 0.49,
+          "subjects": [
+            2,
+            5
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+          "importance": 0.89,
+          "subjects": [
+            14,
+            13
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+          "importance": 0.39,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.68,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6499999999999999,
+        "total": 0.68
+      }
+    },
+    {
+      "turn": 14,
+      "speaker_id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+        "importance": 0.89,
+        "subjects": [
+          16,
+          10
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+          "importance": 0.89,
+          "subjects": [
+            16,
+            10
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "c251611f-abd7-434e-ae1e-a2f95444e7bb",
+          "importance": 0.49,
+          "subjects": [
+            2,
+            5
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+          "importance": 0.89,
+          "subjects": [
+            14,
+            13
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+          "importance": 0.35,
+          "subjects": [
+            5
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "6c7b59b7-0938-499c-92d0-bbae72a6e2ec",
+          "importance": 0.09,
+          "subjects": [
+            5
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+          "importance": 0.39,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.89,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": -0.10999999999999999
+      }
+    },
+    {
+      "turn": 15,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+        "importance": 0.39,
+        "subjects": [
+          5
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "f2bb79c0-b5a7-4f84-8f25-8983ddcc8a2f",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            8
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "c251611f-abd7-434e-ae1e-a2f95444e7bb",
+          "importance": 0.49,
+          "subjects": [
+            2,
+            5
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+          "importance": 0.55,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+          "importance": 0.39,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.39,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 1.0,
+        "total": 0.39
+      }
+    },
+    {
+      "turn": 16,
+      "speaker_id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+        "importance": 0.95,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "c251611f-abd7-434e-ae1e-a2f95444e7bb",
+          "importance": 0.49,
+          "subjects": [
+            2,
+            5
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+          "importance": 0.35,
+          "subjects": [
+            5
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+          "importance": 0.95,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "6c7b59b7-0938-499c-92d0-bbae72a6e2ec",
+          "importance": 0.09,
+          "subjects": [
+            5
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.95,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": -0.050000000000000044
+      }
+    },
+    {
+      "turn": 17,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+        "importance": 0.86,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+          "importance": 0.95,
+          "subjects": [
+            1
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+          "importance": 0.55,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+          "importance": 0.86,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.86,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": -0.14
+      }
+    },
+    {
+      "turn": 18,
+      "speaker_id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "cf976f9f-3e79-47c0-a55d-6449a46c17d5",
+        "importance": 0.32,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+          "importance": 0.18,
+          "subjects": [
+            6
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "cf976f9f-3e79-47c0-a55d-6449a46c17d5",
+          "importance": 0.32,
+          "subjects": [
+            7
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.32,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": 0.32
+      }
+    },
+    {
+      "turn": 19,
+      "speaker_id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "660b6710-a31b-4529-a644-7c77e317a1be",
+        "importance": 0.78,
+        "subjects": [
+          17
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+          "importance": 0.18,
+          "subjects": [
+            6
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "660b6710-a31b-4529-a644-7c77e317a1be",
+          "importance": 0.78,
+          "subjects": [
+            17
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.78,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.9,
+        "total": -0.21999999999999997
+      }
+    },
+    {
+      "turn": 20,
+      "speaker_id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+        "importance": 0.18,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+          "importance": 0.62,
+          "subjects": [
+            17
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+          "importance": 0.18,
+          "subjects": [
+            6
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.18,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 1.0,
+        "total": 0.18
+      }
+    },
+    {
+      "turn": 21,
+      "speaker_id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "c8c193cd-7c7e-412a-a99c-107cae26cfe3",
+        "importance": 0.98,
+        "subjects": [
+          11,
+          17
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+          "importance": 0.62,
+          "subjects": [
+            17
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "c8c193cd-7c7e-412a-a99c-107cae26cfe3",
+          "importance": 0.98,
+          "subjects": [
+            11,
+            17
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.98,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.47500000000000003,
+        "total": -0.020000000000000018
+      }
+    },
+    {
+      "turn": 22,
+      "speaker_id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+        "importance": 0.89,
+        "subjects": [
+          14,
+          13
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+          "importance": 0.62,
+          "subjects": [
+            17
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+          "importance": 0.89,
+          "subjects": [
+            14,
+            13
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.89,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.5249999999999999,
+        "total": -0.10999999999999999
+      }
+    },
+    {
+      "turn": 23,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+        "importance": 0.62,
+        "subjects": [
+          17
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+          "importance": 0.62,
+          "subjects": [
+            17
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "08b1b86d-3298-49ce-8fda-c9c594bf617c",
+          "importance": 0.1,
+          "subjects": [
+            14,
+            17
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.62,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6,
+        "total": 0.62
+      }
+    },
+    {
+      "turn": 24,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "e17bcf76-be56-4660-828d-23078e3dda96",
+        "importance": 0.94,
+        "subjects": [
+          13
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e17bcf76-be56-4660-828d-23078e3dda96",
+          "importance": 0.94,
+          "subjects": [
+            13
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.94,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.25,
+        "total": 0.94
+      }
+    },
+    {
+      "turn": 25,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "f2bb79c0-b5a7-4f84-8f25-8983ddcc8a2f",
+        "importance": 0.88,
+        "subjects": [
+          10,
+          8
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "bcdc8ee5-7bec-47ba-a64e-ec4d63dfdc10",
+          "importance": 0.21,
+          "subjects": [
+            13
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "f2bb79c0-b5a7-4f84-8f25-8983ddcc8a2f",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            8
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "08b1b86d-3298-49ce-8fda-c9c594bf617c",
+          "importance": 0.1,
+          "subjects": [
+            14,
+            17
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "efc9df1f-4a9c-451e-a09d-ef1c1d2a48f6",
+          "importance": 0.37,
+          "subjects": [
+            14,
+            13
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.88,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.525,
+        "total": -0.12
+      }
+    },
+    {
+      "turn": 26,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+        "importance": 0.82,
+        "subjects": [
+          13,
+          10
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+          "importance": 0.82,
+          "subjects": [
+            13,
+            10
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "056eada0-29b5-462f-b95f-21e17b0aefa8",
+          "importance": 0.02,
+          "subjects": [
+            8,
+            17
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+          "importance": 0.55,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.82,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": 0.82
+      }
+    },
+    {
+      "turn": 27,
+      "speaker_id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "34ffbebf-c4a0-4525-850f-fe39a6f00f15",
+        "importance": 0.95,
+        "subjects": [
+          12,
+          9
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "bcdc8ee5-7bec-47ba-a64e-ec4d63dfdc10",
+          "importance": 0.21,
+          "subjects": [
+            13
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "34ffbebf-c4a0-4525-850f-fe39a6f00f15",
+          "importance": 0.95,
+          "subjects": [
+            12,
+            9
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+          "importance": 0.55,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.95,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.575,
+        "total": -0.050000000000000044
+      }
+    },
+    {
+      "turn": 28,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+        "importance": 0.55,
+        "subjects": [
+          10
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "79a74fe1-100f-4a88-a429-900a94452a0b",
+          "importance": 0.04,
+          "subjects": [
+            9,
+            12
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+          "importance": 0.55,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.55,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.7,
+        "total": 1.55
+      }
+    },
+    {
+      "turn": 29,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "6a709489-147c-4cb7-9043-23acb5a5d975",
+        "importance": 0.19,
+        "subjects": [
+          10
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "79a74fe1-100f-4a88-a429-900a94452a0b",
+          "importance": 0.04,
+          "subjects": [
+            9,
+            12
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "6a709489-147c-4cb7-9043-23acb5a5d975",
+          "importance": 0.19,
+          "subjects": [
+            10
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.19,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.7,
+        "total": 1.19
+      }
+    },
+    {
+      "turn": 30,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "bb1d09f9-f990-40c1-97e4-fa15334c55b6",
+        "importance": 0.26,
+        "subjects": [
+          12
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "79a74fe1-100f-4a88-a429-900a94452a0b",
+          "importance": 0.04,
+          "subjects": [
+            9,
+            12
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "bb1d09f9-f990-40c1-97e4-fa15334c55b6",
+          "importance": 0.26,
+          "subjects": [
+            12
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.26,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.65,
+        "total": 0.26
+      }
+    },
+    {
+      "turn": 31,
+      "speaker_id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+        "importance": 0.89,
+        "subjects": [
+          18,
+          16
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+          "importance": 0.89,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "32700d81-6546-4e5c-a24d-3e4bd8b6d0b1",
+          "importance": 0.42,
+          "subjects": [
+            15,
+            14
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.89,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.825,
+        "total": -0.10999999999999999
+      }
+    },
+    {
+      "turn": 32,
+      "speaker_id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+        "importance": 0.68,
+        "subjects": [
+          5
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+          "importance": 0.68,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "da407a61-e263-4c34-9a95-ec97d8e8abef",
+          "importance": 0.44,
+          "subjects": [
+            14,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.68,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.44999999999999996,
+        "total": -0.31999999999999995
+      }
+    },
+    {
+      "turn": 33,
+      "speaker_id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "054cccd3-9c42-4ca2-be6d-84bb6f9dfdf7",
+        "importance": 0.16,
+        "subjects": [
+          5
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "054cccd3-9c42-4ca2-be6d-84bb6f9dfdf7",
+          "importance": 0.16,
+          "subjects": [
+            5
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "da407a61-e263-4c34-9a95-ec97d8e8abef",
+          "importance": 0.44,
+          "subjects": [
+            14,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "45018042-c8ed-49e5-9c58-4a4c6d6f67cd",
+          "importance": 0.74,
+          "subjects": [
+            5,
+            18
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.16,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.44999999999999996,
+        "total": 0.16
+      }
+    },
+    {
+      "turn": 34,
+      "speaker_id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "ce72cfb6-3983-404f-9c2b-8242bb07829d",
+        "importance": 0.29,
+        "subjects": [
+          9,
+          3
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ce72cfb6-3983-404f-9c2b-8242bb07829d",
+          "importance": 0.29,
+          "subjects": [
+            9,
+            3
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+          "importance": 0.35,
+          "subjects": [
+            5
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "6c7b59b7-0938-499c-92d0-bbae72a6e2ec",
+          "importance": 0.09,
+          "subjects": [
+            5
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.29,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.775,
+        "total": -0.71
+      }
+    },
+    {
+      "turn": 35,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+        "importance": 0.85,
+        "subjects": [
+          17,
+          11
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+          "importance": 0.35,
+          "subjects": [
+            5
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "6c7b59b7-0938-499c-92d0-bbae72a6e2ec",
+          "importance": 0.09,
+          "subjects": [
+            5
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+          "importance": 0.85,
+          "subjects": [
+            17,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.85,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6,
+        "total": -0.15000000000000002
+      }
+    },
+    {
+      "turn": 36,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "09c34697-5111-453a-b6b4-1654af75fb15",
+        "importance": 0.21,
+        "subjects": [
+          11
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+          "importance": 0.35,
+          "subjects": [
+            5
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "09c34697-5111-453a-b6b4-1654af75fb15",
+          "importance": 0.21,
+          "subjects": [
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.21,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.5,
+        "total": 0.21
+      }
+    },
+    {
+      "turn": 37,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "0868a00a-a9b4-4112-8102-5f25ca7be51b",
+        "importance": 0.66,
+        "subjects": [
+          12,
+          17
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+          "importance": 0.55,
+          "subjects": [
+            11
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+          "importance": 0.09,
+          "subjects": [
+            11
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "0868a00a-a9b4-4112-8102-5f25ca7be51b",
+          "importance": 0.66,
+          "subjects": [
+            12,
+            17
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.66,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6499999999999999,
+        "total": -0.33999999999999997
+      }
+    },
+    {
+      "turn": 38,
+      "speaker_id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "64723a38-72c7-4a5f-b49d-098f8672dac8",
+        "importance": 0.73,
+        "subjects": [
+          16,
+          14
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+          "importance": 0.55,
+          "subjects": [
+            11
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+          "importance": 0.09,
+          "subjects": [
+            11
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "64723a38-72c7-4a5f-b49d-098f8672dac8",
+          "importance": 0.73,
+          "subjects": [
+            16,
+            14
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.73,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.275,
+        "total": -0.27
+      }
+    },
+    {
+      "turn": 39,
+      "speaker_id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+        "importance": 0.7,
+        "subjects": [
+          12,
+          17
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+          "importance": 0.7,
+          "subjects": [
+            12,
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "08b1b86d-3298-49ce-8fda-c9c594bf617c",
+          "importance": 0.1,
+          "subjects": [
+            14,
+            17
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.7,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.35000000000000003,
+        "total": 0.7
+      }
+    },
+    {
+      "turn": 40,
+      "speaker_id": "42645bd8-17ab-4185-b537-4cdbe2f34789",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+        "importance": 0.85,
+        "subjects": [
+          15
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+          "importance": 0.85,
+          "subjects": [
+            15
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+          "importance": 0.73,
+          "subjects": [
+            17
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.85,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.75,
+        "total": -0.15000000000000002
+      }
+    },
+    {
+      "turn": 41,
+      "speaker_id": "42645bd8-17ab-4185-b537-4cdbe2f34789",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "edf0b39e-7089-4ab4-8771-1fd161022e6a",
+        "importance": 0.46,
+        "subjects": [
+          11,
+          18
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+          "importance": 0.45,
+          "subjects": [
+            17
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "edf0b39e-7089-4ab4-8771-1fd161022e6a",
+          "importance": 0.46,
+          "subjects": [
+            11,
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "32700d81-6546-4e5c-a24d-3e4bd8b6d0b1",
+          "importance": 0.42,
+          "subjects": [
+            15,
+            14
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "08b1b86d-3298-49ce-8fda-c9c594bf617c",
+          "importance": 0.1,
+          "subjects": [
+            14,
+            17
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.46,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": -0.54
+      }
+    },
+    {
+      "turn": 42,
+      "speaker_id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "601232da-b494-4414-906d-da067bf34732",
+        "importance": 0.79,
+        "subjects": [
+          8,
+          15
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+          "importance": 0.55,
+          "subjects": [
+            11
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+          "importance": 0.03,
+          "subjects": [
+            12
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "601232da-b494-4414-906d-da067bf34732",
+          "importance": 0.79,
+          "subjects": [
+            8,
+            15
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.79,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.575,
+        "total": -0.20999999999999996
+      }
+    },
+    {
+      "turn": 43,
+      "speaker_id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+        "importance": 0.09,
+        "subjects": [
+          11
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+          "importance": 0.55,
+          "subjects": [
+            11
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+          "importance": 0.09,
+          "subjects": [
+            11
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.09,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.15000000000000002,
+        "total": 0.09
+      }
+    },
+    {
+      "turn": 44,
+      "speaker_id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+        "importance": 0.55,
+        "subjects": [
+          11
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+          "importance": 0.55,
+          "subjects": [
+            11
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+          "importance": 0.68,
+          "subjects": [
+            18
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.55,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.25,
+        "total": 1.55
+      }
+    },
+    {
+      "turn": 45,
+      "speaker_id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+        "importance": 0.41,
+        "subjects": [
+          9
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b71affc8-d814-4bf6-81dc-ac8873c9fd71",
+          "importance": 0.89,
+          "subjects": [
+            0,
+            13
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "53c8136f-3fec-4090-8963-4229574c955d",
+          "importance": 0.77,
+          "subjects": [
+            8
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.41,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.85,
+        "total": -0.5900000000000001
+      }
+    },
+    {
+      "turn": 46,
+      "speaker_id": "b303706a-7697-41a8-b148-dd50555eaa96",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+        "importance": 0.49,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+          "importance": 0.26,
+          "subjects": [
+            1,
+            7
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+          "importance": 0.49,
+          "subjects": [
+            6
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "4b4512f5-d65c-4e7c-a581-ce2620e871ad",
+          "importance": 0.12,
+          "subjects": [
+            3,
+            0
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.49,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": -0.51
+      }
+    },
+    {
+      "turn": 47,
+      "speaker_id": "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+        "importance": 0.82,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+          "importance": 0.8,
+          "subjects": [
+            11
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+          "importance": 0.82,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        },
+        "ab3d2b22-a14d-49f3-85d1-aa70f983d130": {
+          "id": "4b4512f5-d65c-4e7c-a581-ce2620e871ad",
+          "importance": 0.12,
+          "subjects": [
+            3,
+            0
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.82,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.050000000000000044,
+        "total": 0.82
+      }
+    },
+    {
+      "turn": 48,
+      "speaker_id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+        "importance": 0.77,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "106940ea-a78f-4ef4-b5e0-ff403dc759af",
+          "importance": 0.17,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+          "importance": 0.77,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+          "importance": 0.41,
+          "subjects": [
+            9
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.77,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.30000000000000004,
+        "total": -0.22999999999999998
+      }
+    },
+    {
+      "turn": 49,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+        "importance": 0.14,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "106940ea-a78f-4ef4-b5e0-ff403dc759af",
+          "importance": 0.17,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "a0772c07-dc78-488a-9097-848d227db760",
+          "importance": 0.7,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b71affc8-d814-4bf6-81dc-ac8873c9fd71",
+          "importance": 0.89,
+          "subjects": [
+            0,
+            13
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+          "importance": 0.14,
+          "subjects": [
+            16
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.14,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 1.0,
+        "total": 0.14
+      }
+    },
+    {
+      "turn": 50,
+      "speaker_id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+      "speaker_name": "BayesTreeBeamMedium",
+      "item": {
+        "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+        "importance": 0.88,
+        "subjects": [
+          10,
+          15
+        ]
+      },
+      "proposals": {
+        "7b8a4c11-95ad-40b1-bf99-eced47b0efb1": {
+          "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+          "importance": 0.67,
+          "subjects": [
+            4,
+            14
+          ]
+        },
+        "ec35bef0-cbf3-402a-896d-e18effbbf568": {
+          "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+          "importance": 0.84,
+          "subjects": [
+            7
+          ]
+        },
+        "93b30c83-339f-4927-878e-dd2e346edfe0": {
+          "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+          "importance": 0.81,
+          "subjects": [
+            18,
+            6
+          ]
+        },
+        "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea": {
+          "id": "106940ea-a78f-4ef4-b5e0-ff403dc759af",
+          "importance": 0.17,
+          "subjects": [
+            6
+          ]
+        },
+        "ecb6c307-08a3-4f59-bbc2-4b2fba99220d": {
+          "id": "a0772c07-dc78-488a-9097-848d227db760",
+          "importance": 0.7,
+          "subjects": [
+            16
+          ]
+        },
+        "42645bd8-17ab-4185-b537-4cdbe2f34789": {
+          "id": "b71affc8-d814-4bf6-81dc-ac8873c9fd71",
+          "importance": 0.89,
+          "subjects": [
+            0,
+            13
+          ]
+        },
+        "7db52a24-2b67-4d2e-af74-8a1426481d67": {
+          "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+          "importance": 0.88,
+          "subjects": [
+            10,
+            15
+          ]
+        },
+        "5808f4a5-ce74-4a79-b87d-51db4e259046": {
+          "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+          "importance": 0.33,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "b303706a-7697-41a8-b148-dd50555eaa96": {
+          "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+          "importance": 0.59,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": true,
+      "score_impact": {
+        "importance": 0.88,
+        "coherence": -1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.625,
+        "total": -0.12
+      }
+    }
+  ],
+  "score_breakdown": {
+    "total": 23.400000000000006,
+    "importance": 31.400000000000006,
+    "coherence": -8.0,
+    "freshness": 0.0,
+    "nonmonotonousness": 0.0
+  },
+  "scores": {
+    "conversation_length": 50,
+    "pauses": 0,
+    "player_scores": [
+      {
+        "id": "7b8a4c11-95ad-40b1-bf99-eced47b0efb1",
+        "preferences": [
+          13,
+          16,
+          17,
+          8,
+          3,
+          9,
+          18,
+          7,
+          2,
+          1,
+          14,
+          5,
+          0,
+          12,
+          6,
+          10,
+          4,
+          11,
+          19,
+          15
+        ],
+        "memory_bank": [
+          {
+            "id": "8e72c3aa-3c6e-4e35-9438-266847be1402",
+            "importance": 0.68,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "ff2cad9a-887e-4e06-84af-dc461a5e2dca",
+            "importance": 0.67,
+            "subjects": [
+              4,
+              14
+            ]
+          },
+          {
+            "id": "a98f58ed-58f8-4703-ac06-388750723afc",
+            "importance": 0.36,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "054cccd3-9c42-4ca2-be6d-84bb6f9dfdf7",
+            "importance": 0.16,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "071efe10-03c1-403b-93e4-b52e946b28b8",
+            "importance": 0.18,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "15678022-42b7-4564-b862-c605692db809",
+            "importance": 0.14,
+            "subjects": [
+              0,
+              12
+            ]
+          },
+          {
+            "id": "ce72cfb6-3983-404f-9c2b-8242bb07829d",
+            "importance": 0.29,
+            "subjects": [
+              9,
+              3
+            ]
+          },
+          {
+            "id": "ee5389a3-7d62-405d-98ae-33ed5c58b564",
+            "importance": 0.89,
+            "subjects": [
+              18,
+              16
+            ]
+          },
+          {
+            "id": "0c34ac82-9596-4bf9-983f-d2f9fee99a3f",
+            "importance": 0.38,
+            "subjects": [
+              19
+            ]
+          },
+          {
+            "id": "1572a108-20df-4a18-9d9c-9c321eab98be",
+            "importance": 0.31,
+            "subjects": [
+              2,
+              19
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5310000000000001,
+          "shared": 23.400000000000006,
+          "individual": 3.15
+        }
+      },
+      {
+        "id": "ec35bef0-cbf3-402a-896d-e18effbbf568",
+        "preferences": [
+          15,
+          19,
+          4,
+          9,
+          10,
+          14,
+          2,
+          12,
+          5,
+          3,
+          8,
+          16,
+          7,
+          6,
+          1,
+          11,
+          13,
+          0,
+          18,
+          17
+        ],
+        "memory_bank": [
+          {
+            "id": "0151b6e1-bfcc-461b-870a-c4645205eadd",
+            "importance": 0.55,
+            "subjects": [
+              11
+            ]
+          },
+          {
+            "id": "8b6c4a44-2128-4d93-ad3f-d0729c9a0d54",
+            "importance": 0.68,
+            "subjects": [
+              2,
+              5
+            ]
+          },
+          {
+            "id": "b6afe89f-6a2a-4ec8-a068-e489a7a69e6d",
+            "importance": 0.89,
+            "subjects": [
+              16,
+              10
+            ]
+          },
+          {
+            "id": "cbe7ac78-464d-4b33-8151-3ee5664912a4",
+            "importance": 0.77,
+            "subjects": [
+              0,
+              16
+            ]
+          },
+          {
+            "id": "8f53968b-2f35-4061-a8f3-2819d2b8340e",
+            "importance": 0.41,
+            "subjects": [
+              17
+            ]
+          },
+          {
+            "id": "a5467871-1877-4db7-b955-f5acbbb01c2c",
+            "importance": 0.84,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "f784c45e-31b7-4e92-be5c-000868dbd4d6",
+            "importance": 0.41,
+            "subjects": [
+              9
+            ]
+          },
+          {
+            "id": "bcdc8ee5-7bec-47ba-a64e-ec4d63dfdc10",
+            "importance": 0.21,
+            "subjects": [
+              13
+            ]
+          },
+          {
+            "id": "28444f3e-3bdb-4dfe-a7c2-36c2865c9984",
+            "importance": 0.7,
+            "subjects": [
+              12,
+              17
+            ]
+          },
+          {
+            "id": "670426b6-9e7d-45be-914d-bd25d588087a",
+            "importance": 0.45,
+            "subjects": [
+              17
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5225000000000002,
+          "shared": 23.400000000000006,
+          "individual": 2.725
+        }
+      },
+      {
+        "id": "93b30c83-339f-4927-878e-dd2e346edfe0",
+        "preferences": [
+          10,
+          5,
+          19,
+          6,
+          12,
+          0,
+          15,
+          1,
+          17,
+          4,
+          16,
+          14,
+          3,
+          9,
+          18,
+          13,
+          11,
+          7,
+          2,
+          8
+        ],
+        "memory_bank": [
+          {
+            "id": "37717996-ceac-4423-b2e7-d7e0a1af242a",
+            "importance": 0.82,
+            "subjects": [
+              13,
+              10
+            ]
+          },
+          {
+            "id": "34ffbebf-c4a0-4525-850f-fe39a6f00f15",
+            "importance": 0.95,
+            "subjects": [
+              12,
+              9
+            ]
+          },
+          {
+            "id": "a8db78b0-74d2-4373-b713-41505e585388",
+            "importance": 0.12,
+            "subjects": [
+              16,
+              11
+            ]
+          },
+          {
+            "id": "6752a6e9-4a87-4fe5-9815-aac994c91973",
+            "importance": 0.62,
+            "subjects": [
+              17
+            ]
+          },
+          {
+            "id": "50e25e0d-6a39-4c15-8deb-1f1b3d9ef922",
+            "importance": 0.8,
+            "subjects": [
+              11
+            ]
+          },
+          {
+            "id": "f2bb79c0-b5a7-4f84-8f25-8983ddcc8a2f",
+            "importance": 0.88,
+            "subjects": [
+              10,
+              8
+            ]
+          },
+          {
+            "id": "e714f527-1703-4713-be87-a66b1e9d61f1",
+            "importance": 0.81,
+            "subjects": [
+              18,
+              6
+            ]
+          },
+          {
+            "id": "d9dcbe28-ce16-4813-8a78-b524505143fd",
+            "importance": 0.34,
+            "subjects": [
+              4
+            ]
+          },
+          {
+            "id": "e17bcf76-be56-4660-828d-23078e3dda96",
+            "importance": 0.94,
+            "subjects": [
+              13
+            ]
+          },
+          {
+            "id": "da407a61-e263-4c34-9a95-ec97d8e8abef",
+            "importance": 0.44,
+            "subjects": [
+              14,
+              6
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5305000000000001,
+          "shared": 23.400000000000006,
+          "individual": 3.125
+        }
+      },
+      {
+        "id": "ac845350-b1e6-4e3e-b98b-85ad3bf3d1ea",
+        "preferences": [
+          14,
+          19,
+          8,
+          3,
+          0,
+          10,
+          4,
+          1,
+          12,
+          16,
+          7,
+          5,
+          9,
+          2,
+          17,
+          11,
+          18,
+          13,
+          15,
+          6
+        ],
+        "memory_bank": [
+          {
+            "id": "5f34ae9a-027b-4d35-958a-c7a776fac231",
+            "importance": 0.57,
+            "subjects": [
+              2,
+              8
+            ]
+          },
+          {
+            "id": "512ed932-4a11-46b0-ad43-c36b755a8243",
+            "importance": 0.95,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "6e875d87-3268-4ae9-ab4f-865fb7ce5e18",
+            "importance": 0.02,
+            "subjects": [
+              7,
+              1
+            ]
+          },
+          {
+            "id": "c251611f-abd7-434e-ae1e-a2f95444e7bb",
+            "importance": 0.49,
+            "subjects": [
+              2,
+              5
+            ]
+          },
+          {
+            "id": "1f727395-27a1-406f-b0d5-637e6cd8aa0b",
+            "importance": 0.82,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "8138f89e-431a-480a-b540-d7d17464073f",
+            "importance": 0.91,
+            "subjects": [
+              0,
+              5
+            ]
+          },
+          {
+            "id": "6e99cbed-381c-463d-b0d3-6949c7dd8e26",
+            "importance": 0.26,
+            "subjects": [
+              1,
+              7
+            ]
+          },
+          {
+            "id": "79a74fe1-100f-4a88-a429-900a94452a0b",
+            "importance": 0.04,
+            "subjects": [
+              9,
+              12
+            ]
+          },
+          {
+            "id": "7c5e78a5-08b9-4333-bd8f-5dde67b34c5c",
+            "importance": 0.09,
+            "subjects": [
+              14,
+              0
+            ]
+          },
+          {
+            "id": "106940ea-a78f-4ef4-b5e0-ff403dc759af",
+            "importance": 0.17,
+            "subjects": [
+              6
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5070000000000001,
+          "shared": 23.400000000000006,
+          "individual": 1.95
+        }
+      },
+      {
+        "id": "ecb6c307-08a3-4f59-bbc2-4b2fba99220d",
+        "preferences": [
+          6,
+          13,
+          0,
+          3,
+          10,
+          9,
+          12,
+          19,
+          15,
+          11,
+          8,
+          7,
+          17,
+          5,
+          16,
+          18,
+          4,
+          2,
+          14,
+          1
+        ],
+        "memory_bank": [
+          {
+            "id": "30f73f5d-78c9-44b4-8b80-7e865f02c1d1",
+            "importance": 0.89,
+            "subjects": [
+              14,
+              13
+            ]
+          },
+          {
+            "id": "056eada0-29b5-462f-b95f-21e17b0aefa8",
+            "importance": 0.02,
+            "subjects": [
+              8,
+              17
+            ]
+          },
+          {
+            "id": "a0772c07-dc78-488a-9097-848d227db760",
+            "importance": 0.7,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "ea853a4c-2523-46ca-892f-182eb90cca97",
+            "importance": 0.23,
+            "subjects": [
+              6,
+              12
+            ]
+          },
+          {
+            "id": "2117269f-d8eb-41c4-865c-16786db43a4a",
+            "importance": 0.03,
+            "subjects": [
+              12
+            ]
+          },
+          {
+            "id": "619d6ff7-61c2-4b3c-9929-07e2caec23b4",
+            "importance": 0.73,
+            "subjects": [
+              13,
+              5
+            ]
+          },
+          {
+            "id": "b08ecf53-762d-40c6-9944-65ccd01d2ab4",
+            "importance": 0.77,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "340bdee1-67db-4a3e-9ef4-f70b542dc422",
+            "importance": 0.18,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "55dd4821-7482-4caf-927e-5a54874a2f55",
+            "importance": 0.84,
+            "subjects": [
+              19
+            ]
+          },
+          {
+            "id": "c8c193cd-7c7e-412a-a99c-107cae26cfe3",
+            "importance": 0.98,
+            "subjects": [
+              11,
+              17
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5270000000000001,
+          "shared": 23.400000000000006,
+          "individual": 2.95
+        }
+      },
+      {
+        "id": "42645bd8-17ab-4185-b537-4cdbe2f34789",
+        "preferences": [
+          4,
+          11,
+          14,
+          0,
+          19,
+          15,
+          17,
+          2,
+          8,
+          10,
+          1,
+          6,
+          7,
+          9,
+          18,
+          13,
+          12,
+          5,
+          16,
+          3
+        ],
+        "memory_bank": [
+          {
+            "id": "a083f819-fa15-4027-9b3d-558c4d7ab5d8",
+            "importance": 0.51,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "eab7e66e-947a-43fb-b471-f372fbf4c90a",
+            "importance": 0.81,
+            "subjects": [
+              4
+            ]
+          },
+          {
+            "id": "458b4c4d-d7f6-461a-90a9-eb45a52a5277",
+            "importance": 0.68,
+            "subjects": [
+              18
+            ]
+          },
+          {
+            "id": "edf0b39e-7089-4ab4-8771-1fd161022e6a",
+            "importance": 0.46,
+            "subjects": [
+              11,
+              18
+            ]
+          },
+          {
+            "id": "c949f6b0-6286-434e-8bc8-06881ad7d667",
+            "importance": 0.1,
+            "subjects": [
+              19,
+              2
+            ]
+          },
+          {
+            "id": "b71affc8-d814-4bf6-81dc-ac8873c9fd71",
+            "importance": 0.89,
+            "subjects": [
+              0,
+              13
+            ]
+          },
+          {
+            "id": "b34604c2-3115-4275-9f9a-07b9a56dc8fd",
+            "importance": 0.85,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "c0d2af24-8336-4a45-9249-d43bc4445a0e",
+            "importance": 0.29,
+            "subjects": [
+              9
+            ]
+          },
+          {
+            "id": "ec8f3710-1e1f-4e10-8a13-39b3851aed0e",
+            "importance": 0.41,
+            "subjects": [
+              9
+            ]
+          },
+          {
+            "id": "4065c172-9c67-49da-a870-de9a40d85646",
+            "importance": 0.31,
+            "subjects": [
+              18
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5235000000000001,
+          "shared": 23.400000000000006,
+          "individual": 2.775
+        }
+      },
+      {
+        "id": "7db52a24-2b67-4d2e-af74-8a1426481d67",
+        "preferences": [
+          16,
+          14,
+          9,
+          2,
+          0,
+          7,
+          10,
+          12,
+          4,
+          15,
+          5,
+          17,
+          1,
+          11,
+          18,
+          3,
+          13,
+          8,
+          19,
+          6
+        ],
+        "memory_bank": [
+          {
+            "id": "7676e755-b1bf-449c-b2e5-5961de121f03",
+            "importance": 0.55,
+            "subjects": [
+              10
+            ]
+          },
+          {
+            "id": "bb1d09f9-f990-40c1-97e4-fa15334c55b6",
+            "importance": 0.26,
+            "subjects": [
+              12
+            ]
+          },
+          {
+            "id": "84d85a07-dcf2-4cc6-be8c-effd98ca88cc",
+            "importance": 0.84,
+            "subjects": [
+              18,
+              7
+            ]
+          },
+          {
+            "id": "c59ef8cd-8cf0-4028-ba48-ec56191b4780",
+            "importance": 0.95,
+            "subjects": [
+              7,
+              16
+            ]
+          },
+          {
+            "id": "6a709489-147c-4cb7-9043-23acb5a5d975",
+            "importance": 0.19,
+            "subjects": [
+              10
+            ]
+          },
+          {
+            "id": "e628397e-22df-4347-a95c-37eec48c2f7b",
+            "importance": 0.14,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "32700d81-6546-4e5c-a24d-3e4bd8b6d0b1",
+            "importance": 0.42,
+            "subjects": [
+              15,
+              14
+            ]
+          },
+          {
+            "id": "53c8136f-3fec-4090-8963-4229574c955d",
+            "importance": 0.77,
+            "subjects": [
+              8
+            ]
+          },
+          {
+            "id": "e715c81b-735b-4a59-9c84-d9bdd7704b76",
+            "importance": 0.88,
+            "subjects": [
+              10,
+              15
+            ]
+          },
+          {
+            "id": "7b172948-5f90-478c-8666-be3348fdbfd7",
+            "importance": 0.35,
+            "subjects": [
+              5
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5590000000000002,
+          "shared": 23.400000000000006,
+          "individual": 4.55
+        }
+      },
+      {
+        "id": "5808f4a5-ce74-4a79-b87d-51db4e259046",
+        "preferences": [
+          6,
+          7,
+          17,
+          15,
+          0,
+          9,
+          19,
+          12,
+          14,
+          1,
+          10,
+          16,
+          4,
+          2,
+          8,
+          3,
+          13,
+          11,
+          18,
+          5
+        ],
+        "memory_bank": [
+          {
+            "id": "5b250d8d-e0f1-4e53-a468-f8624224e6e6",
+            "importance": 0.25,
+            "subjects": [
+              7,
+              13
+            ]
+          },
+          {
+            "id": "877e4354-60a1-459c-8b7f-a3c32453f15c",
+            "importance": 0.13,
+            "subjects": [
+              4
+            ]
+          },
+          {
+            "id": "cf976f9f-3e79-47c0-a55d-6449a46c17d5",
+            "importance": 0.32,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "eff4770d-f3f2-4638-b4fb-64350d5a0d00",
+            "importance": 0.95,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "ad01ef63-317a-4d03-bc49-876e3adc2bc5",
+            "importance": 0.09,
+            "subjects": [
+              11
+            ]
+          },
+          {
+            "id": "601232da-b494-4414-906d-da067bf34732",
+            "importance": 0.79,
+            "subjects": [
+              8,
+              15
+            ]
+          },
+          {
+            "id": "660b6710-a31b-4529-a644-7c77e317a1be",
+            "importance": 0.78,
+            "subjects": [
+              17
+            ]
+          },
+          {
+            "id": "38f9d798-0d86-4161-83bc-3c62d98fe2be",
+            "importance": 0.33,
+            "subjects": [
+              7,
+              10
+            ]
+          },
+          {
+            "id": "45018042-c8ed-49e5-9c58-4a4c6d6f67cd",
+            "importance": 0.74,
+            "subjects": [
+              5,
+              18
+            ]
+          },
+          {
+            "id": "08b1b86d-3298-49ce-8fda-c9c594bf617c",
+            "importance": 0.1,
+            "subjects": [
+              14,
+              17
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5385000000000001,
+          "shared": 23.400000000000006,
+          "individual": 3.525
+        }
+      },
+      {
+        "id": "b303706a-7697-41a8-b148-dd50555eaa96",
+        "preferences": [
+          9,
+          6,
+          16,
+          2,
+          8,
+          15,
+          7,
+          19,
+          13,
+          12,
+          17,
+          4,
+          11,
+          10,
+          1,
+          14,
+          0,
+          18,
+          3,
+          5
+        ],
+        "memory_bank": [
+          {
+            "id": "efd1fcd0-076d-48a9-af07-d5b62e207bc8",
+            "importance": 0.85,
+            "subjects": [
+              8
+            ]
+          },
+          {
+            "id": "6c7b59b7-0938-499c-92d0-bbae72a6e2ec",
+            "importance": 0.09,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "a1a110d9-a548-4e62-8de9-771a11772335",
+            "importance": 0.15,
+            "subjects": [
+              8
+            ]
+          },
+          {
+            "id": "7a383976-0f07-4b45-830b-45a23fa09d3f",
+            "importance": 0.69,
+            "subjects": [
+              14
+            ]
+          },
+          {
+            "id": "e8466132-d528-47fd-a792-01ac25e26fe6",
+            "importance": 0.81,
+            "subjects": [
+              1,
+              13
+            ]
+          },
+          {
+            "id": "dfe53b24-07b8-44fd-9f12-f15bf8f2e3c1",
+            "importance": 0.43,
+            "subjects": [
+              3
+            ]
+          },
+          {
+            "id": "872a765b-f5ab-4606-b271-cd41c88d6d70",
+            "importance": 0.59,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "e731ea3c-620d-4912-9e82-b657ee407161",
+            "importance": 0.79,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "b5ebe546-66fb-43e8-b088-ced488d37427",
+            "importance": 0.49,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "50c76c07-8f29-4958-9731-4945ab16ee4c",
+            "importance": 0.73,
+            "subjects": [
+              17
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5330000000000001,
+          "shared": 23.400000000000006,
+          "individual": 3.25
+        }
+      },
+      {
+        "id": "ab3d2b22-a14d-49f3-85d1-aa70f983d130",
+        "preferences": [
+          5,
+          6,
+          0,
+          7,
+          18,
+          4,
+          17,
+          10,
+          12,
+          15,
+          11,
+          19,
+          3,
+          9,
+          16,
+          14,
+          1,
+          13,
+          8,
+          2
+        ],
+        "memory_bank": [
+          {
+            "id": "efc9df1f-4a9c-451e-a09d-ef1c1d2a48f6",
+            "importance": 0.37,
+            "subjects": [
+              14,
+              13
+            ]
+          },
+          {
+            "id": "09c34697-5111-453a-b6b4-1654af75fb15",
+            "importance": 0.21,
+            "subjects": [
+              11
+            ]
+          },
+          {
+            "id": "4b78deb1-0da9-4a0d-b533-51594e256465",
+            "importance": 0.26,
+            "subjects": [
+              2
+            ]
+          },
+          {
+            "id": "4b4512f5-d65c-4e7c-a581-ce2620e871ad",
+            "importance": 0.12,
+            "subjects": [
+              3,
+              0
+            ]
+          },
+          {
+            "id": "12d080fa-7778-4df2-a8cc-4fde7903749e",
+            "importance": 0.86,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "d01b47ac-7489-4719-8dab-6ee46b15883a",
+            "importance": 0.85,
+            "subjects": [
+              17,
+              11
+            ]
+          },
+          {
+            "id": "695f292b-554b-4eb8-9b33-82a9fe486065",
+            "importance": 0.39,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "0868a00a-a9b4-4112-8102-5f25ca7be51b",
+            "importance": 0.66,
+            "subjects": [
+              12,
+              17
+            ]
+          },
+          {
+            "id": "34949c40-42db-4a1f-8444-871b0c64828a",
+            "importance": 0.35,
+            "subjects": [
+              9,
+              0
+            ]
+          },
+          {
+            "id": "64723a38-72c7-4a5f-b49d-098f8672dac8",
+            "importance": 0.73,
+            "subjects": [
+              16,
+              14
+            ]
+          }
+        ],
+        "scores": {
+          "total": 0.5475000000000001,
+          "shared": 23.400000000000006,
+          "individual": 3.9749999999999996
+        }
+      }
+    ],
+    "shared_score_breakdown": {
+      "total": 23.400000000000006,
+      "importance": 31.400000000000006,
+      "coherence": -8.0,
+      "freshness": 0.0,
+      "nonmonotonousness": 0.0
+    }
+  }
+}

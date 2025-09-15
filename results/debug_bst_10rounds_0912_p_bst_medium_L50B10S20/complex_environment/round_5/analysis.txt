@@ -1,0 +1,71 @@
+CONVERSATION ANALYSIS REPORT
+============================================================
+
+INDIVIDUAL PLAYER ANALYSIS
+----------------------------------------
+         Player             Quality     Individual  Contributed  Involvement    Num   
+--------------------------------------------------------------------------------------
+  SelfishGreedyPlayer_2       0.48         4.00        -2.71         1.60        5    
+   BayesTreeBeamHigh_2        0.46         3.20         4.19         1.28        4    
+  BayesTreeBeamMedium_2       0.46         3.15         1.02         1.92        6    
+  SelfishGreedyPlayer_1       0.45         2.85        -0.54         0.96        3    
+   BayesTreeBeamLow_2         0.44         2.40         1.08         0.96        3    
+  BayesTreeBeamMedium_3       0.44         2.20         2.87         0.96        3    
+   BayesTreeBeamHigh_1        0.44         2.10         0.97         0.96        3    
+     RandomPlayer_2           0.43         1.92        -1.51         0.96        3    
+   BayesTreeBeamLow_1         0.43         1.92         1.85         1.28        4    
+  BayesTreeBeamMedium_4       0.43         1.90         2.54         1.28        4    
+ SelflessGreedyPlayer_2       0.43         1.70         2.84         0.64        2    
+     ZipperPlayer_2           0.42         1.40         1.29         0.64        2    
+ SelflessGreedyPlayer_1       0.42         1.40         1.88         0.64        2    
+  BayesTreeBeamMedium_1       0.42         1.10         4.34         0.96        3    
+     ZipperPlayer_1           0.41         0.90         0.59         0.32        1    
+     RandomPlayer_1           0.41         0.47        -0.91         0.64        2    
+
+
+PLAYER TYPE ANALYSIS
+------------------------------
+ Rank          Type          Count   Avg Qual  Avg Indiv   Avg Cont  Avg Invol   Total 
+---------------------------------------------------------------------------------------
+  1    SelfishGreedyPlayer     2       0.46       3.42      -1.62       1.28       8   
+  2     BayesTreeBeamHigh      2       0.45       2.65       2.58       1.12       7   
+  3      BayesTreeBeamLow      2       0.44       2.16       1.47       1.12       7   
+  4    BayesTreeBeamMedium     4       0.44       2.09       2.69       1.28      16   
+  5    SelflessGreedyPlayer    2       0.43       1.55       2.36       0.64       4   
+  6        RandomPlayer        2       0.42       1.20      -1.21       0.80       5   
+  7        ZipperPlayer        2       0.42       1.15       0.94       0.48       3   
+
+NORMALIZED ATTRIBUTE ANALYSIS BY TYPE:
+---------------------------------------------
+        Type          Importance   Coherence    Freshness   Nonmonotone 
+------------------------------------------------------------------------
+SelfishGreedyPlayer      0.01         0.04         0.00        -0.12    
+ BayesTreeBeamHigh       0.08         0.02         0.00         0.00    
+  BayesTreeBeamLow       0.10        -0.04         0.00         0.00    
+BayesTreeBeamMedium      0.22         0.00         0.00         0.00    
+SelflessGreedyPlayer     0.05         0.04         0.00         0.00    
+    RandomPlayer         0.03        -0.06         0.00        -0.02    
+    ZipperPlayer         0.04         0.00         0.00         0.00    
+
+
+GLOBAL CONVERSATION METRICS
+-----------------------------------
+Conversation Length: 50
+Total Pauses: 0
+Active Turns: 50
+
+OVERALL SCORES:
+  Total Shared Score: 19.79
+
+NORMALIZED SCORES (per turn):
+  Normalized Total: 0.40
+  Normalized Importance: 0.54
+  Normalized Coherence: 0.00
+  Normalized Freshness: 0.00
+  Normalized Nonmonotonousness: -0.14
+
+PLAYER PERFORMANCE SUMMARY:
+  Average Quality Score: 0.44
+  Best Quality Score: 0.48
+  Worst Quality Score: 0.41
+  Quality Score Std Dev: 0.02

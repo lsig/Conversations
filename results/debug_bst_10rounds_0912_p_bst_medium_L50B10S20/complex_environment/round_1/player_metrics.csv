@@ -1,0 +1,8 @@
+type,player_numbers,score,individual,shared_score,involvement_ratio,contributed_individual_score,contributed_shared_score,importance,coherence,freshness,nonmonotone
+BayesTreeBeamMedium,4,0.44,0.06,0.38,1.36,0.75,0.27,0.62,-0.29,0.00,-0.06
+SelfishGreedyPlayer,2,0.44,0.06,0.38,0.96,0.98,-0.29,0.20,0.17,0.00,-0.67
+BayesTreeBeamLow,2,0.42,0.04,0.38,1.28,0.52,0.11,0.61,-0.50,0.00,0.00
+BayesTreeBeamHigh,2,0.41,0.03,0.38,0.96,0.56,0.50,0.83,-0.33,0.00,0.00
+RandomPlayer,2,0.41,0.03,0.38,0.96,0.51,0.80,0.47,0.33,0.00,0.00
+SelflessGreedyPlayer,2,0.39,0.02,0.38,0.80,0.33,1.19,0.79,0.40,0.00,0.00
+ZipperPlayer,2,0.38,0.01,0.38,0.32,0.28,0.76,0.76,0.00,0.00,0.00

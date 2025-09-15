@@ -1,0 +1,8 @@
+type,player_numbers,score,individual,shared_score,involvement_ratio,contributed_individual_score,contributed_shared_score,importance,coherence,freshness,nonmonotone
+SelfishGreedyPlayer,2,-0.0978,0.1192,-0.2171,2.3200,0.8224,-0.9398,0.0084,0.0172,0.0000,-0.9655
+RandomPlayer,2,-0.1344,0.0827,-0.2171,2.4400,0.5422,-0.7880,0.1300,-0.2459,0.0000,-0.6721
+BayesTreeBeamMedium,2,-0.1815,0.0356,-0.2171,0.8800,0.6466,0.0914,0.4095,-0.0909,0.0000,-0.2273
+BayesTreeBeamLow,2,-0.1954,0.0216,-0.2171,0.7200,0.4806,0.3256,0.4367,0.1111,0.0000,-0.2222
+BalancedGreedyPlayer,4,-0.1998,0.0172,-0.2171,0.4800,0.5740,1.1883,0.6467,0.5833,0.0000,-0.0417
+SelflessGreedyPlayer,2,-0.2007,0.0164,-0.2171,0.4800,0.5458,1.2625,0.4292,0.9167,0.0000,-0.0833
+ZipperPlayer,2,-0.2109,0.0061,-0.2171,0.2000,0.4900,1.5260,0.7260,1.0000,0.0000,-0.2000

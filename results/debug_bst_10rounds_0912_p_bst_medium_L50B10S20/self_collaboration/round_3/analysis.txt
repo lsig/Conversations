@@ -1,0 +1,53 @@
+CONVERSATION ANALYSIS REPORT
+============================================================
+
+INDIVIDUAL PLAYER ANALYSIS
+----------------------------------------
+         Player             Quality     Individual  Contributed  Involvement    Num   
+--------------------------------------------------------------------------------------
+  BayesTreeBeamMedium_2       0.44         5.33         2.66         1.40        7    
+  BayesTreeBeamMedium_4       0.43         4.80         1.16         1.40        7    
+  BayesTreeBeamMedium_5       0.42         4.05        -0.30         1.00        5    
+  BayesTreeBeamMedium_9       0.40         3.33         1.49         1.20        6    
+ BayesTreeBeamMedium_10       0.39         3.03         3.68         0.80        4    
+  BayesTreeBeamMedium_7       0.39         2.98         1.06         0.80        4    
+  BayesTreeBeamMedium_1       0.39         2.72         1.19         0.80        4    
+  BayesTreeBeamMedium_6       0.39         2.62         1.46         1.00        5    
+  BayesTreeBeamMedium_3       0.38         2.30         0.81         0.80        4    
+  BayesTreeBeamMedium_8       0.38         2.30         3.50         0.80        4    
+
+
+PLAYER TYPE ANALYSIS
+------------------------------
+ Rank          Type          Count   Avg Qual  Avg Indiv   Avg Cont  Avg Invol   Total 
+---------------------------------------------------------------------------------------
+  1    BayesTreeBeamMedium    10       0.40       3.35       1.67       1.00      50   
+
+NORMALIZED ATTRIBUTE ANALYSIS BY TYPE:
+---------------------------------------------
+        Type          Importance   Coherence    Freshness   Nonmonotone 
+------------------------------------------------------------------------
+BayesTreeBeamMedium      0.61        -0.24         0.00        -0.04    
+
+
+GLOBAL CONVERSATION METRICS
+-----------------------------------
+Conversation Length: 50
+Total Pauses: 0
+Active Turns: 50
+
+OVERALL SCORES:
+  Total Shared Score: 16.71
+
+NORMALIZED SCORES (per turn):
+  Normalized Total: 0.33
+  Normalized Importance: 0.61
+  Normalized Coherence: -0.24
+  Normalized Freshness: 0.00
+  Normalized Nonmonotonousness: -0.04
+
+PLAYER PERFORMANCE SUMMARY:
+  Average Quality Score: 0.40
+  Best Quality Score: 0.44
+  Worst Quality Score: 0.38
+  Quality Score Std Dev: 0.02

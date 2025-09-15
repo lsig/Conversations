@@ -1,0 +1,3764 @@
+{
+  "history": [
+    null,
+    {
+      "id": "c7b9ab2a-a28c-4283-b1a5-fe0f8b6ccd1d",
+      "importance": 0.53,
+      "subjects": [
+        18,
+        16
+      ]
+    },
+    {
+      "id": "859a0457-99a2-4b55-a796-98372a6580dd",
+      "importance": 0.96,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "e8da7e5d-6269-44e8-900d-6f6d1f86f629",
+      "importance": 0.56,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+      "importance": 0.85,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+      "importance": 0.51,
+      "subjects": [
+        16
+      ]
+    },
+    {
+      "id": "56436049-94b9-4ba3-81b2-b653e804ecbc",
+      "importance": 0.31,
+      "subjects": [
+        16
+      ]
+    },
+    null,
+    {
+      "id": "a494d741-bfbf-490a-9c39-760111061115",
+      "importance": 0.53,
+      "subjects": [
+        11,
+        17
+      ]
+    },
+    {
+      "id": "b7bae4a6-64a7-477b-bac7-a86dc5937ef7",
+      "importance": 0.48,
+      "subjects": [
+        17
+      ]
+    },
+    {
+      "id": "09c7c55d-38d1-46e2-9c9b-1d3f664bc5ac",
+      "importance": 0.06,
+      "subjects": [
+        17
+      ]
+    },
+    {
+      "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+      "importance": 0.95,
+      "subjects": [
+        11
+      ]
+    },
+    null,
+    {
+      "id": "dd184fac-4750-47a5-90c5-105026b38894",
+      "importance": 1.0,
+      "subjects": [
+        19,
+        3
+      ]
+    },
+    {
+      "id": "315c11bc-70e2-4651-989f-c1ca45a5bc9a",
+      "importance": 0.48,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "id": "09da8e86-d9a7-496a-b895-181548fbc818",
+      "importance": 0.55,
+      "subjects": [
+        3
+      ]
+    },
+    {
+      "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+      "importance": 0.88,
+      "subjects": [
+        3
+      ]
+    },
+    null,
+    {
+      "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+      "importance": 0.53,
+      "subjects": [
+        7,
+        11
+      ]
+    },
+    {
+      "id": "255361ef-06f4-4dce-a3c2-48ab051f4c12",
+      "importance": 0.44,
+      "subjects": [
+        7
+      ]
+    },
+    {
+      "id": "f25bfdf6-5fee-4e00-b4bd-d09bc1bb3bb8",
+      "importance": 0.11,
+      "subjects": [
+        7
+      ]
+    },
+    null,
+    {
+      "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+      "importance": 0.92,
+      "subjects": [
+        9,
+        19
+      ]
+    },
+    null,
+    {
+      "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+      "importance": 0.93,
+      "subjects": [
+        15,
+        14
+      ]
+    },
+    {
+      "id": "0a59ede5-686c-4268-980e-86602643fab9",
+      "importance": 0.59,
+      "subjects": [
+        14
+      ]
+    },
+    {
+      "id": "701107c6-34d8-491e-85e0-5e024e8f3186",
+      "importance": 0.15,
+      "subjects": [
+        15
+      ]
+    },
+    {
+      "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+      "importance": 0.42,
+      "subjects": [
+        14
+      ]
+    },
+    null,
+    {
+      "id": "d039fc08-16d8-4136-a288-6f80e9867456",
+      "importance": 0.63,
+      "subjects": [
+        6,
+        3
+      ]
+    },
+    {
+      "id": "8a0395c9-3c29-4430-81ce-e006160b8764",
+      "importance": 0.68,
+      "subjects": [
+        6
+      ]
+    },
+    {
+      "id": "dad8292b-cc01-4f45-a32f-76401ba4431f",
+      "importance": 0.14,
+      "subjects": [
+        6
+      ]
+    },
+    null,
+    {
+      "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+      "importance": 0.81,
+      "subjects": [
+        8,
+        16
+      ]
+    },
+    null,
+    {
+      "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+      "importance": 0.42,
+      "subjects": [
+        7,
+        10
+      ]
+    },
+    null,
+    {
+      "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+      "importance": 0.6,
+      "subjects": [
+        0,
+        3
+      ]
+    },
+    {
+      "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+      "importance": 0.99,
+      "subjects": [
+        0,
+        3
+      ]
+    },
+    null,
+    {
+      "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+      "importance": 0.77,
+      "subjects": [
+        5,
+        15
+      ]
+    },
+    {
+      "id": "ed823629-4262-4f18-ad14-81125d0a67ab",
+      "importance": 0.31,
+      "subjects": [
+        5
+      ]
+    },
+    {
+      "id": "5dcd9ee7-c5d3-48fd-8e74-579427bf79be",
+      "importance": 0.44,
+      "subjects": [
+        5
+      ]
+    },
+    null,
+    {
+      "id": "1fd0da8d-f5a9-4fc7-b976-e1efa47d8d49",
+      "importance": 0.7,
+      "subjects": [
+        16,
+        2
+      ]
+    },
+    null,
+    {
+      "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+      "importance": 0.86,
+      "subjects": [
+        13,
+        3
+      ]
+    },
+    null,
+    {
+      "id": "5a45cdb1-5d52-4927-9ef6-da3084641476",
+      "importance": 0.67,
+      "subjects": [
+        8,
+        10
+      ]
+    },
+    null
+  ],
+  "turn_impact": [
+    {
+      "turn": 1,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 2,
+      "speaker_id": "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "c7b9ab2a-a28c-4283-b1a5-fe0f8b6ccd1d",
+        "importance": 0.53,
+        "subjects": [
+          18,
+          16
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "dd184fac-4750-47a5-90c5-105026b38894",
+          "importance": 1.0,
+          "subjects": [
+            19,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c7b9ab2a-a28c-4283-b1a5-fe0f8b6ccd1d",
+          "importance": 0.53,
+          "subjects": [
+            18,
+            16
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+          "importance": 0.92,
+          "subjects": [
+            9,
+            19
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+          "importance": 0.53,
+          "subjects": [
+            7,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.53,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.65,
+        "total": 1.53
+      }
+    },
+    {
+      "turn": 3,
+      "speaker_id": "f6b42c9a-64ad-44d5-b96e-f014440ea75c",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "859a0457-99a2-4b55-a796-98372a6580dd",
+        "importance": 0.96,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+          "importance": 0.85,
+          "subjects": [
+            16
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+          "importance": 0.51,
+          "subjects": [
+            16
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "859a0457-99a2-4b55-a796-98372a6580dd",
+          "importance": 0.96,
+          "subjects": [
+            16
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.96,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": 0.96
+      }
+    },
+    {
+      "turn": 4,
+      "speaker_id": "f6b42c9a-64ad-44d5-b96e-f014440ea75c",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "e8da7e5d-6269-44e8-900d-6f6d1f86f629",
+        "importance": 0.56,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "4b3a2773-2949-4eec-90ff-bd13db1cb264",
+          "importance": 0.51,
+          "subjects": [
+            16
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+          "importance": 0.85,
+          "subjects": [
+            16
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+          "importance": 0.51,
+          "subjects": [
+            16
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "e8da7e5d-6269-44e8-900d-6f6d1f86f629",
+          "importance": 0.56,
+          "subjects": [
+            16
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "ab99b2e3-788a-4fa3-aabd-f60e5cabd626",
+          "importance": 0.53,
+          "subjects": [
+            16
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.56,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.95,
+        "total": 1.56
+      }
+    },
+    {
+      "turn": 5,
+      "speaker_id": "cfd61c22-d65f-4571-bf11-033a2bf74dc8",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+        "importance": 0.85,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+          "importance": 0.85,
+          "subjects": [
+            16
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+          "importance": 0.51,
+          "subjects": [
+            16
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.85,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": -1.0,
+        "individual": 0.95,
+        "total": 0.8500000000000001
+      }
+    },
+    {
+      "turn": 6,
+      "speaker_id": "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+        "importance": 0.51,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+          "importance": 0.51,
+          "subjects": [
+            16
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.51,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": -1.0,
+        "individual": 0.75,
+        "total": 0.51
+      }
+    },
+    {
+      "turn": 7,
+      "speaker_id": "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "56436049-94b9-4ba3-81b2-b653e804ecbc",
+        "importance": 0.31,
+        "subjects": [
+          16
+        ]
+      },
+      "proposals": {
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "56436049-94b9-4ba3-81b2-b653e804ecbc",
+          "importance": 0.31,
+          "subjects": [
+            16
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.31,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": -1.0,
+        "individual": 0.75,
+        "total": 0.31000000000000005
+      }
+    },
+    {
+      "turn": 8,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 9,
+      "speaker_id": "5a23832a-6937-4e7d-981b-9e02de229cd6",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "a494d741-bfbf-490a-9c39-760111061115",
+        "importance": 0.53,
+        "subjects": [
+          11,
+          17
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "a494d741-bfbf-490a-9c39-760111061115",
+          "importance": 0.53,
+          "subjects": [
+            11,
+            17
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "dd184fac-4750-47a5-90c5-105026b38894",
+          "importance": 1.0,
+          "subjects": [
+            19,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+          "importance": 0.92,
+          "subjects": [
+            9,
+            19
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+          "importance": 0.53,
+          "subjects": [
+            7,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.53,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.725,
+        "total": 1.53
+      }
+    },
+    {
+      "turn": 10,
+      "speaker_id": "b5dfa582-388a-44e9-a92c-3c07beaa9113",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "b7bae4a6-64a7-477b-bac7-a86dc5937ef7",
+        "importance": 0.48,
+        "subjects": [
+          17
+        ]
+      },
+      "proposals": {
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "b7bae4a6-64a7-477b-bac7-a86dc5937ef7",
+          "importance": 0.48,
+          "subjects": [
+            17
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+          "importance": 0.95,
+          "subjects": [
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.48,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.55,
+        "total": 0.48
+      }
+    },
+    {
+      "turn": 11,
+      "speaker_id": "5a23832a-6937-4e7d-981b-9e02de229cd6",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "09c7c55d-38d1-46e2-9c9b-1d3f664bc5ac",
+        "importance": 0.06,
+        "subjects": [
+          17
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "09c7c55d-38d1-46e2-9c9b-1d3f664bc5ac",
+          "importance": 0.06,
+          "subjects": [
+            17
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+          "importance": 0.95,
+          "subjects": [
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.06,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.44999999999999996,
+        "total": 1.06
+      }
+    },
+    {
+      "turn": 12,
+      "speaker_id": "f6b42c9a-64ad-44d5-b96e-f014440ea75c",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+        "importance": 0.95,
+        "subjects": [
+          11
+        ]
+      },
+      "proposals": {
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+          "importance": 0.95,
+          "subjects": [
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.95,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.25,
+        "total": 0.95
+      }
+    },
+    {
+      "turn": 13,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 14,
+      "speaker_id": "f28e8aa6-97a6-458b-97d2-fca83c604219",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "dd184fac-4750-47a5-90c5-105026b38894",
+        "importance": 1.0,
+        "subjects": [
+          19,
+          3
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "dd184fac-4750-47a5-90c5-105026b38894",
+          "importance": 1.0,
+          "subjects": [
+            19,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+          "importance": 0.92,
+          "subjects": [
+            9,
+            19
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+          "importance": 0.6,
+          "subjects": [
+            0,
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 1.0,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.45,
+        "total": 2.0
+      }
+    },
+    {
+      "turn": 15,
+      "speaker_id": "d705e2d1-766d-4345-979f-0cee5ff228d0",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "315c11bc-70e2-4651-989f-c1ca45a5bc9a",
+        "importance": 0.48,
+        "subjects": [
+          3
+        ]
+      },
+      "proposals": {
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "09da8e86-d9a7-496a-b895-181548fbc818",
+          "importance": 0.55,
+          "subjects": [
+            3
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+          "importance": 0.88,
+          "subjects": [
+            3
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "315c11bc-70e2-4651-989f-c1ca45a5bc9a",
+          "importance": 0.48,
+          "subjects": [
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.48,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.7,
+        "total": 0.48
+      }
+    },
+    {
+      "turn": 16,
+      "speaker_id": "b5dfa582-388a-44e9-a92c-3c07beaa9113",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "09da8e86-d9a7-496a-b895-181548fbc818",
+        "importance": 0.55,
+        "subjects": [
+          3
+        ]
+      },
+      "proposals": {
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "09da8e86-d9a7-496a-b895-181548fbc818",
+          "importance": 0.55,
+          "subjects": [
+            3
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+          "importance": 0.88,
+          "subjects": [
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.55,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 1.0,
+        "total": 1.55
+      }
+    },
+    {
+      "turn": 17,
+      "speaker_id": "cfd61c22-d65f-4571-bf11-033a2bf74dc8",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+        "importance": 0.88,
+        "subjects": [
+          3
+        ]
+      },
+      "proposals": {
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+          "importance": 0.88,
+          "subjects": [
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.88,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": -1.0,
+        "individual": 0.85,
+        "total": 0.8799999999999999
+      }
+    },
+    {
+      "turn": 18,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 19,
+      "speaker_id": "2d45e71b-0b98-4a34-af14-2147b30fda55",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+        "importance": 0.53,
+        "subjects": [
+          7,
+          11
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+          "importance": 0.93,
+          "subjects": [
+            15,
+            14
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+          "importance": 0.77,
+          "subjects": [
+            5,
+            15
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "f85b1e9d-11e4-4271-a652-b285f7691a0f",
+          "importance": 0.18,
+          "subjects": [
+            2,
+            14
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+          "importance": 0.53,
+          "subjects": [
+            7,
+            11
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.53,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6499999999999999,
+        "total": 1.53
+      }
+    },
+    {
+      "turn": 20,
+      "speaker_id": "2d45e71b-0b98-4a34-af14-2147b30fda55",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "255361ef-06f4-4dce-a3c2-48ab051f4c12",
+        "importance": 0.44,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "255361ef-06f4-4dce-a3c2-48ab051f4c12",
+          "importance": 0.44,
+          "subjects": [
+            7
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.44,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.7,
+        "total": 0.44
+      }
+    },
+    {
+      "turn": 21,
+      "speaker_id": "d705e2d1-766d-4345-979f-0cee5ff228d0",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "f25bfdf6-5fee-4e00-b4bd-d09bc1bb3bb8",
+        "importance": 0.11,
+        "subjects": [
+          7
+        ]
+      },
+      "proposals": {
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "f25bfdf6-5fee-4e00-b4bd-d09bc1bb3bb8",
+          "importance": 0.11,
+          "subjects": [
+            7
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.11,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.25,
+        "total": 1.11
+      }
+    },
+    {
+      "turn": 22,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 23,
+      "speaker_id": "b8153fd3-76fe-4b08-bcda-322e7c247eca",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+        "importance": 0.92,
+        "subjects": [
+          9,
+          19
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+          "importance": 0.93,
+          "subjects": [
+            15,
+            14
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "3da4fbf8-d1d0-4378-8792-1f3d5b2275c8",
+          "importance": 0.36,
+          "subjects": [
+            16,
+            18
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+          "importance": 0.92,
+          "subjects": [
+            9,
+            19
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.92,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.75,
+        "total": 1.92
+      }
+    },
+    {
+      "turn": 24,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 25,
+      "speaker_id": "f28e8aa6-97a6-458b-97d2-fca83c604219",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+        "importance": 0.93,
+        "subjects": [
+          15,
+          14
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+          "importance": 0.93,
+          "subjects": [
+            15,
+            14
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "3da4fbf8-d1d0-4378-8792-1f3d5b2275c8",
+          "importance": 0.36,
+          "subjects": [
+            16,
+            18
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "d039fc08-16d8-4136-a288-6f80e9867456",
+          "importance": 0.63,
+          "subjects": [
+            6,
+            3
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "f85b1e9d-11e4-4271-a652-b285f7691a0f",
+          "importance": 0.18,
+          "subjects": [
+            2,
+            14
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+          "importance": 0.6,
+          "subjects": [
+            0,
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.93,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.325,
+        "total": 1.9300000000000002
+      }
+    },
+    {
+      "turn": 26,
+      "speaker_id": "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "0a59ede5-686c-4268-980e-86602643fab9",
+        "importance": 0.59,
+        "subjects": [
+          14
+        ]
+      },
+      "proposals": {
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+          "importance": 0.42,
+          "subjects": [
+            14
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "0a59ede5-686c-4268-980e-86602643fab9",
+          "importance": 0.59,
+          "subjects": [
+            14
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.59,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.55,
+        "total": 0.59
+      }
+    },
+    {
+      "turn": 27,
+      "speaker_id": "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "701107c6-34d8-491e-85e0-5e024e8f3186",
+        "importance": 0.15,
+        "subjects": [
+          15
+        ]
+      },
+      "proposals": {
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+          "importance": 0.42,
+          "subjects": [
+            14
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "701107c6-34d8-491e-85e0-5e024e8f3186",
+          "importance": 0.15,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.15,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.9,
+        "total": 0.15
+      }
+    },
+    {
+      "turn": 28,
+      "speaker_id": "f28e8aa6-97a6-458b-97d2-fca83c604219",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+        "importance": 0.42,
+        "subjects": [
+          14
+        ]
+      },
+      "proposals": {
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+          "importance": 0.42,
+          "subjects": [
+            14
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "9417d3a6-df58-4260-9b12-6fd3bb1408c3",
+          "importance": 0.11,
+          "subjects": [
+            15
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "d6a10d41-711b-4acd-a6ee-e08324e17c1b",
+          "importance": 0.68,
+          "subjects": [
+            15
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.42,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.6,
+        "total": 1.42
+      }
+    },
+    {
+      "turn": 29,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 30,
+      "speaker_id": "b8153fd3-76fe-4b08-bcda-322e7c247eca",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "d039fc08-16d8-4136-a288-6f80e9867456",
+        "importance": 0.63,
+        "subjects": [
+          6,
+          3
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+          "importance": 0.86,
+          "subjects": [
+            13,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "d039fc08-16d8-4136-a288-6f80e9867456",
+          "importance": 0.63,
+          "subjects": [
+            6,
+            3
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "2e9c8633-e747-497f-a6cc-0af35e095370",
+          "importance": 0.51,
+          "subjects": [
+            0,
+            8
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+          "importance": 0.6,
+          "subjects": [
+            0,
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.63,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.825,
+        "total": 1.63
+      }
+    },
+    {
+      "turn": 31,
+      "speaker_id": "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "8a0395c9-3c29-4430-81ce-e006160b8764",
+        "importance": 0.68,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "8a0395c9-3c29-4430-81ce-e006160b8764",
+          "importance": 0.68,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.68,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.44999999999999996,
+        "total": 0.68
+      }
+    },
+    {
+      "turn": 32,
+      "speaker_id": "d705e2d1-766d-4345-979f-0cee5ff228d0",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "dad8292b-cc01-4f45-a32f-76401ba4431f",
+        "importance": 0.14,
+        "subjects": [
+          6
+        ]
+      },
+      "proposals": {
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "cbe5cf7d-e2cf-4aaf-9105-590356b07940",
+          "importance": 0.66,
+          "subjects": [
+            6
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "dad8292b-cc01-4f45-a32f-76401ba4431f",
+          "importance": 0.14,
+          "subjects": [
+            6
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.14,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.55,
+        "total": 1.1400000000000001
+      }
+    },
+    {
+      "turn": 33,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 34,
+      "speaker_id": "5a23832a-6937-4e7d-981b-9e02de229cd6",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+        "importance": 0.81,
+        "subjects": [
+          8,
+          16
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+          "importance": 0.81,
+          "subjects": [
+            8,
+            16
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "9388c321-b8b7-4b21-a1e7-3ac8c1606966",
+          "importance": 0.01,
+          "subjects": [
+            18,
+            0
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "024c496e-2e1b-415a-b52e-7d677ed14103",
+          "importance": 0.66,
+          "subjects": [
+            0,
+            16
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+          "importance": 0.77,
+          "subjects": [
+            5,
+            15
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.81,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.55,
+        "total": 1.81
+      }
+    },
+    {
+      "turn": 35,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 36,
+      "speaker_id": "cfd61c22-d65f-4571-bf11-033a2bf74dc8",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+        "importance": 0.42,
+        "subjects": [
+          7,
+          10
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "281f650a-f8cc-46b6-a9cb-bbad83116ced",
+          "importance": 0.19,
+          "subjects": [
+            1,
+            14
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "9388c321-b8b7-4b21-a1e7-3ac8c1606966",
+          "importance": 0.01,
+          "subjects": [
+            18,
+            0
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+          "importance": 0.42,
+          "subjects": [
+            7,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "f5adbf3d-4b55-47a4-a438-3003792c13a9",
+          "importance": 0.59,
+          "subjects": [
+            2,
+            15
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+          "importance": 0.77,
+          "subjects": [
+            5,
+            15
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "f85b1e9d-11e4-4271-a652-b285f7691a0f",
+          "importance": 0.18,
+          "subjects": [
+            2,
+            14
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.42,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.775,
+        "total": 1.42
+      }
+    },
+    {
+      "turn": 37,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 38,
+      "speaker_id": "2d45e71b-0b98-4a34-af14-2147b30fda55",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+        "importance": 0.6,
+        "subjects": [
+          0,
+          3
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "281f650a-f8cc-46b6-a9cb-bbad83116ced",
+          "importance": 0.19,
+          "subjects": [
+            1,
+            14
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+          "importance": 0.86,
+          "subjects": [
+            13,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "cb0735a1-4f32-47a9-a5b4-00b270652d31",
+          "importance": 0.11,
+          "subjects": [
+            2,
+            19
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "abb63515-85c4-43aa-97b9-e4577631379e",
+          "importance": 0.67,
+          "subjects": [
+            13,
+            11
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "f5adbf3d-4b55-47a4-a438-3003792c13a9",
+          "importance": 0.59,
+          "subjects": [
+            2,
+            15
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+          "importance": 0.77,
+          "subjects": [
+            5,
+            15
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "f85b1e9d-11e4-4271-a652-b285f7691a0f",
+          "importance": 0.18,
+          "subjects": [
+            2,
+            14
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+          "importance": 0.6,
+          "subjects": [
+            0,
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.6,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.5,
+        "total": 1.6
+      }
+    },
+    {
+      "turn": 39,
+      "speaker_id": "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+        "importance": 0.99,
+        "subjects": [
+          0,
+          3
+        ]
+      },
+      "proposals": {
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+          "importance": 0.99,
+          "subjects": [
+            0,
+            3
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.99,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.125,
+        "total": 0.99
+      }
+    },
+    {
+      "turn": 40,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 41,
+      "speaker_id": "b8153fd3-76fe-4b08-bcda-322e7c247eca",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+        "importance": 0.77,
+        "subjects": [
+          5,
+          15
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "29fbb449-88b0-44a6-9a7d-ae8d078033db",
+          "importance": 0.92,
+          "subjects": [
+            16,
+            5
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "1d42ea85-7585-411c-823a-24d91c4b95db",
+          "importance": 0.17,
+          "subjects": [
+            1,
+            4
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "4f6ebc34-90e8-4c9a-9eb5-2e09bb2d9ef9",
+          "importance": 0.33,
+          "subjects": [
+            19,
+            1
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "cb0735a1-4f32-47a9-a5b4-00b270652d31",
+          "importance": 0.11,
+          "subjects": [
+            2,
+            19
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "abb63515-85c4-43aa-97b9-e4577631379e",
+          "importance": 0.67,
+          "subjects": [
+            13,
+            11
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+          "importance": 0.77,
+          "subjects": [
+            5,
+            15
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.77,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.675,
+        "total": 1.77
+      }
+    },
+    {
+      "turn": 42,
+      "speaker_id": "b5dfa582-388a-44e9-a92c-3c07beaa9113",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "ed823629-4262-4f18-ad14-81125d0a67ab",
+        "importance": 0.31,
+        "subjects": [
+          5
+        ]
+      },
+      "proposals": {
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "ed823629-4262-4f18-ad14-81125d0a67ab",
+          "importance": 0.31,
+          "subjects": [
+            5
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "5dcd9ee7-c5d3-48fd-8e74-579427bf79be",
+          "importance": 0.44,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.31,
+        "coherence": 0.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.9,
+        "total": 0.31
+      }
+    },
+    {
+      "turn": 43,
+      "speaker_id": "2d45e71b-0b98-4a34-af14-2147b30fda55",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "5dcd9ee7-c5d3-48fd-8e74-579427bf79be",
+        "importance": 0.44,
+        "subjects": [
+          5
+        ]
+      },
+      "proposals": {
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "a449b963-b510-4eb0-90f6-a2f623c9660e",
+          "importance": 0.54,
+          "subjects": [
+            5
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "5dcd9ee7-c5d3-48fd-8e74-579427bf79be",
+          "importance": 0.44,
+          "subjects": [
+            5
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.44,
+        "coherence": 1.0,
+        "freshness": 0.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.9,
+        "total": 1.44
+      }
+    },
+    {
+      "turn": 44,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 45,
+      "speaker_id": "5a23832a-6937-4e7d-981b-9e02de229cd6",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "1fd0da8d-f5a9-4fc7-b976-e1efa47d8d49",
+        "importance": 0.7,
+        "subjects": [
+          16,
+          2
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "1fd0da8d-f5a9-4fc7-b976-e1efa47d8d49",
+          "importance": 0.7,
+          "subjects": [
+            16,
+            2
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "1d42ea85-7585-411c-823a-24d91c4b95db",
+          "importance": 0.17,
+          "subjects": [
+            1,
+            4
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "4f6ebc34-90e8-4c9a-9eb5-2e09bb2d9ef9",
+          "importance": 0.33,
+          "subjects": [
+            19,
+            1
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "cb0735a1-4f32-47a9-a5b4-00b270652d31",
+          "importance": 0.11,
+          "subjects": [
+            2,
+            19
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "abb63515-85c4-43aa-97b9-e4577631379e",
+          "importance": 0.67,
+          "subjects": [
+            13,
+            11
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "f29316ce-2b34-4bf1-9481-f605f9b1451a",
+          "importance": 0.78,
+          "subjects": [
+            19,
+            17
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "3a66c085-0256-4ed6-b73f-469972b1ae74",
+          "importance": 0.57,
+          "subjects": [
+            8,
+            14
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.7,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.39999999999999997,
+        "total": 1.7
+      }
+    },
+    {
+      "turn": 46,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 47,
+      "speaker_id": "f28e8aa6-97a6-458b-97d2-fca83c604219",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+        "importance": 0.86,
+        "subjects": [
+          13,
+          3
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "281f650a-f8cc-46b6-a9cb-bbad83116ced",
+          "importance": 0.19,
+          "subjects": [
+            1,
+            14
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+          "importance": 0.86,
+          "subjects": [
+            13,
+            3
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "abb63515-85c4-43aa-97b9-e4577631379e",
+          "importance": 0.67,
+          "subjects": [
+            13,
+            11
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+          "importance": 0.98,
+          "subjects": [
+            6,
+            13
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "f29316ce-2b34-4bf1-9481-f605f9b1451a",
+          "importance": 0.78,
+          "subjects": [
+            19,
+            17
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "3a66c085-0256-4ed6-b73f-469972b1ae74",
+          "importance": 0.57,
+          "subjects": [
+            8,
+            14
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.86,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.25,
+        "total": 1.8599999999999999
+      }
+    },
+    {
+      "turn": 48,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": false,
+      "score_impact": {
+        "total": 0.0
+      }
+    },
+    {
+      "turn": 49,
+      "speaker_id": "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3",
+      "speaker_name": "BalancedGreedyPlayer",
+      "item": {
+        "id": "5a45cdb1-5d52-4927-9ef6-da3084641476",
+        "importance": 0.67,
+        "subjects": [
+          8,
+          10
+        ]
+      },
+      "proposals": {
+        "5a23832a-6937-4e7d-981b-9e02de229cd6": {
+          "id": "281f650a-f8cc-46b6-a9cb-bbad83116ced",
+          "importance": 0.19,
+          "subjects": [
+            1,
+            14
+          ]
+        },
+        "f28e8aa6-97a6-458b-97d2-fca83c604219": {
+          "id": "9388c321-b8b7-4b21-a1e7-3ac8c1606966",
+          "importance": 0.01,
+          "subjects": [
+            18,
+            0
+          ]
+        },
+        "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b": {
+          "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+          "importance": 0.76,
+          "subjects": [
+            17,
+            0
+          ]
+        },
+        "b5dfa582-388a-44e9-a92c-3c07beaa9113": {
+          "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+          "importance": 0.14,
+          "subjects": [
+            10,
+            0
+          ]
+        },
+        "cfd61c22-d65f-4571-bf11-033a2bf74dc8": {
+          "id": "ccac6ec9-8305-4900-8be1-50da3ae0a01e",
+          "importance": 0.04,
+          "subjects": [
+            19,
+            10
+          ]
+        },
+        "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3": {
+          "id": "5a45cdb1-5d52-4927-9ef6-da3084641476",
+          "importance": 0.67,
+          "subjects": [
+            8,
+            10
+          ]
+        },
+        "b8153fd3-76fe-4b08-bcda-322e7c247eca": {
+          "id": "f29316ce-2b34-4bf1-9481-f605f9b1451a",
+          "importance": 0.78,
+          "subjects": [
+            19,
+            17
+          ]
+        },
+        "d705e2d1-766d-4345-979f-0cee5ff228d0": {
+          "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+          "importance": 0.77,
+          "subjects": [
+            6,
+            19
+          ]
+        },
+        "f6b42c9a-64ad-44d5-b96e-f014440ea75c": {
+          "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+          "importance": 0.99,
+          "subjects": [
+            15,
+            1
+          ]
+        },
+        "2d45e71b-0b98-4a34-af14-2147b30fda55": {
+          "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+          "importance": 0.52,
+          "subjects": [
+            4,
+            1
+          ]
+        }
+      },
+      "is_over": false,
+      "score_impact": {
+        "importance": 0.67,
+        "coherence": -1.0,
+        "freshness": 2.0,
+        "nonmonotonousness": 0.0,
+        "individual": 0.22499999999999998,
+        "total": 1.67
+      }
+    },
+    {
+      "turn": 50,
+      "speaker_id": null,
+      "speaker_name": "",
+      "item": null,
+      "proposals": {},
+      "is_over": true,
+      "score_impact": {
+        "total": 0.0
+      }
+    }
+  ],
+  "score_breakdown": {
+    "total": 51.76,
+    "importance": 20.759999999999998,
+    "coherence": 7.0,
+    "freshness": 28.0,
+    "nonmonotonousness": -4.0
+  },
+  "scores": {
+    "conversation_length": 50,
+    "pauses": 15,
+    "player_scores": [
+      {
+        "id": "5a23832a-6937-4e7d-981b-9e02de229cd6",
+        "preferences": [
+          11,
+          18,
+          1,
+          19,
+          13,
+          0,
+          7,
+          4,
+          16,
+          10,
+          8,
+          17,
+          15,
+          9,
+          3,
+          14,
+          2,
+          12,
+          5,
+          6
+        ],
+        "memory_bank": [
+          {
+            "id": "ac08f665-f6e1-47fa-9026-b68a6a3f1723",
+            "importance": 0.33,
+            "subjects": [
+              15,
+              6
+            ]
+          },
+          {
+            "id": "d2dcbe11-bacb-4fe4-b750-1cb0973fe712",
+            "importance": 0.54,
+            "subjects": [
+              12,
+              5
+            ]
+          },
+          {
+            "id": "253e76b0-edf5-4c37-b39f-8206a84d870a",
+            "importance": 0.81,
+            "subjects": [
+              8,
+              16
+            ]
+          },
+          {
+            "id": "c4ce06c0-7d11-42f5-aa8b-311acd092a7b",
+            "importance": 0.21,
+            "subjects": [
+              6,
+              13
+            ]
+          },
+          {
+            "id": "29fbb449-88b0-44a6-9a7d-ae8d078033db",
+            "importance": 0.92,
+            "subjects": [
+              16,
+              5
+            ]
+          },
+          {
+            "id": "7a20e439-55b4-445c-bb75-fe6b6ad4ad5b",
+            "importance": 0.16,
+            "subjects": [
+              10,
+              15
+            ]
+          },
+          {
+            "id": "1fd0da8d-f5a9-4fc7-b976-e1efa47d8d49",
+            "importance": 0.7,
+            "subjects": [
+              16,
+              2
+            ]
+          },
+          {
+            "id": "281f650a-f8cc-46b6-a9cb-bbad83116ced",
+            "importance": 0.19,
+            "subjects": [
+              1,
+              14
+            ]
+          },
+          {
+            "id": "a494d741-bfbf-490a-9c39-760111061115",
+            "importance": 0.53,
+            "subjects": [
+              11,
+              17
+            ]
+          },
+          {
+            "id": "09c7c55d-38d1-46e2-9c9b-1d3f664bc5ac",
+            "importance": 0.06,
+            "subjects": [
+              17
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0776999999999999,
+          "shared": 51.76,
+          "individual": 2.125
+        }
+      },
+      {
+        "id": "f28e8aa6-97a6-458b-97d2-fca83c604219",
+        "preferences": [
+          7,
+          10,
+          9,
+          6,
+          8,
+          0,
+          1,
+          17,
+          14,
+          19,
+          16,
+          18,
+          5,
+          3,
+          11,
+          12,
+          2,
+          13,
+          4,
+          15
+        ],
+        "memory_bank": [
+          {
+            "id": "9388c321-b8b7-4b21-a1e7-3ac8c1606966",
+            "importance": 0.01,
+            "subjects": [
+              18,
+              0
+            ]
+          },
+          {
+            "id": "c8b3d2d8-4b11-49f1-8778-0227f7d7e3cf",
+            "importance": 0.67,
+            "subjects": [
+              3,
+              13
+            ]
+          },
+          {
+            "id": "339dcc80-5065-48d1-be10-5869a04d2049",
+            "importance": 0.86,
+            "subjects": [
+              13,
+              3
+            ]
+          },
+          {
+            "id": "dd184fac-4750-47a5-90c5-105026b38894",
+            "importance": 1.0,
+            "subjects": [
+              19,
+              3
+            ]
+          },
+          {
+            "id": "8153f558-28c2-411a-be6c-90eca8d8c3e6",
+            "importance": 0.42,
+            "subjects": [
+              14
+            ]
+          },
+          {
+            "id": "e2d2caf5-c96c-464c-bbf9-cc51ffa1f7a1",
+            "importance": 0.93,
+            "subjects": [
+              15,
+              14
+            ]
+          },
+          {
+            "id": "b4535a70-0f6b-4b49-91eb-78eca2904aec",
+            "importance": 0.49,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "600bd724-ea86-44f0-9acd-038871fe1b56",
+            "importance": 0.84,
+            "subjects": [
+              13
+            ]
+          },
+          {
+            "id": "e43f639b-bda6-46c6-991b-12dc43a2d152",
+            "importance": 0.45,
+            "subjects": [
+              19
+            ]
+          },
+          {
+            "id": "1d42ea85-7585-411c-823a-24d91c4b95db",
+            "importance": 0.17,
+            "subjects": [
+              1,
+              4
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0676999999999999,
+          "shared": 51.76,
+          "individual": 1.625
+        }
+      },
+      {
+        "id": "f2cd3cd2-ba0f-4bdc-9755-725acc425e0b",
+        "preferences": [
+          18,
+          8,
+          15,
+          11,
+          5,
+          19,
+          2,
+          4,
+          7,
+          14,
+          17,
+          1,
+          9,
+          10,
+          16,
+          13,
+          12,
+          3,
+          0,
+          6
+        ],
+        "memory_bank": [
+          {
+            "id": "e785c27e-2cd6-4a41-b710-5b5f29c86a3f",
+            "importance": 0.33,
+            "subjects": [
+              13,
+              2
+            ]
+          },
+          {
+            "id": "fbfe616d-5a6e-4d33-9201-7a056a858ca3",
+            "importance": 0.35,
+            "subjects": [
+              3,
+              1
+            ]
+          },
+          {
+            "id": "4f6ebc34-90e8-4c9a-9eb5-2e09bb2d9ef9",
+            "importance": 0.33,
+            "subjects": [
+              19,
+              1
+            ]
+          },
+          {
+            "id": "7f816d54-5ab2-4ba5-bf71-619cde5f2b7f",
+            "importance": 0.3,
+            "subjects": [
+              4
+            ]
+          },
+          {
+            "id": "0a59ede5-686c-4268-980e-86602643fab9",
+            "importance": 0.59,
+            "subjects": [
+              14
+            ]
+          },
+          {
+            "id": "cbe5cf7d-e2cf-4aaf-9105-590356b07940",
+            "importance": 0.66,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "c86235c8-306d-48f5-9298-efbf446aeb05",
+            "importance": 0.99,
+            "subjects": [
+              0,
+              3
+            ]
+          },
+          {
+            "id": "701107c6-34d8-491e-85e0-5e024e8f3186",
+            "importance": 0.15,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "755b55d3-f6b5-42a4-b78b-677e13a7e426",
+            "importance": 0.76,
+            "subjects": [
+              17,
+              0
+            ]
+          },
+          {
+            "id": "c7b9ab2a-a28c-4283-b1a5-fe0f8b6ccd1d",
+            "importance": 0.53,
+            "subjects": [
+              18,
+              16
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0796999999999999,
+          "shared": 51.76,
+          "individual": 2.225
+        }
+      },
+      {
+        "id": "b5dfa582-388a-44e9-a92c-3c07beaa9113",
+        "preferences": [
+          3,
+          9,
+          5,
+          14,
+          13,
+          10,
+          0,
+          11,
+          2,
+          17,
+          6,
+          16,
+          1,
+          18,
+          15,
+          19,
+          7,
+          8,
+          12,
+          4
+        ],
+        "memory_bank": [
+          {
+            "id": "ed823629-4262-4f18-ad14-81125d0a67ab",
+            "importance": 0.31,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "bc92500a-0a6e-4c54-8a62-5f9e941a189c",
+            "importance": 0.1,
+            "subjects": [
+              8,
+              3
+            ]
+          },
+          {
+            "id": "cb0735a1-4f32-47a9-a5b4-00b270652d31",
+            "importance": 0.11,
+            "subjects": [
+              2,
+              19
+            ]
+          },
+          {
+            "id": "952ce77f-77d3-4d73-9c5c-11ed9eea1d2d",
+            "importance": 0.14,
+            "subjects": [
+              10,
+              0
+            ]
+          },
+          {
+            "id": "b7bae4a6-64a7-477b-bac7-a86dc5937ef7",
+            "importance": 0.48,
+            "subjects": [
+              17
+            ]
+          },
+          {
+            "id": "7a1cf81d-2013-4450-a7a4-52edb83f43b0",
+            "importance": 0.58,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "dac0b258-7d4f-4806-a54d-30b009e33976",
+            "importance": 0.63,
+            "subjects": [
+              12
+            ]
+          },
+          {
+            "id": "4b3a2773-2949-4eec-90ff-bd13db1cb264",
+            "importance": 0.51,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "9417d3a6-df58-4260-9b12-6fd3bb1408c3",
+            "importance": 0.11,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "09da8e86-d9a7-496a-b895-181548fbc818",
+            "importance": 0.55,
+            "subjects": [
+              3
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0842,
+          "shared": 51.76,
+          "individual": 2.45
+        }
+      },
+      {
+        "id": "cfd61c22-d65f-4571-bf11-033a2bf74dc8",
+        "preferences": [
+          0,
+          16,
+          7,
+          3,
+          13,
+          19,
+          8,
+          10,
+          17,
+          4,
+          2,
+          12,
+          6,
+          1,
+          18,
+          15,
+          11,
+          14,
+          5,
+          9
+        ],
+        "memory_bank": [
+          {
+            "id": "c1d77c21-07e6-4ad8-84a9-0b02093e15dc",
+            "importance": 0.85,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "e95fe1f0-74f0-4953-a6a9-669d7f271a3b",
+            "importance": 0.26,
+            "subjects": [
+              13,
+              18
+            ]
+          },
+          {
+            "id": "d2837b3e-a86b-47c0-afcc-a87cce3c56e7",
+            "importance": 0.0,
+            "subjects": [
+              10
+            ]
+          },
+          {
+            "id": "faad91f3-d953-41fd-84fd-32d0062eb852",
+            "importance": 0.88,
+            "subjects": [
+              3
+            ]
+          },
+          {
+            "id": "d6a10d41-711b-4acd-a6ee-e08324e17c1b",
+            "importance": 0.68,
+            "subjects": [
+              15
+            ]
+          },
+          {
+            "id": "abb63515-85c4-43aa-97b9-e4577631379e",
+            "importance": 0.67,
+            "subjects": [
+              13,
+              11
+            ]
+          },
+          {
+            "id": "406cd3cf-0054-4404-bdbc-d4345f950642",
+            "importance": 0.95,
+            "subjects": [
+              18
+            ]
+          },
+          {
+            "id": "ea594188-5a49-4169-aed9-8a2f5135c540",
+            "importance": 0.42,
+            "subjects": [
+              7,
+              10
+            ]
+          },
+          {
+            "id": "ccac6ec9-8305-4900-8be1-50da3ae0a01e",
+            "importance": 0.04,
+            "subjects": [
+              19,
+              10
+            ]
+          },
+          {
+            "id": "3da4fbf8-d1d0-4378-8792-1f3d5b2275c8",
+            "importance": 0.36,
+            "subjects": [
+              16,
+              18
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0867,
+          "shared": 51.76,
+          "individual": 2.5749999999999997
+        }
+      },
+      {
+        "id": "35daf9a7-9f5d-46d7-a1e6-ce9f2e4158b3",
+        "preferences": [
+          11,
+          7,
+          15,
+          1,
+          18,
+          16,
+          5,
+          3,
+          14,
+          0,
+          2,
+          6,
+          12,
+          8,
+          4,
+          13,
+          19,
+          9,
+          10,
+          17
+        ],
+        "memory_bank": [
+          {
+            "id": "f5adbf3d-4b55-47a4-a438-3003792c13a9",
+            "importance": 0.59,
+            "subjects": [
+              2,
+              15
+            ]
+          },
+          {
+            "id": "2a948eb7-d90d-4241-aa47-626f6ef4b6c1",
+            "importance": 0.41,
+            "subjects": [
+              8,
+              17
+            ]
+          },
+          {
+            "id": "ffcc9470-7154-4103-96e2-6aef831c12bb",
+            "importance": 0.98,
+            "subjects": [
+              6,
+              13
+            ]
+          },
+          {
+            "id": "5a45cdb1-5d52-4927-9ef6-da3084641476",
+            "importance": 0.67,
+            "subjects": [
+              8,
+              10
+            ]
+          },
+          {
+            "id": "93a7ead1-8d89-4773-9d41-faa3b7f27c59",
+            "importance": 0.1,
+            "subjects": [
+              9,
+              4
+            ]
+          },
+          {
+            "id": "dd530e85-86bf-4880-9177-e3243a54952a",
+            "importance": 0.51,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "8a0395c9-3c29-4430-81ce-e006160b8764",
+            "importance": 0.68,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "c0027c18-5eff-4b2a-bca1-0dedfad7ee2f",
+            "importance": 0.08,
+            "subjects": [
+              10
+            ]
+          },
+          {
+            "id": "024c496e-2e1b-415a-b52e-7d677ed14103",
+            "importance": 0.66,
+            "subjects": [
+              0,
+              16
+            ]
+          },
+          {
+            "id": "56436049-94b9-4ba3-81b2-b653e804ecbc",
+            "importance": 0.31,
+            "subjects": [
+              16
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0787,
+          "shared": 51.76,
+          "individual": 2.175
+        }
+      },
+      {
+        "id": "b8153fd3-76fe-4b08-bcda-322e7c247eca",
+        "preferences": [
+          15,
+          6,
+          9,
+          12,
+          16,
+          7,
+          3,
+          10,
+          19,
+          2,
+          11,
+          0,
+          1,
+          5,
+          8,
+          14,
+          4,
+          13,
+          18,
+          17
+        ],
+        "memory_bank": [
+          {
+            "id": "8e934aab-f42d-42e7-8d62-c4206cbdf9fe",
+            "importance": 0.07,
+            "subjects": [
+              14,
+              1
+            ]
+          },
+          {
+            "id": "231b8aff-9ade-4dd6-9de1-08df4f66551e",
+            "importance": 0.92,
+            "subjects": [
+              9,
+              19
+            ]
+          },
+          {
+            "id": "f29316ce-2b34-4bf1-9481-f605f9b1451a",
+            "importance": 0.78,
+            "subjects": [
+              19,
+              17
+            ]
+          },
+          {
+            "id": "774e08e8-419b-4369-afbc-96eb6dee3af0",
+            "importance": 0.24,
+            "subjects": [
+              8
+            ]
+          },
+          {
+            "id": "874488e1-4ba4-415d-b7d7-683f1345af49",
+            "importance": 0.69,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "3712225d-2802-48eb-83fe-11f2d79b6a1e",
+            "importance": 0.49,
+            "subjects": [
+              12
+            ]
+          },
+          {
+            "id": "d039fc08-16d8-4136-a288-6f80e9867456",
+            "importance": 0.63,
+            "subjects": [
+              6,
+              3
+            ]
+          },
+          {
+            "id": "0099277e-aee9-4b9d-9638-15bf298be25c",
+            "importance": 0.38,
+            "subjects": [
+              18
+            ]
+          },
+          {
+            "id": "2221d6dd-017c-4d1e-80f1-b2810562b953",
+            "importance": 0.77,
+            "subjects": [
+              5,
+              15
+            ]
+          },
+          {
+            "id": "8bd0520c-94a9-474e-a078-bf1c5ca93bed",
+            "importance": 0.12,
+            "subjects": [
+              15,
+              12
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0802,
+          "shared": 51.76,
+          "individual": 2.25
+        }
+      },
+      {
+        "id": "d705e2d1-766d-4345-979f-0cee5ff228d0",
+        "preferences": [
+          8,
+          2,
+          14,
+          17,
+          15,
+          19,
+          3,
+          4,
+          12,
+          6,
+          18,
+          9,
+          13,
+          11,
+          16,
+          7,
+          0,
+          5,
+          10,
+          1
+        ],
+        "memory_bank": [
+          {
+            "id": "62076e57-f290-4361-b5b9-b2a0562672a5",
+            "importance": 0.21,
+            "subjects": [
+              3,
+              19
+            ]
+          },
+          {
+            "id": "f25bfdf6-5fee-4e00-b4bd-d09bc1bb3bb8",
+            "importance": 0.11,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "315c11bc-70e2-4651-989f-c1ca45a5bc9a",
+            "importance": 0.48,
+            "subjects": [
+              3
+            ]
+          },
+          {
+            "id": "619448e3-0bef-4be0-8842-85d6a2033121",
+            "importance": 0.76,
+            "subjects": [
+              4
+            ]
+          },
+          {
+            "id": "dad8292b-cc01-4f45-a32f-76401ba4431f",
+            "importance": 0.14,
+            "subjects": [
+              6
+            ]
+          },
+          {
+            "id": "0b095e62-9b27-4bf9-bbdf-8b60ad3f7969",
+            "importance": 0.23,
+            "subjects": [
+              14,
+              7
+            ]
+          },
+          {
+            "id": "f85b1e9d-11e4-4271-a652-b285f7691a0f",
+            "importance": 0.18,
+            "subjects": [
+              2,
+              14
+            ]
+          },
+          {
+            "id": "07315f7d-e32c-4bec-bc96-83a6b9f3855c",
+            "importance": 0.24,
+            "subjects": [
+              0,
+              1
+            ]
+          },
+          {
+            "id": "54af04c7-47b3-4301-b345-3d0ee6953225",
+            "importance": 0.77,
+            "subjects": [
+              6,
+              19
+            ]
+          },
+          {
+            "id": "a449b963-b510-4eb0-90f6-a2f623c9660e",
+            "importance": 0.54,
+            "subjects": [
+              5
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0652,
+          "shared": 51.76,
+          "individual": 1.5
+        }
+      },
+      {
+        "id": "f6b42c9a-64ad-44d5-b96e-f014440ea75c",
+        "preferences": [
+          18,
+          16,
+          13,
+          14,
+          4,
+          0,
+          8,
+          7,
+          15,
+          1,
+          2,
+          17,
+          6,
+          10,
+          9,
+          11,
+          5,
+          19,
+          12,
+          3
+        ],
+        "memory_bank": [
+          {
+            "id": "6d2c109d-4304-4915-abab-6aa80abd2698",
+            "importance": 0.95,
+            "subjects": [
+              11
+            ]
+          },
+          {
+            "id": "b6d3ba97-1469-426b-bf8d-9ffb70cbd959",
+            "importance": 0.12,
+            "subjects": [
+              13,
+              11
+            ]
+          },
+          {
+            "id": "e8da7e5d-6269-44e8-900d-6f6d1f86f629",
+            "importance": 0.56,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "3a41637c-7caa-4d39-94b9-07af7e0abe05",
+            "importance": 0.49,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "69b36348-053f-40c6-8f6a-8145f024ade9",
+            "importance": 0.48,
+            "subjects": [
+              19,
+              16
+            ]
+          },
+          {
+            "id": "2e9c8633-e747-497f-a6cc-0af35e095370",
+            "importance": 0.51,
+            "subjects": [
+              0,
+              8
+            ]
+          },
+          {
+            "id": "859a0457-99a2-4b55-a796-98372a6580dd",
+            "importance": 0.96,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "d72e5415-ad11-40f1-8a71-2f3b70222344",
+            "importance": 0.99,
+            "subjects": [
+              15,
+              1
+            ]
+          },
+          {
+            "id": "e517336a-00bc-4d64-b972-4f334af1162f",
+            "importance": 0.03,
+            "subjects": [
+              0,
+              2
+            ]
+          },
+          {
+            "id": "3a66c085-0256-4ed6-b73f-469972b1ae74",
+            "importance": 0.57,
+            "subjects": [
+              8,
+              14
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0781999999999998,
+          "shared": 51.76,
+          "individual": 2.15
+        }
+      },
+      {
+        "id": "2d45e71b-0b98-4a34-af14-2147b30fda55",
+        "preferences": [
+          6,
+          9,
+          5,
+          15,
+          17,
+          13,
+          7,
+          1,
+          11,
+          3,
+          18,
+          0,
+          14,
+          12,
+          4,
+          19,
+          16,
+          2,
+          10,
+          8
+        ],
+        "memory_bank": [
+          {
+            "id": "7e66c793-70a2-43e0-9e1a-131b5fad32d7",
+            "importance": 0.09,
+            "subjects": [
+              12,
+              8
+            ]
+          },
+          {
+            "id": "6b5541ee-1e9d-40d3-928a-a6cc71dc1e08",
+            "importance": 0.6,
+            "subjects": [
+              0,
+              3
+            ]
+          },
+          {
+            "id": "5dcd9ee7-c5d3-48fd-8e74-579427bf79be",
+            "importance": 0.44,
+            "subjects": [
+              5
+            ]
+          },
+          {
+            "id": "255361ef-06f4-4dce-a3c2-48ab051f4c12",
+            "importance": 0.44,
+            "subjects": [
+              7
+            ]
+          },
+          {
+            "id": "3ac69086-3a62-492a-9452-556db5e84c32",
+            "importance": 0.53,
+            "subjects": [
+              10,
+              3
+            ]
+          },
+          {
+            "id": "e2f96807-a782-4dc4-927f-1c038068ccd6",
+            "importance": 0.53,
+            "subjects": [
+              7,
+              11
+            ]
+          },
+          {
+            "id": "b350fc17-6f83-49e2-aa11-dd6ab2de6e5d",
+            "importance": 0.89,
+            "subjects": [
+              1
+            ]
+          },
+          {
+            "id": "b50f2d92-dd02-4d8f-8b0c-1f53f180a621",
+            "importance": 0.52,
+            "subjects": [
+              4,
+              1
+            ]
+          },
+          {
+            "id": "ab99b2e3-788a-4fa3-aabd-f60e5cabd626",
+            "importance": 0.53,
+            "subjects": [
+              16
+            ]
+          },
+          {
+            "id": "e19130d6-ba11-413b-8c31-88d86c71cdbd",
+            "importance": 0.71,
+            "subjects": [
+              2
+            ]
+          }
+        ],
+        "scores": {
+          "total": 1.0902,
+          "shared": 51.76,
+          "individual": 2.75
+        }
+      }
+    ],
+    "shared_score_breakdown": {
+      "total": 51.76,
+      "importance": 20.759999999999998,
+      "coherence": 7.0,
+      "freshness": 28.0,
+      "nonmonotonousness": -4.0
+    }
+  }
+}

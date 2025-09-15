@@ -1,0 +1,75 @@
+CONVERSATION ANALYSIS REPORT
+============================================================
+
+INDIVIDUAL PLAYER ANALYSIS
+----------------------------------------
+         Player             Quality     Individual  Contributed  Involvement    Num   
+--------------------------------------------------------------------------------------
+   BayesTreeBeamLow_2        0.6500       3.4500       2.8900       1.4400       4    
+   BayesTreeBeamHigh_2       0.6460       3.2500       3.0300       1.8000       5    
+  SelfishGreedyPlayer_1      0.6380       2.8500      -2.7200       1.0800       3    
+   BayesTreeBeamHigh_1       0.6340       2.6500       2.2300       1.4400       4    
+  BayesTreeBeamMedium_2      0.6335       2.6250       4.3500       1.4400       4    
+     RandomPlayer_2          0.6320       2.5500      -1.8200       2.1600       6    
+  BayesTreeBeamMedium_1      0.6225       2.0750       2.0700       1.0800       3    
+  SelfishGreedyPlayer_2      0.6210       2.0000       0.9500       0.7200       2    
+  BayesTreeBeamMedium_3      0.6135       1.6250       1.0600       1.0800       3    
+ BalancedGreedyPlayer_2      0.6130       1.6000       2.0500       0.7200       2    
+ BalancedGreedyPlayer_1      0.6090       1.4000       1.5900       0.7200       2    
+     RandomPlayer_1          0.6070       1.3000       3.3200       0.7200       2    
+   BayesTreeBeamLow_1        0.6000       0.9500       1.5400       0.7200       2    
+ SelflessGreedyPlayer_1      0.5980       0.8500       3.2300       0.7200       2    
+  BayesTreeBeamMedium_4      0.5965       0.7750       0.9100       0.7200       2    
+     ZipperPlayer_2          0.5910       0.5000       1.8300       0.3600       1    
+ SelflessGreedyPlayer_2      0.5910       0.5000       1.8500       0.7200       2    
+     ZipperPlayer_1          0.5820       0.0500       0.6900       0.3600       1    
+
+
+PLAYER TYPE ANALYSIS
+------------------------------
+ Rank          Type          Count   Avg Qual  Avg Indiv   Avg Cont  Avg Invol   Total 
+---------------------------------------------------------------------------------------
+  1     BayesTreeBeamHigh      2      0.6400     2.9500     2.6300     1.6200      9   
+  2    SelfishGreedyPlayer     2      0.6295     2.4250    -0.8850     0.9000      5   
+  3      BayesTreeBeamLow      2      0.6250     2.2000     2.2150     1.0800      6   
+  4        RandomPlayer        2      0.6195     1.9250     0.7500     1.4400      8   
+  5    BayesTreeBeamMedium     4      0.6165     1.7750     2.0975     1.0800     12   
+  6    BalancedGreedyPlayer    2      0.6110     1.5000     1.8200     0.7200      4   
+  7    SelflessGreedyPlayer    2      0.5945     0.6750     2.5400     0.7200      4   
+  8        ZipperPlayer        2      0.5865     0.2750     1.2600     0.3600      2   
+
+NORMALIZED ATTRIBUTE ANALYSIS BY TYPE:
+---------------------------------------------
+        Type          Importance   Coherence    Freshness   Nonmonotone 
+------------------------------------------------------------------------
+ BayesTreeBeamHigh      0.1052       0.0000       0.0000       0.0000   
+SelfishGreedyPlayer     0.0246       0.0000       0.0000      -0.0600   
+  BayesTreeBeamLow      0.0686       0.0200       0.0000       0.0000   
+    RandomPlayer        0.0900      -0.0600       0.0000       0.0000   
+BayesTreeBeamMedium     0.1678       0.0200       0.0000      -0.0200   
+BalancedGreedyPlayer    0.0528       0.0200       0.0000       0.0000   
+SelflessGreedyPlayer    0.0616       0.0600       0.0000      -0.0200   
+    ZipperPlayer        0.0304       0.0200       0.0000       0.0000   
+
+
+GLOBAL CONVERSATION METRICS
+-----------------------------------
+Conversation Length: 50
+Total Pauses: 0
+Active Turns: 50
+
+OVERALL SCORES:
+  Total Shared Score: 29.0500
+
+NORMALIZED SCORES (per turn):
+  Normalized Total: 0.5810
+  Normalized Importance: 0.6010
+  Normalized Coherence: 0.0800
+  Normalized Freshness: 0.0000
+  Normalized Nonmonotonousness: -0.1000
+
+PLAYER PERFORMANCE SUMMARY:
+  Average Quality Score: 0.6154
+  Best Quality Score: 0.6500
+  Worst Quality Score: 0.5820
+  Quality Score Std Dev: 0.0203

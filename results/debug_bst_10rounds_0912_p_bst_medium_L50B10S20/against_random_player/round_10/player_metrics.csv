@@ -1,0 +1,3 @@
+type,player_numbers,score,individual,shared_score,involvement_ratio,contributed_individual_score,contributed_shared_score,importance,coherence,freshness,nonmonotone
+BayesTreeBeamMedium,2,-0.03,0.06,-0.10,1.20,0.54,0.33,0.66,-0.33,0.00,0.00
+RandomPlayer,8,-0.05,0.05,-0.10,0.95,0.49,-0.23,0.34,-0.39,0.00,-0.18

@@ -1,0 +1,55 @@
+CONVERSATION ANALYSIS REPORT
+============================================================
+
+INDIVIDUAL PLAYER ANALYSIS
+----------------------------------------
+         Player             Quality     Individual  Contributed  Involvement    Num   
+--------------------------------------------------------------------------------------
+     RandomPlayer_6          -0.09         5.17        -3.49         1.60        8    
+     RandomPlayer_3          -0.11         4.20        -0.15         1.20        6    
+     RandomPlayer_4          -0.12         3.78        -0.61         1.40        7    
+     RandomPlayer_8          -0.12         3.35        -0.55         1.00        5    
+     RandomPlayer_2          -0.13         2.92        -4.57         1.00        5    
+     RandomPlayer_1          -0.13         2.90        -2.02         1.00        5    
+  BayesTreeBeamMedium_1      -0.14         2.45         4.47         0.60        3    
+     RandomPlayer_7          -0.15         1.95        -2.11         1.00        5    
+     RandomPlayer_5          -0.15         1.87        -2.50         1.00        5    
+  BayesTreeBeamMedium_2      -0.18         0.80         1.94         0.20        1    
+
+
+PLAYER TYPE ANALYSIS
+------------------------------
+ Rank          Type          Count   Avg Qual  Avg Indiv   Avg Cont  Avg Invol   Total 
+---------------------------------------------------------------------------------------
+  1        RandomPlayer        8      -0.13       3.27      -2.00       1.15      46   
+  2    BayesTreeBeamMedium     2      -0.16       1.62       3.21       0.40       4   
+
+NORMALIZED ATTRIBUTE ANALYSIS BY TYPE:
+---------------------------------------------
+        Type          Importance   Coherence    Freshness   Nonmonotone 
+------------------------------------------------------------------------
+    RandomPlayer         0.38        -0.54         0.00        -0.16    
+BayesTreeBeamMedium      0.05         0.08         0.00         0.00    
+
+
+GLOBAL CONVERSATION METRICS
+-----------------------------------
+Conversation Length: 50
+Total Pauses: 0
+Active Turns: 50
+
+OVERALL SCORES:
+  Total Shared Score: -9.59
+
+NORMALIZED SCORES (per turn):
+  Normalized Total: -0.19
+  Normalized Importance: 0.43
+  Normalized Coherence: -0.46
+  Normalized Freshness: 0.00
+  Normalized Nonmonotonousness: -0.16
+
+PLAYER PERFORMANCE SUMMARY:
+  Average Quality Score: -0.13
+  Best Quality Score: -0.09
+  Worst Quality Score: -0.18
+  Quality Score Std Dev: 0.03
