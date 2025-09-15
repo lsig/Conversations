@@ -1,7 +1,7 @@
 from collections import Counter
 
 from core.engine import Engine  # noqa: F821
-from models.player import Item, Player, PlayerSnapshot
+from models.player import GameContext, Item, Player, PlayerSnapshot
 
 
 class self_engine(Engine):
@@ -9,26 +9,34 @@ class self_engine(Engine):
 
 
 class Player5(Player):
-	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
-		super().__init__(snapshot, conversation_length)
+	def __init__(
+		self, snapshot: PlayerSnapshot, ctx: GameContext = None, conversation_length: int = None
+	) -> None:
+		if ctx is not None:
+			super().__init__(snapshot, ctx)
+			self.ctx = ctx
+			self.conversation_length = ctx.conversation_length
+		else:
+			super().__init__(snapshot, conversation_length)
+			self.ctx = None
+			self.conversation_length = conversation_length
 
 		self.snapshot = snapshot
 
+		# Sort memory bank by importance
 		self.memory_bank.sort(key=lambda x: x.importance, reverse=True)
 		self.best = self.memory_bank[0] if self.memory_bank else None
 
+		# Internal state
 		self.turn_length = 0
 		self.last_turn_position = -1
-
 		self.recent_history = Counter()
 		self.score_engine = None
 		self.preferences = snapshot.preferences
 
 	def individual_score(self, item: Item) -> float:
-		# Individual score based on preference using the code in the game engine
-
+		"""Score based on player preferences."""
 		score = 0
-
 		bonuses = [
 			1 - self.preferences.index(s) / len(self.preferences)
 			for s in item.subjects
@@ -36,10 +44,10 @@ class Player5(Player):
 		]
 		if bonuses:
 			score += sum(bonuses) / len(bonuses)
-
 		return score
 
 	def propose_item(self, history: list[Item]) -> Item | None:
+		# Create a temporary engine for shared scoring
 		self.score_engine = self_engine(
 			players=[],
 			player_count=0,
@@ -48,19 +56,47 @@ class Player5(Player):
 			conversation_length=self.conversation_length,
 			seed=0,
 		)
+		# FIX: snapshots must be a dict, not a list
+		self.score_engine.snapshots = {self.snapshot.id: self.snapshot}
 
-		self.score_engine.snapshots = [self.snapshot]
-
-		res = []
+		# Build three rankings:
+		shared_ranking = []
+		pref_ranking = []
+		importance_ranking = []
 
 		for item in self.memory_bank:
 			new_history = history + [item]
 			self.score_engine.history = new_history
 			score = self.score_engine._Engine__calculate_scores()
-			res = res + [(item, score['shared'] + self.individual_score(item), score)]
 
-		res.sort(key=lambda x: x[1], reverse=True)
+			shared_ranking.append((item, score['shared']))
+			pref_ranking.append((item, self.individual_score(item)))
+			importance_ranking.append((item, item.importance))
 
-		# print("shared", res[0][2])
+		# Sort each list descending (best first)
+		shared_ranking.sort(key=lambda x: x[1], reverse=True)
+		pref_ranking.sort(key=lambda x: x[1], reverse=True)
+		importance_ranking.sort(key=lambda x: x[1], reverse=True)
 
-		return res[0][0] if res else None
+		# Build rank maps for quick lookup
+		def build_rank_map(ranking):
+			return {item: rank for rank, (item, _) in enumerate(ranking, start=1)}
+
+		shared_map = build_rank_map(shared_ranking)
+		pref_map = build_rank_map(pref_ranking)
+		imp_map = build_rank_map(importance_ranking)
+
+		# RRF parameters
+		k = 60
+		scores = {}
+
+		for item in self.memory_bank:
+			scores[item] = (
+				1 / (k + shared_map[item])
+				+ 2 * (1 / (k + pref_map[item]))  # weight preferences higher
+				+ 1 / (k + imp_map[item])
+			)
+
+		# Pick best
+		best_item = max(scores.items(), key=lambda x: x[1])[0]
+		return best_item
