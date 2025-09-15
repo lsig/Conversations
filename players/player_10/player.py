@@ -6,7 +6,7 @@ from collections import Counter
 from collections.abc import Iterable, Sequence
 
 from models.item import Item
-from models.player import Player, PlayerSnapshot, GameContext
+from models.player import GameContext, Player, PlayerSnapshot
 
 # Creating a player for Group 10, working on RL agent
 
