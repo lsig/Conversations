@@ -149,6 +149,7 @@ class Player4(Player):
 			context_items = self._take_preceding_block(history, 3)
 			subj_counts = self._subjects_in(context_items)
 
+
 			if item.subjects and context_items:
 				# If any subject of I is never mentioned in CI -> -1
 				if any(subj_counts.get(s, 0) == 0 for s in item.subjects):
@@ -184,12 +185,16 @@ class Player4(Player):
 		#print(history)
 		if len(history) != 0 and best_score < 1:
 			return None
+		best_score = max(s for s, _ in scored)
 
 		# All with best score
 		tied = [it for s, it in scored if s == best_score]
 
 		choice = tied[0] if len(tied) == 1 else min(tied, key=self._preference_tiebreak_key)
+		# All with best score
+		tied = [it for s, it in scored if s == best_score]
 
+		choice = tied[0] if len(tied) == 1 else min(tied, key=self._preference_tiebreak_key)
 		# Track contribution if you care downstream
 		self.contributed_items.append(choice)
 		return choice
