@@ -15,16 +15,13 @@ class Player5(Player):
 	CANDIDATE_FRACTION = 0.2  # configure percentage for large banks
 
 	def __init__(
-		self, snapshot: PlayerSnapshot, ctx: GameContext = None, conversation_length: int = None
+		self, snapshot: PlayerSnapshot, ctx: GameContext, conversation_length: int = None
 	) -> None:
-		if ctx is not None:
-			super().__init__(snapshot, ctx)
-			self.ctx = ctx
-			self.conversation_length = ctx.conversation_length
-		else:
-			super().__init__(snapshot, conversation_length)
-			self.ctx = None
-			self.conversation_length = conversation_length
+		
+		super().__init__(snapshot, ctx)
+		self.ctx = ctx
+		self.conversation_length = ctx.conversation_length
+
 
 		self.snapshot = snapshot
 
