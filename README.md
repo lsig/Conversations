@@ -1,67 +1,21 @@
-# Conversation Simulator
+# Project 1
 
-A multi-agent conversation simulation where players contribute items from their memory banks to create coherent, high-quality discussions. Players balance individual preferences with shared conversation goals to optimize collective and personal scores.
+### Setup
 
-## Features
+Start with installing uv, uv is a modern python package manager.
 
-- **Multi-Agent Simulation**: Support for various player types with different strategies
-- **Advanced AI Players**: Bayesian Tree Search players with configurable search depths and competition rates
-- **Comprehensive Analysis**: Built-in tools for per-player and per-type performance analysis
-- **Flexible Configuration**: Extensive CLI options for custom experiments
-- **Visualization**: GUI mode for real-time conversation visualization
-- **Batch Testing**: Automated test pipelines with statistical analysis
+- [UV Install instructions](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer)
 
-## Project Structure
-
-```
-conversations/
-├── core/                    # Core simulation engine
-│   ├── engine.py           # Main simulation logic
-│   └── utils.py            # Analysis utilities and data structures
-├── models/                 # Data models and CLI parsing
-│   ├── cli.py             # Command-line argument parsing
-│   ├── item.py            # Item representation
-│   └── player.py          # Base player class
-├── players/                # Player implementations
-│   ├── bayesian_tree_search_player/  # Advanced BST players
-│   ├── pause_player.py     # Pause-only player
-│   ├── random_player.py    # Random selection player
-│   ├── zipper_player/      # Zipper algorithm player
-│   └── player_3/           # Custom player implementation
-├── ui/                     # User interface components
-├── results/                # Experiment outputs and analysis
-├── shells/                 # Test automation scripts
-└── main.py                 # Entry point
+Using brew:
+```bash
+brew install uv
 ```
 
-## Setup
+### Running the simulator
 
-### Prerequisites
-
-- Python 3.13+
-- uv (modern Python package manager)
-
-### Installation
-
-1. **Install uv**:
-   ```bash
-   # macOS with Homebrew
-   brew install uv
-
-   # Or follow: https://docs.astral.sh/uv/getting-started/installation/
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   cd /path/to/conversations
-   uv sync
-   ```
-
-### Dependencies
-
-- `pygame>=2.6.1` - GUI visualization
-- `openai` - AI model integration (optional)
-- `ruff>=0.12.8` - Code formatting and linting
+```bash
+uv run main.py <CLI_ARGS>
+```
 
 ---
 
@@ -69,29 +23,15 @@ conversations/
 
 The simulation can be configured using a variety of command-line arguments. If no arguments are provided, the simulation will run with a default set of parameters.
 
-#### Core Options
+#### General Options
 
 | Argument | Default | Description |
 | :--- | :--- | :--- |
-| `--gui` | `False` | Launches the graphical user interface to visualize the simulation |
-| `--subjects` | `20` | Number of unique subjects in the simulation |
-| `--memory_size` | `10` | Number of items each player has in their memory bank |
-| `--length` | `10` | Maximum number of turns for the conversation |
-| `--seed` | `91` | Random number generator seed for reproducibility |
-
-#### Output Options
-
-| Argument | Default | Description |
-| :--- | :--- | :--- |
-| `--output_path` | `results` | Directory for saving simulation outputs |
-| `--test_player` | `None` | Player type code to highlight in analysis reports |
-| `--detailed` | `False` | Save per-round JSON/TXT/CSV files in addition to summary |
-
-#### Experiment Options
-
-| Argument | Default | Description |
-| :--- | :--- | :--- |
-| `--rounds` | `1` | Number of simulation rounds with different seeds |
+| `--gui` | `False` | Launches the graphical user interface to visualize the simulation. If omitted, the simulation runs in the command line and outputs a JSON blob. |
+| `--subjects` | `20` | Sets the total number of unique subjects in the simulation. |
+| `--memory_size` | `10` | Sets the number of items each player has in their memory bank. |
+| `--length` | `10` | Sets the maximum number of turns for the conversation. |
+| `--seed` | `91` | Provides a seed for the random number generator to ensure reproducible simulations. |
 
 #### Player Configuration
 
@@ -103,21 +43,12 @@ The `--player` argument allows you to specify the number of players of a certain
 
 ##### Available Player Types
 
-| Code | Player Type | Description |
-| :--- | :--- | :--- |
-| `pr` | RandomPlayer | Random item selection |
-| `pp` | PausePlayer | Only contributes pauses |
-| `p3` | Player3 | Custom player implementation |
-| `p_zipper` | ZipperPlayer | Zipper algorithm strategy |
-| `p_balanced_greedy` | BalancedGreedyPlayer | Greedy with balanced competition (rate=0.5) |
-| `p_selfless_greedy` | SelflessGreedyPlayer | Greedy prioritizing shared goals (rate=0.0) |
-| `p_selfish_greedy` | SelfishGreedyPlayer | Greedy prioritizing individual goals (rate=1.0) |
-| `p_bst_low` | BayesTreeBeamLow | BST search: depth=2, breadth=4 |
-| `p_bst_medium` | BayesTreeBeamMedium | BST search: depth=3, breadth=16 |
-| `p_bst_high` | BayesTreeBeamHigh | BST search: depth=6, breadth=128 |
-| `p_bst_dynamic` | BayesTreeDynamicStandard | BST with dynamic breadth (0.5 × memory size) |
-| `p_bst_dynamic_width` | BayesTreeDynamicWidth | BST with dynamic breadth (4 × memory size) |
-| `p_bst_dynamic_depth` | BayesTreeDynamicDepth | BST with depth=6, dynamic breadth |
+| Code | Player Type |
+| :--- | :--- |
+| `pr` | RandomPlayer |
+| `prp` | RandomPausePlayer |
+| `pp` | PausePlayer |
+| `p0`-`p11` | Player0 through Player11 |
 
 ---
 
@@ -153,62 +84,45 @@ uv run ruff check --fix
 
 ---
 
-## Usage Examples
+### Usage Examples
 
-### Basic Usage
+Here are some common examples of how to run the simulation with different configurations.
 
-Run a simple simulation with random players:
+##### Example 1: Run with the GUI
+
+To run the simulation and see the visualizer, use the `--gui` flag. This example also increases the conversation length and adds 10 instances of the random player
+
 ```bash
-uv run main.py --player pr 5 --length 20
+uv run python main.py --gui --length 50 --player pr 10
 ```
 
-### GUI Mode
+##### Example 2: Run a Simulation with Specific Players
 
-Launch with visualization:
+To create a game with 2 `Player0` instances and 8 `RandomPlayer` instances, use the `--player` argument twice.
+
 ```bash
-uv run main.py --gui --player p_balanced_greedy 3 --player pr 2 --length 30
+uv run python main.py --player p0 2 --player pr 8
 ```
 
-### Advanced Players
+##### Example 3: Run a CLI Simulation
 
-Test Bayesian Tree Search players:
+This example runs a long conversation with 100 turns, a large number of subjects, and a custom seed. Since `--gui` is not specified, it will output the final JSON results to the console.
+
 ```bash
-uv run main.py --player p_bst_medium 2 --player p_selfless_greedy 2 --length 50
+uv run python main.py --length 100 --subjects 50 --seed 123 --player p0 10
 ```
 
-### Batch Experiments
+##### Example 4: Run a Head-to-Head Test
 
-Run multiple rounds with analysis:
+To test `Player1` against `Player2` without any other players, specify only those two types.
+
 ```bash
-uv run main.py \
-  --player p_bst_low 4 \
-  --player p_balanced_greedy 4 \
-  --length 100 \
-  --memory_size 20 \
-  --rounds 5 \
-  --detailed \
-  --output_path results/experiment1
+uv run python main.py --player p1 1 --player p2 1 --length 20
 ```
 
-### Head-to-Head Comparison
+---
 
-Compare different strategies:
-```bash
-uv run main.py --player p_bst_medium 1 --player p_selfish_greedy 1 --length 40
-```
-
-## Scoring System
-
-### Shared Goals (affect all players)
-- **Importance**: Sum of item importance values
-- **Coherence**: ±1 based on subject overlap with context window
-- **Freshness**: Bonus for introducing novel subjects after pauses
-- **Non-monotonousness**: Penalty for repetitive subject sequences
-- **Non-repetition**: Repeated items get zero score
-
-### Individual Goals
-- **Preference Bonus**: Based on player's ranked subject preferences
-- Items with preferred subjects get higher individual scores
+### What's New
 
 - **Analysis utilities (`core/utils.py`)**:
   - Added `CustomEncoder` for safe JSON export (handles `Item`, `UUID`, and nested dict keys).
@@ -237,17 +151,16 @@ uv run main.py --player p_bst_medium 1 --player p_selfish_greedy 1 --length 40
   - The `--player` flag accepts any known code from `main.py` (validation relaxed).
   - Returns a `Settings` dataclass with derived `total_players`.
 
-### Output Files
-- `results.csv`: Per-type performance summary across rounds
-- `simulation_results.json`: Complete conversation data
-- `analysis.txt`: Human-readable performance report
-- `player_metrics.csv`: Per-player detailed metrics
+- **Player codes (`main.py`)**:
+  - Built-in: `pr` (Random), `pp` (Pause), `p_zipper` (Zipper)
+  - Greedy: `p_balanced_greedy`, `p_selfless_greedy`, `p_selfish_greedy`
+  - Bayesian tree search presets: `p_bst_low`, `p_bst_medium`, `p_bst_high`, `p_bst_dynamic`, `p_bst_dynamic_width`, `p_bst_dynamic_depth`
 
 ---
 
-## Test Automation
+### Extended CLI Examples
 
-Use provided shell scripts for systematic testing:
+- Run 10 rounds with per-round artifacts and a custom output directory:
 
 ```bash
 uv run python main.py \
@@ -259,47 +172,44 @@ uv run python main.py \
   --rounds 10 --detailed
 ```
 
-Configure test parameters in the script:
-- Player combinations
-- Memory sizes and conversation lengths
-- Number of rounds
-- Output directories
-
-## Development
-
-### Code Quality
-
-This project uses Ruff for code formatting and linting:
+- Head-to-head between a greedy and a BST player (single round, CLI-only):
 
 ```bash
-# Check formatting
-uv run ruff format --check
-
-# Auto-format code
-uv run ruff format
-
-# Check linting
-uv run ruff check
-
-# Auto-fix linting issues
-uv run ruff check --fix
+uv run python main.py --player p_balanced_greedy 1 --player p_bst_medium 1 --length 50
 ```
 
-### Architecture Notes
+---
 
-- **Modular Design**: Player implementations are completely encapsulated
-- **Configurable Competition**: `competition_rate` balances individual vs. shared goals
-- **Beam Search**: BST players use probabilistic tree search with expectation maximization
-- **Analysis Pipeline**: Built-in tools for systematic performance evaluation
+### Test Pipeline Script
 
-## License
+A convenience script is provided at `shells/trivial_test_0911.sh` to reproduce common experiments.
 
-This project is developed for educational purposes as part of COMS 4444 coursework.
+1) Edit the variables at the top of the script:
 
-## Contributing
+- `test_player`: primary player to highlight
+- `L` (length), `B` (memory_size), `S` (subjects)
+- `gui_on`, `rounds`, `detailed_on`
+- `player_list`: mix of other player codes for the complex environment
 
-1. Follow the code quality guidelines using Ruff
-2. Add new player types to `main.py`'s `g_player_classes` dictionary
-3. Update this README when adding new features
-4. Test new players with the provided shell scripts
+2) Make executable and run:
+
+```bash
+chmod +x shells/trivial_test_0911.sh
+./shells/trivial_test_0911.sh
+```
+
+3) Outputs
+
+- Results are saved under the derived `--output_path` inside `results/`.
+- Example (as configured in the script):
+  - `results/test_good_players_0913_p_balanced_greedy_L200B500S20/`
+    - `complex_environment/results.csv` – per-type averages across rounds
+    - If `--detailed`: `complex_environment/round_*/` with per-round JSON/TXT/CSV
+
+---
+
+### Notes
+
+- The analysis CSVs use a consistent float precision and normalize metrics per turn where applicable.
+- Player type names in outputs come from the concrete class names mapped in `main.py`.
 
