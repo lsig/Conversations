@@ -107,7 +107,7 @@ class Strategy3(BaseStrategy):
 
 			# If repeated (not possible here due to skip) importance & others would be zero/penalty.
 			shared_total = importance + coherence + freshness + nonmono
-			total = shared_total + indiv
+			total = shared_total #+ indiv # Currently not using individual bonus to avoid overfitting to self
 
 			if total > best_score:
 				best_score = total
