@@ -41,12 +41,11 @@ class Player4(Player):
 			return []
 		# walk left of the trailing pause
 		out: list[Item] = []
-		count = 0
-		for x in reversed(history[:-1]):
+		#count = 0
+		for count, x in enumerate(reversed(history[:-1])):
 			if x is None:
 				break
 			out.append(x)
-			count += 1
 			if count == k:
 				break
 		out.reverse()
@@ -143,11 +142,7 @@ class Player4(Player):
 		# All with best score
 		tied = [it for s, it in scored if s == best_score]
 
-		if len(tied) == 1:
-			choice = tied[0]
-		else:
-			# Tie-break by preferences
-			choice = min(tied, key=self._preference_tiebreak_key)
+		choice = tied[0] if len(tied) == 1 else min(tied, key=self._preference_tiebreak_key)
 
 		# Track contribution if you care downstream
 		self.contributed_items.append(choice)
