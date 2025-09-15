@@ -41,7 +41,7 @@ class Player4(Player):
 			return []
 		# walk left of the trailing pause
 		out: list[Item] = []
-		#count = 0
+		# count = 0
 		for count, x in enumerate(reversed(history[:-1])):
 			if x is None:
 				break
