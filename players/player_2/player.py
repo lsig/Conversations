@@ -13,9 +13,9 @@ class Player2(Player):
 		self.memory_bank_size: int = len(self.memory_bank)
 		self.current_strategy: BaseStrategy = None
 		self.sub_to_item: dict = {}
+		self.last_proposed_item: Item = None	
 
 		self._init_sub_to_item()
-		print(self.sub_to_item)	 # TODO: Comment this out before merge!!!
 
 		self._choose_strategy()
 
