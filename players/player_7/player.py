@@ -31,7 +31,7 @@ class Player7(Player):
 						return item
 					
 			# check history of last 5 items to see if preference has been mentioned recently and if it has skip
-			if p not in history[:-5]:
+			elif len(history) >= 5 and p not in history[:-5]:
 				for item in self.memory_bank:
 					#check if p is in the subejcts of an item, not in history, and greater importance than arbitrary theshold
 					if p in item.subjects and item not in history and item.importance > 0.5:
