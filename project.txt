@@ -1,0 +1,74 @@
+Project 1: Conversation — Description
+
+Overview:
+This project simulates group conversations. You will write code for a single player (agent) whose objective is to achieve the highest possible final conversation quality. Multiple players (including copies of your agent, other agents, and possibly random players) interact in a turn-based conversation; the simulator computes shared and individual scores that together determine each player’s final score.
+
+Static parameters and setup:
+	•	P: Number of players in the conversation.
+	•	B: Memory bank size for each player (number of newsworthy items each player may contribute).
+	•	Half of a player’s B items are single-subject items, half are two-subject items.
+	•	Each item has an importance value drawn uniformly from [0,1].
+	•	S: Total number of possible subjects.
+	•	L: Maximum conversation length (number of turns). Known to all players in advance.
+	•	Each player receives a private random permutation (ranking) of the S subjects that expresses their personal preferences.
+	•	The simulator accepts a random seed for repeatability.
+
+Player state and knowledge:
+	•	Each player knows:
+	•	Their own memory bank of B items (subject(s) + importance for each item).
+	•	Their own subject ranking (preference order over S subjects).
+	•	The full sequence of items spoken so far (the conversation state) and the number of non-pause turns each player has contributed so far (as necessary to compute who has spoken least).
+	•	The parameters P, B, S, L (these are shared and known ahead of time).
+	•	Each player does NOT know other players’ subject rankings or private preferences.
+
+Turn mechanics and proposals:
+	•	The conversation is a sequence (up to L) of items or pauses.
+	•	On each turn, any player may propose one item from their memory bank (or choose not to propose = stay silent).
+	•	If multiple players propose on the same turn:
+	1.	If the previous non-pause speaker is among proposers, that speaker is selected with probability 0.5 to speak again.
+	2.	Otherwise (or if the previous speaker is not chosen), the simulator selects uniformly at random among the proposers who have contributed the fewest items so far (breaking ties uniformly at random).
+	•	This selection rule encourages long-run balance in who speaks.
+	•	If nobody proposes on a turn, the turn is recorded as a pause.
+	•	Three consecutive pauses end the conversation early (before L).
+	•	Repeated items (exact same item repeated later) are allowed but treated specially in scoring (see below).
+
+Scoring components:
+Final scoring for each player equals the sum of shared (global) components and that player’s individual (private) contributions; the sum is then divided by L to produce a normalized conversation-quality metric.
+
+Shared (global) components — these affect every player equally:
+	1.	Coherence (context window): For each item I in the final sequence, collect up to 3 preceding and up to 3 following items as the context set C_I. The window does not cross pauses or the conversation start/end.
+	•	If a subject present in I is never mentioned in C_I, subtract 1 point.
+	•	If all subjects in I are each mentioned at least twice in C_I, add 1 point.
+	2.	Importance: Sum the importance values of all items in the final item sequence (repeated instances contribute zero). Add the total to the shared score.
+	3.	Nonrepetition: Repeated items contribute zero importance and do not help coherence beyond their first instance.
+	4.	Freshness: Immediately after a pause, an item whose subject was not present in the five turns prior to the pause gains +1 bonus point (per novel subject). Two novel subjects ⇒ +2. Repeated items do not get freshness points.
+	5.	Nonmonotonousness: If an item’s subject is present in each of the previous three items, that item loses 1 point. Repeated items lose 1 point here as well.
+
+Individual (private) components — these are awarded only to the player who contributes an item:
+	•	Each player has a ranking of S subjects. For a single-subject item with rank k (where k is the position of that subject in the player’s ranking, 1..|S|), the private bonus = 1 - k/|S|.
+	•	For a two-subject item, the private bonus is the average of the two subject bonuses.
+	•	Private bonuses are added to that player’s total score only when they contribute the corresponding item.
+
+Final normalization and comparison:
+	•	After the conversation ends (either at L turns or earlier due to 3 pauses), each player’s total score (shared + private earned by contributions) is divided by L.
+	•	This normalized number is the player’s conversation-quality metric used to compare players and evaluate strategies.
+
+Design and coding requirements (what you must deliver):
+	1.	Implement a player class/agent that, on each turn, receives the current conversation state and outputs either “propose item i” (select an item from its bank) or “stay silent.”
+	2.	The player implementation must be fully encapsulated: multiple independent instances can be created without shared global state.
+	3.	Your player should work with the simulator’s interface (the TA/instructor will provide the simulator API or required function signatures). The simulator will supply random seeds for repeatability.
+	4.	Provide code (clear, commented) and any required README explaining how to instantiate and run multiple copies of your player with the simulator.
+
+Optional analyses (expected in report/demonstration):
+	•	How do conversation length (L), player count (P), or random players affect conversation quality?
+	•	Do certain strategies produce emergent patterns (topic clustering, domination by a speaker, etc.)?
+	•	Sensitivity of the shared score to players who only maximize private bonuses.
+
+Goal summary:
+	•	Primary: code a single-player strategy that maximizes that player’s final normalized conversation-quality in unknown multi-player settings.
+	•	Secondary: analyze behavior and performance across varied simulator configurations and report findings.
+
+Notes:
+	•	Keep deterministic behavior controllable via the simulator’s random seed where randomness is needed.
+	•	Make sure repeated items and pauses are handled according to the scoring rules above.
+	•	The course will run tournaments across multiple configurations; follow interface and encapsulation requirements so your player can be evaluated fairly.
