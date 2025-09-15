@@ -38,7 +38,7 @@ class Strategy3(BaseStrategy):
 				context_items.append(prev)
 				back_count += 1
 				j -= 1
-    
+
 			context_subject_counts = {}
 			for ctxt in context_items:
 				for s in ctxt.subjects:
@@ -107,20 +107,17 @@ class Strategy3(BaseStrategy):
 
 			# If repeated (not possible here due to skip) importance & others would be zero/penalty.
 			shared_total = importance + coherence + freshness + nonmono
-			total = shared_total #+ indiv # Currently not using individual bonus to avoid overfitting to self
+			total = shared_total  # + indiv # Currently not using individual bonus to avoid overfitting to self
 
 			if total > best_score:
 				best_score = total
 				best_item = candidate
 			elif total == best_score and best_item is not None:
 				# Deterministic tie-break: higher importance, then fewer subjects, lexicographic.
-				if (
-					importance > best_item.importance
-					or (
-						importance == best_item.importance
-						and (len(candidate.subjects), candidate.subjects)
-						< (len(best_item.subjects), best_item.subjects)
-					)
+				if importance > best_item.importance or (
+					importance == best_item.importance
+					and (len(candidate.subjects), candidate.subjects)
+					< (len(best_item.subjects), best_item.subjects)
 				):
 					best_item = candidate
 

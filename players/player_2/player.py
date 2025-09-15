@@ -1,6 +1,5 @@
-from players.player_2.BaseStrategy import BaseStrategy
-
 from models.player import GameContext, Item, Player, PlayerSnapshot
+from players.player_2.BaseStrategy import BaseStrategy
 from players.player_2.Strategy_1 import Strategy1
 from players.player_2.Strategy_2 import Strategy2
 
@@ -13,7 +12,7 @@ class Player2(Player):
 		self.memory_bank_size: int = len(self.memory_bank)
 		self.current_strategy: BaseStrategy = None
 		self.sub_to_item: dict = {}
-		self.last_proposed_item: Item = None	
+		self.last_proposed_item: Item = None
 
 		self._init_sub_to_item()
 
@@ -27,11 +26,10 @@ class Player2(Player):
 			self.current_strategy = Strategy1()
 		else:
 			self.current_strategy = Strategy2()
-	
+
 	def _init_sub_to_item(self):
 		for item in self.memory_bank:
 			subjects = tuple(sorted(list(item.subjects)))
 			if subjects not in self.sub_to_item:
 				self.sub_to_item[subjects] = []
 			self.sub_to_item[subjects].append(item)
-
