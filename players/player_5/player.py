@@ -14,9 +14,7 @@ class Player5(Player):
 	MIN_CANDIDATES_COUNT = 10  # configure for small banks
 	CANDIDATE_FRACTION = 0.2  # configure percentage for large banks
 
-	def __init__(
-		self, snapshot: PlayerSnapshot, ctx: GameContext
-	) -> None:
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
 		super().__init__(snapshot, ctx)
 		self.ctx = ctx
 		self.conversation_length = ctx.conversation_length
@@ -66,6 +64,7 @@ class Player5(Player):
 		shared_ranking = []
 		pref_ranking = []
 		importance_ranking = []
+		total_ranking = []
 
 		# speed up player: run through either the min baseline(smaller memories) or a percentage(larger ones)
 		candidates = max(
@@ -78,13 +77,30 @@ class Player5(Player):
 		for item in top_candidates:
 			new_history = history + [item]
 			self.score_engine.history = new_history
-			score = self.score_engine._Engine__calculate_scores()
+			shared_score = self.score_engine._Engine__calculate_scores()
+			self_score = self.individual_score(item)
 
-			shared_ranking.append((item, score['shared']))
-			pref_ranking.append((item, self.individual_score(item)))
+			shared_score = round(shared_score['shared'], 4)
+			self_score = round(self_score, 4)
+
+			print(
+				f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
+			)
+
+			total_ranking.append((item, shared_score + self_score))
+			shared_ranking.append((item, shared_score))
+			pref_ranking.append((item, self_score))
 			importance_ranking.append((item, item.importance))
 
 		# Sort each list descending (best first)
+
+		strategy = 'greedy'
+
+		if strategy == 'greedy':
+			total_ranking.sort(key=lambda x: x[1], reverse=True)
+			best_item = total_ranking[0][0]
+			return best_item
+
 		shared_ranking.sort(key=lambda x: x[1], reverse=True)
 		pref_ranking.sort(key=lambda x: x[1], reverse=True)
 		importance_ranking.sort(key=lambda x: x[1], reverse=True)
@@ -148,6 +164,5 @@ class Player5(Player):
 		highest_candidates = [item for item, s in scores.items() if s == best_score]
 		# if tied choose randomly so we don't constantly repeat picking the first max
 		best_item = random.choice(highest_candidates)
-
 
 		return best_item
