@@ -17,6 +17,7 @@ class Player0(Player):
 		history_score = self.calculate_history_score(history)
 		item_scores = self.calculate_greedy(history_score, history) #[item, score]
 		threshold = self.calculate_threshold(history_score, history)
+		print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
 
 		if not item_scores: #just an edge case in case our memory is empty
 			return None
@@ -62,7 +63,7 @@ class Player0(Player):
 		# return 0
 		# #return hist_avg_score
 
-		num_players = 2
+		num_players = self.number_of_players
 		hist_depth = 5 * num_players
 		turn_one_threshold = -1000
 
