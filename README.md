@@ -46,6 +46,7 @@ The `--player` argument allows you to specify the number of players of a certain
 | Code | Player Type |
 | :--- | :--- |
 | `pr` | RandomPlayer |
+| `prp` | RandomPausePlayer |
 | `pp` | PausePlayer |
 | `p0`-`p11` | Player0 through Player11 |
 
@@ -118,4 +119,3 @@ To test `Player1` against `Player2` without any other players, specify only thos
 ```bash
 uv run python main.py --player p1 1 --player p2 1 --length 20
 ```
-
