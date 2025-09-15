@@ -6,7 +6,7 @@ from collections import Counter
 from collections.abc import Iterable, Sequence
 
 from models.item import Item
-from models.player import Player, PlayerSnapshot
+from models.player import Player, PlayerSnapshot, GameContext
 
 # Creating a player for Group 10, working on RL agent
 
@@ -43,8 +43,8 @@ class Player10(Player):
 	"""
 
 	# -------- init --------
-	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:
-		super().__init__(snapshot, conversation_length)
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
+		super().__init__(snapshot, ctx)
 		self._seen_item_ids: set[uuid.UUID] = set()
 		self._S = len(self.preferences)
 		self._rank1: dict[int, int] = {subj: i + 1 for i, subj in enumerate(self.preferences)}
