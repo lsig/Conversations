@@ -48,7 +48,7 @@ class Engine:
 		for _ in range(player_count):
 			id = uuid.uuid4()
 			preferences = self.__generate_preference()
-			memory_bank = self.__generate_items()
+			memory_bank = self.__generate_items(player_id=id)
 
 			snapshot = PlayerSnapshot(id=id, preferences=preferences, memory_bank=memory_bank)
 
@@ -60,7 +60,7 @@ class Engine:
 	def __generate_preference(self) -> tuple[int]:
 		return tuple(random.sample(self.subjects, len(self.subjects)))
 
-	def __generate_items(self) -> tuple[Item, ...]:
+	def __generate_items(self, player_id: uuid.UUID) -> tuple[Item, ...]:
 		items: list[Item] = []
 
 		for _ in range(self.memory_size):
@@ -69,7 +69,9 @@ class Engine:
 			importance = round(random.random(), 2)
 			subjects = tuple(random.sample(self.subjects, samples))
 
-			item = Item(id=uuid.uuid4(), importance=importance, subjects=subjects)
+			item = Item(
+				id=uuid.uuid4(), player_id=player_id, importance=importance, subjects=subjects
+			)
 			items.append(item)
 
 		return tuple(items)
