@@ -66,7 +66,7 @@ class Strategy1(BaseStrategy):
 				context = context[context.index(None)+1:]
 
 			context_subs_sorted = self._get_subjects_counts_sorted(context, player)
-			print(f"Sorted: {context_subs_sorted}")
+			# print(f"Sorted: {context_subs_sorted}")
 			
 			
 			# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
@@ -84,7 +84,7 @@ class Strategy1(BaseStrategy):
 					most_valuable_item = max(items_with_subs, key=lambda item: self._get_overall_score(item, player))
 					player.last_proposed_item = most_valuable_item
 
-					print(f"Most valuable item: {most_valuable_item}")
+					# print(f"Most valuable item: {most_valuable_item}")
 					return most_valuable_item
 
 		return None
