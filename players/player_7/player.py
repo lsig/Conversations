@@ -66,10 +66,7 @@ class Player7(Player):
 					and subject in self.preferences[0:preference_threshold]
 					and (
 						pref_index < preference_threshold
-						or (
-							pref_index == highest_pref_index
-							and item.importance > importance
-						)
+						or (pref_index == highest_pref_index and item.importance > importance)
 					)
 				):
 					chosen_item = item
