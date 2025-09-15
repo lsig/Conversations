@@ -1,5 +1,5 @@
-from collections import Counter
 import random
+from collections import Counter
 
 from core.engine import Engine  # noqa: F821
 from models.player import GameContext, Item, Player, PlayerSnapshot
@@ -11,8 +11,8 @@ class self_engine(Engine):
 
 class Player5(Player):
 	# Speed up players: only run through certain amount of memory bank
-	MIN_CANDIDATES_COUNT = 10		# configure for small banks
-	CANDIDATE_FRACTION = 0.2	# configure percentage for large banks
+	MIN_CANDIDATES_COUNT = 10  # configure for small banks
+	CANDIDATE_FRACTION = 0.2  # configure percentage for large banks
 
 	def __init__(
 		self, snapshot: PlayerSnapshot, ctx: GameContext = None, conversation_length: int = None
@@ -54,7 +54,7 @@ class Player5(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if not self.memory_bank:
 			return None
-		
+
 		# Create a temporary engine for shared scoring
 		self.score_engine = self_engine(
 			players=[],
@@ -73,7 +73,9 @@ class Player5(Player):
 		importance_ranking = []
 
 		# speed up player: run through either the min baseline(smaller memories) or a percentage(larger ones)
-		candidates = max(self.MIN_CANDIDATES_COUNT, int(len(self.memory_bank) * self.CANDIDATE_FRACTION))
+		candidates = max(
+			self.MIN_CANDIDATES_COUNT, int(len(self.memory_bank) * self.CANDIDATE_FRACTION)
+		)
 		top_candidates = self.memory_bank[:candidates]
 		if not top_candidates:
 			return None
@@ -112,21 +114,26 @@ class Player5(Player):
 
 		# Add freshness bonus after pause
 		last_pause = max((index for index, item in enumerate(history) if item is None), default=-1)
-		history_post_pause = history[last_pause + 1:]
-		subjects_post_pause = {subject for item in history_post_pause if item is not None for subject in item.subjects}
+		history_post_pause = history[last_pause + 1 :]
+		subjects_post_pause = {
+			subject for item in history_post_pause if item is not None for subject in item.subjects
+		}
 
 		for item in self.memory_bank:
 			if turns_left <= 3:
 				# lean into more important topics
 				scores[item] = (
 					1 / (k + shared_map.get(item, len(self.memory_bank)))
-					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))  
-					+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank)))) # triple 
+					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))
+					+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank))))  # triple
 				)
 			else:
 				scores[item] = (
 					1 / (k + shared_map.get(item, len(self.memory_bank)))
-					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))  # weight preferences higher
+					+ 2
+					* (
+						1 / (k + pref_map.get(item, len(self.memory_bank)))
+					)  # weight preferences higher
 					+ 1 / (k + imp_map.get(item, len(self.memory_bank)))
 				)
 
@@ -135,11 +142,13 @@ class Player5(Player):
 				scores[item] -= 1
 
 			# freshness: count how many subjects of an item hasn't been mentioned since pause
-			new_subject_count = sum(1 for subject in item.subjects if subject not in subjects_post_pause)
+			new_subject_count = sum(
+				1 for subject in item.subjects if subject not in subjects_post_pause
+			)
 			scores[item] += new_subject_count
 
 		# Pick best
-		#best_item = max(scores.items(), key=lambda x: x[1])[0]
+		# best_item = max(scores.items(), key=lambda x: x[1])[0]
 		best_score = max(scores.values())
 		highest_candidates = [item for item, s in scores.items() if s == best_score]
 		# if tied choose randomly so we don't constantly repeat picking the first max
