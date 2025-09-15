@@ -102,7 +102,7 @@ class Strategy3(BaseStrategy):
 			coherence = coherence_score(temp_history, idx, candidate)
 			freshness = freshness_score(temp_history, idx, candidate)
 			nonmono = nonmonotonousness_score(temp_history, idx, candidate)
-			#indiv = individual_bonus(candidate)
+			# indiv = individual_bonus(candidate)
 
 			# If repeated (not possible here due to skip) importance & others would be zero/penalty.
 			shared_total = importance + coherence + freshness + nonmono
