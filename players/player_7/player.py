@@ -1,5 +1,5 @@
 
-from models.player import Item, Player, PlayerSnapshot, GameContext
+from models.player import GameContext, Item, Player, PlayerSnapshot
 
 
 class Player7(Player):
@@ -7,9 +7,8 @@ class Player7(Player):
 		super().__init__(snapshot, ctx)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		if len(history) > 0:
-			if history[-1] is not None and history[-1].player_id == self.id:
-				self.contributed_items.append(history[-1])
+		if len(history) > 0 and history[-1] is not None and history[-1].player_id == self.id:
+			self.contributed_items.append(history[-1])
 
 		# if its first turn or previous was a pause
 		if len(history) == 0 or history[-1] is None:
@@ -61,14 +60,14 @@ class Player7(Player):
 					if pref_index < preference_threshold or (pref_index ==highest_pref_index and item.importance > importance):
 						chosen_item = item
 						importance = item.importance
+						highest_pref_index = pref_index
 		
 		# If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
 		if chosen_item is None:
 			for item in self.memory_bank:
-				if item not in history:
-					if item.importance > importance:
-						chosen_item = item
-						importance = item.importance
+				if item not in history and item.importance > importance:
+					chosen_item = item
+					importance = item.importance
 		# Return item with highest importance that is not in history.
 		return chosen_item if chosen_item else None
 
