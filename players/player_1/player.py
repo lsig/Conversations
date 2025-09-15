@@ -1,12 +1,11 @@
 from uuid import UUID
 
-from models.player import Item, Player, PlayerSnapshot, GameContext
-from collections import Counter
+from models.player import Item, Player, PlayerSnapshot
 
 
 class Player1(Player):
-	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
-		super().__init__(snapshot, ctx)
+	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
+		super().__init__(snapshot, conversation_length)
 
 		self.subj_pref_ranking = {
 			subject: snapshot.preferences.index(subject) for subject in snapshot.preferences
@@ -14,8 +13,8 @@ class Player1(Player):
 		# player snapshot includes preferences and memory bank of items to contribute
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		#print('\nCurrent Memory Bank: ', self.memory_bank)
-		#print('\nConversation History: ', history)
+		print('\nCurrent Memory Bank: ', self.memory_bank)
+		print('\nConversation History: ', history)
 
 		# If history length is 0, return the first item from preferred sort ( Has the highest Importance)
 		if len(history) == 0:
@@ -26,12 +25,12 @@ class Player1(Player):
 
 		# This Checks Repitition so we dont repeat any item that has already been said in the history, returns a filtered memory bank
 		filtered_memory_bank = check_repetition(history, self.used_items, self.memory_bank)
-		#print('\nFiltered Memory Bank: ', filtered_memory_bank)
+		print('\nFiltered Memory Bank: ', filtered_memory_bank)
 
 		# Return None if there are no valid items to propose
 		# This can be changed in future just incase we run out of things to say and have to repeat. Not sure if this is possible
 		if len(filtered_memory_bank) == 0:
-			#print('No valid items to propose after filtering')
+			print('No valid items to propose after filtering')
 			# Use importance score if no items are left after filtering
 			memory_bank_imp = importance_sort(self.memory_bank)
 			return memory_bank_imp[0] if memory_bank_imp else None

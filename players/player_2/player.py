@@ -1,14 +1,9 @@
-from models.player import Item, Player, PlayerSnapshot, GameContext
-from collections import Counter
+from models.player import Item, Player, PlayerSnapshot
 
 
 class Player2(Player):
-	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
-		super().__init__(snapshot, ctx)
-
-		self.subj_pref_ranking = {
-			subject: snapshot.preferences.index(subject) for subject in snapshot.preferences
-		}
+	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
+		super().__init__(snapshot, conversation_length)
 
 	def propose_item(self, history: list[Item]) -> Item | None:
 		# Sort items by importance
