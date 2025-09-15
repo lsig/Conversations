@@ -1,4 +1,5 @@
 from collections import Counter
+import random
 
 from core.engine import Engine  # noqa: F821
 from models.player import GameContext, Item, Player, PlayerSnapshot
@@ -9,6 +10,10 @@ class self_engine(Engine):
 
 
 class Player5(Player):
+	# Speed up players: only run through certain amount of memory bank
+	MIN_CANDIDATES_COUNT = 10		# configure for small banks
+	CANDIDATE_FRACTION = 0.2	# configure percentage for large banks
+
 	def __init__(
 		self, snapshot: PlayerSnapshot, ctx: GameContext = None, conversation_length: int = None
 	) -> None:
@@ -67,8 +72,13 @@ class Player5(Player):
 		pref_ranking = []
 		importance_ranking = []
 
-		# NOTE: if player speed is slow likely because of this
-		for item in self.memory_bank:
+		# speed up player: run through either the min baseline(smaller memories) or a percentage(larger ones)
+		candidates = max(self.MIN_CANDIDATES_COUNT, int(len(self.memory_bank) * self.CANDIDATE_FRACTION))
+		top_candidates = self.memory_bank[:candidates]
+		if not top_candidates:
+			return None
+
+		for item in top_candidates:
 			new_history = history + [item]
 			self.score_engine.history = new_history
 			score = self.score_engine._Engine__calculate_scores()
@@ -93,18 +103,41 @@ class Player5(Player):
 		# RRF parameters
 		k = 60
 		scores = {}
+		# Nearing the end, maximize individaul score by preferring high importance topics
+		turns_left = self.conversation_length - len(history)
+
+		# Track subject repetition
+		recent_subjects = [s for item in history[-3:] for s in item.subjects]
+		count_recent = Counter(recent_subjects)
 
 		for item in self.memory_bank:
-			scores[item] = (
-				1 / (k + shared_map[item])
-				+ 2 * (1 / (k + pref_map[item]))  # weight preferences higher
-				+ 1 / (k + imp_map[item])
-			)
+			if turns_left <= 3:
+				# lean into more important topics
+				scores[item] = (
+					1 / (k + shared_map.get(item, len(self.memory_bank)))
+					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))  
+					+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank)))) # triple 
+				)
+			else:
+				scores[item] = (
+					1 / (k + shared_map.get(item, len(self.memory_bank)))
+					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))  # weight preferences higher
+					+ 1 / (k + imp_map.get(item, len(self.memory_bank)))
+				)
+
+			if any(count_recent[subject] >= 3 for subject in item.subjects):
+				# non-monotnous penalty
+				scores[item] -= 1
 
 		# Pick best
-		best_item = max(scores.items(), key=lambda x: x[1])[0]
+		#best_item = max(scores.items(), key=lambda x: x[1])[0]
+		best_score = max(scores.values())
+		highest_candidates = [item for item, s in scores.items() if s == best_score]
+		# if tied choose randomly so we don't constantly repeat picking the first max
+		best_item = random.choice(highest_candidates)
+
 		# remove after selection
 		if best_item in self.memory_bank:
 			self.memory_bank.remove(best_item)
-			
+
 		return best_item
