@@ -152,12 +152,26 @@ class BayesianTreeBeamSearch():
                     tree.leaf_branch_backward_prunning(node)
 
             level += 1
+                    
+    # def backward_get_best_candidate(self, node:BayesianTreeNode, root_for_score:BayesianTreeNode):
+    #     # Recursive: pick the best scoring leaf in the subtree
+    #     if node.is_leaf():
+    #         score = self._compute_normalized_expectation(node, root_for_score)
+    #         return node, score
+    #     best_node = None
+    #     best_score = float('-inf')
+    #     # best_score = self._compute_normalized_expectation(node, root_for_score)
+    #     for child in node.childs:
+    #         candidate_node, candidate_score = self.backward_get_best_candidate(child, root_for_score)
+    #         if candidate_score > best_score:
+    #             best_node = candidate_node
+    #             best_score = candidate_score
+    #     return best_node, best_score
     
     def backward_get_best_candidate(self, node:BayesianTreeNode, root_for_score:BayesianTreeNode):
         # Recursive: pick the best scoring leaf in the subtree
         if node.is_leaf():
             score = self._compute_normalized_expectation(node, root_for_score)
-            # return node, score
             return None, score
         best_node = None
         # best_score = float('-inf')
@@ -165,7 +179,6 @@ class BayesianTreeBeamSearch():
         for child in node.childs:
             _, candidate_score = self.backward_get_best_candidate(child, root_for_score)
             if candidate_score > best_score:
-                # best_node = candidate_node
                 best_node = child ## !!!
                 best_score = candidate_score
         return best_node, best_score

@@ -10,7 +10,6 @@ from models.player import Player
 from players.pause_player import PausePlayer
 from players.random_player import RandomPlayer
 from players.zipper_player.player import ZipperPlayer
-from players.player_3.player import Player3
 
 from players.bayesian_tree_search_player.greedy_players import BalancedGreedyPlayer, SelflessGreedyPlayer, SelfishGreedyPlayer
 from players.bayesian_tree_search_player.bst_players import BayesTreeBeamLow, BayesTreeBeamMedium, BayesTreeBeamHigh, BayesTreeDynamicStandard, BayesTreeDynamicWidth
@@ -20,11 +19,6 @@ from players.bayesian_tree_search_player.bst_players import BayesTreeBeamLow, Ba
 g_player_classes = {
 		'pr': RandomPlayer,
 		'pp': PausePlayer,
-  
-		# Final Player to present.
-		'p3': Player3,
-  
-		# zipper player
 		'p_zipper': ZipperPlayer,
   
 		# greedy players
