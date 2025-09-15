@@ -1,5 +1,7 @@
 import heapq
-from models.player import GameContext, Item, Player, PlayerSnapshot
+
+from models.item import Item
+from models.player import Player, PlayerSnapshot
 
 class ZipperPlayer(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
