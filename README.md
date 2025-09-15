@@ -119,3 +119,4 @@ To test `Player1` against `Player2` without any other players, specify only thos
 ```bash
 uv run python main.py --player p1 1 --player p2 1 --length 20
 ```
+
