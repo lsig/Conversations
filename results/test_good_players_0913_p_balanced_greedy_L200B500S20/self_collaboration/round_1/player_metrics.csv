@@ -1,2 +1,0 @@
-type,player_numbers,score,individual,shared_score,involvement_ratio,contributed_individual_score,contributed_shared_score,importance,coherence,freshness,nonmonotone
-BalancedGreedyPlayer,10,0.8186,0.0736,0.7450,0.9850,0.7467,0.7564,0.6701,0.9695,0.0305,-0.9137

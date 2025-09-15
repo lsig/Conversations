@@ -1,3 +1,0 @@
-type,player_numbers,score,individual,shared_score,involvement_ratio,contributed_individual_score,contributed_shared_score,importance,coherence,freshness,nonmonotone
-RandomPlayer,8,-0.49,0.06,-0.55,1.17,0.53,-0.66,0.19,-0.24,0.00,-0.61
-BalancedGreedyPlayer,2,-0.53,0.02,-0.55,0.32,0.57,1.05,0.59,0.48,0.00,-0.01
