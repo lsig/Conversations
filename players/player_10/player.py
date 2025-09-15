@@ -226,7 +226,12 @@ class Player10(Player):
 				best_score = score
 				best_item = item
 
-		return best_item if best_score >= 0 else None
+		last_score = self._calculate_turn_score_impact(history[-1], history[:-1])['total'] if len(history) > 1 else 0
+		self.last_scores.append(last_score)
+		avg_last_score = sum(self.last_scores) / len(self.last_scores)
+
+		return best_item if best_score >= avg_last_score else None
+
 
 	def _calculate_turn_score_impact(self, item: Item | None, history: list[Item]) -> dict:
 		if item is None:
