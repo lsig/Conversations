@@ -57,21 +57,24 @@ class Player10(Player):
 
 		# Get cumulative scores so far for this player
 		cumulative_scores = self.get_cumulative_score(history)
-		
+
 		# You can now use cumulative_scores to make informed decisions:
 		# - cumulative_scores['total'] - total score so far
 		# - cumulative_scores['importance'] - importance component
-		# - cumulative_scores['coherence'] - coherence component  
+		# - cumulative_scores['coherence'] - coherence component
 		# - cumulative_scores['freshness'] - freshness component
 		# - cumulative_scores['nonmonotonousness'] - nonmonotonousness component
 		# - cumulative_scores['individual'] - individual bonus for this player
-		
+
 		# Example: If our individual score is low, prioritize items that benefit us
 		if cumulative_scores['individual'] < 0.5 and len(history) > 2:
 			# Look for items that align with our preferences
 			preference_items = [
-				item for item in self._iter_unused_items()
-				if any(s in self.preferences[:3] for s in self._subjects_of(item))  # Top 3 preferences
+				item
+				for item in self._iter_unused_items()
+				if any(
+					s in self.preferences[:3] for s in self._subjects_of(item)
+				)  # Top 3 preferences
 				and not self._is_repeated(item, history)
 			]
 			if preference_items:
@@ -99,11 +102,11 @@ class Player10(Player):
 	def get_cumulative_score(self, history: list[Item]) -> dict[str, float]:
 		"""
 		Calculate the cumulative score so far for each scoring component.
-		
+
 		Returns a dictionary with:
 		- 'total': total cumulative score
 		- 'importance': cumulative importance score
-		- 'coherence': cumulative coherence score  
+		- 'coherence': cumulative coherence score
 		- 'freshness': cumulative freshness score
 		- 'nonmonotonousness': cumulative nonmonotonousness score
 		- 'individual': cumulative individual bonus for this player
@@ -140,7 +143,9 @@ class Player10(Player):
 				total_importance += item.importance
 				total_coherence += self._calculate_coherence_score(i, item, history)
 				total_freshness += self._calculate_freshness_score(i, item, history)
-				total_nonmonotonousness += self._calculate_nonmonotonousness_score(i, item, False, history)
+				total_nonmonotonousness += self._calculate_nonmonotonousness_score(
+					i, item, False, history
+				)
 
 			# Calculate individual bonus
 			bonuses = [
@@ -201,37 +206,40 @@ class Player10(Player):
 
 		# Get current cumulative scores for context-aware decision making
 		cumulative_scores = self.get_cumulative_score(history)
-		
+
 		for item in self.memory_bank:
 			if self._is_repeated(item, history):
 				continue
 			impact = self._calculate_turn_score_impact(item, history)
 			score = impact['total']
-			
+
 			# Example RL-style scoring adjustments based on cumulative state:
 			# If we're behind on individual score, boost items that help us
 			if cumulative_scores['individual'] < 1.0:
 				individual_bonus = impact.get('individual', 0.0)
 				score += individual_bonus * 0.5  # 50% bonus for individual benefit
-			
+
 			# If conversation is struggling with coherence, prioritize coherence
 			if cumulative_scores['coherence'] < 0 and impact.get('coherence', 0) > 0:
 				score += 0.3  # Bonus for improving coherence
-			
+
 			# If we need freshness boost, prioritize fresh items
 			if cumulative_scores['freshness'] < 1.0 and impact.get('freshness', 0) > 0:
 				score += 0.2  # Bonus for adding freshness
-			
+
 			if score > best_score:
 				best_score = score
 				best_item = item
 
-		last_score = self._calculate_turn_score_impact(history[-1], history[:-1])['total'] if len(history) > 1 else 0
+		last_score = (
+			self._calculate_turn_score_impact(history[-1], history[:-1])['total']
+			if len(history) > 1
+			else 0
+		)
 		self.last_scores.append(last_score)
 		avg_last_score = sum(self.last_scores) / len(self.last_scores)
 
 		return best_item if best_score >= avg_last_score else None
-
 
 	def _calculate_turn_score_impact(self, item: Item | None, history: list[Item]) -> dict:
 		if item is None:
@@ -278,7 +286,7 @@ class Player10(Player):
 		if i > 0 and history[i - 1] is not None:
 			return 0.0
 
-		prior_items = (item for item in history[max(0, i - 6):i - 1] if item is not None)
+		prior_items = (item for item in history[max(0, i - 6) : i - 1] if item is not None)
 		prior_subjects = {s for item in prior_items for s in item.subjects}
 		novel_subjects = [s for s in current_item.subjects if s not in prior_subjects]
 		return float(len(novel_subjects))
@@ -286,13 +294,13 @@ class Player10(Player):
 	def _calculate_coherence_score(self, i: int, current_item: Item, history: list[Item]) -> float:
 		"""Calculate coherence score for a specific item."""
 		context_items = []
-		
+
 		# Past up to 3 (stop at pause)
 		for j in range(i - 1, max(-1, i - 4), -1):
 			if j < 0 or history[j] is None:
 				break
 			context_items.append(history[j])
-		
+
 		# Future side (usually empty at proposal time)
 		for j in range(i + 1, min(len(history), i + 4)):
 			if history[j] is None:
@@ -301,25 +309,26 @@ class Player10(Player):
 
 		context_subject_counts = Counter(s for item in context_items for s in item.subjects)
 		score = 0.0
-		
+
 		if not all(subject in context_subject_counts for subject in current_item.subjects):
 			score -= 1.0
 		if all(context_subject_counts.get(s, 0) >= 2 for s in current_item.subjects):
 			score += 1.0
-		
+
 		return score
 
-	def _calculate_nonmonotonousness_score(self, i: int, current_item: Item, repeated: bool, history: list[Item]) -> float:
+	def _calculate_nonmonotonousness_score(
+		self, i: int, current_item: Item, repeated: bool, history: list[Item]
+	) -> float:
 		"""Calculate nonmonotonousness score for a specific item."""
 		if repeated:
 			return -1.0
 		if i < 3:
 			return 0.0
-		
+
 		last_three_items = [history[j] for j in range(i - 3, i)]
 		if all(
-			item is not None
-			and any(s in item.subjects for s in current_item.subjects)
+			item is not None and any(s in item.subjects for s in current_item.subjects)
 			for item in last_three_items
 		):
 			return -1.0
@@ -481,7 +490,7 @@ class Player10(Player):
 	def get_game_state(self, history: list[Item]) -> dict:
 		"""
 		Get a comprehensive game state representation for RL training.
-		
+
 		Returns a dictionary containing:
 		- cumulative_scores: Current cumulative scores
 		- turn_info: Turn number, consecutive pauses, etc.
@@ -489,19 +498,23 @@ class Player10(Player):
 		- recent_context: Recent conversation context
 		"""
 		cumulative_scores = self.get_cumulative_score(history)
-		
+
 		# Available items analysis
 		available_items = []
 		for item in self._iter_unused_items():
 			impact = self._calculate_turn_score_impact(item, history)
-			available_items.append({
-				'id': str(item.id),
-				'importance': item.importance,
-				'subjects': item.subjects,
-				'predicted_impact': impact,
-				'aligns_with_preferences': any(s in self.preferences[:3] for s in item.subjects),
-			})
-		
+			available_items.append(
+				{
+					'id': str(item.id),
+					'importance': item.importance,
+					'subjects': item.subjects,
+					'predicted_impact': impact,
+					'aligns_with_preferences': any(
+						s in self.preferences[:3] for s in item.subjects
+					),
+				}
+			)
+
 		# Recent context analysis
 		recent_context = {
 			'last_was_pause': self._last_was_pause(history),
@@ -509,16 +522,16 @@ class Player10(Player):
 			'recent_subjects': set(),
 			'our_contributions': 0,
 		}
-		
+
 		# Analyze last 5 turns
 		for item in history[-5:]:
 			if item is not None:
 				recent_context['recent_subjects'].update(item.subjects)
 				if item.player_id == self.id:
 					recent_context['our_contributions'] += 1
-		
+
 		recent_context['recent_subjects'] = list(recent_context['recent_subjects'])
-		
+
 		return {
 			'cumulative_scores': cumulative_scores,
 			'turn_info': {
