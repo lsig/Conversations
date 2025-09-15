@@ -60,16 +60,21 @@ class Player7(Player):
 				pref_index = self.preferences.index(
 					subject
 				)  # get index of subject in preferences list
+				# formatted long if using copilot
 				if (
 					times_mentioned in range(1, 3)
 					and subject in self.preferences[0:preference_threshold]
-				):  # noqa: SIM102
-					if pref_index < preference_threshold or (
-						pref_index == highest_pref_index and item.importance > importance
-					):
-						chosen_item = item
-						importance = item.importance
-						highest_pref_index = pref_index
+					and (
+						pref_index < preference_threshold
+						or (
+							pref_index == highest_pref_index
+							and item.importance > importance
+						)
+					)
+				):
+					chosen_item = item
+					importance = item.importance
+					highest_pref_index = pref_index
 
 		# If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
 		if chosen_item is None:
