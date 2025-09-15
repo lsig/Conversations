@@ -4,24 +4,24 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 
 
 class Player3(Player):
-	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821 
-		super().__init__(snapshot, ctx) 
-		self.ID_dict = dict() 
-		# maps IDs to items 
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
+		super().__init__(snapshot, ctx)
+		self.ID_dict = dict()
+		# maps IDs to items
 
-		self.blocks = dict() 
-		# Good conversation continuers "middle of the zipper" 
+		self.blocks = dict()
+		# Good conversation continuers "middle of the zipper"
 
-		self.High_topics = self.preferences[: len(self.preferences) // 2] 
+		self.High_topics = self.preferences[: len(self.preferences) // 2]
 
-		self.started_subject = set() 
+		self.started_subject = set()
 
-		self.previous_item = [-1] 
+		self.previous_item = [-1]
 
 		# Sets self.starters to be a heap of items that have high importance and high self value
 		# sets self.blocks to be a heap of items that have high importance
 		optimal_p = Player3.best_p_value(self)
-		#print('optimal_p', optimal_p)
+		# print('optimal_p', optimal_p)
 		for item in self.memory_bank:
 			self.ID_dict[item.id] = item
 			if len(item.subjects) == 2:
