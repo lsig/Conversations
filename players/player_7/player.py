@@ -62,7 +62,7 @@ class Player7(Player):
 			for subject in item.subjects:
 				times_mentioned = subject_count[subject]
 				pref_index = self.preferences.index(subject) # get index of subject in preferences list
-				if times_mentioned in range(0, 3) and subject in self.preferences[0:preference_threshold]:  # noqa: SIM102
+				if times_mentioned in range(1, 3) and subject in self.preferences[0:preference_threshold]:  # noqa: SIM102
 					if pref_index < preference_threshold or (pref_index ==highest_pref_index and item.importance > importance):
 						chosen_item = item
 						importance = item.importance
