@@ -8,7 +8,7 @@ from collections.abc import Iterable, Sequence
 from models.item import Item
 from models.player import Player, PlayerSnapshot
 
-# Creating a player for Group 10
+# Creating a player for Group 10, working on RL agent
 
 
 class Player10(Player):
