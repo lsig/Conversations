@@ -180,8 +180,8 @@ class Player4(Player):
 		if not scored:
 			return None
 		best_score = max(s for s, _ in scored)
-		print(best_score)
-		print(history)
+		#print(best_score)
+		#print(history)
 		if len(history) != 0 and best_score < 1:
 			return None
 
