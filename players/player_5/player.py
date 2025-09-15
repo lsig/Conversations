@@ -17,11 +17,9 @@ class Player5(Player):
 	def __init__(
 		self, snapshot: PlayerSnapshot, ctx: GameContext, conversation_length: int = None
 	) -> None:
-		
 		super().__init__(snapshot, ctx)
 		self.ctx = ctx
 		self.conversation_length = ctx.conversation_length
-
 
 		self.snapshot = snapshot
 
