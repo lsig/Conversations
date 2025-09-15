@@ -2,6 +2,14 @@
 
 A multi-agent conversation simulation where players contribute items from their memory banks to create coherent, high-quality discussions. Players balance individual preferences with shared conversation goals to optimize collective and personal scores.
 
+## Features
+
+- **Multi-Agent Simulation**: Support for various player types with different strategies
+- **Advanced AI Players**: Bayesian Tree Search players with configurable search depths and competition rates
+- **Comprehensive Analysis**: Built-in tools for per-player and per-type performance analysis
+- **Flexible Configuration**: Extensive CLI options for custom experiments
+- **Visualization**: GUI mode for real-time conversation visualization
+- **Batch Testing**: Automated test pipelines with statistical analysis
 
 ## Project Structure
 
@@ -65,6 +73,7 @@ The simulation can be configured using a variety of command-line arguments. If n
 
 | Argument | Default | Description |
 | :--- | :--- | :--- |
+| `--gui` | `False` | Launches the graphical user interface to visualize the simulation |
 | `--subjects` | `20` | Number of unique subjects in the simulation |
 | `--memory_size` | `10` | Number of items each player has in their memory bank |
 | `--length` | `10` | Maximum number of turns for the conversation |
@@ -74,12 +83,15 @@ The simulation can be configured using a variety of command-line arguments. If n
 
 | Argument | Default | Description |
 | :--- | :--- | :--- |
-| `--gui` | `False` | Launches the graphical user interface to visualize the simulation |
 | `--output_path` | `results` | Directory for saving simulation outputs |
 | `--test_player` | `None` | Player type code to highlight in analysis reports |
 | `--detailed` | `False` | Save per-round JSON/TXT/CSV files in addition to summary |
-| `--rounds` | `1` | Number of simulation rounds with different seeds |
 
+#### Experiment Options
+
+| Argument | Default | Description |
+| :--- | :--- | :--- |
+| `--rounds` | `1` | Number of simulation rounds with different seeds |
 
 #### Player Configuration
 
@@ -109,13 +121,59 @@ The `--player` argument allows you to specify the number of players of a certain
 
 ---
 
+### Code Quality and Formatting
 
+The repository uses Ruff for both formatting and linting, if your PR does not pass the CI checks it won't be merged.
+
+VSCode has a Ruff extension that can run on save. [Editor Setup](https://docs.astral.sh/ruff/editors/setup/).
+
+To run formatting check:
+
+```bash
+uv run ruff format --check
+```
+
+To run formatting:
+
+```bash
+uv run ruff format
+```
+
+To run linting:
+
+```bash
+uv run ruff check
+```
+
+To run linting with auto-fix:
+
+```bash
+uv run ruff check --fix
+```
+
+---
+
+## Usage Examples
 
 ### Basic Usage
 
 Run a simple simulation with random players:
 ```bash
 uv run main.py --player pr 5 --length 20
+```
+
+### GUI Mode
+
+Launch with visualization:
+```bash
+uv run main.py --gui --player p_balanced_greedy 3 --player pr 2 --length 30
+```
+
+### Advanced Players
+
+Test Bayesian Tree Search players:
+```bash
+uv run main.py --player p_bst_medium 2 --player p_selfless_greedy 2 --length 50
 ```
 
 ### Batch Experiments
@@ -132,14 +190,25 @@ uv run main.py \
   --output_path results/experiment1
 ```
 
-### Output Files
-- `results.csv`: Per-type performance summary across rounds
-- `simulation_results.json`: Complete conversation data
-- `analysis.txt`: Human-readable performance report
-- `player_metrics.csv`: Per-player detailed metrics
+### Head-to-Head Comparison
 
+Compare different strategies:
+```bash
+uv run main.py --player p_bst_medium 1 --player p_selfish_greedy 1 --length 40
+```
 
-## What's New? 
+## Scoring System
+
+### Shared Goals (affect all players)
+- **Importance**: Sum of item importance values
+- **Coherence**: ±1 based on subject overlap with context window
+- **Freshness**: Bonus for introducing novel subjects after pauses
+- **Non-monotonousness**: Penalty for repetitive subject sequences
+- **Non-repetition**: Repeated items get zero score
+
+### Individual Goals
+- **Preference Bonus**: Based on player's ranked subject preferences
+- Items with preferred subjects get higher individual scores
 
 - **Analysis utilities (`core/utils.py`)**:
   - Added `CustomEncoder` for safe JSON export (handles `Item`, `UUID`, and nested dict keys).
@@ -168,6 +237,11 @@ uv run main.py \
   - The `--player` flag accepts any known code from `main.py` (validation relaxed).
   - Returns a `Settings` dataclass with derived `total_players`.
 
+### Output Files
+- `results.csv`: Per-type performance summary across rounds
+- `simulation_results.json`: Complete conversation data
+- `analysis.txt`: Human-readable performance report
+- `player_metrics.csv`: Per-player detailed metrics
 
 ---
 
