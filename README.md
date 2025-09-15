@@ -46,7 +46,6 @@ The `--player` argument allows you to specify the number of players of a certain
 | Code | Player Type |
 | :--- | :--- |
 | `pr` | RandomPlayer |
-| `prp` | RandomPausePlayer |
 | `pp` | PausePlayer |
 | `p0`-`p11` | Player0 through Player11 |
 
