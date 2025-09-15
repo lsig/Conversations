@@ -2,6 +2,8 @@ from collections import Counter
 
 from models.player import GameContext, Item, Player, PlayerSnapshot
 
+#player 6, 10
+
 
 class Player9(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
@@ -19,7 +21,7 @@ class Player9(Player):
 		history_score = self.calculate_history_score(history)
 		item_scores = self.calculate_greedy(history_score, history)  # [item, score]
 		threshold = self.calculate_threshold(history_score, history)
-		# print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
+		#print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
 
 		if not item_scores:  # just an edge case in case our memory is empty
 			return None
@@ -29,8 +31,11 @@ class Player9(Player):
 		if self.check_two_pause(history):
 			if item_scores[1] > 0.1:  # number is arbitrary, but should be at least 0
 				return item_scores[0]
-		else:
-			return None
+		if self.conversation_length == (len(history) + 1): #last turn
+			last_turn_threshold = max(0, max(self.conversation_length / 100, -1))
+			if item_scores[1] > last_turn_threshold:
+				return item_scores[0]
+		return None
 
 	def check_two_pause(self, history: list[Item]) -> bool:
 		# print (history)
