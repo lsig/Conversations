@@ -52,7 +52,6 @@ class Player4(Player):
 		out.reverse()
 		return out
 
-
 	def _preference_tiebreak_key(self, item: Item) -> tuple[int, int, str]:
 		"""
 		Lower is better. Uses:
@@ -62,14 +61,11 @@ class Player4(Player):
 		Subjects not found in preferences rank after all known preferences.
 		"""
 		n = len(self.preferences)
-		idxs = [
-			(self.preferences.index(s) if s in self.preferences else n)
-			for s in item.subjects
-		]
+		idxs = [(self.preferences.index(s) if s in self.preferences else n) for s in item.subjects]
 		best = min(idxs) if idxs else n
 		total = sum(idxs) if idxs else n * 2
 		return (best, total, str(item.id))
-	
+
 	def _score_candidate(self, item: Item, history: list[Item | None]) -> float:
 		score = 0.0
 
@@ -103,9 +99,9 @@ class Player4(Player):
 			unseen_count = sum(1 for s in item.subjects if s not in seen)
 
 			if unseen_count >= 2:
-				score += 2.0     # two or more unseen subjects → +2
+				score += 2.0  # two or more unseen subjects → +2
 			elif unseen_count >= 1:
-				score += 1.0     # exactly one unseen subject → +1
+				score += 1.0  # exactly one unseen subject → +1
 
 		# Coherence relative to up to 3 preceding (no following at the end)
 		# Window cannot extend across a pause.
