@@ -1,25 +1,34 @@
+import random
 from collections import Counter
 
 from models.item import Item
 from models.player import Player
 from players.player_2.BaseStrategy import BaseStrategy
+from players.player_2.Strategy_1 import Strategy1
 
 
-class Strategy1(BaseStrategy):
+class CoherentStrategy(BaseStrategy):
 	def __init__(self):
 		super().__init__()
+		self.obs_num = 0
+		self.strategy1 = Strategy1()
 
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
 		turn_nr = len(history) + 1
-		# print(f"Turn nr {turn_nr} / {player.conversation_length}")
 
-		# If last proposed item was accepted, remove it from memory bank and sub_to_item
-		if turn_nr > 1 and history[-1] == player.last_proposed_item:
-			# print(f"Remove last proposed item: {player.last_proposed_item}")
+		# Determine observation period
+		num_p = player.number_of_players
+		c_len = player.conversation_length
+		self.obs_num = num_p
+		if num_p - 1 > c_len // 3:
+			self.obs_num = c_len // 3
 
+		# Remove if proposal was accepted last turn
+		if turn_nr > 1 and history[-1] is not None and history[-1] == player.last_proposed_item:
 			last_proposed_subjects = tuple(sorted(list(player.last_proposed_item.subjects)))
-			player.memory_bank.remove(player.last_proposed_item)
 			player.sub_to_item[last_proposed_subjects].remove(player.last_proposed_item)
+			if len(player.sub_to_item[last_proposed_subjects]) == 0:
+				del player.sub_to_item[last_proposed_subjects]
 
 			# If we still have items with those subjects, propose the most valuable one
 			if (
@@ -35,31 +44,21 @@ class Strategy1(BaseStrategy):
 				player.last_proposed_item = most_valuable_item
 				return most_valuable_item
 
-		# Comment this out before merge!!!
-		# for subs, items in player.sub_to_item.items():
-		# 	print(f"Subjects: {subs}, Importances: {[item.importance for item in items]}")
+		# Observe
+		if turn_nr <= self.obs_num:
+			# If last turn the second pause occurred then try to be coherent no matter what
+			if len(history) > 0 and history[-1] is None and history.count(None) == 2:
+				return self.strategy1.propose_item(player, history)
 
-		# For the first turn, propose an item I can further be coherent with
-		# Do the same if in the previous turn there was a pause
-		if turn_nr == 1 or turn_nr > 1 and history[-1] is None:
-			# print("Here in first turn or after pause")
-			# Get the items with the most frequent occurring subject in memory bank
-			# print(player.sub_to_item.items())
-			_, coherent_items = next(iter(player.sub_to_item.items()))
-			# print(f"Coherent items: {coherent_items}")
+			if num_p > 2 and (turn_nr == 1 or (turn_nr > 1 and history[-1] is not None)):
+				# in observation period and other people are talking - so don't propose anything
+				return None
 
-			# Pick the most valuable item
-			most_valuable_item = max(
-				coherent_items, key=lambda item: self._get_overall_score(item, player)
-			)
-			player.last_proposed_item = most_valuable_item
+		# go for freshness
+		if history[-1] is None:
+			return self._freshness(player, history)
 
-			# print(f"Most valuable item: {most_valuable_item}")
-			return most_valuable_item
-
-		# After the first turn, check history to decide proposal
-		if turn_nr > 1:
-			# print("Here after first turn")
+		else:
 			context = history[-3:]
 			# Context doesn't extend over pause
 			if None in context:
@@ -71,6 +70,7 @@ class Strategy1(BaseStrategy):
 			# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 			# If there are no items in memory bank that match the subjects in context, then pause
 			for subs, subs_count in context_subs_sorted:
+				# If a subject already occurred thrice then we don't want to be monotonous
 				if subs_count < 3:
 					items_with_subs = player.sub_to_item.get(subs, []).copy()
 					# If there is only one subject, also get items with two subjects including that subject
@@ -85,6 +85,10 @@ class Strategy1(BaseStrategy):
 							]
 						)
 
+					# If the subject only occurred once in the context and we only have one item with this subject, propose it with 50/50 chance
+					if subs_count == 1 and len(items_with_subs) == 1 and random.uniform(0, 1) < 0.7:
+						continue
+
 					# print(f"Items with subjects {subs}: {items_with_subs}")
 					# If we have an item with fitting subjects, propose the most valuable one
 					if items_with_subs:
@@ -96,7 +100,7 @@ class Strategy1(BaseStrategy):
 						# print(f"Most valuable item: {most_valuable_item}")
 						return most_valuable_item
 
-		return None
+			return None
 
 	def _get_subjects_counts_sorted(self, items: list[Item], player: Player) -> list:
 		"""Count occurrences of subjects in items and return them, first sorted by count, second sorted by occurence in player's memory bank."""
@@ -131,3 +135,45 @@ class Strategy1(BaseStrategy):
 
 		overall_score = item.importance + final_bonus
 		return overall_score
+
+	# finds item to maximize freshness
+	# make a copy and sort? Probably a better idea
+	def _freshness(self, player, history) -> Item | None:
+		prev_subs = []
+		filtered_dict = player.sub_to_item.copy()
+		if len(history) > 1 and history[-2] is not None:
+			for sub in history[-2].subjects:
+				prev_subs.append(sub)
+		if len(history) > 2 and history[-3] is not None:
+			for sub in history[-3].subjects:
+				prev_subs.append(sub)
+		if len(history) > 3 and history[-4] is not None:
+			for sub in history[-4].subjects:
+				prev_subs.append(sub)
+		if len(history) > 4 and history[-5] is not None:
+			for sub in history[-5].subjects:
+				prev_subs.append(sub)
+		for sub in prev_subs:
+			filtered_dict = dict(filter(lambda x: sub not in x[0], filtered_dict.items()))
+		if len(filtered_dict) != 0:
+			# maximize freshness if posible - find subject with most items in filtered_dict
+			sub_length = 0
+			sub_key = tuple()
+			for key in filtered_dict:
+				if len(filtered_dict[key]) > sub_length:
+					sub_length = len(filtered_dict[key])
+					sub_key = key
+			player.last_proposed_item = filtered_dict[sub_key][0]
+			return player.last_proposed_item
+		# otherwise there was no fresh option be greedy
+		return self._greedy(player, history)
+
+	def _greedy(self, player, history) -> Item | None:
+		_, coherent_items = next(iter(player.sub_to_item.items()))
+
+		# Pick the most valuable item
+		most_valuable_item = max(
+			coherent_items, key=lambda item: self._get_overall_score(item, player)
+		)
+		player.last_proposed_item = most_valuable_item
+		return most_valuable_item
