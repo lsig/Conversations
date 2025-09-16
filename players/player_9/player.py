@@ -5,6 +5,11 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 #player 6, 10
 
 threshold_weight = 0
+freshness_weight = 0
+coherence_weight = 0
+nonmonotonousness_weight = 0
+individual_weight = 0
+importance_weight = 0
 
 
 class Player9(Player):
