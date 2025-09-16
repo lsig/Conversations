@@ -1,61 +1,156 @@
-import itertools
+import random
 from collections import Counter
 
-from models.player import Item, Player, PlayerSnapshot
+from core.engine import Engine  # noqa: F821
+from models.player import GameContext, Item, Player, PlayerSnapshot
+
+
+class self_engine(Engine):
+	pass
 
 
 class Player5(Player):
-	def __init__(self, snapshot: PlayerSnapshot, conversation_length: int) -> None:  # noqa: F821
-		super().__init__(snapshot, conversation_length)
+	# Speed up players: only run through certain amount of memory bank
+	MIN_CANDIDATES_COUNT = 10  # configure for small banks
+	CANDIDATE_FRACTION = 0.2  # configure percentage for large banks
+
+	def __init__(
+		self, snapshot: PlayerSnapshot, ctx: GameContext, conversation_length: int = None
+	) -> None:
+		super().__init__(snapshot, ctx)
+		self.ctx = ctx
+		self.conversation_length = ctx.conversation_length
+
+		self.snapshot = snapshot
+
+		# Sort memory bank by importance
 		self.memory_bank.sort(key=lambda x: x.importance, reverse=True)
 		self.best = self.memory_bank[0] if self.memory_bank else None
 
+		# Internal state
+		self.turn_length = 0
+		self.last_turn_position = -1
+		self.recent_history = Counter()
+		self.score_engine = None
+		self.preferences = snapshot.preferences
+
+	def individual_score(self, item: Item) -> float:
+		"""Score based on player preferences."""
+		score = 0
+		bonuses = [
+			1 - self.preferences.index(s) / len(self.preferences)
+			for s in item.subjects
+			if s in self.preferences
+		]
+		if bonuses:
+			score += sum(bonuses) / len(bonuses)
+		return score
+
 	def propose_item(self, history: list[Item]) -> Item | None:
-		if len(self.memory_bank) == 0:
+		if not self.memory_bank:
 			return None
-		choice = self.memory_bank[0]
 
-		# no history -> just talk about the most important thing we have
-		if len(history) == 0:
-			self.memory_bank.remove(choice)
-			return choice
+		# Create a temporary engine for shared scoring
+		self.score_engine = self_engine(
+			players=[],
+			player_count=0,
+			subjects=0,
+			memory_size=len(self.memory_bank),
+			conversation_length=self.conversation_length,
+			seed=0,
+		)
+		# FIX: snapshots must be a dict, not a list
+		self.score_engine.snapshots = {self.snapshot.id: self.snapshot}
 
-		# start with worst
-		choice = self.memory_bank[-1]
+		# Build three rankings:
+		shared_ranking = []
+		pref_ranking = []
+		importance_ranking = []
 
-		# look back up to 3 turns
-		clen = min(3, len(history))
-		recent = history[-clen:]
+		# speed up player: run through either the min baseline(smaller memories) or a percentage(larger ones)
+		candidates = max(
+			self.MIN_CANDIDATES_COUNT, int(len(self.memory_bank) * self.CANDIDATE_FRACTION)
+		)
+		top_candidates = self.memory_bank[:candidates]
+		if not top_candidates:
+			return None
 
-		# get subjects from most recent items
-		subjects = []
-		for r in recent:
-			subjects.append(r.subjects)
-		result = list(itertools.chain(*subjects))
-		count = Counter(result)
+		for item in top_candidates:
+			new_history = history + [item]
+			self.score_engine.history = new_history
+			score = self.score_engine._Engine__calculate_scores()
 
-		# print("History", history[-1].subjects)
+			shared_ranking.append((item, score['shared']))
+			pref_ranking.append((item, self.individual_score(item)))
+			importance_ranking.append((item, item.importance))
 
-		# look for better candidate
+		# Sort each list descending (best first)
+		shared_ranking.sort(key=lambda x: x[1], reverse=True)
+		pref_ranking.sort(key=lambda x: x[1], reverse=True)
+		importance_ranking.sort(key=lambda x: x[1], reverse=True)
+
+		# Build rank maps for quick lookup
+		def build_rank_map(ranking):
+			return {item: rank for rank, (item, _) in enumerate(ranking, start=1)}
+
+		shared_map = build_rank_map(shared_ranking)
+		pref_map = build_rank_map(pref_ranking)
+		imp_map = build_rank_map(importance_ranking)
+
+		# RRF parameters
+		k = 60
+		scores = {}
+		# Nearing the end, maximize individaul score by preferring high importance topics
+		turns_left = self.conversation_length - len(history)
+
+		# Track subject repetition
+		recent_subjects = [s for item in history[-3:] for s in item.subjects]
+		count_recent = Counter(recent_subjects)
+
+		# Add freshness bonus after pause
+		last_pause = max((index for index, item in enumerate(history) if item is None), default=-1)
+		history_post_pause = history[last_pause + 1 :]
+		subjects_post_pause = {
+			subject for item in history_post_pause if item is not None for subject in item.subjects
+		}
+
 		for item in self.memory_bank:
-			# reset inside each time
-			fail = False
+			if turns_left <= 3:
+				# lean into more important topics
+				scores[item] = (
+					1 / (k + shared_map.get(item, len(self.memory_bank)))
+					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))
+					+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank))))  # triple
+				)
+			else:
+				scores[item] = (
+					1 / (k + shared_map.get(item, len(self.memory_bank)))
+					+ 2
+					* (
+						1 / (k + pref_map.get(item, len(self.memory_bank)))
+					)  # weight preferences higher
+					+ 1 / (k + imp_map.get(item, len(self.memory_bank)))
+				)
 
-			for subject in item.subjects:
-				# print("subject", subject, "in", history[-1].subjects, "count", count[subject])
-				# eliminate subjects mentioned more than twice or exactly beforehand
-				if count[subject] > 2 or subject in history[-1].subjects:
-					fail = True
-					break
+			if any(count_recent[subject] >= 3 for subject in item.subjects):
+				# non-monotnous penalty
+				scores[item] -= 1
 
-			if not fail:
-				fail = False
-				# prefer higher importance if available
-				if item.importance > choice.importance:
-					choice = item
+			# freshness: count how many subjects of an item hasn't been mentioned since pause
+			new_subject_count = sum(
+				1 for subject in item.subjects if subject not in subjects_post_pause
+			)
+			scores[item] += new_subject_count
 
-		# remove chosen item from memory bank
-		if choice in self.memory_bank:
-			self.memory_bank.remove(choice)
+		# Pick best
+		# best_item = max(scores.items(), key=lambda x: x[1])[0]
+		best_score = max(scores.values())
+		highest_candidates = [item for item, s in scores.items() if s == best_score]
+		# if tied choose randomly so we don't constantly repeat picking the first max
+		best_item = random.choice(highest_candidates)
 
-		return choice
+		# remove after selection
+		if best_item in self.memory_bank:
+			self.memory_bank.remove(best_item)
+
+		return best_item
