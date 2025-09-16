@@ -1,7 +1,6 @@
 from models.player import GameContext, Item, Player, PlayerSnapshot
 from players.player_2.BaseStrategy import BaseStrategy
-from players.player_2.Strategy_1 import Strategy1
-from players.player_2.Strategy_2 import Strategy2
+from players.player_2.CoherentStrategy import CoherentStrategy
 
 
 class Player2(Player):
@@ -20,7 +19,7 @@ class Player2(Player):
 		return self.current_strategy.propose_item(self, history)
 
 	def _choose_strategy(self):
-		self.current_strategy = Strategy1()
+		self.current_strategy = CoherentStrategy()
 		# if self.subject_num / self.memory_bank_size <= 0.5:
 		# 	self.current_strategy = Strategy1()
 		# else:
@@ -34,5 +33,5 @@ class Player2(Player):
 				sub_to_item[subjects] = []
 			sub_to_item[subjects].append(item)
 
-		# Sorted according to number of items in memory bank 
+		# Sorted according to number of items in memory bank
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))

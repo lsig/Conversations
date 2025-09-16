@@ -44,6 +44,7 @@ class Strategy1(BaseStrategy):
 		if turn_nr == 1 or turn_nr > 1 and history[-1] is None:
 			# print("Here in first turn or after pause")
 			# Get the items with the most frequent occurring subject in memory bank
+			# print(player.sub_to_item.items())
 			_, coherent_items = next(iter(player.sub_to_item.items()))
 			# print(f"Coherent items: {coherent_items}")
 
