@@ -65,7 +65,7 @@ class Player7(Player):
 					times_mentioned in range(1, 3)
 					and subject in self.preferences[0:preference_threshold]
 					and (
-						pref_index < preference_threshold
+						pref_index < highest_pref_index  # if item is higher in preference list, choose it
 						or (pref_index == highest_pref_index and item.importance > importance) #if two items have the same subject, say the more important one
 					)
 				):
