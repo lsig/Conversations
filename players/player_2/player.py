@@ -11,10 +11,8 @@ class Player2(Player):
 		self.subject_num: int = len(self.preferences)
 		self.memory_bank_size: int = len(self.memory_bank)
 		self.current_strategy: BaseStrategy = None
-		self.sub_to_item: dict = {}
+		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
-
-		self._init_sub_to_item()
 
 		self._choose_strategy()
 
@@ -29,8 +27,12 @@ class Player2(Player):
 		# 	self.current_strategy = Strategy2()
 
 	def _init_sub_to_item(self):
+		sub_to_item = {}
 		for item in self.memory_bank:
 			subjects = tuple(sorted(list(item.subjects)))
-			if subjects not in self.sub_to_item:
-				self.sub_to_item[subjects] = []
-			self.sub_to_item[subjects].append(item)
+			if subjects not in sub_to_item:
+				sub_to_item[subjects] = []
+			sub_to_item[subjects].append(item)
+
+		# Sorted according to number of items in memory bank 
+		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))

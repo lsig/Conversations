@@ -13,16 +13,6 @@ class Strategy1(BaseStrategy):
 		turn_nr = len(history) + 1
 		# print(f"Turn nr {turn_nr} / {player.conversation_length}")
 
-		# TODO: Add a subject to bonus dict to Player2 init??
-		# sub_to_bonus = {sub: 1 - (player.preferences.index(sub)) / player.subject_num for sub in range(player.subject_num)}
-		# print(sub_to_bonus)
-
-		# Sort memory bank dictionary by number of items
-		# TODO: already do this in init
-		player.sub_to_item = dict(
-			sorted(player.sub_to_item.items(), key=lambda x: len(x[1]), reverse=True)
-		)
-
 		# If last proposed item was accepted, remove it from memory bank and sub_to_item
 		if turn_nr > 1 and history[-1] == player.last_proposed_item:
 			# print(f"Remove last proposed item: {player.last_proposed_item}")
@@ -79,30 +69,31 @@ class Strategy1(BaseStrategy):
 
 			# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 			# If there are no items in memory bank that match the subjects in context, then pause
-			for subs, _ in context_subs_sorted:
-				items_with_subs = player.sub_to_item.get(subs, []).copy()
-				# If there is only one subject, also get items with two subjects including that subject
-				if len(subs) == 1:
-					# print(f"Also look for items with subject {subs} and another subject")
-					items_with_subs.extend(
-						[
-							item
-							for items_subs, items in player.sub_to_item.items()
-							if subs[0] in items_subs
-							for item in items
-						]
-					)
+			for subs, subs_count in context_subs_sorted:
+				if subs_count < 3:
+					items_with_subs = player.sub_to_item.get(subs, []).copy()
+					# If there is only one subject, also get items with two subjects including that subject
+					if len(subs) == 1:
+						# print(f"Also look for items with subject {subs} and another subject")
+						items_with_subs.extend(
+							[
+								item
+								for items_subs, items in player.sub_to_item.items()
+								if subs[0] in items_subs
+								for item in items
+							]
+						)
 
-				# print(f"Items with subjects {subs}: {items_with_subs}")
-				# If we have an item with fitting subjects, propose the most valuable one
-				if items_with_subs:
-					most_valuable_item = max(
-						items_with_subs, key=lambda item: self._get_overall_score(item, player)
-					)
-					player.last_proposed_item = most_valuable_item
+					# print(f"Items with subjects {subs}: {items_with_subs}")
+					# If we have an item with fitting subjects, propose the most valuable one
+					if items_with_subs:
+						most_valuable_item = max(
+							items_with_subs, key=lambda item: self._get_overall_score(item, player)
+						)
+						player.last_proposed_item = most_valuable_item
 
-					# print(f"Most valuable item: {most_valuable_item}")
-					return most_valuable_item
+						# print(f"Most valuable item: {most_valuable_item}")
+						return most_valuable_item
 
 		return None
 
