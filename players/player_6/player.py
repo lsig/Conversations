@@ -81,7 +81,6 @@ class Player6(Player):
 			if item.id in id_list:
 				repeated = True
 			history.append(item)
-			individual_score = 0
 			freshness_score = self.__calculate_freshness_score(history, n, item)
 			nonmonotonousness_score = self.__calculate_nonmonotonousness_score(
 				history, n, item, repeated
@@ -97,12 +96,23 @@ class Player6(Player):
 			# print(f"TOTAL COHERENCE SCORE: {coherence_score}")
 			# print('*'*20)
 
-			current_item_score = (
-				individual_score + coherence_score + freshness_score + nonmonotonousness_score
-			)
+			current_item_score = coherence_score + freshness_score + nonmonotonousness_score
+
+			epsilon = 0.1
+			preference_score = 0
+			for i in item.subjects:
+				preference_score += 1 - (self.preferences.index(i) / len(self.preferences))
+			preference_score = preference_score / len(item.subjects)
+
 			if current_item_score > best_score:
 				best_score = current_item_score
 				best_item = item
+
+			elif abs(current_item_score - best_score) > epsilon:
+				if best_item is not None and current_item_score + preference_score > best_score:
+					best_score = current_item_score
+					best_item = item
+
 			history.pop(-1)
 
 		# print('%'*20)
@@ -113,7 +123,7 @@ class Player6(Player):
 			if item.id in id_list:
 				repeated = True
 			history.append(item)
-			individual_score = 0
+			# individual_score = 0
 			freshness_score = self.__calculate_freshness_score(history, n, item)
 			nonmonotonousness_score = self.__calculate_nonmonotonousness_score(
 				history, n, item, repeated

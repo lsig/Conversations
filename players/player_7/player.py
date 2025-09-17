@@ -57,8 +57,6 @@ class Player7(Player):
 
 		# look through memory bank, find item in top half of preference list that has been mentioned recently and has highest importance
 		for item in eligible:
-			if item in history:
-				continue
 			subject = self.preferences[self.most_preferred(item)]
 			times_mentioned = subject_count[subject]
 			pref_index = self.preferences.index(subject)
