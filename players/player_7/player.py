@@ -1,5 +1,5 @@
 from models.player import GameContext, Item, Player, PlayerSnapshot
-
+import statistics
 
 class Player7(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
@@ -75,14 +75,21 @@ class Player7(Player):
 				chosen_item = item
 				importance = item.importance
 				highest_pref_index = pref_index
-    
+
+
+		### new code below
+		# calculate average importance of remaining items
+		avg = statistics.mean([item.importance for item in remaining]) if remaining else 0
+
+		#calculate median importance of remaining items
+		med = statistics.median([item.importance for item in remaining]) if remaining else 0
+
 		#if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
 			for item in self.memory_bank:
-				if self.most_preferred(item) <= K and item.importance > 0.5:
+				if self.most_preferred(item) <= K and item.importance > .5:
 					chosen_item = item
-					return chosen_item
-			return None  # pause if no item found
+			return chosen_item if chosen_item else None
 
 		### old code below
 		# # If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
