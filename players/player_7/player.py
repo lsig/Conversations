@@ -109,14 +109,10 @@ class Player7(Player):
 	
 	def dynamic_threshold(self,history:list[Item])->int:
 		# return a dynamic threshold based on the history length
-		remaining = [item for item in self.memory_bank if item not in history]
 		said = len(self.contributed_items)
 		progress = min(1, said/ (max(1,len(self.memory_bank)) ))  # 0→1
 		S = len(self.preferences)
 		K = int(S * (0.50 + 0.40 * progress)) - 1  # 50% -> 90% as bank shrinks
 		return max(0, min(S - 1, K))
-
-
-
 
 
