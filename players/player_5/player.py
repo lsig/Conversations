@@ -102,6 +102,14 @@ class Player5(Player):
 		# Note down what's been said by everyone
 		self.update_external_subjects(history)
 		group_subject_preference = self.predict_group_preference()
+		
+		# For now, we examine only the previously spoken player
+		prev_player = None
+		for item in reversed(history):
+			if item is not None and item.player_id != self.snapshot.id:
+				prev_player = item.player_id
+				break
+		prev_player_preferences = self.external_subjects.get(prev_player, Counter()) if prev_player else Counter()
 
 		# Create a temporary engine for shared scoring
 		self.score_engine = self_engine(
@@ -205,6 +213,12 @@ class Player5(Player):
 				# repeated too much
 				elif group_subject_preference[subject] > 3:
 					scores[item] -= 1	# tune later
+					
+			# Adjust score based on direct previous player
+			for subject in item.subjects:
+				if prev_player_preferences[subject] > 0:
+					# try to be cohesive with the last player's subject preferences
+					scores[item] += 2   # tune later
 
 		# Pick best
 		best_score = max(scores.values())
