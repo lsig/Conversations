@@ -17,7 +17,7 @@ instances (one per conversation length) and executes them in sequence.
 import argparse
 from typing import List
 
-from ..test_framework import (
+from ..sim.test_framework import (
     TestBuilder,
     FlexibleTestRunner,
     TestConfiguration,

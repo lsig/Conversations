@@ -6,8 +6,8 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
-from players.player_10.config import DEBUG_ENABLED, DEBUG_LEVEL
-from players.player_10.player import Player10
+from players.player_10.agent.config import DEBUG_ENABLED, DEBUG_LEVEL
+from players.player_10 import Player10
 from models.item import Item
 from models.player import PlayerSnapshot, GameContext
 import uuid

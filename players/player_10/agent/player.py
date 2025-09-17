@@ -19,8 +19,8 @@ from models.player import GameContext, Player, PlayerSnapshot
 
 # Import config module instead of specific values to allow dynamic updates
 from . import config as config_module
-from .scoring import PlayerPerformanceTracker, calculate_canonical_delta, is_pause
-from .strategies import AltruismStrategy, OriginalStrategy
+from .logic.scoring import PlayerPerformanceTracker, calculate_canonical_delta, is_pause
+from .logic.strategies import AltruismStrategy, OriginalStrategy
 from .debug_utils import DebugLogger, debug_item_ranking, debug_performance_summary, debug_conversation_context
 
 

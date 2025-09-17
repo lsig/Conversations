@@ -17,8 +17,8 @@ from core.engine import Engine
 from models.cli import Settings
 from models.player import Player
 
-from .config import ALTRUISM_USE_PROB, TAU_MARGIN, EPSILON_FRESH, EPSILON_MONO
-from .player import Player10
+from ..agent.config import ALTRUISM_USE_PROB, TAU_MARGIN, EPSILON_FRESH, EPSILON_MONO
+from ..agent.player import Player10
 
 
 @dataclass

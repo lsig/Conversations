@@ -13,7 +13,7 @@ from typing import Optional
 from models.item import Item
 
 # Import config module instead of specific values to allow dynamic updates
-from . import config as config_module
+from .. import config as config_module
 from .scoring import (
     PlayerPerformanceTracker,
     calculate_canonical_delta,
@@ -30,7 +30,7 @@ from .utils import (
     subjects_in_last_n_nonpause_before_index,
     trailing_pause_count,
 )
-from .debug_utils import DebugLogger
+from ..debug_utils import DebugLogger
 
 
 class OriginalStrategy:

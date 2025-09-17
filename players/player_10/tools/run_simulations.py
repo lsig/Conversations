@@ -9,7 +9,7 @@ import argparse
 import time
 from pathlib import Path
 
-from ..monte_carlo import MonteCarloSimulator, SimulationConfig
+from ..sim.monte_carlo import MonteCarloSimulator, SimulationConfig
 
 
 def run_altruism_comparison(num_simulations: int = 100):

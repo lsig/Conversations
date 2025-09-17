@@ -20,7 +20,7 @@ def main():
     args = parser.parse_args()
     
     # Import config module
-    import players.player_10.config as config_module
+    import players.player_10.agent.config as config_module
     
     if args.status:
         print(f"Current debug status:")

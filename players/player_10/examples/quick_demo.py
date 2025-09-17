@@ -4,7 +4,7 @@ Quick demo of the flexible test framework.
 This demonstrates the key features of the new framework.
 """
 
-from ..test_framework import TestBuilder, FlexibleTestRunner, create_altruism_comparison_test
+from ..sim.test_framework import TestBuilder, FlexibleTestRunner, create_altruism_comparison_test
 
 
 def demo_basic_usage():
