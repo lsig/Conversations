@@ -8,10 +8,10 @@ with optimized defaults based on Monte Carlo simulation results:
 """
 
 # Altruism hyperparameters (optimized configuration)
-ALTRUISM_USE_PROB = 0.0  # Per-turn probability to use altruism policy (optimized: 0.5)
-TAU_MARGIN = 0.2  # Altruism margin: speak if Δ_self ≥ E[Δ_others] - τ (optimized: 0.10)
+ALTRUISM_USE_PROB = 0.2  # Per-turn probability to use altruism policy (optimized: 0.5)
+TAU_MARGIN = 0.1  # Altruism margin: speak if Δ_self ≥ E[Δ_others] - τ (optimized: 0.10)
 EPSILON_FRESH = 0.05  # Lower τ by ε if (last was pause) AND (our best item is fresh)
-EPSILON_MONO = 0.1  # Raise τ by ε if our best item would trigger monotony
+EPSILON_MONO = 0.05  # Raise τ by ε if our best item would trigger monotony
 MIN_SAMPLES_PID = 5  # Trust per-player mean after this many samples; else use global mean
 
 # EWMA parameters
