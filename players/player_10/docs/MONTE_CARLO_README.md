@@ -31,6 +31,10 @@ Notes
 - For multiple configurations (ranges × players), the runner executes all combinations and persists a single timestamped JSON per run.
  - Strategy descriptions: see `players/player_10/docs/STRATEGIES.md`.
 
+### Why we sweep τ and altruism probability
+
+The altruism gate compares our best Δ against a selection-weighted expectation of others’ learned quality. τ shifts this decision boundary; ε_fresh and ε_mono refine it near pauses and monotony risk. The altruism probability controls how often we use this selection-aware policy versus the original scoring, trading initiative for restraint. Sweeping these parameters shows how conversation quality responds to more/less altruistic speaking behavior.
+
 ### Mechanism (concise)
 - Flexible runner builds a cartesian product of parameter ranges and player configurations.
 - For each combination:

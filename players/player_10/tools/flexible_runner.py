@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 from ..sim.test_framework import (
-    FlexibleTestRunner, TestBuilder, TestConfiguration,
+    FlexibleTestRunner, TestBuilder, TestConfiguration, ParameterRange,
     create_altruism_comparison_test, create_random_players_test,
     create_scalability_test, create_parameter_sweep_test,
     create_mixed_opponents_test
@@ -204,7 +204,57 @@ Examples:
         # Create custom test
         config = create_custom_test_from_args(args)
     
-    # Override settings from command line
+    # Override settings from command line (applies to both predefined and custom)
+    # Parameter ranges
+    if args.predefined:
+        if args.altruism:
+            config.altruism_probs = ParameterRange(values=args.altruism, name="altruism_prob", description="Altruism probability")
+        if args.tau:
+            config.tau_margins = ParameterRange(values=args.tau, name="tau_margin", description="Tau margin")
+        if args.epsilon_fresh:
+            config.epsilon_fresh_values = ParameterRange(values=args.epsilon_fresh, name="epsilon_fresh", description="Epsilon fresh")
+        if args.epsilon_mono:
+            config.epsilon_mono_values = ParameterRange(values=args.epsilon_mono, name="epsilon_mono", description="Epsilon mono")
+        if args.min_samples:
+            config.min_samples_values = ParameterRange(values=args.min_samples, name="min_samples_pid", description="Min samples per player for trusted mean")
+        if args.ewma:
+            config.ewma_alpha_values = ParameterRange(values=args.ewma, name="ewma_alpha", description="EWMA alpha")
+        if args.w_importance:
+            config.importance_weights = ParameterRange(values=args.w_importance, name="importance_weight", description="Importance weight")
+        if args.w_coherence:
+            config.coherence_weights = ParameterRange(values=args.w_coherence, name="coherence_weight", description="Coherence weight")
+        if args.w_freshness:
+            config.freshness_weights = ParameterRange(values=args.w_freshness, name="freshness_weight", description="Freshness weight")
+        if args.w_monotony:
+            config.monotony_weights = ParameterRange(values=args.w_monotony, name="monotony_weight", description="Monotony weight")
+        # Player configurations
+        if args.players:
+            player_configs = []
+            for player_str in args.players:
+                parsed = _parse_player_config_string(player_str)
+                if parsed:
+                    player_configs.append(parsed)
+            if player_configs:
+                config.player_configs = player_configs
+        # Simulation parameters
+        if args.simulations:
+            config.num_simulations = args.simulations
+        if args.conversation_length:
+            config.conversation_length = args.conversation_length
+        if args.subjects:
+            config.subjects = args.subjects
+        if args.memory_size:
+            config.memory_size = args.memory_size
+        # Parallel
+        if args.parallel:
+            config.parallel = True
+            if args.workers:
+                config.workers = args.workers
+        # Output directory
+        if args.output_dir:
+            config.output_dir = args.output_dir
+
+    # Generic flags
     if args.no_save:
         config.save_results = False
     if args.quiet:
@@ -292,6 +342,108 @@ Examples:
                 print(f"   Early Termination Rate: {summary['conversation_metrics']['early_termination_rate']:.2f}")
                 print(f"   Avg Pause Count: {summary['conversation_metrics']['avg_pause_count']:.1f}")
                 print(f"   Avg Unique Items: {summary['conversation_metrics']['avg_unique_items']:.1f}")
+
+        # --- New: Full-parameterization aggregation and Top-10 table ---
+        def _std(values: list[float]) -> float:
+            if len(values) < 2:
+                return 0.0
+            m = sum(values) / len(values)
+            var = sum((v - m) ** 2 for v in values) / (len(values) - 1)
+            return var ** 0.5
+
+        # Group by full parameterization including players and extended knobs
+        from collections import defaultdict
+        groups: dict[tuple, dict] = {}
+        by_key_scores: dict[tuple, list[float]] = defaultdict(list)
+        by_key_p10: dict[tuple, list[float]] = defaultdict(list)
+
+        def _players_key(players_dict: dict[str, int]) -> tuple:
+            return tuple(sorted(players_dict.items()))
+
+        def _key_from_cfg(cfg) -> tuple:
+            return (
+                round(cfg.altruism_prob, 6),
+                round(cfg.tau_margin, 6),
+                round(cfg.epsilon_fresh, 6),
+                round(cfg.epsilon_mono, 6),
+                int(cfg.min_samples_pid),
+                round(cfg.ewma_alpha, 6),
+                round(cfg.importance_weight, 6),
+                round(cfg.coherence_weight, 6),
+                round(cfg.freshness_weight, 6),
+                round(cfg.monotony_weight, 6),
+                _players_key(cfg.players),
+                cfg.conversation_length,
+                cfg.subjects,
+                cfg.memory_size,
+            )
+
+        for r in results:
+            k = _key_from_cfg(r.config)
+            if k not in groups:
+                groups[k] = {
+                    'altruism_prob': r.config.altruism_prob,
+                    'tau_margin': r.config.tau_margin,
+                    'epsilon_fresh': r.config.epsilon_fresh,
+                    'epsilon_mono': r.config.epsilon_mono,
+                    'min_samples_pid': r.config.min_samples_pid,
+                    'ewma_alpha': r.config.ewma_alpha,
+                    'importance_weight': r.config.importance_weight,
+                    'coherence_weight': r.config.coherence_weight,
+                    'freshness_weight': r.config.freshness_weight,
+                    'monotony_weight': r.config.monotony_weight,
+                    'players': r.config.players,
+                    'conversation_length': r.config.conversation_length,
+                    'subjects': r.config.subjects,
+                    'memory_size': r.config.memory_size,
+                }
+            by_key_scores[k].append(r.total_score)
+            by_key_p10[k].append(r.player_scores.get('Player10', 0.0))
+
+        # Build summary rows
+        rows = []
+        for k, meta in groups.items():
+            scores = by_key_scores[k]
+            p10_scores = by_key_p10[k]
+            rows.append({
+                'key': k,
+                'meta': meta,
+                'mean': sum(scores) / len(scores),
+                'std': _std(scores),
+                'count': len(scores),
+                'p10_mean': (sum(p10_scores) / len(p10_scores)) if p10_scores else 0.0,
+                'p10_std': _std(p10_scores) if p10_scores else 0.0,
+            })
+
+        rows.sort(key=lambda x: x['mean'], reverse=True)
+
+        print(f"\n=== TOP 10 PARAMETERIZATIONS (FULL CONFIG) ===")
+        header = (
+            f"{'Rank':<4} {'Total (μ±σ)':<16} {'P10 (μ±σ)':<16} {'Count':<6} "
+            f"{'Altruism':<8} {'Tau':<6} {'εfresh':<8} {'εmono':<7} {'MIN_S':<6} "
+            f"{'EWMA':<6} {'Wimp':<6} {'Wcoh':<6} {'Wfre':<6} {'Wmon':<6} {'Players':<30}"
+        )
+        print(header)
+        print("-" * len(header))
+
+        for i, row in enumerate(rows[:10], start=1):
+            m = row['meta']
+            players_str = ",".join(f"{k}={v}" for k, v in sorted(m['players'].items()))
+            print(
+                f"{i:<4} "
+                f"{row['mean']:.2f}±{row['std']:.2f} "
+                f"{row['p10_mean']:.2f}±{row['p10_std']:.2f} "
+                f"{row['count']:<6} "
+                f"{m['altruism_prob']:<8.2f} {m['tau_margin']:<6.2f} {m['epsilon_fresh']:<8.2f} {m['epsilon_mono']:<7.2f} "
+                f"{m['min_samples_pid']:<6} {m['ewma_alpha']:<6.2f} {m['importance_weight']:<6.2f} {m['coherence_weight']:<6.2f} "
+                f"{m['freshness_weight']:<6.2f} {m['monotony_weight']:<6.2f} {players_str:<30}"
+            )
+
+        # Overall stats across all runs
+        all_scores = [r.total_score for r in results]
+        overall_mean = sum(all_scores) / len(all_scores) if all_scores else 0.0
+        overall_std = _std(all_scores) if all_scores else 0.0
+        print(f"\nOverall Total Score: {overall_mean:.2f} ± {overall_std:.2f} across {len(all_scores)} runs")
 
 
 if __name__ == "__main__":

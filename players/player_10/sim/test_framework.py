@@ -6,6 +6,7 @@ without being limited to predefined test types.
 """
 
 import time
+import sys
 from dataclasses import dataclass, field
 import os
 from pathlib import Path
@@ -13,6 +14,12 @@ from typing import Dict, List, Any, Optional, Union, Callable
 
 from .monte_carlo import MonteCarloSimulator, SimulationConfig, SimulationResult
 from .parallel import execute_in_parallel
+
+# Try to import tqdm once at module load and force-enable it when available
+try:
+    from tqdm import tqdm  # type: ignore
+except Exception:  # pragma: no cover
+    tqdm = None  # type: ignore
 
 
 @dataclass
@@ -203,29 +210,28 @@ class FlexibleTestRunner:
         self.simulator = MonteCarloSimulator(str(self.output_dir))
         self.results: List[SimulationResult] = []
 
-
-def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, combination_count: int) -> list[tuple[SimulationConfig, str]]:
-    tasks: list[tuple[SimulationConfig, str]] = []
-    for sim_idx in range(config.num_simulations):
-        run_cfg = SimulationConfig(
-            altruism_prob=sim_config.altruism_prob,
-            tau_margin=sim_config.tau_margin,
-            epsilon_fresh=sim_config.epsilon_fresh,
-            epsilon_mono=sim_config.epsilon_mono,
-            seed=config.base_seed + combination_count * config.num_simulations + sim_idx,
-            players=sim_config.players,
-            subjects=sim_config.subjects,
-            memory_size=sim_config.memory_size,
-            conversation_length=sim_config.conversation_length,
-            min_samples_pid=sim_config.min_samples_pid,
-            ewma_alpha=sim_config.ewma_alpha,
-            importance_weight=sim_config.importance_weight,
-            coherence_weight=sim_config.coherence_weight,
-            freshness_weight=sim_config.freshness_weight,
-            monotony_weight=sim_config.monotony_weight,
-        )
-        tasks.append((run_cfg, str(self.output_dir)))
-    return tasks
+    def _build_task_args(self, sim_config: SimulationConfig, config: TestConfiguration, combination_count: int) -> list[tuple[SimulationConfig, str]]:
+        tasks: list[tuple[SimulationConfig, str]] = []
+        for sim_idx in range(config.num_simulations):
+            run_cfg = SimulationConfig(
+                altruism_prob=sim_config.altruism_prob,
+                tau_margin=sim_config.tau_margin,
+                epsilon_fresh=sim_config.epsilon_fresh,
+                epsilon_mono=sim_config.epsilon_mono,
+                seed=config.base_seed + combination_count * config.num_simulations + sim_idx,
+                players=sim_config.players,
+                subjects=sim_config.subjects,
+                memory_size=sim_config.memory_size,
+                conversation_length=sim_config.conversation_length,
+                min_samples_pid=sim_config.min_samples_pid,
+                ewma_alpha=sim_config.ewma_alpha,
+                importance_weight=sim_config.importance_weight,
+                coherence_weight=sim_config.coherence_weight,
+                freshness_weight=sim_config.freshness_weight,
+                monotony_weight=sim_config.monotony_weight,
+            )
+            tasks.append((run_cfg, str(self.output_dir)))
+        return tasks
     
     def run_test(self, config: TestConfiguration) -> List[SimulationResult]:
         """
@@ -251,10 +257,21 @@ def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, co
         total_simulations = total_combinations * config.num_simulations
         pbar = None
         if config.print_progress and total_simulations > 0:
-            try:
-                from tqdm.auto import tqdm  # type: ignore
-                pbar = tqdm(total=total_simulations, desc="Simulations", leave=False)
-            except Exception:
+            if tqdm is not None:
+                try:
+                    pbar = tqdm(
+                        total=total_simulations,
+                        desc="Simulations",
+                        leave=True,
+                        dynamic_ncols=True,
+                        miniters=1,
+                        smoothing=0.1,
+                        file=sys.stdout,
+                        disable=False,
+                    )
+                except Exception:
+                    pbar = None
+            else:
                 pbar = None
         
         # Generate all parameter combinations
@@ -263,8 +280,25 @@ def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, co
                 combination_count += 1
                 
                 if config.print_progress:
-                    print(f"Running combination {combination_count}/{total_combinations}: "
-                          f"params={param_combo}, players={player_config}")
+                    # Keep progress bar as the main output; no extra lines
+                    a = param_combo['altruism_prob']
+                    t = param_combo['tau_margin']
+                    ef = param_combo['epsilon_fresh']
+                    em = param_combo['epsilon_mono']
+                    postfix = (
+                        f"combo {combination_count}/{total_combinations} "
+                        f"a={a:.2f},τ={t:.2f},εf={ef:.2f},εm={em:.2f} players={player_config}"
+                    )
+                    if pbar is not None:
+                        try:
+                            pbar.set_description("Simulations")
+                            pbar.set_postfix_str(postfix)
+                        except Exception:
+                            pass
+                    else:
+                        # Minimal inline fallback without creating new lines
+                        sys.stdout.write("\r" + postfix + " " * 10)
+                        sys.stdout.flush()
                 
                 # Create simulation config
                 sim_config = SimulationConfig(
@@ -287,7 +321,7 @@ def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, co
                 
                 # Run simulations for this combination
                 if config.parallel:
-                    task_args = _build_task_args(sim_config, config, combination_count)
+                    task_args = self._build_task_args(sim_config, config, combination_count)
                     for result in execute_in_parallel(task_args, workers=config.workers):
                         all_results.append(result)
                         if pbar is not None:
@@ -334,11 +368,19 @@ def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, co
         return all_results
     
     def _count_combinations(self, config: TestConfiguration) -> int:
-        """Count total parameter combinations."""
-        param_count = (len(config.altruism_probs.values) * 
-                      len(config.tau_margins.values) * 
-                      len(config.epsilon_fresh_values.values) * 
-                      len(config.epsilon_mono_values.values))
+        """Count total parameter combinations across all ranges and player configs."""
+        param_count = (
+            len(config.altruism_probs.values)
+            * len(config.tau_margins.values)
+            * len(config.epsilon_fresh_values.values)
+            * len(config.epsilon_mono_values.values)
+            * len(config.min_samples_values.values)
+            * len(config.ewma_alpha_values.values)
+            * len(config.importance_weights.values)
+            * len(config.coherence_weights.values)
+            * len(config.freshness_weights.values)
+            * len(config.monotony_weights.values)
+        )
         return param_count * len(config.player_configs)
     
     def _generate_parameter_combinations(self, config: TestConfiguration) -> List[Dict[str, Any]]:
@@ -406,12 +448,12 @@ def create_scalability_test() -> TestConfiguration:
 def create_parameter_sweep_test() -> TestConfiguration:
     """Create a comprehensive parameter sweep test."""
     return (TestBuilder("parameter_sweep", "Comprehensive parameter sweep")
-            .altruism_range([0.0, 0.2, 0.5, 1.0])
-            .tau_range([0.01, 0.03, 0.05, 0.07, 0.10])
-            .epsilon_fresh_range([0.01, 0.03, 0.05, 0.07])
-            .epsilon_mono_range([0.01, 0.03, 0.05, 0.07])
-            .player_configs([{'p10': 10}])
-            .simulations(20)  # Fewer simulations due to large parameter space
+            .altruism_range([0.0, 0.1, 0.15, 0.2, 0.25])
+            .tau_range([-0.1, 0, 0.05, 0.1, 0.15, 0.2])
+            .epsilon_fresh_range([0, 0.05, 0.1])
+            .epsilon_mono_range([0, 0.05, 0.1])
+            .player_configs([{'p10': 10, 'pr': 0}, {'p10': 9, 'pr': 1}])
+            .simulations(20)
             .build())
 
 

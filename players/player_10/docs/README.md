@@ -94,6 +94,10 @@ The altruism strategy implements:
 
 4. **Safety Mechanisms**: Always proposes if two consecutive pauses to avoid game termination
 
+## Motivation
+
+Earlier versions spoke when our best item’s score beat a global average threshold (not recent). The altruism variant refines this by comparing against a selection-weighted expectation of other players’ learned quality: speak if `Δ_self ≥ E[Δ_others] - τ`. This accounts for who is most likely to speak next (current speaker edge + fairness among the minimum-contribution tier) and how good they have been (EWMA). See `STRATEGIES.md` for details on τ adjustments, freshness, and monotony.
+
 ## Testing
 
 Run the test to verify default behavior:

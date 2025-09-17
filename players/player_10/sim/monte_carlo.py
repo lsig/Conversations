@@ -304,7 +304,12 @@ class MonteCarloSimulator:
         Returns:
             List of simulation results
         """
-        filepath = self.output_dir / filename
+        # Support absolute paths or already-qualified paths
+        candidate = Path(filename)
+        if candidate.is_absolute() or candidate.exists():
+            filepath = candidate
+        else:
+            filepath = self.output_dir / filename
         
         with open(filepath, 'r') as f:
             data = json.load(f)

@@ -13,7 +13,7 @@ import seaborn as sns
 from pathlib import Path
 from typing import Dict, List, Any, Tuple
 
-from .monte_carlo import MonteCarloSimulator, SimulationResult
+from ..sim.monte_carlo import MonteCarloSimulator, SimulationResult
 
 
 class ResultsAnalyzer:
