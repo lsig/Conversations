@@ -211,16 +211,16 @@ class Player5(Player):
 			for subject in item.subjects:
 				# No one else mentioned - bonus
 				if group_subject_preference[subject] == 0:
-					scores[item] += 1  # tune later
+					scores[item] += 0.5  # tune later
 				# repeated too much
 				elif group_subject_preference[subject] > 3:
-					scores[item] -= 1  # tune later
+					scores[item] -= 0.5  # tune later
 
 			# Adjust score based on direct previous player
 			for subject in item.subjects:
 				if prev_player_preferences[subject] > 0:
 					# try to be cohesive with the last player's subject preferences
-					scores[item] += 2  # tune later
+					scores[item] += 1.5  # tune later
 
 		# Pick best
 		best_score = max(scores.values())
