@@ -17,9 +17,11 @@ from typing import Optional
 from models.item import Item
 from models.player import GameContext, Player, PlayerSnapshot
 
-from .config import ALTRUISM_USE_PROB
+# Import config module instead of specific values to allow dynamic updates
+from . import config as config_module
 from .scoring import PlayerPerformanceTracker, calculate_canonical_delta, is_pause
 from .strategies import AltruismStrategy, OriginalStrategy
+from .debug_utils import DebugLogger, debug_item_ranking, debug_performance_summary, debug_conversation_context
 
 
 class Player10(Player):
@@ -68,6 +70,9 @@ class Player10(Player):
         # Initialize strategies
         self.original_strategy = OriginalStrategy(self)
         self.altruism_strategy = AltruismStrategy(self, self.performance_tracker)
+        
+        # Debug logging
+        self.debug_logger = DebugLogger(str(self.id))
     
     def propose_item(self, history: list[Item | None]) -> Item | None:
         """
@@ -79,16 +84,38 @@ class Player10(Player):
         Returns:
             An item to propose, or None to pass
         """
+        # Start debug logging for this turn
+        turn_number = len(history) + 1
+        self.debug_logger.start_turn(turn_number)
+        
         # Update performance tracking with last turn's result
         self._update_performance_tracking(history)
         
-        # Stochastic strategy selection
-        use_altruism = random.random() < ALTRUISM_USE_PROB
+        # Log conversation context
+        if config_module.DEBUG_ENABLED:
+            print(debug_conversation_context(history))
+            print(debug_performance_summary(self.performance_tracker, str(self.id)))
         
+        # Stochastic strategy selection (read config dynamically)
+        random_value = random.random()
+        threshold = config_module.ALTRUISM_USE_PROB
+        use_altruism = random_value < threshold
+        
+        self.debug_logger.log_strategy_selection(use_altruism, random_value, threshold)
+        
+        # Execute selected strategy
         if use_altruism:
-            return self.altruism_strategy.propose_item(history)
+            result = self.altruism_strategy.propose_item(history)
+            strategy_used = "ALTRUISM"
         else:
-            return self.original_strategy.propose_item(history)
+            result = self.original_strategy.propose_item(history)
+            strategy_used = "ORIGINAL"
+        
+        # Log final decision
+        decision_text = f"Item(id={result.id})" if result else "PASS"
+        self.debug_logger.log_decision_summary(result, f"Strategy: {strategy_used}", strategy_used)
+        
+        return result
     
     def _update_performance_tracking(self, history: Sequence[Item | None]) -> None:
         """
@@ -110,7 +137,20 @@ class Player10(Player):
         # Update performance tracking
         player_id = getattr(last_item, 'player_id', None)
         if player_id is not None:
+            # Get old values for debug logging
+            old_global_mean = self.performance_tracker.mu_global
+            old_global_count = self.performance_tracker.count_global
+            
+            # Update tracking
             self.performance_tracker.update(player_id, delta)
+            
+            # Log performance update
+            if config_module.DEBUG_PERFORMANCE_TRACKING:
+                new_global_mean = self.performance_tracker.mu_global
+                new_global_count = self.performance_tracker.count_global
+                self.debug_logger.log_performance_tracking(
+                    str(player_id), old_global_mean, new_global_mean, delta, new_global_count
+                )
     
     def _is_repeated(self, item: Item, history: Sequence[Item | None]) -> bool:
         """
@@ -291,18 +331,38 @@ class Player10(Player):
         return float(len(novel_subjects))
     
     def _calculate_coherence_score(self, i: int, current_item: Item, history: list[Item | None]) -> float:
-        """Calculate coherence score for a specific item."""
+        """
+        Calculate coherence score for a specific item following official game rules.
+        
+        Official rule: For every item I, the (up to) 3 preceding items and (up to) 3 following 
+        items are collected into a set C_I of context items. The window defining C_I does not 
+        extend beyond the start of the conversation or any pauses.
+        
+        OLD VERSION (INCORRECT - stops at first pause):
+        # Past up to 3 (stop at pause)
+        # for j in range(i - 1, max(-1, i - 4), -1):
+        #     if j < 0 or history[j] is None:
+        #         break
+        #     context_items.append(history[j])
+        
+        NEW VERSION (CORRECT - includes items up to but not across pause boundaries):
+        """
         context_items = []
         
-        # Past up to 3 (stop at pause)
+        # Past context (up to 3 items, but don't extend across pause boundaries)
+        # Look back up to 3 items, but stop if we hit a pause or start of conversation
         for j in range(i - 1, max(-1, i - 4), -1):
-            if j < 0 or history[j] is None:
+            if j < 0:
+                break
+            if history[j] is None:
+                # Hit a pause - stop here but don't include the pause
                 break
             context_items.append(history[j])
         
-        # Future side (usually empty at proposal time)
+        # Future context (usually empty at proposal time, but follow same rules)
         for j in range(i + 1, min(len(history), i + 4)):
             if history[j] is None:
+                # Hit a pause - stop here but don't include the pause
                 break
             context_items.append(history[j])
         

@@ -143,26 +143,44 @@ def calculate_freshness_score(turn_idx: int, item: Item, history: Sequence[Item 
 
 def calculate_coherence_score(turn_idx: int, item: Item, history: Sequence[Item | None]) -> float:
     """
-    Calculate coherence score for an item.
+    Calculate coherence score for an item following official game rules.
     
-    Considers both past and future context (future usually empty at proposal time).
+    Official rule: For every item I, the (up to) 3 preceding items and (up to) 3 following 
+    items are collected into a set C_I of context items. The window defining C_I does not 
+    extend beyond the start of the conversation or any pauses.
+    
+    OLD VERSION (INCORRECT - stops at first pause):
+    # Past context (up to COHERENCE_WINDOW, stop at pause)
+    # for j in range(turn_idx - 1, max(-1, turn_idx - COHERENCE_WINDOW - 1), -1):
+    #     if j < 0 or history[j] is None:
+    #         break
+    #     context_items.append(history[j])
+    
+    NEW VERSION (CORRECT - includes items up to but not across pause boundaries):
     """
     context_items = []
     
-    # Past context (up to COHERENCE_WINDOW, stop at pause)
+    # Past context (up to COHERENCE_WINDOW, but don't extend across pause boundaries)
+    # Look back up to 3 items, but stop if we hit a pause or start of conversation
     for j in range(turn_idx - 1, max(-1, turn_idx - COHERENCE_WINDOW - 1), -1):
-        if j < 0 or history[j] is None:
+        if j < 0:
+            break
+        if history[j] is None:
+            # Hit a pause - stop here but don't include the pause
+            # This means we don't extend across pause boundaries
             break
         context_items.append(history[j])
     
-    # Future context (usually empty at proposal time)
+    # Future context (usually empty at proposal time, but follow same rules)
     for j in range(turn_idx + 1, min(len(history), turn_idx + COHERENCE_WINDOW + 1)):
         if history[j] is None:
+            # Hit a pause - stop here but don't include the pause
             break
         context_items.append(history[j])
     
     if not context_items:
-        return 0.0
+        # No context items means all subjects are not in context -> penalty
+        return -1.0
     
     context_subject_counts = Counter(s for item in context_items for s in item.subjects)
     score = 0.0

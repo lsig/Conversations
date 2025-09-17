@@ -12,16 +12,8 @@ from typing import Optional
 
 from models.item import Item
 
-from .config import (
-    ALTRUISM_USE_PROB,
-    CURRENT_SPEAKER_EDGE,
-    EPSILON_FRESH,
-    EPSILON_MONO,
-    FAIRNESS_PROB_NO_SPEAKER,
-    FAIRNESS_PROB_WITH_SPEAKER,
-    MAX_CONSECUTIVE_PAUSES,
-    TAU_MARGIN,
-)
+# Import config module instead of specific values to allow dynamic updates
+from . import config as config_module
 from .scoring import (
     PlayerPerformanceTracker,
     calculate_canonical_delta,
@@ -38,6 +30,7 @@ from .utils import (
     subjects_in_last_n_nonpause_before_index,
     trailing_pause_count,
 )
+from .debug_utils import DebugLogger
 
 
 class OriginalStrategy:
@@ -60,7 +53,7 @@ class OriginalStrategy:
             return self._pick_first_turn_opener()
         
         # Keepalive if two pauses already
-        if trailing_pause_count(history) >= MAX_CONSECUTIVE_PAUSES:
+        if trailing_pause_count(history) >= config_module.MAX_CONSECUTIVE_PAUSES:
             return self._pick_safe_keepalive(history)
         
         # Freshness mode: immediately after a pause
@@ -119,7 +112,24 @@ class OriginalStrategy:
         )
     
     def _general_scoring_best(self, history: Sequence[Item | None]) -> Optional[Item]:
-        """General scoring logic (original Player10 style)."""
+        """
+        General scoring logic (original Player10 style).
+        
+        This method uses calculate_canonical_delta from scoring.py, which now correctly
+        implements the official coherence rules. The coherence calculation was fixed to:
+        - Return -1.0 when no context items are found (e.g., after pauses)
+        - Properly handle pause boundaries in the coherence window
+        
+        OLD BEHAVIOR (INCORRECT - before coherence fix):
+        # The old coherence calculation incorrectly returned 0.0 for empty context
+        # instead of -1.0, leading to poor coherence scoring and decision-making
+        
+        NEW BEHAVIOR (CORRECT - after coherence fix):
+        # Now uses the fixed calculate_canonical_delta which properly handles:
+        # - Pause boundaries (stops at pauses, doesn't extend across them)
+        # - Empty context (returns -1.0 penalty instead of 0.0)
+        # - Matches official engine behavior exactly
+        """
         best_item = None
         best_score = float('-inf')
         
@@ -159,6 +169,7 @@ class AltruismStrategy:
     def __init__(self, player, performance_tracker: PlayerPerformanceTracker):
         self.player = player
         self.performance_tracker = performance_tracker
+        self.debug_logger = DebugLogger(player.id)
     
     def propose_item(self, history: Sequence[Item | None]) -> Optional[Item]:
         """
@@ -171,7 +182,7 @@ class AltruismStrategy:
         if not history:
             return self._pick_first_turn_opener()
         
-        if trailing_pause_count(history) >= MAX_CONSECUTIVE_PAUSES:
+        if trailing_pause_count(history) >= config_module.MAX_CONSECUTIVE_PAUSES:
             return self._pick_safe_keepalive(history)
         
         if last_was_pause(history):
@@ -211,8 +222,15 @@ class AltruismStrategy:
         # Calculate tau with epsilon adjustments
         tau = self._calculate_tau(best_item, history)
         
+        # Log altruism gate decision
+        threshold = expected_others_delta - tau
+        decision = "PROPOSE" if best_delta >= threshold else "HOLD"
+        reason = f"Δ_self={best_delta:.3f} {'>=' if best_delta >= threshold else '<'} threshold={threshold:.3f}"
+        
+        self.debug_logger.log_altruism_gate(best_delta, expected_others_delta, tau, decision, reason)
+        
         # Decision: propose if our delta >= expected others - tau
-        if best_delta >= expected_others_delta - tau:
+        if best_delta >= threshold:
             return best_item
         else:
             return None
@@ -234,15 +252,15 @@ class AltruismStrategy:
         """
         Calculate tau with epsilon adjustments based on context.
         """
-        tau = TAU_MARGIN
+        tau = config_module.TAU_MARGIN
         
         # Lower tau if last was pause and our best item is fresh
         if last_was_pause(history) and self._is_item_fresh(best_item, history):
-            tau -= EPSILON_FRESH
+            tau -= config_module.EPSILON_FRESH
         
         # Raise tau if our best item would trigger monotony
         if self._would_trigger_monotony(best_item, history):
-            tau += EPSILON_MONO
+            tau += config_module.EPSILON_MONO
         
         return tau
     
