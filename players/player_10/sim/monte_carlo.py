@@ -334,7 +334,7 @@ class MonteCarloSimulator:
     
     def _update_player10_config(self, config: SimulationConfig):
         """Temporarily update Player10 configuration."""
-        import players.player_10.config as config_module
+        import players.player_10.agent.config as config_module
         config_module.ALTRUISM_USE_PROB = config.altruism_prob
         config_module.TAU_MARGIN = config.tau_margin
         config_module.EPSILON_FRESH = config.epsilon_fresh
@@ -342,7 +342,7 @@ class MonteCarloSimulator:
     
     def _reset_player10_config(self):
         """Reset Player10 configuration to original values."""
-        import players.player_10.config as config_module
+        import players.player_10.agent.config as config_module
         config_module.ALTRUISM_USE_PROB = 0.2  # Reset to current value
         config_module.TAU_MARGIN = 0.05
         config_module.EPSILON_FRESH = 0.05
