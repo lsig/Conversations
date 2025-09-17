@@ -6,6 +6,7 @@ This provides an easy way to run custom tests from the command line.
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 from ..sim.test_framework import (
@@ -14,6 +15,55 @@ from ..sim.test_framework import (
     create_scalability_test, create_parameter_sweep_test,
     create_mixed_opponents_test
 )
+
+
+def _parse_player_config_string(config_str: str) -> dict:
+    """Parse a player configuration string into a dict.
+
+    Accepts:
+    - Strict JSON (e.g., '{"p10": 10, "pr": 2}')
+    - JSON-ish without quoted keys (e.g., '{p10: 10, pr: 2}')
+    - Key/value pairs (e.g., 'p10=10 pr=2' or 'p10:10,pr:2')
+    """
+    s = config_str.strip()
+    # 1) Try strict JSON
+    try:
+        return json.loads(s)
+    except Exception:
+        pass
+
+    # 2) Try to repair JSON-ish with unquoted keys and single quotes
+    try:
+        repaired = s
+        repaired = repaired.replace("'", '"')
+        repaired = re.sub(r"([\{\[,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:", r'\1"\2":', repaired)
+        return json.loads(repaired)
+    except Exception:
+        pass
+
+    # 3) Parse as key/value pairs
+    pairs = re.split(r"[\s,]+", s)
+    out: dict[str, int] = {}
+    for token in pairs:
+        if not token:
+            continue
+        if '=' in token:
+            k, v = token.split('=', 1)
+        elif ':' in token:
+            k, v = token.split(':', 1)
+        else:
+            # Not a recognizable token, skip
+            continue
+        k = k.strip().strip('"\'')
+        v = v.strip().strip('"\'')
+        if not k or not v:
+            continue
+        try:
+            out[k] = int(v)
+        except ValueError:
+            # Ignore non-int values
+            continue
+    return out
 
 
 def create_custom_test_from_args(args) -> TestConfiguration:
@@ -32,15 +82,15 @@ def create_custom_test_from_args(args) -> TestConfiguration:
     
     # Set player configurations
     if args.players:
-        # Parse player configurations from JSON
         player_configs = []
         for player_str in args.players:
-            try:
-                config = json.loads(player_str)
-                player_configs.append(config)
-            except json.JSONDecodeError:
+            parsed = _parse_player_config_string(player_str)
+            if parsed:
+                player_configs.append(parsed)
+            else:
                 print(f"Warning: Invalid player configuration '{player_str}', skipping")
-        builder.player_configs(player_configs)
+        if player_configs:
+            builder.player_configs(player_configs)
     
     # Set simulation parameters
     if args.simulations:
