@@ -10,6 +10,7 @@ class Player2(Player):
 		self.subject_num: int = len(self.preferences)
 		self.memory_bank_size: int = len(self.memory_bank)
 		self.current_strategy: BaseStrategy = None
+
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 

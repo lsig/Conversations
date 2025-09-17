@@ -44,7 +44,7 @@ class Strategy1(BaseStrategy):
 		if turn_nr == 1 or turn_nr > 1 and history[-1] is None:
 			# print("Here in first turn or after pause")
 			# Get the items with the most frequent occurring subject in memory bank
-			# print(player.sub_to_item.items())
+
 			_, coherent_items = next(iter(player.sub_to_item.items()))
 			# print(f"Coherent items: {coherent_items}")
 
@@ -70,6 +70,7 @@ class Strategy1(BaseStrategy):
 
 			# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 			# If there are no items in memory bank that match the subjects in context, then pause
+
 			for subs, subs_count in context_subs_sorted:
 				if subs_count < 3:
 					items_with_subs = player.sub_to_item.get(subs, []).copy()
