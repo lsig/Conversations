@@ -75,15 +75,24 @@ class Player7(Player):
 				chosen_item = item
 				importance = item.importance
 				highest_pref_index = pref_index
-
-		# If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
+    
+		#if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
 			for item in self.memory_bank:
-				if item not in history and item.importance > importance:
+				if self.most_preferred(item) <= K and item.importance > 0.5:
 					chosen_item = item
-					importance = item.importance
-		# Return item with highest importance that is not in history.
-		return chosen_item if chosen_item else None
+					return chosen_item
+			return None  # pause if no item found
+
+		### old code below
+		# # If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
+		# if chosen_item is None:
+		# 	for item in self.memory_bank:
+		# 		if item not in history and item.importance > importance:
+		# 			chosen_item = item
+		# 			importance = item.importance
+		# # Return item with highest importance that is not in history.
+		# return chosen_item if chosen_item else None
 	
 	def most_preferred(self,item:Item)->int:
 		# return the most preferred subject in the item
@@ -97,8 +106,7 @@ class Player7(Player):
 		S = len(self.preferences)
 		K = int(S * (0.50 + 0.40 * progress)) - 1  # 50% -> 90% as bank shrinks
 		return max(0, min(S - 1, K))
-		
-		
+
 
 
 
