@@ -123,7 +123,7 @@ class Player6(Player):
 			if item.id in id_list:
 				repeated = True
 			history.append(item)
-			#individual_score = 0
+			# individual_score = 0
 			freshness_score = self.__calculate_freshness_score(history, n, item)
 			nonmonotonousness_score = self.__calculate_nonmonotonousness_score(
 				history, n, item, repeated
