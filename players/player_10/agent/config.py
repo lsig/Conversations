@@ -26,7 +26,7 @@ FAIRNESS_PROB_NO_SPEAKER = 1.0    # Probability of fairness step when no current
 IMPORTANCE_WEIGHT = 1.0 # * (1-ALTRUISM_USE_PROB)
 COHERENCE_WEIGHT = 1.0 
 FRESHNESS_WEIGHT = 1.0
-MONOTONY_WEIGHT = 1.0 * 2 # Note: monotony is subtracted, so this is actually -1.0 in practice
+MONOTONY_WEIGHT = 2.0 # Note: monotony is subtracted, so this is actually -1.0 in practice
 
 # Context window sizes
 FRESHNESS_WINDOW = 5     # Look back 5 turns for freshness calculation
@@ -37,7 +37,7 @@ MONOTONY_WINDOW = 3      # Look back 3 turns for monotony detection
 MAX_CONSECUTIVE_PAUSES = 2  # Always propose if this many consecutive pauses
 
 # Debugging parameters
-DEBUG_ENABLED = True  # Master debug toggle - set to True to enable detailed logging
+DEBUG_ENABLED = False  # Master debug toggle - set to True to enable detailed logging
 DEBUG_LEVEL = 1        # Debug level: 1=basic, 2=detailed, 3=verbose
 DEBUG_STRATEGY_SELECTION = True   # Log strategy selection (altruism vs original)
 DEBUG_ITEM_EVALUATION = True      # Log item scoring and evaluation
