@@ -36,4 +36,3 @@ class Player2(Player):
 
 		# Sorted according to number of items in memory bank
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
-
