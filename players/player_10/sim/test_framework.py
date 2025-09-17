@@ -7,12 +7,12 @@ without being limited to predefined test types.
 
 import time
 from dataclasses import dataclass, field
-import concurrent.futures
 import os
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Union, Callable
 
 from .monte_carlo import MonteCarloSimulator, SimulationConfig, SimulationResult
+from .parallel import execute_in_parallel
 
 
 @dataclass
@@ -204,13 +204,28 @@ class FlexibleTestRunner:
         self.results: List[SimulationResult] = []
 
 
-def _run_simulation_task(args: tuple[SimulationConfig, str]) -> SimulationResult:
-    """Helper for parallel execution: run one simulation in a fresh simulator.
-    Avoids sharing state across processes.
-    """
-    sim_config, output_dir = args
-    local_sim = MonteCarloSimulator(output_dir)
-    return local_sim.run_single_simulation(sim_config)
+def _build_task_args(sim_config: SimulationConfig, config: TestConfiguration, combination_count: int) -> list[tuple[SimulationConfig, str]]:
+    tasks: list[tuple[SimulationConfig, str]] = []
+    for sim_idx in range(config.num_simulations):
+        run_cfg = SimulationConfig(
+            altruism_prob=sim_config.altruism_prob,
+            tau_margin=sim_config.tau_margin,
+            epsilon_fresh=sim_config.epsilon_fresh,
+            epsilon_mono=sim_config.epsilon_mono,
+            seed=config.base_seed + combination_count * config.num_simulations + sim_idx,
+            players=sim_config.players,
+            subjects=sim_config.subjects,
+            memory_size=sim_config.memory_size,
+            conversation_length=sim_config.conversation_length,
+            min_samples_pid=sim_config.min_samples_pid,
+            ewma_alpha=sim_config.ewma_alpha,
+            importance_weight=sim_config.importance_weight,
+            coherence_weight=sim_config.coherence_weight,
+            freshness_weight=sim_config.freshness_weight,
+            monotony_weight=sim_config.monotony_weight,
+        )
+        tasks.append((run_cfg, str(self.output_dir)))
+    return tasks
     
     def run_test(self, config: TestConfiguration) -> List[SimulationResult]:
         """
@@ -272,34 +287,11 @@ def _run_simulation_task(args: tuple[SimulationConfig, str]) -> SimulationResult
                 
                 # Run simulations for this combination
                 if config.parallel:
-                    max_workers = config.workers or os.cpu_count() or 1
-                    # Build task arguments: distinct config per simulation with unique seeds
-                    task_args = []
-                    for sim_idx in range(config.num_simulations):
-                        run_cfg = SimulationConfig(
-                            altruism_prob=sim_config.altruism_prob,
-                            tau_margin=sim_config.tau_margin,
-                            epsilon_fresh=sim_config.epsilon_fresh,
-                            epsilon_mono=sim_config.epsilon_mono,
-                            seed=config.base_seed + combination_count * config.num_simulations + sim_idx,
-                            players=sim_config.players,
-                            subjects=sim_config.subjects,
-                            memory_size=sim_config.memory_size,
-                            conversation_length=sim_config.conversation_length,
-                            min_samples_pid=sim_config.min_samples_pid,
-                            ewma_alpha=sim_config.ewma_alpha,
-                            importance_weight=sim_config.importance_weight,
-                            coherence_weight=sim_config.coherence_weight,
-                            freshness_weight=sim_config.freshness_weight,
-                            monotony_weight=sim_config.monotony_weight,
-                        )
-                        task_args.append((run_cfg, str(self.output_dir)))
-
-                    with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
-                        for result in executor.map(_run_simulation_task, task_args):
-                            all_results.append(result)
-                            if pbar is not None:
-                                pbar.update(1)
+                    task_args = _build_task_args(sim_config, config, combination_count)
+                    for result in execute_in_parallel(task_args, workers=config.workers):
+                        all_results.append(result)
+                        if pbar is not None:
+                            pbar.update(1)
                 else:
                     for sim_idx in range(config.num_simulations):
                         sim_config.seed = config.base_seed + combination_count * config.num_simulations + sim_idx
