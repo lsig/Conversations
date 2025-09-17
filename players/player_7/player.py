@@ -62,7 +62,6 @@ class Player7(Player):
 			pref_index = self.preferences.index(
 				subject
 			)
-			print(subject, times_mentioned, item.importance, pref_index)
 			# get index of subject in preferences list
 			# formatted long if using copilot
 			if (
