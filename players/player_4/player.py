@@ -6,6 +6,7 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 class Player4(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super().__init__(snapshot, ctx)
+		self.ctx = ctx
 
 	@staticmethod
 	def _is_pause(x: Item | None) -> bool:
@@ -46,10 +47,28 @@ class Player4(Player):
 			if x is None:
 				break
 			out.append(x)
-			if count == k:
+			if count + 1 == k:
 				break
 		out.reverse()
 		return out
+
+	def _preference_bonus(self, item: Item) -> float:
+		"""
+		Average of (1 - k/|S|) over the item's subjects, where k is 1-based rank
+		in self.preferences (a permutation of all subjects). Unknown subjects -> 0.
+		Only called when history ends with a pause.
+		"""
+		S = len(self.preferences)
+		if S == 0 or not item.subjects:
+			return 0.0
+
+		def subj_bonus(s: int) -> float:
+			# worst-case (unknown) -> k = S -> 1 - S/S = 0
+			k = self.preferences.index(s) + 1 if s in self.preferences else S
+			return 1.0 - (k / S)
+
+		bonuses = [subj_bonus(s) for s in item.subjects]
+		return sum(bonuses) / len(bonuses)
 
 	def _coherence_prev3_score(self, item: Item, history: list[Item | None]) -> float:
 		"""
@@ -157,6 +176,7 @@ class Player4(Player):
 				elif all(subj_counts.get(s, 0) >= 2 for s in item.subjects):
 					score += 1.0
 
+		score += self._preference_bonus(item)
 		score += self._coherence_prev3_score(item, history)
 		return score
 
@@ -182,7 +202,9 @@ class Player4(Player):
 		best_score = max(s for s, _ in scored)
 		# print(best_score)
 		# print(history)
-		if len(history) != 0 and best_score < 1:
+		max_possible = 1.0 + 2.0 + 1.5  # importance + pause + coherence
+		threshold = max_possible * 0.3
+		if len(history) != 0 and best_score < threshold:
 			return None
 
 		# All with best score
