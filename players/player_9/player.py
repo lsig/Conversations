@@ -2,6 +2,15 @@ from collections import Counter
 
 from models.player import GameContext, Item, Player, PlayerSnapshot
 
+# player 6, 10
+
+threshold_weight = 0
+freshness_weight = 0
+coherence_weight = 0
+nonmonotonousness_weight = 0
+individual_weight = 0
+importance_weight = 0
+
 
 class Player9(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
@@ -18,7 +27,10 @@ class Player9(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		history_score = self.calculate_history_score(history)
 		item_scores = self.calculate_greedy(history_score, history)  # [item, score]
+
 		threshold = self.calculate_threshold(history_score, history)
+		# threshold_weight = self.threshold_weight_adjustment() #uncomment this to add threshold weighting
+		threshold = threshold * (1 + threshold_weight)
 		# print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
 
 		if not item_scores:  # just an edge case in case our memory is empty
@@ -26,11 +38,27 @@ class Player9(Player):
 
 		if item_scores[1] > threshold:
 			return item_scores[0]
-		if self.check_two_pause(history):
-			if item_scores[1] > 0.1:  # number is arbitrary, but should be at least 0
+		if (
+			self.check_two_pause(history) and item_scores[1] > 0.1
+		):  # number is arbitrary, but should be at least 0
+			return item_scores[0]
+		if self.conversation_length == (len(history) + 1):  # last turn
+			last_turn_threshold = max(0, max(self.conversation_length / 100, -1))
+			if item_scores[1] > last_turn_threshold:
 				return item_scores[0]
-		else:
-			return None
+		return None
+
+	"""Adjusts the threshold based on the number of turns and players in the game
+
+	1. The longer the conversation, the higher the threshold (uses 10 turns as default)
+	"""
+
+	def threshold_weight_adjustment(self) -> int:
+		default_iterations = 10
+		total_iterations = self.conversation_length
+		iteration_weight = (total_iterations - default_iterations) / default_iterations
+
+		return iteration_weight * 0.1
 
 	def check_two_pause(self, history: list[Item]) -> bool:
 		# print (history)
