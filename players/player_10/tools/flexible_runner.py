@@ -102,6 +102,20 @@ def create_custom_test_from_args(args) -> TestConfiguration:
     if args.memory_size:
         builder.memory_size(args.memory_size)
     
+    # Extended ranges
+    if args.min_samples:
+        builder.min_samples_range(args.min_samples)
+    if args.ewma:
+        builder.ewma_alpha_range(args.ewma)
+    if args.w_importance:
+        builder.importance_weight_range(args.w_importance)
+    if args.w_coherence:
+        builder.coherence_weight_range(args.w_coherence)
+    if args.w_freshness:
+        builder.freshness_weight_range(args.w_freshness)
+    if args.w_monotony:
+        builder.monotony_weight_range(args.w_monotony)
+
     # Set output directory
     if args.output_dir:
         builder.output_dir(args.output_dir)
@@ -144,6 +158,12 @@ Examples:
     parser.add_argument('--tau', nargs='+', type=float, help='Tau margins to test')
     parser.add_argument('--epsilon-fresh', nargs='+', type=float, help='Epsilon fresh values to test')
     parser.add_argument('--epsilon-mono', nargs='+', type=float, help='Epsilon mono values to test')
+    parser.add_argument('--min-samples', nargs='+', type=int, help='Min samples per player for trusted mean')
+    parser.add_argument('--ewma', nargs='+', type=float, help='EWMA alpha values to test')
+    parser.add_argument('--w-importance', nargs='+', type=float, help='Importance weight values')
+    parser.add_argument('--w-coherence', nargs='+', type=float, help='Coherence weight values')
+    parser.add_argument('--w-freshness', nargs='+', type=float, help='Freshness weight values')
+    parser.add_argument('--w-monotony', nargs='+', type=float, help='Monotony weight values')
     
     # Player configurations
     parser.add_argument('--players', nargs='+', help='Player configurations as JSON strings')

@@ -17,7 +17,18 @@ from core.engine import Engine
 from models.cli import Settings
 from models.player import Player
 
-from ..agent.config import ALTRUISM_USE_PROB, TAU_MARGIN, EPSILON_FRESH, EPSILON_MONO
+from ..agent.config import (
+    ALTRUISM_USE_PROB,
+    TAU_MARGIN,
+    EPSILON_FRESH,
+    EPSILON_MONO,
+    MIN_SAMPLES_PID,
+    EWMA_ALPHA,
+    IMPORTANCE_WEIGHT,
+    COHERENCE_WEIGHT,
+    FRESHNESS_WEIGHT,
+    MONOTONY_WEIGHT,
+)
 from ..agent.player import Player10
 
 
@@ -33,6 +44,13 @@ class SimulationConfig:
     subjects: int = 20
     memory_size: int = 10
     conversation_length: int = 50
+    # Extended config knobs (defaults pulled from agent.config)
+    min_samples_pid: int = MIN_SAMPLES_PID
+    ewma_alpha: float = EWMA_ALPHA
+    importance_weight: float = IMPORTANCE_WEIGHT
+    coherence_weight: float = COHERENCE_WEIGHT
+    freshness_weight: float = FRESHNESS_WEIGHT
+    monotony_weight: float = MONOTONY_WEIGHT
 
 
 @dataclass
@@ -339,14 +357,18 @@ class MonteCarloSimulator:
         config_module.TAU_MARGIN = config.tau_margin
         config_module.EPSILON_FRESH = config.epsilon_fresh
         config_module.EPSILON_MONO = config.epsilon_mono
+        config_module.MIN_SAMPLES_PID = config.min_samples_pid
+        config_module.EWMA_ALPHA = config.ewma_alpha
+        config_module.IMPORTANCE_WEIGHT = config.importance_weight
+        config_module.COHERENCE_WEIGHT = config.coherence_weight
+        config_module.FRESHNESS_WEIGHT = config.freshness_weight
+        config_module.MONOTONY_WEIGHT = config.monotony_weight
     
     def _reset_player10_config(self):
         """Reset Player10 configuration to original values."""
         import players.player_10.agent.config as config_module
-        config_module.ALTRUISM_USE_PROB = 0.2  # Reset to current value
-        config_module.TAU_MARGIN = 0.05
-        config_module.EPSILON_FRESH = 0.05
-        config_module.EPSILON_MONO = 0.05
+        # Note: we do not have original snapshot; leave as-is after run to avoid conflicting concurrent tests.
+        # For isolation, each run sets values explicitly before it starts.
     
     def _extract_results(self, config: SimulationConfig, simulation_results: Any, execution_time: float) -> SimulationResult:
         """Extract results from engine simulation output."""

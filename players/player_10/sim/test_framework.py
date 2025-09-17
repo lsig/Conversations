@@ -63,6 +63,25 @@ class TestConfiguration:
     output_dir: str = "simulation_results"
     save_results: bool = True
     print_progress: bool = True
+    # Extended knobs (optional ranges)
+    min_samples_values: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[3], name="min_samples_pid", description="Min samples per player for trusted mean"
+    ))
+    ewma_alpha_values: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[0.10], name="ewma_alpha", description="EWMA alpha"
+    ))
+    importance_weights: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[1.0], name="importance_weight", description="Importance weight"
+    ))
+    coherence_weights: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[1.0], name="coherence_weight", description="Coherence weight"
+    ))
+    freshness_weights: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[1.0], name="freshness_weight", description="Freshness weight"
+    ))
+    monotony_weights: ParameterRange = field(default_factory=lambda: ParameterRange(
+        values=[1.0], name="monotony_weight", description="Monotony weight"
+    ))
 
 
 class TestBuilder:
@@ -127,6 +146,31 @@ class TestBuilder:
     def memory_size(self, size: int) -> 'TestBuilder':
         """Set memory size."""
         self.config.memory_size = size
+        return self
+
+    # Extended range setters
+    def min_samples_range(self, values: List[int]) -> 'TestBuilder':
+        self.config.min_samples_values = ParameterRange(values=values, name="min_samples_pid", description="Min samples per player")
+        return self
+
+    def ewma_alpha_range(self, values: List[float]) -> 'TestBuilder':
+        self.config.ewma_alpha_values = ParameterRange(values=values, name="ewma_alpha", description="EWMA alpha")
+        return self
+
+    def importance_weight_range(self, values: List[float]) -> 'TestBuilder':
+        self.config.importance_weights = ParameterRange(values=values, name="importance_weight", description="Importance weight")
+        return self
+
+    def coherence_weight_range(self, values: List[float]) -> 'TestBuilder':
+        self.config.coherence_weights = ParameterRange(values=values, name="coherence_weight", description="Coherence weight")
+        return self
+
+    def freshness_weight_range(self, values: List[float]) -> 'TestBuilder':
+        self.config.freshness_weights = ParameterRange(values=values, name="freshness_weight", description="Freshness weight")
+        return self
+
+    def monotony_weight_range(self, values: List[float]) -> 'TestBuilder':
+        self.config.monotony_weights = ParameterRange(values=values, name="monotony_weight", description="Monotony weight")
         return self
     
     def output_dir(self, directory: str) -> 'TestBuilder':
@@ -244,12 +288,24 @@ class FlexibleTestRunner:
             for tau in config.tau_margins.values:
                 for fresh in config.epsilon_fresh_values.values:
                     for mono in config.epsilon_mono_values.values:
-                        combinations.append({
-                            'altruism_prob': altruism,
-                            'tau_margin': tau,
-                            'epsilon_fresh': fresh,
-                            'epsilon_mono': mono
-                        })
+                        for min_samples in config.min_samples_values.values:
+                            for ewma in config.ewma_alpha_values.values:
+                                for w_imp in config.importance_weights.values:
+                                    for w_coh in config.coherence_weights.values:
+                                        for w_fre in config.freshness_weights.values:
+                                            for w_mon in config.monotony_weights.values:
+                                                combinations.append({
+                                                    'altruism_prob': altruism,
+                                                    'tau_margin': tau,
+                                                    'epsilon_fresh': fresh,
+                                                    'epsilon_mono': mono,
+                                                    'min_samples_pid': min_samples,
+                                                    'ewma_alpha': ewma,
+                                                    'importance_weight': w_imp,
+                                                    'coherence_weight': w_coh,
+                                                    'freshness_weight': w_fre,
+                                                    'monotony_weight': w_mon,
+                                                })
         
         return combinations
 
