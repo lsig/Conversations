@@ -13,3 +13,6 @@ wheels/
 .DS_Store
 players/player_10/results/
 simulation_results/
+
+# Result files
+*.json
