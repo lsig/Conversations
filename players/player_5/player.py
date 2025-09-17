@@ -44,6 +44,31 @@ class Player5(Player):
 			score += sum(bonuses) / len(bonuses)
 		return score
 
+	def rrf_score(
+		self,
+		item: Item,
+		shared_map: dict,
+		pref_map: dict,
+		imp_map: dict,
+		turns_left: int,
+	) -> float:
+		"""Calculate Reciprocal Rank Fusion (RRF) score for one item."""
+		k = 60
+		if turns_left <= 3:
+			# Lean into more important topics
+			return (
+				1 / (k + shared_map.get(item, len(self.memory_bank)))
+				+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))
+				+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank))))  # triple weight
+			)
+		else:
+			return (
+				1 / (k + shared_map.get(item, len(self.memory_bank)))
+				+ 2
+				* (1 / (k + pref_map.get(item, len(self.memory_bank))))  # weight preferences higher
+				+ 1 / (k + imp_map.get(item, len(self.memory_bank)))
+			)
+
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if not self.memory_bank:
 			return None
@@ -113,10 +138,7 @@ class Player5(Player):
 		pref_map = build_rank_map(pref_ranking)
 		imp_map = build_rank_map(importance_ranking)
 
-		# RRF parameters
-		k = 60
-		scores = {}
-		# Nearing the end, maximize individaul score by preferring high importance topics
+		# Nearing the end, maximize individual score by preferring high importance topics
 		turns_left = self.conversation_length - len(history)
 
 		# Track subject repetition
@@ -130,26 +152,13 @@ class Player5(Player):
 			subject for item in history_post_pause if item is not None for subject in item.subjects
 		}
 
+		scores = {}
 		for item in self.memory_bank:
-			if turns_left <= 3:
-				# lean into more important topics
-				scores[item] = (
-					1 / (k + shared_map.get(item, len(self.memory_bank)))
-					+ 2 * (1 / (k + pref_map.get(item, len(self.memory_bank))))
-					+ 3 * (1 / (k + imp_map.get(item, len(self.memory_bank))))  # triple
-				)
-			else:
-				scores[item] = (
-					1 / (k + shared_map.get(item, len(self.memory_bank)))
-					+ 2
-					* (
-						1 / (k + pref_map.get(item, len(self.memory_bank)))
-					)  # weight preferences higher
-					+ 1 / (k + imp_map.get(item, len(self.memory_bank)))
-				)
+			# Base score from RRF
+			scores[item] = self.rrf_score(item, shared_map, pref_map, imp_map, turns_left)
 
 			if any(count_recent[subject] >= 3 for subject in item.subjects):
-				# non-monotnous penalty
+				# non-monotonous penalty
 				scores[item] -= 1
 
 			# freshness: count how many subjects of an item hasn't been mentioned since pause
@@ -159,10 +168,6 @@ class Player5(Player):
 			scores[item] += new_subject_count
 
 		# Pick best
-		# best_item = max(scores.items(), key=lambda x: x[1])[0]
 		best_score = max(scores.values())
 		highest_candidates = [item for item, s in scores.items() if s == best_score]
-		# if tied choose randomly so we don't constantly repeat picking the first max
-		best_item = random.choice(highest_candidates)
-
-		return best_item
+		return random.choice(highest_candidates)
