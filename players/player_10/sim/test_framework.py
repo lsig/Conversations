@@ -448,11 +448,11 @@ def create_scalability_test() -> TestConfiguration:
 def create_parameter_sweep_test() -> TestConfiguration:
     """Create a comprehensive parameter sweep test."""
     return (TestBuilder("parameter_sweep", "Comprehensive parameter sweep")
-            .altruism_range([0.0, 0.1, 0.15, 0.2, 0.25])
-            .tau_range([-0.1, 0, 0.05, 0.1, 0.15, 0.2])
-            .epsilon_fresh_range([0, 0.05, 0.1])
-            .epsilon_mono_range([0, 0.05, 0.1])
-            .player_configs([{'p10': 10, 'pr': 0}, {'p10': 9, 'pr': 1}])
+            .altruism_range([0.0, 0.1, 0.15, 0.2, 0.25, 0.3])
+            .tau_range([-0.1, 0, 0.05, 0.1, 0.15, 0.2, 0.25])
+            .epsilon_fresh_range([-0.05, 0, 0.05, 0.1, 0.15])
+            .epsilon_mono_range([-0.05, 0, 0.05, 0.1])
+            .player_configs([{'p10': 8, 'pr': 0}])# , {'p10': 9, 'pr': 1}])
             .simulations(20)
             .build())
 
