@@ -4,7 +4,7 @@ Examples of using the flexible test framework.
 This script demonstrates various ways to create and run custom tests.
 """
 
-from test_framework import (
+from ..test_framework import (
     FlexibleTestRunner, TestBuilder, TestConfiguration,
     create_altruism_comparison_test, create_random_players_test,
     create_scalability_test, create_parameter_sweep_test,

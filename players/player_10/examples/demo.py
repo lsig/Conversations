@@ -10,7 +10,7 @@ def run_demo():
     print()
     
     # Import the framework
-    from .monte_carlo import MonteCarloSimulator, SimulationConfig
+    from ..monte_carlo import MonteCarloSimulator, SimulationConfig
     
     print("1. Creating simulator...")
     simulator = MonteCarloSimulator("demo_results")

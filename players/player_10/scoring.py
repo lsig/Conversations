@@ -201,19 +201,58 @@ def calculate_monotony_score(turn_idx: int, item: Item, history: Sequence[Item |
     Calculate monotony score for an item.
     
     Penalizes items that would continue a subject streak.
+
+    OLD VERSION (INCORRECT):
+        - Shadowed the candidate variable name by reusing `item` in a list
+          comprehension/loop, making the condition effectively tautological:
+              any(s in item.subjects for s in item.subjects)
+          This always evaluates True when `item.subjects` is non-empty.
+        - Did not explicitly ensure we were checking the last three non-pause
+          items, which can under/over-count around pauses.
+
+        Reference (commented out for posterity):
+            # if turn_idx < MONOTONY_WINDOW:
+            #     return 0.0
+            # last_items = [history[j] for j in range(turn_idx - MONOTONY_WINDOW, turn_idx)]
+            # if all(
+            #     item is not None and any(s in item.subjects for s in item.subjects)
+            #     for item in last_items
+            # ):
+            #     return 1.0
+            # return 0.0
+
+    CORRECT APPROACH (this implementation):
+        - Look back over the last MONOTONY_WINDOW non-pause items.
+        - Apply the spec: if ANY subject of the candidate appears in EACH of the
+          last three non-pause items, return 1.0 (penalty). Otherwise 0.0.
     """
     if turn_idx < MONOTONY_WINDOW:
         return 0.0
-    
-    # Check if this subject appeared in each of the last MONOTONY_WINDOW items
-    last_items = [history[j] for j in range(turn_idx - MONOTONY_WINDOW, turn_idx)]
-    
-    if all(
-        item is not None and any(s in item.subjects for s in item.subjects)
-        for item in last_items
-    ):
-        return 1.0  # This will be subtracted, so it's a penalty
-    
+
+    # Consider only the last MONOTONY_WINDOW non-pause items
+    last_items: list[Item] = []
+    for j in range(turn_idx - 1, max(-1, turn_idx - MONOTONY_WINDOW - 1), -1):
+        prev = history[j]
+        if prev is None:
+            continue
+        last_items.append(prev)
+        if len(last_items) >= MONOTONY_WINDOW:
+            break
+
+    # Not enough prior non-pause items to incur a penalty
+    if len(last_items) < MONOTONY_WINDOW:
+        return 0.0
+
+    # Penalty if ANY subject of the candidate appears in EACH of the last
+    # MONOTONY_WINDOW non-pause items
+    candidate_subjects = tuple(getattr(item, 'subjects', ()) or ())
+    if not candidate_subjects:
+        return 0.0
+
+    for subj in candidate_subjects:
+        if all(subj in getattr(prev, 'subjects', ()) for prev in last_items):
+            return 1.0
+
     return 0.0
 
 

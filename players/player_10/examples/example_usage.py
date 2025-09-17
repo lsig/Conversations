@@ -5,8 +5,8 @@ This script demonstrates how to run simulations and analyze results
 for different Player10 configurations.
 """
 
-from .monte_carlo import MonteCarloSimulator, SimulationConfig
-from .analyze_results import ResultsAnalyzer
+from ..monte_carlo import MonteCarloSimulator, SimulationConfig
+from ..analyze_results import ResultsAnalyzer
 
 
 def example_quick_test():

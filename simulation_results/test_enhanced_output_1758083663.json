@@ -1,0 +1,6482 @@
+[
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.82000000000001,
+    "player_scores": {
+      "Player10": 2.6955
+    },
+    "player_contributions": {
+      "Player_2ed7e48e": 4,
+      "Player_f5c0be12": 3,
+      "Player_40a9a8f6": 5,
+      "Player_0790d33e": 6,
+      "Player_5dd6b3ad": 3,
+      "Player_223a755d": 4,
+      "Player_f854d7f0": 4,
+      "Player_f08b8b6c": 3,
+      "Player_7824e631": 5,
+      "Player_cc75533e": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06132221221923828
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.0,
+    "player_scores": {
+      "Player10": 2.5609756097560976
+    },
+    "player_contributions": {
+      "Player_de9b2355": 5,
+      "Player_d8b70695": 4,
+      "Player_e2f09a59": 5,
+      "Player_b30320fb": 3,
+      "Player_4d049040": 5,
+      "Player_9d1efc85": 3,
+      "Player_b2e13f3d": 4,
+      "Player_cad4974c": 3,
+      "Player_262c2dc4": 5,
+      "Player_666cba98": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.0625448226928711
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.56,
+    "player_scores": {
+      "Player10": 2.40390243902439
+    },
+    "player_contributions": {
+      "Player_ceab0794": 3,
+      "Player_1e3719e5": 3,
+      "Player_206dabd7": 4,
+      "Player_9075e9e5": 4,
+      "Player_46481d76": 4,
+      "Player_93b98ed3": 5,
+      "Player_68d6d9c3": 5,
+      "Player_0059fd8d": 4,
+      "Player_e94b8c55": 4,
+      "Player_b44b4f2a": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.058259010314941406
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.43999999999998,
+    "player_scores": {
+      "Player10": 2.5960975609756094
+    },
+    "player_contributions": {
+      "Player_b2160a83": 6,
+      "Player_faf16332": 4,
+      "Player_32e31ba1": 3,
+      "Player_7fb62a91": 6,
+      "Player_ee8efc99": 4,
+      "Player_0c88af22": 3,
+      "Player_6302fe1d": 4,
+      "Player_d60330f4": 3,
+      "Player_29411b57": 5,
+      "Player_2dbdb66f": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.0584101676940918
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.78,
+    "player_scores": {
+      "Player10": 2.7945
+    },
+    "player_contributions": {
+      "Player_0ca12764": 3,
+      "Player_1dba8b9e": 4,
+      "Player_c42ca322": 5,
+      "Player_ed8c6d3b": 3,
+      "Player_810fb708": 4,
+      "Player_73ac69ca": 4,
+      "Player_cb4c409d": 4,
+      "Player_8156b2d6": 5,
+      "Player_cb109e35": 4,
+      "Player_c15de0b8": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.056508779525756836
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.12,
+    "player_scores": {
+      "Player10": 2.6933333333333334
+    },
+    "player_contributions": {
+      "Player_889caf2b": 3,
+      "Player_ba73034b": 4,
+      "Player_dacd25c0": 4,
+      "Player_ce7546a3": 4,
+      "Player_106d0dcf": 5,
+      "Player_52fd1496": 5,
+      "Player_2f18af70": 6,
+      "Player_af621d84": 4,
+      "Player_d51bd2bd": 3,
+      "Player_aa696d18": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06019878387451172
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.16,
+    "player_scores": {
+      "Player10": 2.3847619047619046
+    },
+    "player_contributions": {
+      "Player_ac93a041": 4,
+      "Player_56c619bc": 3,
+      "Player_4a3f4d6b": 5,
+      "Player_d57d4d7e": 3,
+      "Player_85f4de4a": 4,
+      "Player_66485818": 5,
+      "Player_cad09924": 4,
+      "Player_04b37b93": 4,
+      "Player_06cad1bf": 6,
+      "Player_62741046": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.0676717758178711
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.68,
+    "player_scores": {
+      "Player10": 2.48
+    },
+    "player_contributions": {
+      "Player_6ebbb4a2": 5,
+      "Player_aa6ff4b7": 5,
+      "Player_27cd5640": 4,
+      "Player_f3da552d": 4,
+      "Player_484300bd": 5,
+      "Player_a1d59a15": 4,
+      "Player_1c461c6d": 3,
+      "Player_0c703bb4": 4,
+      "Player_04106864": 3,
+      "Player_6307e2cf": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06161022186279297
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 112.12,
+    "player_scores": {
+      "Player10": 2.7346341463414636
+    },
+    "player_contributions": {
+      "Player_5bca443e": 4,
+      "Player_292809ab": 4,
+      "Player_74a7cbde": 4,
+      "Player_2563168d": 5,
+      "Player_853a2c33": 5,
+      "Player_28ed1063": 3,
+      "Player_8644288d": 4,
+      "Player_b7172a7e": 5,
+      "Player_fe4e7333": 4,
+      "Player_b6cd4193": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06261157989501953
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.78,
+    "player_scores": {
+      "Player10": 2.4233333333333333
+    },
+    "player_contributions": {
+      "Player_6b74fb1c": 6,
+      "Player_d7c81ac5": 4,
+      "Player_4ae3bf36": 3,
+      "Player_f14e01d5": 3,
+      "Player_47b6d894": 3,
+      "Player_aa2bc4b1": 6,
+      "Player_0a150d1e": 4,
+      "Player_3be9dad3": 4,
+      "Player_5f61456f": 3,
+      "Player_fc16da58": 6
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.0600278377532959
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.35999999999999,
+    "player_scores": {
+      "Player10": 2.7089999999999996
+    },
+    "player_contributions": {
+      "Player_d56d41aa": 4,
+      "Player_3ed052ca": 4,
+      "Player_2357e7da": 4,
+      "Player_00f1c8ed": 5,
+      "Player_84d0a80c": 3,
+      "Player_97d024ba": 5,
+      "Player_7967fb81": 4,
+      "Player_ca96d58f": 4,
+      "Player_155ed7f9": 3,
+      "Player_a9855e03": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05868983268737793
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 96.2,
+    "player_scores": {
+      "Player10": 2.346341463414634
+    },
+    "player_contributions": {
+      "Player_3a7bb514": 3,
+      "Player_fcd0a4bb": 5,
+      "Player_2230f6c0": 4,
+      "Player_470e6f13": 4,
+      "Player_3a09d568": 5,
+      "Player_ebfae07c": 4,
+      "Player_69c29df4": 4,
+      "Player_44f1a51b": 4,
+      "Player_f9605849": 4,
+      "Player_85b6c3a4": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05866885185241699
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.30000000000001,
+    "player_scores": {
+      "Player10": 2.6131578947368426
+    },
+    "player_contributions": {
+      "Player_70bd8363": 3,
+      "Player_c4555900": 4,
+      "Player_e3425619": 5,
+      "Player_2e789ef2": 4,
+      "Player_76069835": 3,
+      "Player_43e7f94d": 4,
+      "Player_7b707534": 4,
+      "Player_e12b5a75": 4,
+      "Player_3a65c5db": 4,
+      "Player_0a2c6ae5": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05579996109008789
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.4,
+    "player_scores": {
+      "Player10": 2.4380952380952383
+    },
+    "player_contributions": {
+      "Player_da33d234": 5,
+      "Player_f4299729": 3,
+      "Player_ae9f7887": 6,
+      "Player_2304fa19": 4,
+      "Player_9d7cf256": 4,
+      "Player_f9d739a7": 5,
+      "Player_98a7e926": 3,
+      "Player_7e78aff2": 4,
+      "Player_2709a96a": 5,
+      "Player_6dba988f": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06081700325012207
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.83999999999999,
+    "player_scores": {
+      "Player10": 2.842051282051282
+    },
+    "player_contributions": {
+      "Player_b1cbfa68": 4,
+      "Player_d45a494e": 4,
+      "Player_ef6ddbe6": 3,
+      "Player_eb76d488": 5,
+      "Player_05d5b912": 4,
+      "Player_5428c614": 3,
+      "Player_2ceb3ade": 4,
+      "Player_f44e01a9": 3,
+      "Player_4aa79adc": 5,
+      "Player_eeab2377": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05260133743286133
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.26,
+    "player_scores": {
+      "Player10": 2.6065
+    },
+    "player_contributions": {
+      "Player_e2016c17": 4,
+      "Player_dc9708f2": 4,
+      "Player_928119f5": 4,
+      "Player_ad959bf0": 4,
+      "Player_64699d78": 4,
+      "Player_2346b96f": 4,
+      "Player_d89c29d1": 3,
+      "Player_df10faa3": 5,
+      "Player_9f9ec6f7": 5,
+      "Player_6a069225": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0626072883605957
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.80000000000001,
+    "player_scores": {
+      "Player10": 2.702439024390244
+    },
+    "player_contributions": {
+      "Player_2595f486": 5,
+      "Player_3da28e8a": 4,
+      "Player_7db62fe0": 3,
+      "Player_f8220318": 4,
+      "Player_acd33df5": 3,
+      "Player_dfe1d1db": 5,
+      "Player_9da3d2ee": 4,
+      "Player_5a9f3cc2": 6,
+      "Player_3d60c13c": 3,
+      "Player_049d28da": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05839061737060547
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 93.68,
+    "player_scores": {
+      "Player10": 2.2304761904761907
+    },
+    "player_contributions": {
+      "Player_8a96be3f": 3,
+      "Player_658c52ec": 5,
+      "Player_10230d0a": 3,
+      "Player_1f9c5b69": 4,
+      "Player_34a2647f": 5,
+      "Player_9f02928c": 4,
+      "Player_d3c8d908": 4,
+      "Player_7d40c036": 5,
+      "Player_055ab6d6": 4,
+      "Player_ad2ca410": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06461906433105469
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.02000000000001,
+    "player_scores": {
+      "Player10": 2.5755000000000003
+    },
+    "player_contributions": {
+      "Player_c2a65fd6": 4,
+      "Player_c8a9f162": 4,
+      "Player_baac4663": 5,
+      "Player_3b75d602": 4,
+      "Player_2775231e": 4,
+      "Player_b4a7a519": 5,
+      "Player_9fb403bf": 3,
+      "Player_ffd3e29a": 4,
+      "Player_2c9ea74c": 4,
+      "Player_546515ac": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.057085275650024414
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 81,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.97999999999999,
+    "player_scores": {
+      "Player10": 2.8495
+    },
+    "player_contributions": {
+      "Player_ee8707a5": 3,
+      "Player_6becb6c1": 3,
+      "Player_8d4049ed": 3,
+      "Player_24f006da": 3,
+      "Player_469c59aa": 5,
+      "Player_deff4b4e": 4,
+      "Player_c5aa79b0": 5,
+      "Player_882176ae": 5,
+      "Player_99c54262": 6,
+      "Player_86a3d78b": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05762982368469238
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.64000000000001,
+    "player_scores": {
+      "Player10": 2.722926829268293
+    },
+    "player_contributions": {
+      "Player_8eb8ba10": 3,
+      "Player_cb501a04": 3,
+      "Player_982bf835": 6,
+      "Player_847b9275": 6,
+      "Player_e8ebcc53": 5,
+      "Player_2664a4f8": 5,
+      "Player_96b957bd": 3,
+      "Player_22fca4b0": 3,
+      "Player_4ead7544": 3,
+      "Player_a2bab6cb": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06081390380859375
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 115.66,
+    "player_scores": {
+      "Player10": 2.9656410256410255
+    },
+    "player_contributions": {
+      "Player_722e03bf": 4,
+      "Player_2a677707": 3,
+      "Player_4f2d1e17": 4,
+      "Player_c6cf2f97": 4,
+      "Player_98698766": 4,
+      "Player_739a60d2": 4,
+      "Player_7dc7532f": 4,
+      "Player_f96af3d9": 4,
+      "Player_fdc5520e": 4,
+      "Player_9ddf6544": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05902504920959473
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 116.72,
+    "player_scores": {
+      "Player10": 3.1545945945945943
+    },
+    "player_contributions": {
+      "Player_d9468dd6": 5,
+      "Player_f51c5e27": 3,
+      "Player_13c0eef9": 3,
+      "Player_52c7d7b3": 3,
+      "Player_d6eda321": 3,
+      "Player_9dce4e52": 4,
+      "Player_4f222b31": 5,
+      "Player_33a85d8e": 4,
+      "Player_fe2338e5": 3,
+      "Player_acc101f0": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05366706848144531
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.08,
+    "player_scores": {
+      "Player10": 2.587317073170732
+    },
+    "player_contributions": {
+      "Player_cea4428e": 3,
+      "Player_a71a9d25": 3,
+      "Player_fc296eb5": 4,
+      "Player_e21dd147": 6,
+      "Player_34fa484f": 5,
+      "Player_702dc833": 3,
+      "Player_e8c47224": 4,
+      "Player_48473ddb": 4,
+      "Player_521a4b44": 5,
+      "Player_45168598": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05833268165588379
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.93999999999997,
+    "player_scores": {
+      "Player10": 2.6734999999999993
+    },
+    "player_contributions": {
+      "Player_e227ec7d": 3,
+      "Player_76aa8bc1": 3,
+      "Player_880f5e56": 4,
+      "Player_466cde25": 7,
+      "Player_0f878f63": 3,
+      "Player_0272b2f5": 4,
+      "Player_54a4b145": 4,
+      "Player_8db06534": 3,
+      "Player_b848b1ec": 5,
+      "Player_496f31f4": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05598735809326172
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.3,
+    "player_scores": {
+      "Player10": 2.5324999999999998
+    },
+    "player_contributions": {
+      "Player_0d9ed2fa": 4,
+      "Player_66fdd99c": 4,
+      "Player_543601b6": 4,
+      "Player_4270b7f1": 4,
+      "Player_e85bbc99": 5,
+      "Player_a6d7b49e": 4,
+      "Player_1b29776c": 4,
+      "Player_eae91d24": 4,
+      "Player_82e75595": 4,
+      "Player_0a614f04": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0536952018737793
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.92000000000002,
+    "player_scores": {
+      "Player10": 2.6647619047619053
+    },
+    "player_contributions": {
+      "Player_553c55fa": 3,
+      "Player_0aa3b023": 4,
+      "Player_f85fe9c7": 5,
+      "Player_bf107fe5": 4,
+      "Player_1a4a1ca8": 5,
+      "Player_3001f309": 6,
+      "Player_e99b8425": 4,
+      "Player_1aeb468f": 4,
+      "Player_dcb25b9f": 4,
+      "Player_381746c9": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06420564651489258
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.85999999999999,
+    "player_scores": {
+      "Player10": 2.4715
+    },
+    "player_contributions": {
+      "Player_8b2e8172": 5,
+      "Player_09aa228a": 5,
+      "Player_b764cd53": 3,
+      "Player_e3c2bbc2": 4,
+      "Player_78e67248": 4,
+      "Player_cd18e3b2": 4,
+      "Player_c9dbdd40": 4,
+      "Player_ead57a5e": 3,
+      "Player_1dc3e9f8": 5,
+      "Player_44d4eae8": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05653810501098633
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 118.0,
+    "player_scores": {
+      "Player10": 2.95
+    },
+    "player_contributions": {
+      "Player_be6b075e": 5,
+      "Player_4a60f267": 3,
+      "Player_b817655c": 3,
+      "Player_ae0c45db": 4,
+      "Player_a1c5351f": 4,
+      "Player_081d54d6": 4,
+      "Player_a588fb0f": 4,
+      "Player_5947bf43": 4,
+      "Player_a77ff351": 4,
+      "Player_97652df6": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05711245536804199
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.42000000000002,
+    "player_scores": {
+      "Player10": 2.728717948717949
+    },
+    "player_contributions": {
+      "Player_d6faaa91": 4,
+      "Player_bb880a46": 3,
+      "Player_51e55ab8": 4,
+      "Player_8f641716": 5,
+      "Player_cdaad956": 4,
+      "Player_29e064e4": 4,
+      "Player_4e96a862": 3,
+      "Player_ce7fd768": 4,
+      "Player_219feefe": 3,
+      "Player_0e10a9ce": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05419182777404785
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.0,
+    "player_scores": {
+      "Player10": 2.707317073170732
+    },
+    "player_contributions": {
+      "Player_607ca3de": 3,
+      "Player_b788d0e3": 4,
+      "Player_e4727199": 4,
+      "Player_d8ea4782": 3,
+      "Player_1e30d480": 5,
+      "Player_b0273da0": 5,
+      "Player_308dcad8": 3,
+      "Player_7ebc059a": 6,
+      "Player_17d4149e": 4,
+      "Player_266eff6d": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06209230422973633
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.58000000000001,
+    "player_scores": {
+      "Player10": 2.6970731707317075
+    },
+    "player_contributions": {
+      "Player_85fa7c8d": 4,
+      "Player_b7349ad7": 4,
+      "Player_f01ef832": 3,
+      "Player_6cd14678": 4,
+      "Player_203e3bf5": 5,
+      "Player_6077f8c9": 5,
+      "Player_b96a005b": 4,
+      "Player_fbab3af9": 4,
+      "Player_300a15be": 4,
+      "Player_4ad016e7": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05586576461791992
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 119.75999999999999,
+    "player_scores": {
+      "Player10": 2.9209756097560975
+    },
+    "player_contributions": {
+      "Player_8520b272": 3,
+      "Player_9235ab3b": 5,
+      "Player_a78572b1": 3,
+      "Player_c3f3de67": 6,
+      "Player_f639bb78": 4,
+      "Player_635116b2": 5,
+      "Player_5d570861": 4,
+      "Player_ba40983e": 4,
+      "Player_1597b0bf": 3,
+      "Player_c164415d": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06145668029785156
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.58,
+    "player_scores": {
+      "Player10": 2.7145
+    },
+    "player_contributions": {
+      "Player_a66c9367": 4,
+      "Player_d1813430": 3,
+      "Player_efd0cc05": 4,
+      "Player_de35703b": 5,
+      "Player_b351aa84": 4,
+      "Player_51d21550": 5,
+      "Player_16e6a40e": 3,
+      "Player_0cc2eda5": 4,
+      "Player_2aafb2ca": 4,
+      "Player_a9843a81": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05585503578186035
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.99999999999999,
+    "player_scores": {
+      "Player10": 2.564102564102564
+    },
+    "player_contributions": {
+      "Player_7fcebf90": 4,
+      "Player_3c27c995": 4,
+      "Player_502b0032": 6,
+      "Player_4b0cec1d": 3,
+      "Player_b939d9b7": 4,
+      "Player_0aacd1c3": 3,
+      "Player_e1c67ac8": 4,
+      "Player_cd74ff40": 4,
+      "Player_c94488d4": 4,
+      "Player_b1d02022": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05618858337402344
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.86,
+    "player_scores": {
+      "Player10": 2.581951219512195
+    },
+    "player_contributions": {
+      "Player_2f464707": 4,
+      "Player_29685ae7": 4,
+      "Player_290aee82": 5,
+      "Player_c32a5cde": 4,
+      "Player_01065985": 4,
+      "Player_537dfc26": 4,
+      "Player_403a37f1": 4,
+      "Player_5f3ed483": 5,
+      "Player_44d74844": 4,
+      "Player_06ce52ec": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06055569648742676
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.0,
+    "player_scores": {
+      "Player10": 2.6
+    },
+    "player_contributions": {
+      "Player_ab0e3a66": 3,
+      "Player_c768d9d5": 5,
+      "Player_3a93f262": 4,
+      "Player_9942a4f8": 3,
+      "Player_b707bc5f": 4,
+      "Player_98b42453": 4,
+      "Player_95a6f084": 6,
+      "Player_324e23d9": 3,
+      "Player_e995b9e8": 4,
+      "Player_96e6a0b8": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05704092979431152
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.28,
+    "player_scores": {
+      "Player10": 2.657
+    },
+    "player_contributions": {
+      "Player_6147d785": 4,
+      "Player_44065d94": 4,
+      "Player_2d05b766": 3,
+      "Player_c2e087c7": 3,
+      "Player_f589fec9": 4,
+      "Player_3e969be7": 3,
+      "Player_1ed15325": 6,
+      "Player_d075306e": 5,
+      "Player_daf27bbb": 3,
+      "Player_6d8213c3": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05590033531188965
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.88,
+    "player_scores": {
+      "Player10": 2.4117073170731707
+    },
+    "player_contributions": {
+      "Player_8980c6d0": 5,
+      "Player_d0227be6": 3,
+      "Player_f280b3cf": 5,
+      "Player_e0dc5cdf": 5,
+      "Player_30698c7b": 4,
+      "Player_fa3e8fff": 3,
+      "Player_a8ff3453": 5,
+      "Player_17f61447": 3,
+      "Player_3057bd60": 3,
+      "Player_be8f4d3f": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.058419227600097656
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 101,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 112.22,
+    "player_scores": {
+      "Player10": 2.8055
+    },
+    "player_contributions": {
+      "Player_cc7380b6": 5,
+      "Player_1075abe5": 4,
+      "Player_a6b8c105": 4,
+      "Player_be927c5f": 4,
+      "Player_c39dd7a6": 3,
+      "Player_fd03e60c": 4,
+      "Player_86343514": 4,
+      "Player_daa84426": 4,
+      "Player_137b6d4f": 4,
+      "Player_7e0d61c0": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.055908203125
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.56,
+    "player_scores": {
+      "Player10": 2.6965853658536587
+    },
+    "player_contributions": {
+      "Player_7a25c996": 3,
+      "Player_c94bdf94": 4,
+      "Player_6de3c032": 5,
+      "Player_e6ba115a": 4,
+      "Player_76ae4d37": 4,
+      "Player_5da8f494": 5,
+      "Player_1ebf0b23": 4,
+      "Player_17499067": 4,
+      "Player_c318766b": 5,
+      "Player_44ae0e86": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05888962745666504
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.53999999999999,
+    "player_scores": {
+      "Player10": 2.577948717948718
+    },
+    "player_contributions": {
+      "Player_1e8edd2c": 3,
+      "Player_71f0765d": 4,
+      "Player_ad57d57e": 4,
+      "Player_439c5de7": 3,
+      "Player_195d8bc7": 6,
+      "Player_d6ea3580": 5,
+      "Player_a2c63e23": 4,
+      "Player_9f175ea8": 4,
+      "Player_d2704d09": 3,
+      "Player_437056e0": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05772995948791504
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 97.34,
+    "player_scores": {
+      "Player10": 2.4335
+    },
+    "player_contributions": {
+      "Player_a56d9627": 3,
+      "Player_065e5501": 4,
+      "Player_205aefd2": 4,
+      "Player_d645e8bf": 5,
+      "Player_2937d3bb": 4,
+      "Player_a2b17402": 5,
+      "Player_58c7ff1a": 2,
+      "Player_561e0e72": 4,
+      "Player_58b700f1": 4,
+      "Player_0bfb1cbd": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05638003349304199
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.32000000000001,
+    "player_scores": {
+      "Player10": 2.602857142857143
+    },
+    "player_contributions": {
+      "Player_d6295e3e": 5,
+      "Player_4669bcf9": 4,
+      "Player_ba4d4b5c": 4,
+      "Player_df163525": 4,
+      "Player_461449a2": 5,
+      "Player_5da42eda": 4,
+      "Player_6f5d5349": 3,
+      "Player_e451098a": 4,
+      "Player_2ec1dd19": 5,
+      "Player_fe3ab571": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.061896324157714844
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.1,
+    "player_scores": {
+      "Player10": 2.5524999999999998
+    },
+    "player_contributions": {
+      "Player_da0ac578": 3,
+      "Player_4dc77405": 5,
+      "Player_267561e1": 4,
+      "Player_7253916e": 4,
+      "Player_7df73f17": 4,
+      "Player_fd6b501e": 3,
+      "Player_3e6cf812": 5,
+      "Player_cdc6ec03": 4,
+      "Player_7c772d7c": 3,
+      "Player_e51a9951": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05334949493408203
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 121.68,
+    "player_scores": {
+      "Player10": 2.8971428571428572
+    },
+    "player_contributions": {
+      "Player_bb964de8": 4,
+      "Player_01d58735": 4,
+      "Player_418d6e0b": 4,
+      "Player_234c3d96": 3,
+      "Player_829c6842": 6,
+      "Player_0426696e": 4,
+      "Player_e705a682": 4,
+      "Player_b062d0e5": 4,
+      "Player_9a2586ec": 6,
+      "Player_41fc1cd6": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06461191177368164
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 121.02,
+    "player_scores": {
+      "Player10": 3.0255
+    },
+    "player_contributions": {
+      "Player_28131099": 3,
+      "Player_c733859f": 5,
+      "Player_b4d3eb1a": 4,
+      "Player_f1674d10": 6,
+      "Player_4379df94": 4,
+      "Player_9f72bea5": 4,
+      "Player_99128b5b": 4,
+      "Player_6a50e50c": 3,
+      "Player_0f0de310": 3,
+      "Player_33c83e21": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05526375770568848
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.96,
+    "player_scores": {
+      "Player10": 2.922051282051282
+    },
+    "player_contributions": {
+      "Player_e76c0e98": 4,
+      "Player_eaededb7": 5,
+      "Player_a60e5ab9": 4,
+      "Player_9563b7f1": 4,
+      "Player_5cf47694": 4,
+      "Player_e8c6406a": 3,
+      "Player_41d93172": 4,
+      "Player_ddc111f1": 4,
+      "Player_760c75ad": 4,
+      "Player_d7ac2732": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.056691646575927734
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.74,
+    "player_scores": {
+      "Player10": 2.5685
+    },
+    "player_contributions": {
+      "Player_2d8d64e9": 4,
+      "Player_aed18a13": 4,
+      "Player_96fe2ebd": 3,
+      "Player_c558364f": 6,
+      "Player_3b522b31": 6,
+      "Player_6fa9462e": 3,
+      "Player_9e8d5605": 4,
+      "Player_fdfadf33": 3,
+      "Player_3c4fc011": 4,
+      "Player_d90cff08": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05905580520629883
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.27999999999997,
+    "player_scores": {
+      "Player10": 2.531999999999999
+    },
+    "player_contributions": {
+      "Player_66721849": 4,
+      "Player_9aa0d4d4": 5,
+      "Player_0af16d1c": 4,
+      "Player_b2b58d90": 4,
+      "Player_4d248888": 4,
+      "Player_7d7a70d5": 3,
+      "Player_7bc2e89e": 5,
+      "Player_9061a300": 4,
+      "Player_f8066b3c": 3,
+      "Player_f0294ef8": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05594468116760254
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.02,
+    "player_scores": {
+      "Player10": 2.548095238095238
+    },
+    "player_contributions": {
+      "Player_2e2690e4": 6,
+      "Player_b614dc6b": 5,
+      "Player_67edb1d1": 4,
+      "Player_202e6806": 3,
+      "Player_ff489bcf": 5,
+      "Player_a20aee13": 4,
+      "Player_8813f773": 4,
+      "Player_8d3d131e": 4,
+      "Player_e6e572de": 4,
+      "Player_32446917": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.05680274963378906
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 96.08000000000001,
+    "player_scores": {
+      "Player10": 2.287619047619048
+    },
+    "player_contributions": {
+      "Player_1161840a": 4,
+      "Player_66e0433f": 5,
+      "Player_a6fe18b1": 4,
+      "Player_79bbe392": 4,
+      "Player_7c8d1938": 4,
+      "Player_39bd8d7c": 6,
+      "Player_15177e19": 4,
+      "Player_d1a12028": 4,
+      "Player_08fea723": 3,
+      "Player_1ad54044": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06479811668395996
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.84,
+    "player_scores": {
+      "Player10": 2.471
+    },
+    "player_contributions": {
+      "Player_6db9a3fb": 4,
+      "Player_989fe7d5": 3,
+      "Player_5cc0dc89": 4,
+      "Player_41b7341a": 4,
+      "Player_47a6e4c2": 5,
+      "Player_9ba4a5ee": 4,
+      "Player_96f58c62": 5,
+      "Player_880c3a04": 4,
+      "Player_242c3e0d": 4,
+      "Player_058a7753": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05751299858093262
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 116.80000000000001,
+    "player_scores": {
+      "Player10": 2.8487804878048784
+    },
+    "player_contributions": {
+      "Player_451db90e": 4,
+      "Player_286e31f6": 4,
+      "Player_a0871812": 5,
+      "Player_e80b9250": 5,
+      "Player_ae30b115": 3,
+      "Player_c497fd6c": 4,
+      "Player_f7c9151c": 4,
+      "Player_acd17e42": 3,
+      "Player_5c40a216": 4,
+      "Player_bfe5c881": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05590367317199707
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.74000000000001,
+    "player_scores": {
+      "Player10": 2.6034146341463416
+    },
+    "player_contributions": {
+      "Player_03f619ae": 4,
+      "Player_386e6a02": 5,
+      "Player_26ca221d": 4,
+      "Player_55dd1b62": 5,
+      "Player_8038696e": 3,
+      "Player_c4e5669c": 6,
+      "Player_c6bdca45": 3,
+      "Player_576a0ef9": 3,
+      "Player_bfa5bc8b": 4,
+      "Player_8b8e393e": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06272387504577637
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.92,
+    "player_scores": {
+      "Player10": 2.7415384615384615
+    },
+    "player_contributions": {
+      "Player_38b07d1d": 4,
+      "Player_b8b3356a": 4,
+      "Player_bb5809ae": 4,
+      "Player_e8455db1": 4,
+      "Player_0690314e": 3,
+      "Player_6d6fed55": 3,
+      "Player_aa633962": 4,
+      "Player_57cdbea8": 4,
+      "Player_92a06ebf": 5,
+      "Player_13fb9923": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05546402931213379
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.52000000000001,
+    "player_scores": {
+      "Player10": 2.464761904761905
+    },
+    "player_contributions": {
+      "Player_2c1d6941": 4,
+      "Player_5c27b1ff": 5,
+      "Player_36a84778": 4,
+      "Player_e73cd73f": 4,
+      "Player_722c7c5b": 6,
+      "Player_17ff7fac": 4,
+      "Player_c030cab7": 3,
+      "Player_83d9184e": 5,
+      "Player_b67eb9a2": 4,
+      "Player_0ae0d0df": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06277823448181152
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.63999999999999,
+    "player_scores": {
+      "Player10": 2.8625641025641024
+    },
+    "player_contributions": {
+      "Player_130a5817": 4,
+      "Player_07f1dea0": 3,
+      "Player_664c4619": 4,
+      "Player_c2be8d54": 5,
+      "Player_2dabbe2a": 4,
+      "Player_0c1cd319": 4,
+      "Player_936d1079": 5,
+      "Player_c22d2020": 4,
+      "Player_4ca170d6": 3,
+      "Player_4cc224bc": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05705904960632324
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 115.98000000000002,
+    "player_scores": {
+      "Player10": 2.761428571428572
+    },
+    "player_contributions": {
+      "Player_fec4b816": 5,
+      "Player_39a5fb8c": 3,
+      "Player_f8f0ea87": 6,
+      "Player_5905f6af": 5,
+      "Player_1e26a6e8": 5,
+      "Player_ad7287a5": 3,
+      "Player_30d4c468": 3,
+      "Player_bd11e90e": 4,
+      "Player_fa5604e5": 4,
+      "Player_ccf07cc6": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06029987335205078
+  },
+  {
+    "config": {
+      "altruism_prob": 0.0,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 121,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.51999999999998,
+    "player_scores": {
+      "Player10": 2.5599999999999996
+    },
+    "player_contributions": {
+      "Player_f84e2ab5": 4,
+      "Player_87ec9804": 4,
+      "Player_a0a2c043": 3,
+      "Player_e9f4d5b5": 4,
+      "Player_f23075f8": 4,
+      "Player_79b9f8eb": 5,
+      "Player_95295137": 4,
+      "Player_5748112a": 4,
+      "Player_0f516418": 5,
+      "Player_4e4c7d2d": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.05974292755126953
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.52000000000001,
+    "player_scores": {
+      "Player10": 2.7630000000000003
+    },
+    "player_contributions": {
+      "Player_5c8fb673": 4,
+      "Player_d2cab57c": 4,
+      "Player_7b70fb4a": 4,
+      "Player_9c59aca7": 3,
+      "Player_a25fd086": 4,
+      "Player_63bf8b6a": 4,
+      "Player_a457d723": 4,
+      "Player_d6aeaad2": 4,
+      "Player_be5a1506": 5,
+      "Player_649e6b8a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05999493598937988
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.47999999999999,
+    "player_scores": {
+      "Player10": 2.4869999999999997
+    },
+    "player_contributions": {
+      "Player_a899891e": 4,
+      "Player_4ac73415": 4,
+      "Player_975a3ef0": 3,
+      "Player_982e6947": 4,
+      "Player_b4cb5f4e": 5,
+      "Player_2cb86357": 4,
+      "Player_759abdf5": 6,
+      "Player_5165902f": 3,
+      "Player_8f4824b3": 4,
+      "Player_4e9e5104": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05839228630065918
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.22,
+    "player_scores": {
+      "Player10": 2.8005128205128207
+    },
+    "player_contributions": {
+      "Player_13818daa": 4,
+      "Player_075d08eb": 4,
+      "Player_40992144": 3,
+      "Player_71602581": 5,
+      "Player_73443a06": 5,
+      "Player_b07bc821": 4,
+      "Player_a322b8d8": 3,
+      "Player_0b8dfd3e": 3,
+      "Player_affad83e": 4,
+      "Player_ab7956eb": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05818915367126465
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.47999999999999,
+    "player_scores": {
+      "Player10": 2.537
+    },
+    "player_contributions": {
+      "Player_5d6eabad": 4,
+      "Player_8bcc8d42": 3,
+      "Player_a78fdc12": 4,
+      "Player_180dc5d3": 3,
+      "Player_c049f35f": 3,
+      "Player_287c298d": 4,
+      "Player_7b049bfa": 6,
+      "Player_ba473457": 6,
+      "Player_f84c0a21": 3,
+      "Player_1cadb847": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.057813167572021484
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.62,
+    "player_scores": {
+      "Player10": 2.7905
+    },
+    "player_contributions": {
+      "Player_23bada0b": 4,
+      "Player_cc6c32ad": 3,
+      "Player_afec9d13": 4,
+      "Player_58e042fe": 5,
+      "Player_837dc708": 3,
+      "Player_d23266e6": 3,
+      "Player_cac3baa6": 4,
+      "Player_bf97e352": 5,
+      "Player_61700437": 4,
+      "Player_97aabd99": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05752849578857422
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.74000000000001,
+    "player_scores": {
+      "Player10": 2.940526315789474
+    },
+    "player_contributions": {
+      "Player_fa0c4a94": 4,
+      "Player_76241760": 4,
+      "Player_04b6927c": 4,
+      "Player_c1dca8a2": 4,
+      "Player_89c252f0": 3,
+      "Player_2d8161c8": 4,
+      "Player_df48e9ad": 4,
+      "Player_1cbdee8d": 3,
+      "Player_efe49e43": 4,
+      "Player_054f08e4": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05890083312988281
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.6,
+    "player_scores": {
+      "Player10": 2.54
+    },
+    "player_contributions": {
+      "Player_4e4eb2f9": 3,
+      "Player_4f3bbb7c": 4,
+      "Player_15314953": 5,
+      "Player_92fbd1c0": 3,
+      "Player_1168b504": 5,
+      "Player_fcc470b0": 3,
+      "Player_b3522383": 3,
+      "Player_40a5254a": 5,
+      "Player_b01bde23": 4,
+      "Player_28fa63e8": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05927729606628418
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.0,
+    "player_scores": {
+      "Player10": 2.8974358974358974
+    },
+    "player_contributions": {
+      "Player_cd452fbc": 3,
+      "Player_da778256": 5,
+      "Player_8f535741": 5,
+      "Player_92ed9ad3": 6,
+      "Player_461b9c52": 3,
+      "Player_23105571": 4,
+      "Player_2a684d7f": 3,
+      "Player_d8f58895": 3,
+      "Player_9ed66840": 4,
+      "Player_1c0678b1": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06071949005126953
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.99999999999999,
+    "player_scores": {
+      "Player10": 2.536585365853658
+    },
+    "player_contributions": {
+      "Player_f9091117": 4,
+      "Player_66ff2e13": 5,
+      "Player_42fbab78": 4,
+      "Player_b2de3743": 4,
+      "Player_a8129f70": 4,
+      "Player_4a882418": 4,
+      "Player_a7c7927c": 4,
+      "Player_7550430b": 4,
+      "Player_e493d103": 3,
+      "Player_6a2d005a": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06259846687316895
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.72,
+    "player_scores": {
+      "Player10": 2.643
+    },
+    "player_contributions": {
+      "Player_5ebb39b5": 4,
+      "Player_d746516d": 4,
+      "Player_6a11aa4e": 4,
+      "Player_3f9bf287": 5,
+      "Player_008335cf": 4,
+      "Player_2b806c65": 5,
+      "Player_a8478014": 3,
+      "Player_d61b8197": 3,
+      "Player_d7e64650": 4,
+      "Player_227dc4ac": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06111598014831543
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.08,
+    "player_scores": {
+      "Player10": 2.727
+    },
+    "player_contributions": {
+      "Player_cdb3c1b2": 5,
+      "Player_1b04c4a8": 4,
+      "Player_71423b69": 4,
+      "Player_943be207": 4,
+      "Player_00ecc4b7": 4,
+      "Player_906c6004": 4,
+      "Player_f23fa14c": 4,
+      "Player_7b67e8cc": 3,
+      "Player_691228b8": 4,
+      "Player_08c75e4e": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05657029151916504
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.95999999999998,
+    "player_scores": {
+      "Player10": 2.4380487804878044
+    },
+    "player_contributions": {
+      "Player_14ec4ad8": 4,
+      "Player_c55dc226": 4,
+      "Player_a2661b2b": 4,
+      "Player_5def8be5": 5,
+      "Player_89cdad85": 4,
+      "Player_3b489d76": 4,
+      "Player_6771da3c": 3,
+      "Player_d86a6c8d": 5,
+      "Player_c31e22b3": 4,
+      "Player_a9ba6203": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06153297424316406
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 92.30000000000001,
+    "player_scores": {
+      "Player10": 2.494594594594595
+    },
+    "player_contributions": {
+      "Player_d3b09c32": 3,
+      "Player_2378de5d": 4,
+      "Player_0a5a9782": 3,
+      "Player_b5a0498f": 3,
+      "Player_4b743c98": 3,
+      "Player_a07a0c78": 4,
+      "Player_091aa917": 4,
+      "Player_7b85618f": 4,
+      "Player_9639da57": 5,
+      "Player_da1849e8": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05655527114868164
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 96.6,
+    "player_scores": {
+      "Player10": 2.415
+    },
+    "player_contributions": {
+      "Player_612e768f": 3,
+      "Player_d80039fb": 4,
+      "Player_777fc767": 4,
+      "Player_9405e6d4": 4,
+      "Player_f2d8177e": 4,
+      "Player_ed7439e0": 4,
+      "Player_6ea8a7df": 5,
+      "Player_5365a6b0": 4,
+      "Player_3618abf7": 4,
+      "Player_628acc43": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.054682016372680664
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 112.06,
+    "player_scores": {
+      "Player10": 2.8733333333333335
+    },
+    "player_contributions": {
+      "Player_98615f35": 3,
+      "Player_642b2135": 5,
+      "Player_057dfa7f": 3,
+      "Player_b49ddb7b": 3,
+      "Player_157e79ac": 4,
+      "Player_7578e993": 5,
+      "Player_4f9016ec": 4,
+      "Player_ae043764": 4,
+      "Player_97da5fcc": 4,
+      "Player_35bd4234": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05945301055908203
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.82,
+    "player_scores": {
+      "Player10": 2.918461538461538
+    },
+    "player_contributions": {
+      "Player_541a66f6": 4,
+      "Player_8801fafd": 4,
+      "Player_6a105e2d": 3,
+      "Player_2516dafc": 4,
+      "Player_9ccec801": 4,
+      "Player_658699f9": 4,
+      "Player_790bea42": 4,
+      "Player_f12807d5": 4,
+      "Player_bb52d61d": 4,
+      "Player_19a7ac8a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06328797340393066
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 118.42000000000002,
+    "player_scores": {
+      "Player10": 2.9605000000000006
+    },
+    "player_contributions": {
+      "Player_4cf0cc02": 4,
+      "Player_af0f6683": 4,
+      "Player_8d45a5b2": 3,
+      "Player_32f405b7": 6,
+      "Player_edb0c280": 5,
+      "Player_b74d574b": 4,
+      "Player_8374a753": 4,
+      "Player_6deb3a15": 3,
+      "Player_04237afd": 4,
+      "Player_56cc8c0a": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.060825347900390625
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.38,
+    "player_scores": {
+      "Player10": 2.8521052631578945
+    },
+    "player_contributions": {
+      "Player_3ffd5272": 4,
+      "Player_bad5c936": 3,
+      "Player_8dd60290": 5,
+      "Player_7b68ac1b": 4,
+      "Player_3f5add0b": 5,
+      "Player_001b0ea3": 3,
+      "Player_a655bd58": 4,
+      "Player_38f72f51": 3,
+      "Player_6e7c47b7": 3,
+      "Player_1b5f5fa0": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05534839630126953
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.41999999999999,
+    "player_scores": {
+      "Player10": 2.5224390243902435
+    },
+    "player_contributions": {
+      "Player_87c47f93": 5,
+      "Player_0fef5c5a": 4,
+      "Player_cb90ba5b": 4,
+      "Player_aabac78b": 4,
+      "Player_fef0393b": 5,
+      "Player_419d5271": 5,
+      "Player_8e892191": 4,
+      "Player_2989203c": 4,
+      "Player_aaa56775": 3,
+      "Player_7e10d780": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.0640420913696289
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 141,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.98,
+    "player_scores": {
+      "Player10": 2.5245
+    },
+    "player_contributions": {
+      "Player_754b7391": 5,
+      "Player_a898885a": 6,
+      "Player_0302d238": 3,
+      "Player_ec00e458": 3,
+      "Player_971d541b": 3,
+      "Player_b54b8c42": 4,
+      "Player_45146d17": 3,
+      "Player_c98b4da8": 6,
+      "Player_4ef5989d": 3,
+      "Player_fafe8700": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06206488609313965
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.84,
+    "player_scores": {
+      "Player10": 2.471
+    },
+    "player_contributions": {
+      "Player_62444360": 5,
+      "Player_ecbcb8d1": 4,
+      "Player_b9aaf3a2": 4,
+      "Player_fb8b95b5": 4,
+      "Player_7b5d951e": 6,
+      "Player_97678561": 3,
+      "Player_89a83762": 4,
+      "Player_3e45b8b5": 3,
+      "Player_2959d8e4": 4,
+      "Player_cb19ab48": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0610194206237793
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.47999999999999,
+    "player_scores": {
+      "Player10": 2.7558974358974355
+    },
+    "player_contributions": {
+      "Player_bc46fd56": 3,
+      "Player_79243801": 4,
+      "Player_519f9c70": 4,
+      "Player_e6078217": 5,
+      "Player_0ba552fa": 3,
+      "Player_78da421c": 6,
+      "Player_bb616acb": 3,
+      "Player_1fbc95fa": 3,
+      "Player_54b683b6": 4,
+      "Player_a2c72a1c": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06053614616394043
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.94,
+    "player_scores": {
+      "Player10": 2.5735
+    },
+    "player_contributions": {
+      "Player_acf89c03": 4,
+      "Player_6be2c62d": 6,
+      "Player_e0c02dc1": 2,
+      "Player_f0583a7a": 3,
+      "Player_70e501bd": 2,
+      "Player_efb5e1f2": 4,
+      "Player_b55e98f7": 6,
+      "Player_50066935": 5,
+      "Player_ef8f32df": 3,
+      "Player_b9573c15": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0635688304901123
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.4,
+    "player_scores": {
+      "Player10": 2.4142857142857146
+    },
+    "player_contributions": {
+      "Player_d1c2b75a": 5,
+      "Player_83338870": 4,
+      "Player_059864e5": 3,
+      "Player_480f3641": 4,
+      "Player_5ac71c15": 3,
+      "Player_77a91b83": 5,
+      "Player_a6f5636f": 4,
+      "Player_86314290": 5,
+      "Player_a9f29b5b": 4,
+      "Player_199b4f0c": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.0651252269744873
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.06,
+    "player_scores": {
+      "Player10": 2.4776190476190476
+    },
+    "player_contributions": {
+      "Player_7a96c587": 4,
+      "Player_7ca83d3f": 3,
+      "Player_5038a654": 6,
+      "Player_02377923": 4,
+      "Player_477d769c": 4,
+      "Player_022e57d9": 4,
+      "Player_60dc295f": 4,
+      "Player_13a13522": 5,
+      "Player_572b2c3d": 4,
+      "Player_84fc0264": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06328153610229492
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.9,
+    "player_scores": {
+      "Player10": 2.612820512820513
+    },
+    "player_contributions": {
+      "Player_abf26ac4": 4,
+      "Player_e24de356": 5,
+      "Player_46bbca60": 4,
+      "Player_b362d340": 4,
+      "Player_3f4228f2": 3,
+      "Player_fed1f26a": 3,
+      "Player_8ee39bca": 4,
+      "Player_f60b23e8": 5,
+      "Player_e89019b0": 4,
+      "Player_2a6876f6": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05884361267089844
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.52,
+    "player_scores": {
+      "Player10": 2.85578947368421
+    },
+    "player_contributions": {
+      "Player_8ec6cacf": 3,
+      "Player_4ab94117": 3,
+      "Player_e7ccbe1a": 4,
+      "Player_05bfd35d": 5,
+      "Player_a28d0d07": 4,
+      "Player_fdc5ec2a": 4,
+      "Player_4ca491ba": 4,
+      "Player_f4afd4cd": 3,
+      "Player_ea6d871b": 3,
+      "Player_e01abf05": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05791044235229492
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.71999999999998,
+    "player_scores": {
+      "Player10": 2.7004878048780485
+    },
+    "player_contributions": {
+      "Player_097c1526": 4,
+      "Player_8c82ccfd": 3,
+      "Player_20441201": 3,
+      "Player_bceb95dd": 4,
+      "Player_e12bdcf9": 3,
+      "Player_0ea42112": 4,
+      "Player_18a19923": 6,
+      "Player_7325506b": 3,
+      "Player_a6c119a1": 7,
+      "Player_7b51e5a6": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06051063537597656
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 124.75999999999999,
+    "player_scores": {
+      "Player10": 3.1189999999999998
+    },
+    "player_contributions": {
+      "Player_e3a20504": 3,
+      "Player_686e6e7e": 5,
+      "Player_7f133b4b": 5,
+      "Player_6287bd58": 5,
+      "Player_87972dea": 3,
+      "Player_c7322386": 3,
+      "Player_3e8b256c": 4,
+      "Player_61b1589e": 3,
+      "Player_9ca51003": 5,
+      "Player_7926b5d7": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06044960021972656
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 117.80000000000001,
+    "player_scores": {
+      "Player10": 2.9450000000000003
+    },
+    "player_contributions": {
+      "Player_c866d5bc": 4,
+      "Player_47926f76": 4,
+      "Player_515bab84": 4,
+      "Player_3905333d": 4,
+      "Player_6635474e": 4,
+      "Player_e0300c67": 4,
+      "Player_1118b8f7": 4,
+      "Player_723492e1": 4,
+      "Player_129ebec6": 4,
+      "Player_4471cdc5": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.060122013092041016
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.52000000000001,
+    "player_scores": {
+      "Player10": 2.713
+    },
+    "player_contributions": {
+      "Player_63d8b8ee": 3,
+      "Player_13749608": 5,
+      "Player_9d30f0e1": 4,
+      "Player_46d6a995": 5,
+      "Player_12c61e77": 4,
+      "Player_cf888f2a": 4,
+      "Player_40677675": 4,
+      "Player_65578bc3": 3,
+      "Player_489c91ae": 4,
+      "Player_88beaa34": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05921006202697754
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 114.06,
+    "player_scores": {
+      "Player10": 2.8515
+    },
+    "player_contributions": {
+      "Player_2ed64e7d": 4,
+      "Player_684237ab": 5,
+      "Player_badde3cf": 4,
+      "Player_98c54928": 5,
+      "Player_935de18c": 4,
+      "Player_73531638": 4,
+      "Player_4f9ffcb0": 3,
+      "Player_1a0eebf7": 4,
+      "Player_9660d1cf": 4,
+      "Player_bc11a281": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0601048469543457
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.00000000000001,
+    "player_scores": {
+      "Player10": 2.5500000000000003
+    },
+    "player_contributions": {
+      "Player_0a7910c3": 5,
+      "Player_d5c65185": 4,
+      "Player_bff03906": 4,
+      "Player_8cf41649": 2,
+      "Player_5e305913": 4,
+      "Player_dc9f90a4": 4,
+      "Player_6fc49256": 5,
+      "Player_4dbcaf56": 5,
+      "Player_add263fe": 4,
+      "Player_5ae4c77e": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.060730934143066406
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 114.53999999999999,
+    "player_scores": {
+      "Player10": 2.8634999999999997
+    },
+    "player_contributions": {
+      "Player_63d86693": 4,
+      "Player_d638e223": 4,
+      "Player_799a1a10": 4,
+      "Player_ef377025": 4,
+      "Player_5a093bf0": 3,
+      "Player_4da53dbd": 6,
+      "Player_2f2b43ea": 4,
+      "Player_a11b00e6": 3,
+      "Player_0b6d4b56": 5,
+      "Player_23e3f283": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.059404611587524414
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 115.94000000000001,
+    "player_scores": {
+      "Player10": 2.8985000000000003
+    },
+    "player_contributions": {
+      "Player_9bfe2c6d": 4,
+      "Player_e41c9396": 3,
+      "Player_a9f38fb6": 5,
+      "Player_02fcb9ae": 3,
+      "Player_c75d1eb7": 6,
+      "Player_2a8c4f01": 4,
+      "Player_df98d6f3": 5,
+      "Player_d9028d04": 3,
+      "Player_090e89d9": 3,
+      "Player_8e4c261c": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06162834167480469
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 119.62,
+    "player_scores": {
+      "Player10": 2.848095238095238
+    },
+    "player_contributions": {
+      "Player_5e0bd681": 3,
+      "Player_d165199a": 6,
+      "Player_373ce102": 4,
+      "Player_66a8f57f": 6,
+      "Player_33fc5714": 4,
+      "Player_8c0695c9": 5,
+      "Player_52cdffaf": 4,
+      "Player_7b291b73": 4,
+      "Player_776647bf": 3,
+      "Player_c4752550": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06338906288146973
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 96.88,
+    "player_scores": {
+      "Player10": 2.484102564102564
+    },
+    "player_contributions": {
+      "Player_3461f8d7": 4,
+      "Player_8d53b802": 4,
+      "Player_1b214003": 3,
+      "Player_4de5b757": 4,
+      "Player_d4cd47f6": 4,
+      "Player_cc28eb4b": 4,
+      "Player_1278f432": 4,
+      "Player_ae88970c": 4,
+      "Player_032597c8": 3,
+      "Player_76f33ac3": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05804109573364258
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.36000000000001,
+    "player_scores": {
+      "Player10": 2.7340000000000004
+    },
+    "player_contributions": {
+      "Player_ccdf7d1e": 5,
+      "Player_5af6db7d": 2,
+      "Player_889ded7f": 6,
+      "Player_5d8dd890": 5,
+      "Player_dd603f52": 4,
+      "Player_c49ca37a": 3,
+      "Player_698196b5": 3,
+      "Player_b5841fa9": 4,
+      "Player_c2f9a526": 5,
+      "Player_1d690976": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0603485107421875
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.91999999999999,
+    "player_scores": {
+      "Player10": 2.7479999999999998
+    },
+    "player_contributions": {
+      "Player_ca31f7ef": 4,
+      "Player_408da50a": 5,
+      "Player_c85dfe66": 4,
+      "Player_52906dc7": 3,
+      "Player_5c6fdd9d": 3,
+      "Player_0ac2d354": 4,
+      "Player_4349b1bd": 5,
+      "Player_5c346a08": 5,
+      "Player_09fd001d": 4,
+      "Player_5faa6173": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05980277061462402
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 161,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.22000000000003,
+    "player_scores": {
+      "Player10": 2.6151219512195127
+    },
+    "player_contributions": {
+      "Player_8de59210": 4,
+      "Player_904ffb56": 4,
+      "Player_f8e2e282": 4,
+      "Player_770849fc": 4,
+      "Player_15416e6f": 5,
+      "Player_4187ea63": 4,
+      "Player_76abb4f5": 3,
+      "Player_331c5aaa": 6,
+      "Player_eaecb860": 3,
+      "Player_86bc871a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06419253349304199
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 116.34000000000002,
+    "player_scores": {
+      "Player10": 2.8375609756097564
+    },
+    "player_contributions": {
+      "Player_09daa6e6": 3,
+      "Player_39a8249e": 4,
+      "Player_2b0d889e": 4,
+      "Player_afef1fda": 4,
+      "Player_5ec6634b": 3,
+      "Player_200b948e": 7,
+      "Player_dff50bbc": 4,
+      "Player_0cd2baa7": 3,
+      "Player_31956cfe": 5,
+      "Player_b64c931a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06331515312194824
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.82,
+    "player_scores": {
+      "Player10": 2.8455
+    },
+    "player_contributions": {
+      "Player_5ef8e2f9": 3,
+      "Player_5df2b12d": 4,
+      "Player_66fc2d59": 4,
+      "Player_fd98ea29": 4,
+      "Player_38f15847": 4,
+      "Player_b87b543f": 4,
+      "Player_aeb67014": 4,
+      "Player_143b2725": 4,
+      "Player_0720a91a": 5,
+      "Player_f5baeec3": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06063723564147949
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.16,
+    "player_scores": {
+      "Player10": 2.613658536585366
+    },
+    "player_contributions": {
+      "Player_f49dba8c": 4,
+      "Player_832ba401": 4,
+      "Player_0f0c9d53": 5,
+      "Player_0364eef4": 4,
+      "Player_9f7f4ea2": 4,
+      "Player_4cccf7af": 4,
+      "Player_a24c7c3c": 3,
+      "Player_8853e63f": 3,
+      "Player_47164f67": 5,
+      "Player_0619d263": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05909395217895508
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.98000000000002,
+    "player_scores": {
+      "Player10": 2.6092682926829274
+    },
+    "player_contributions": {
+      "Player_aaadc30c": 3,
+      "Player_4de1865e": 4,
+      "Player_7cf11f77": 4,
+      "Player_38084ce8": 4,
+      "Player_2a21206c": 5,
+      "Player_58d242e7": 3,
+      "Player_6c87cc01": 4,
+      "Player_952c2f8e": 4,
+      "Player_c3f60c54": 4,
+      "Player_10c10407": 6
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.0628807544708252
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.52000000000001,
+    "player_scores": {
+      "Player10": 2.7880000000000003
+    },
+    "player_contributions": {
+      "Player_b544a2fb": 4,
+      "Player_296c246d": 4,
+      "Player_428c8f1e": 5,
+      "Player_4a831a46": 4,
+      "Player_47612c5b": 4,
+      "Player_582a6253": 4,
+      "Player_5c29dc25": 3,
+      "Player_cf5e725a": 4,
+      "Player_dbeea45c": 4,
+      "Player_b1ee9804": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.060062408447265625
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 114.92000000000002,
+    "player_scores": {
+      "Player10": 2.873
+    },
+    "player_contributions": {
+      "Player_82a05772": 3,
+      "Player_13938326": 5,
+      "Player_ea5424b5": 6,
+      "Player_cc92b953": 3,
+      "Player_f4022c63": 4,
+      "Player_55b32f8d": 4,
+      "Player_8cc90d30": 3,
+      "Player_b19f96e1": 4,
+      "Player_315f2cd0": 3,
+      "Player_3105830e": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06232619285583496
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 118.02000000000001,
+    "player_scores": {
+      "Player10": 2.878536585365854
+    },
+    "player_contributions": {
+      "Player_353bbd66": 5,
+      "Player_8db6196e": 4,
+      "Player_887f45fa": 3,
+      "Player_ec0cff9f": 4,
+      "Player_d2976d1c": 5,
+      "Player_8931f747": 4,
+      "Player_9aff27cc": 6,
+      "Player_cde88cba": 3,
+      "Player_9e0625bd": 3,
+      "Player_11562847": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.0630655288696289
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.32,
+    "player_scores": {
+      "Player10": 2.758
+    },
+    "player_contributions": {
+      "Player_f204c093": 4,
+      "Player_310bb01e": 4,
+      "Player_f96b58fb": 3,
+      "Player_31fdaf76": 5,
+      "Player_93f4fe98": 4,
+      "Player_ccf18e3a": 4,
+      "Player_042ce3e6": 5,
+      "Player_a35dc91d": 3,
+      "Player_09992cf4": 4,
+      "Player_536f62c0": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05641508102416992
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 124.62,
+    "player_scores": {
+      "Player10": 2.967142857142857
+    },
+    "player_contributions": {
+      "Player_683f2aba": 4,
+      "Player_61877e8b": 5,
+      "Player_ac8304d5": 5,
+      "Player_bbfcd0b2": 4,
+      "Player_6db3501b": 4,
+      "Player_6826e2ec": 5,
+      "Player_09a13931": 3,
+      "Player_fde77dce": 5,
+      "Player_b15f8277": 4,
+      "Player_7dea1bed": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 8,
+    "unique_items_used": 42,
+    "execution_time": 0.06519579887390137
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.78,
+    "player_scores": {
+      "Player10": 2.836315789473684
+    },
+    "player_contributions": {
+      "Player_9cf9c653": 3,
+      "Player_291397e5": 5,
+      "Player_7b4a21e5": 4,
+      "Player_c1b30eae": 3,
+      "Player_8aa2ec00": 4,
+      "Player_a9000521": 4,
+      "Player_f69a747b": 5,
+      "Player_ba9feace": 4,
+      "Player_fa63cf83": 3,
+      "Player_b006c9ad": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05849409103393555
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.52000000000001,
+    "player_scores": {
+      "Player10": 2.6380000000000003
+    },
+    "player_contributions": {
+      "Player_c0de8ed8": 4,
+      "Player_5f6e7f03": 7,
+      "Player_f6aa2591": 7,
+      "Player_de8b761d": 3,
+      "Player_73b8899c": 2,
+      "Player_fd979bb5": 4,
+      "Player_fbba978f": 3,
+      "Player_8ddde7f4": 4,
+      "Player_a012100d": 3,
+      "Player_7df44b33": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06007552146911621
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.56000000000002,
+    "player_scores": {
+      "Player10": 2.5890000000000004
+    },
+    "player_contributions": {
+      "Player_8c86d6fe": 5,
+      "Player_ce8107ae": 4,
+      "Player_e7ce900a": 5,
+      "Player_0ad66eee": 3,
+      "Player_e87329e7": 4,
+      "Player_50c45160": 4,
+      "Player_e477f6da": 3,
+      "Player_565f1a14": 5,
+      "Player_9fcdcbc7": 3,
+      "Player_257b0ea2": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.061655282974243164
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 87.36,
+    "player_scores": {
+      "Player10": 2.184
+    },
+    "player_contributions": {
+      "Player_c3dc9673": 2,
+      "Player_a508d2c5": 4,
+      "Player_caf12d06": 4,
+      "Player_07a0d8e1": 5,
+      "Player_c0ecdceb": 3,
+      "Player_0a106977": 8,
+      "Player_92a11f3b": 4,
+      "Player_6c13e140": 3,
+      "Player_10fb221f": 3,
+      "Player_d7c50839": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.058943986892700195
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 134.54,
+    "player_scores": {
+      "Player10": 3.281463414634146
+    },
+    "player_contributions": {
+      "Player_cb16ba3e": 4,
+      "Player_e42107f5": 4,
+      "Player_462ad81f": 4,
+      "Player_98051314": 4,
+      "Player_3a8bccf6": 5,
+      "Player_0875f6e1": 5,
+      "Player_06954963": 4,
+      "Player_d198c5ca": 4,
+      "Player_fab5b067": 3,
+      "Player_d77f4dc9": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06215262413024902
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.26000000000002,
+    "player_scores": {
+      "Player10": 2.570769230769231
+    },
+    "player_contributions": {
+      "Player_e730adf1": 4,
+      "Player_d6dc6570": 3,
+      "Player_6a08a79d": 4,
+      "Player_002ed223": 3,
+      "Player_733f6b2b": 4,
+      "Player_f86c4b49": 4,
+      "Player_78aa688e": 4,
+      "Player_8b3e0a9a": 4,
+      "Player_04fcc80a": 5,
+      "Player_188d0e56": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05717587471008301
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.52000000000001,
+    "player_scores": {
+      "Player10": 2.5248780487804883
+    },
+    "player_contributions": {
+      "Player_3e9549fa": 3,
+      "Player_8c9072d0": 4,
+      "Player_f5980875": 3,
+      "Player_397e9f75": 5,
+      "Player_515dee5d": 5,
+      "Player_bd040b6e": 4,
+      "Player_3a6c8c74": 4,
+      "Player_6a31cdf4": 5,
+      "Player_9f50dc1f": 5,
+      "Player_42e19325": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06298470497131348
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.05999999999999,
+    "player_scores": {
+      "Player10": 2.6264999999999996
+    },
+    "player_contributions": {
+      "Player_90c341ac": 5,
+      "Player_90768396": 4,
+      "Player_e115ae58": 4,
+      "Player_fcc8427f": 3,
+      "Player_22c7428b": 6,
+      "Player_9e289584": 3,
+      "Player_db628318": 3,
+      "Player_cd44b1c0": 5,
+      "Player_3947e40d": 4,
+      "Player_7289c35a": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06013059616088867
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.64000000000001,
+    "player_scores": {
+      "Player10": 2.716
+    },
+    "player_contributions": {
+      "Player_e8b71126": 4,
+      "Player_0163a685": 4,
+      "Player_15394053": 4,
+      "Player_d66a7a54": 4,
+      "Player_2b512c4c": 5,
+      "Player_c056f3dd": 3,
+      "Player_d5a9cc9c": 3,
+      "Player_1a3b3563": 3,
+      "Player_9c4cfa2e": 5,
+      "Player_9d9cabb2": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06197619438171387
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 109.02000000000001,
+    "player_scores": {
+      "Player10": 2.7255000000000003
+    },
+    "player_contributions": {
+      "Player_5532caaf": 4,
+      "Player_a72c5273": 4,
+      "Player_945985bb": 4,
+      "Player_5e9eb055": 4,
+      "Player_039c8084": 5,
+      "Player_37358915": 4,
+      "Player_27e0ac31": 5,
+      "Player_b16ec9df": 3,
+      "Player_850c380e": 4,
+      "Player_c1ab5746": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.058400869369506836
+  },
+  {
+    "config": {
+      "altruism_prob": 0.3,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 181,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 114.20000000000002,
+    "player_scores": {
+      "Player10": 2.8550000000000004
+    },
+    "player_contributions": {
+      "Player_7c982758": 3,
+      "Player_1a46e42d": 3,
+      "Player_edddf8bb": 4,
+      "Player_50bb512a": 4,
+      "Player_32551f19": 3,
+      "Player_0e2cb1e5": 4,
+      "Player_1a969f86": 6,
+      "Player_1037a591": 5,
+      "Player_d4c32c72": 4,
+      "Player_932c3867": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06236124038696289
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.80000000000001,
+    "player_scores": {
+      "Player10": 2.7243243243243245
+    },
+    "player_contributions": {
+      "Player_5a83d7f0": 3,
+      "Player_62d53a0d": 3,
+      "Player_4f2d43a8": 4,
+      "Player_01da0918": 4,
+      "Player_73a154d1": 3,
+      "Player_1eefc459": 3,
+      "Player_08451396": 4,
+      "Player_bcf5862d": 5,
+      "Player_91c5ae82": 4,
+      "Player_9b7e0d93": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05682969093322754
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 84.42,
+    "player_scores": {
+      "Player10": 2.345
+    },
+    "player_contributions": {
+      "Player_1aadf8fc": 3,
+      "Player_fc109177": 4,
+      "Player_c07d1eaf": 4,
+      "Player_0632e2de": 3,
+      "Player_2d063707": 3,
+      "Player_2b38ae1f": 4,
+      "Player_ccc9abb0": 4,
+      "Player_cf350b81": 4,
+      "Player_f5f2f6e5": 4,
+      "Player_6ed981bb": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 14,
+    "unique_items_used": 36,
+    "execution_time": 0.05189776420593262
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 93.78,
+    "player_scores": {
+      "Player10": 2.4678947368421054
+    },
+    "player_contributions": {
+      "Player_0fafbe0a": 4,
+      "Player_55bcc44b": 4,
+      "Player_7c3a15a7": 4,
+      "Player_b3d051f6": 3,
+      "Player_87bcb15d": 3,
+      "Player_6eff7484": 3,
+      "Player_0bfd275a": 5,
+      "Player_95fad8b9": 4,
+      "Player_d143c297": 4,
+      "Player_a303c565": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05999588966369629
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.5,
+    "player_scores": {
+      "Player10": 2.573170731707317
+    },
+    "player_contributions": {
+      "Player_bc2298bf": 3,
+      "Player_3242e27c": 4,
+      "Player_21be347a": 6,
+      "Player_c14b81a4": 4,
+      "Player_24c17f2b": 4,
+      "Player_3cca744d": 4,
+      "Player_bc4832b7": 5,
+      "Player_b05a39a4": 4,
+      "Player_55a31ba4": 4,
+      "Player_900b8d21": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05884814262390137
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.60000000000001,
+    "player_scores": {
+      "Player10": 2.9894736842105267
+    },
+    "player_contributions": {
+      "Player_06e7ecfc": 4,
+      "Player_f95b12e9": 4,
+      "Player_8ec014c9": 4,
+      "Player_3aa6947c": 4,
+      "Player_d757989e": 3,
+      "Player_9b262e48": 4,
+      "Player_9caf8ae5": 4,
+      "Player_790d80d7": 4,
+      "Player_a95366ca": 4,
+      "Player_41f6f751": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.06097531318664551
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.32,
+    "player_scores": {
+      "Player10": 3.0086486486486486
+    },
+    "player_contributions": {
+      "Player_6920365d": 3,
+      "Player_afdd6193": 5,
+      "Player_6947b5b1": 4,
+      "Player_5c85a22b": 3,
+      "Player_0e9d5f06": 4,
+      "Player_d359b078": 4,
+      "Player_d565f9db": 4,
+      "Player_9205c715": 3,
+      "Player_8f6cf3d0": 4,
+      "Player_9324a0ef": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05537676811218262
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.9,
+    "player_scores": {
+      "Player10": 2.628947368421053
+    },
+    "player_contributions": {
+      "Player_10c3a3a1": 4,
+      "Player_ff76f78e": 4,
+      "Player_68ab0069": 4,
+      "Player_4ac98692": 4,
+      "Player_4eec424b": 3,
+      "Player_55ca4e4e": 5,
+      "Player_685ddc33": 4,
+      "Player_c8efcd3f": 4,
+      "Player_8f1a7ae0": 3,
+      "Player_f0250857": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.061045169830322266
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.92,
+    "player_scores": {
+      "Player10": 2.997777777777778
+    },
+    "player_contributions": {
+      "Player_97c3c929": 4,
+      "Player_98c8792a": 3,
+      "Player_668739ba": 4,
+      "Player_b70b064d": 3,
+      "Player_fe326402": 4,
+      "Player_9f992fa6": 3,
+      "Player_13f54c96": 4,
+      "Player_c27d360c": 4,
+      "Player_ee2ed6db": 4,
+      "Player_4bf43bc3": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 14,
+    "unique_items_used": 36,
+    "execution_time": 0.05398106575012207
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.02000000000001,
+    "player_scores": {
+      "Player10": 2.8383783783783785
+    },
+    "player_contributions": {
+      "Player_09ae2478": 4,
+      "Player_2bbe654b": 3,
+      "Player_107fe764": 4,
+      "Player_e8fb53a3": 3,
+      "Player_260997e9": 3,
+      "Player_bf038c26": 4,
+      "Player_bcc9b220": 4,
+      "Player_22146c9a": 4,
+      "Player_8d27da10": 3,
+      "Player_8024a483": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05696558952331543
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 112.8,
+    "player_scores": {
+      "Player10": 2.8923076923076922
+    },
+    "player_contributions": {
+      "Player_26589249": 4,
+      "Player_44f4a240": 3,
+      "Player_c8572f26": 4,
+      "Player_3502e0cf": 5,
+      "Player_f2ef0f50": 4,
+      "Player_34b38fee": 4,
+      "Player_1f361172": 4,
+      "Player_2d89015c": 4,
+      "Player_7201c9e3": 3,
+      "Player_65319bea": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05799674987792969
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.06,
+    "player_scores": {
+      "Player10": 2.606842105263158
+    },
+    "player_contributions": {
+      "Player_c28df577": 3,
+      "Player_8575afd7": 3,
+      "Player_a56e0dc1": 6,
+      "Player_a16eeff5": 5,
+      "Player_f40cba06": 3,
+      "Player_6507fe93": 3,
+      "Player_495619e3": 5,
+      "Player_d0f70ac7": 3,
+      "Player_be7e7637": 3,
+      "Player_4649ae6a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.06053662300109863
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.82,
+    "player_scores": {
+      "Player10": 2.856111111111111
+    },
+    "player_contributions": {
+      "Player_9ab8cb38": 4,
+      "Player_39186eac": 3,
+      "Player_5f5b3280": 4,
+      "Player_036b1adb": 4,
+      "Player_a63ef689": 4,
+      "Player_310e997b": 3,
+      "Player_9c514ea5": 3,
+      "Player_3a15bb17": 4,
+      "Player_fbf13479": 3,
+      "Player_4d35adc3": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 14,
+    "unique_items_used": 36,
+    "execution_time": 0.05144643783569336
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 97.01999999999998,
+    "player_scores": {
+      "Player10": 2.622162162162162
+    },
+    "player_contributions": {
+      "Player_58b522ea": 4,
+      "Player_87bcc110": 4,
+      "Player_c955775b": 4,
+      "Player_7c3efc89": 3,
+      "Player_7bcace77": 4,
+      "Player_378cc8c0": 3,
+      "Player_553fef39": 4,
+      "Player_ec06719d": 3,
+      "Player_6a67f3b7": 4,
+      "Player_7bd14e9a": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.061760902404785156
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.50000000000001,
+    "player_scores": {
+      "Player10": 2.8142857142857145
+    },
+    "player_contributions": {
+      "Player_23c9c629": 4,
+      "Player_8aea907a": 4,
+      "Player_f7c729d9": 3,
+      "Player_2c335511": 3,
+      "Player_784a96f8": 4,
+      "Player_1504339a": 3,
+      "Player_b6ef39f7": 4,
+      "Player_be29ec8e": 3,
+      "Player_5a656d86": 3,
+      "Player_82b09533": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 15,
+    "unique_items_used": 35,
+    "execution_time": 0.055410146713256836
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.96000000000001,
+    "player_scores": {
+      "Player10": 2.9131428571428573
+    },
+    "player_contributions": {
+      "Player_226d61b1": 4,
+      "Player_b60da9eb": 4,
+      "Player_8d86596e": 3,
+      "Player_562b78ca": 4,
+      "Player_41ee6a38": 5,
+      "Player_72293be2": 3,
+      "Player_c2e9e34a": 3,
+      "Player_c03277aa": 3,
+      "Player_d0ed5e59": 3,
+      "Player_dc19471a": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 15,
+    "unique_items_used": 35,
+    "execution_time": 0.05514264106750488
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.68,
+    "player_scores": {
+      "Player10": 2.7810526315789477
+    },
+    "player_contributions": {
+      "Player_3c8e043c": 5,
+      "Player_77377fc8": 4,
+      "Player_7890c0ad": 3,
+      "Player_a41ae606": 4,
+      "Player_3deef325": 3,
+      "Player_438576bc": 4,
+      "Player_b113e5cd": 4,
+      "Player_e4ab5017": 4,
+      "Player_7816f14a": 3,
+      "Player_94342a17": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.058209896087646484
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.32000000000002,
+    "player_scores": {
+      "Player10": 2.623589743589744
+    },
+    "player_contributions": {
+      "Player_bbf8c60e": 4,
+      "Player_df3099bc": 4,
+      "Player_b34f9535": 4,
+      "Player_5f23f97f": 3,
+      "Player_8cdefdb0": 3,
+      "Player_c99ffcb1": 5,
+      "Player_8e0a7069": 4,
+      "Player_ebd94b5d": 4,
+      "Player_bfcb9748": 4,
+      "Player_f8d037b9": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05947470664978027
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.1,
+    "player_scores": {
+      "Player10": 2.7594594594594595
+    },
+    "player_contributions": {
+      "Player_f93bade7": 5,
+      "Player_df276c0d": 4,
+      "Player_039c1f53": 4,
+      "Player_560be74c": 4,
+      "Player_7e1556e5": 3,
+      "Player_4bed5d00": 4,
+      "Player_d44f8f61": 3,
+      "Player_2acbcae8": 3,
+      "Player_6db80128": 3,
+      "Player_fe2aa1a4": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.057195425033569336
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.39999999999999,
+    "player_scores": {
+      "Player10": 2.7025641025641023
+    },
+    "player_contributions": {
+      "Player_866ba88a": 3,
+      "Player_bd577a31": 4,
+      "Player_780a6b92": 5,
+      "Player_964d2d8e": 5,
+      "Player_282be0ba": 3,
+      "Player_8894d505": 3,
+      "Player_3b3be4db": 5,
+      "Player_83da8ce2": 4,
+      "Player_a881c1de": 4,
+      "Player_14143ec7": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06075859069824219
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.02,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 201,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.54000000000002,
+    "player_scores": {
+      "Player10": 2.603589743589744
+    },
+    "player_contributions": {
+      "Player_4b054287": 3,
+      "Player_0615dcc4": 4,
+      "Player_5aa29f51": 4,
+      "Player_9e4a2641": 5,
+      "Player_59cebfdd": 4,
+      "Player_c91060d1": 4,
+      "Player_908af109": 4,
+      "Player_044c1b72": 5,
+      "Player_e323a04a": 3,
+      "Player_30450030": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.059966087341308594
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.32,
+    "player_scores": {
+      "Player10": 2.797894736842105
+    },
+    "player_contributions": {
+      "Player_9e673f53": 4,
+      "Player_2fc7b8ce": 3,
+      "Player_f2e8a417": 5,
+      "Player_579ac00b": 4,
+      "Player_b5c1eed6": 4,
+      "Player_0379cbc1": 4,
+      "Player_4da7f198": 4,
+      "Player_30eca4d2": 3,
+      "Player_0e1affb4": 4,
+      "Player_e1a7243c": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.06037092208862305
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 97.18,
+    "player_scores": {
+      "Player10": 2.491794871794872
+    },
+    "player_contributions": {
+      "Player_ea52c7fc": 5,
+      "Player_ca92f698": 4,
+      "Player_49d40717": 3,
+      "Player_16336d76": 3,
+      "Player_785daf6f": 5,
+      "Player_492aeafd": 4,
+      "Player_5e5f6fc2": 4,
+      "Player_537e0972": 4,
+      "Player_37637962": 4,
+      "Player_cde61016": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06103873252868652
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 116.55999999999999,
+    "player_scores": {
+      "Player10": 2.9887179487179485
+    },
+    "player_contributions": {
+      "Player_20d68d9b": 4,
+      "Player_2a318f50": 3,
+      "Player_ec3c7ffb": 5,
+      "Player_7ebb55bf": 3,
+      "Player_bbc027f3": 3,
+      "Player_f0ba2df0": 5,
+      "Player_0d786082": 4,
+      "Player_22e5288e": 4,
+      "Player_dfb9a420": 4,
+      "Player_9a7c5c35": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05873584747314453
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.33999999999999,
+    "player_scores": {
+      "Player10": 2.587894736842105
+    },
+    "player_contributions": {
+      "Player_9cc6d9d6": 4,
+      "Player_2b83f42a": 4,
+      "Player_0f58da5c": 4,
+      "Player_12d46267": 3,
+      "Player_38e6a66c": 4,
+      "Player_64e98306": 4,
+      "Player_5d0983d5": 4,
+      "Player_3a7e3390": 4,
+      "Player_e2bba7ac": 3,
+      "Player_c67e2505": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05993366241455078
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.75999999999999,
+    "player_scores": {
+      "Player10": 2.457560975609756
+    },
+    "player_contributions": {
+      "Player_a5a38f78": 4,
+      "Player_16d9bd53": 3,
+      "Player_4df45ead": 7,
+      "Player_e2430482": 5,
+      "Player_3a9fa71c": 4,
+      "Player_459b7ffd": 4,
+      "Player_a9e4f8df": 5,
+      "Player_cd17b58a": 3,
+      "Player_6cd34ffc": 3,
+      "Player_7d1d973b": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.05941152572631836
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 96.58,
+    "player_scores": {
+      "Player10": 2.682777777777778
+    },
+    "player_contributions": {
+      "Player_9486c581": 4,
+      "Player_af690dc1": 4,
+      "Player_6dd57f42": 2,
+      "Player_9b6a5807": 3,
+      "Player_dfa92290": 5,
+      "Player_282292e2": 4,
+      "Player_57f05b2c": 4,
+      "Player_3c363a29": 4,
+      "Player_74bf3816": 3,
+      "Player_d0e027a9": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 14,
+    "unique_items_used": 36,
+    "execution_time": 0.0619051456451416
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.5,
+    "player_scores": {
+      "Player10": 2.8333333333333335
+    },
+    "player_contributions": {
+      "Player_3271ca97": 4,
+      "Player_b23ee525": 4,
+      "Player_c2be5843": 5,
+      "Player_8aa3aa63": 4,
+      "Player_05c099d0": 4,
+      "Player_f2b01399": 3,
+      "Player_1723c5ac": 3,
+      "Player_94ede1a3": 4,
+      "Player_f0858353": 4,
+      "Player_6534b055": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.058911800384521484
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 110.60000000000001,
+    "player_scores": {
+      "Player10": 2.835897435897436
+    },
+    "player_contributions": {
+      "Player_498b6a29": 4,
+      "Player_62f95466": 4,
+      "Player_7282153e": 3,
+      "Player_db707f21": 4,
+      "Player_d2332858": 3,
+      "Player_594e9ae4": 5,
+      "Player_91613864": 4,
+      "Player_4e5f725d": 4,
+      "Player_aefeceb0": 5,
+      "Player_09198d4e": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.059072017669677734
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.28,
+    "player_scores": {
+      "Player10": 2.8724324324324324
+    },
+    "player_contributions": {
+      "Player_51883753": 4,
+      "Player_142f3ae7": 3,
+      "Player_dfe2c56c": 3,
+      "Player_4461c795": 4,
+      "Player_241f1ea5": 3,
+      "Player_68f7075f": 4,
+      "Player_eaaa1e41": 4,
+      "Player_83c786c2": 4,
+      "Player_0828a2bc": 4,
+      "Player_4bafec2e": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.056850433349609375
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 108.52,
+    "player_scores": {
+      "Player10": 2.7825641025641024
+    },
+    "player_contributions": {
+      "Player_dba9e8f2": 3,
+      "Player_cb8f7c49": 4,
+      "Player_04255c7a": 4,
+      "Player_155fff54": 4,
+      "Player_3cb52b3a": 3,
+      "Player_9d44560e": 5,
+      "Player_a8b0857a": 4,
+      "Player_0fa8c9a5": 5,
+      "Player_dad4806d": 3,
+      "Player_16a2af27": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05849504470825195
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.98000000000002,
+    "player_scores": {
+      "Player10": 2.6661538461538465
+    },
+    "player_contributions": {
+      "Player_c524a148": 3,
+      "Player_6d638b12": 5,
+      "Player_cb00711b": 3,
+      "Player_1e8b18c8": 4,
+      "Player_c38f6d89": 4,
+      "Player_e633ff37": 3,
+      "Player_bada84bf": 3,
+      "Player_29833bf0": 5,
+      "Player_dd0d224a": 5,
+      "Player_81eed8d7": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06229281425476074
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 101.88000000000001,
+    "player_scores": {
+      "Player10": 2.6810526315789476
+    },
+    "player_contributions": {
+      "Player_58121da5": 3,
+      "Player_80b97bbd": 3,
+      "Player_56200c42": 5,
+      "Player_423190f2": 4,
+      "Player_c5a88bc8": 5,
+      "Player_60507bfe": 4,
+      "Player_f1db39be": 3,
+      "Player_7190d552": 3,
+      "Player_5cf22d45": 4,
+      "Player_feb45db7": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.05673646926879883
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 107.83999999999999,
+    "player_scores": {
+      "Player10": 2.6959999999999997
+    },
+    "player_contributions": {
+      "Player_b49c2f11": 4,
+      "Player_4cc1d3f8": 4,
+      "Player_0b63367b": 4,
+      "Player_7e95ec4a": 3,
+      "Player_69faa732": 4,
+      "Player_28d4f0fd": 4,
+      "Player_f399f9bb": 4,
+      "Player_a891a9fa": 3,
+      "Player_18386d7a": 5,
+      "Player_b96ff1c8": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06498980522155762
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 92.78,
+    "player_scores": {
+      "Player10": 2.4415789473684213
+    },
+    "player_contributions": {
+      "Player_4cdb8d5e": 4,
+      "Player_56e2266b": 3,
+      "Player_45552c44": 4,
+      "Player_d6f69154": 4,
+      "Player_69d78142": 3,
+      "Player_8be00c30": 4,
+      "Player_f9517669": 4,
+      "Player_688094ff": 4,
+      "Player_64320438": 4,
+      "Player_f5e7a4ae": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 12,
+    "unique_items_used": 38,
+    "execution_time": 0.06102132797241211
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 103.38000000000001,
+    "player_scores": {
+      "Player10": 2.650769230769231
+    },
+    "player_contributions": {
+      "Player_489d290c": 4,
+      "Player_db981b6a": 4,
+      "Player_280c2ff9": 3,
+      "Player_e7c75994": 4,
+      "Player_1b44f29f": 5,
+      "Player_3a1a56f5": 6,
+      "Player_21a7afa9": 4,
+      "Player_8eaae86a": 3,
+      "Player_b2e26091": 3,
+      "Player_b3a1d5f0": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06060290336608887
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.57999999999998,
+    "player_scores": {
+      "Player10": 2.9308571428571426
+    },
+    "player_contributions": {
+      "Player_056f1f9f": 5,
+      "Player_3a45292d": 3,
+      "Player_60c61ab4": 3,
+      "Player_d55772bb": 4,
+      "Player_d6af0503": 3,
+      "Player_e36acb46": 3,
+      "Player_ae1265f1": 3,
+      "Player_05c89495": 3,
+      "Player_8c8c5286": 4,
+      "Player_85867efb": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 15,
+    "unique_items_used": 35,
+    "execution_time": 0.053192138671875
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.18,
+    "player_scores": {
+      "Player10": 2.6712820512820517
+    },
+    "player_contributions": {
+      "Player_f1db3c66": 5,
+      "Player_6e528f85": 4,
+      "Player_92cf0c5d": 4,
+      "Player_56c2ceeb": 4,
+      "Player_ed371ad9": 4,
+      "Player_ec267018": 3,
+      "Player_18c3c2b2": 4,
+      "Player_4b624ba0": 4,
+      "Player_0c3cdb8a": 3,
+      "Player_83cf4f79": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05670738220214844
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 100.80000000000001,
+    "player_scores": {
+      "Player10": 2.5200000000000005
+    },
+    "player_contributions": {
+      "Player_d30a3ee9": 4,
+      "Player_e94ef304": 3,
+      "Player_cf61105b": 5,
+      "Player_311bbe8e": 3,
+      "Player_70e00155": 5,
+      "Player_25d448eb": 3,
+      "Player_d62d81be": 4,
+      "Player_d9cc1706": 5,
+      "Player_ef8aa797": 4,
+      "Player_20b2c957": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.08722829818725586
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 93.48,
+    "player_scores": {
+      "Player10": 2.5264864864864864
+    },
+    "player_contributions": {
+      "Player_5f81ee5a": 3,
+      "Player_b49bc76e": 4,
+      "Player_a6c78bfc": 3,
+      "Player_f477d1c8": 4,
+      "Player_33ad65a4": 3,
+      "Player_d364b3d2": 4,
+      "Player_deab3646": 4,
+      "Player_39835a82": 4,
+      "Player_8d1d5a6a": 4,
+      "Player_d3692021": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.06022071838378906
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.05,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 221,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 97.11999999999998,
+    "player_scores": {
+      "Player10": 2.6248648648648643
+    },
+    "player_contributions": {
+      "Player_d9a7a378": 3,
+      "Player_c6c965f1": 5,
+      "Player_8dafc520": 4,
+      "Player_3f0fe6db": 3,
+      "Player_9e06a1c9": 3,
+      "Player_35646470": 4,
+      "Player_82785b7e": 4,
+      "Player_37e2361d": 5,
+      "Player_05a3a3d8": 3,
+      "Player_7d289e6a": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.05936145782470703
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 97.64000000000001,
+    "player_scores": {
+      "Player10": 2.4410000000000003
+    },
+    "player_contributions": {
+      "Player_f28ca244": 4,
+      "Player_4d5bcace": 4,
+      "Player_78700a8f": 4,
+      "Player_7e791a77": 5,
+      "Player_5659fbee": 4,
+      "Player_9af2e97b": 4,
+      "Player_a7222cf8": 3,
+      "Player_da6ee297": 3,
+      "Player_b98ae040": 5,
+      "Player_fb82e681": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.0609433650970459
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 87.14,
+    "player_scores": {
+      "Player10": 2.1785
+    },
+    "player_contributions": {
+      "Player_4edb071d": 6,
+      "Player_a32c27ff": 4,
+      "Player_05ddb27b": 4,
+      "Player_00556da5": 5,
+      "Player_b8fedf67": 3,
+      "Player_c244847b": 4,
+      "Player_d3f24eba": 3,
+      "Player_7beb4858": 3,
+      "Player_02dcd7af": 5,
+      "Player_9cf7d1e0": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.05996823310852051
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.66,
+    "player_scores": {
+      "Player10": 2.8556756756756756
+    },
+    "player_contributions": {
+      "Player_d11f5039": 3,
+      "Player_b7ee02cc": 3,
+      "Player_42586d45": 3,
+      "Player_109ebeb9": 4,
+      "Player_8e7f7c55": 3,
+      "Player_057af365": 3,
+      "Player_9a9dab28": 4,
+      "Player_3df58c9c": 5,
+      "Player_7053a1fc": 5,
+      "Player_2467d94f": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.060402631759643555
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 105.48,
+    "player_scores": {
+      "Player10": 2.704615384615385
+    },
+    "player_contributions": {
+      "Player_add75cb5": 5,
+      "Player_51930e9d": 4,
+      "Player_e6325bb2": 4,
+      "Player_ca6ae4e3": 5,
+      "Player_55e33039": 4,
+      "Player_7b57fe20": 3,
+      "Player_63efef0d": 3,
+      "Player_80d1925d": 4,
+      "Player_c3430155": 3,
+      "Player_cd63f632": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05943584442138672
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.91999999999999,
+    "player_scores": {
+      "Player10": 2.781621621621621
+    },
+    "player_contributions": {
+      "Player_169f6b3a": 3,
+      "Player_407df444": 3,
+      "Player_b40e825a": 3,
+      "Player_00cea295": 3,
+      "Player_7f04cca9": 5,
+      "Player_0810f59c": 4,
+      "Player_f725c261": 4,
+      "Player_7d8f3c3d": 4,
+      "Player_701f1d0a": 4,
+      "Player_1b2388cb": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.056295156478881836
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.58000000000001,
+    "player_scores": {
+      "Player10": 2.681538461538462
+    },
+    "player_contributions": {
+      "Player_3f5d500c": 3,
+      "Player_aa805c33": 3,
+      "Player_a807963c": 3,
+      "Player_a23d7a4b": 3,
+      "Player_2fc053dd": 3,
+      "Player_a136663c": 4,
+      "Player_d6d6638d": 5,
+      "Player_4318f023": 7,
+      "Player_7b64e739": 4,
+      "Player_f7a12b5f": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05676388740539551
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 111.01999999999998,
+    "player_scores": {
+      "Player10": 2.7078048780487802
+    },
+    "player_contributions": {
+      "Player_f1945d8d": 6,
+      "Player_008a61b1": 5,
+      "Player_51e04960": 4,
+      "Player_8f5c51c6": 3,
+      "Player_539829e1": 4,
+      "Player_15c24703": 4,
+      "Player_e0db5129": 3,
+      "Player_88fe67d1": 4,
+      "Player_ea8841f2": 4,
+      "Player_56822ece": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06356358528137207
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 93.47999999999999,
+    "player_scores": {
+      "Player10": 2.3969230769230765
+    },
+    "player_contributions": {
+      "Player_8b7ec08e": 4,
+      "Player_604d38fb": 6,
+      "Player_ace1104c": 3,
+      "Player_952f30c7": 4,
+      "Player_98fa042c": 3,
+      "Player_9b9f26a8": 4,
+      "Player_57a01114": 3,
+      "Player_7a93a6d6": 4,
+      "Player_a1381841": 4,
+      "Player_0bc51a37": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.058354854583740234
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 113.62,
+    "player_scores": {
+      "Player10": 2.771219512195122
+    },
+    "player_contributions": {
+      "Player_c3606ade": 4,
+      "Player_3ff3d400": 3,
+      "Player_83bccb5f": 5,
+      "Player_7147cb5b": 3,
+      "Player_6d8dcd46": 6,
+      "Player_71411bcf": 5,
+      "Player_0f81d57b": 4,
+      "Player_6db135e4": 4,
+      "Player_007a5c86": 4,
+      "Player_1a193012": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 9,
+    "unique_items_used": 41,
+    "execution_time": 0.06576967239379883
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 102.82000000000002,
+    "player_scores": {
+      "Player10": 2.937714285714286
+    },
+    "player_contributions": {
+      "Player_a375cb82": 3,
+      "Player_9908d854": 3,
+      "Player_7397fbc0": 3,
+      "Player_81dabeb8": 5,
+      "Player_e69c0ef5": 3,
+      "Player_345520e6": 3,
+      "Player_c836b771": 3,
+      "Player_2c031286": 5,
+      "Player_ae55c366": 4,
+      "Player_785f85f8": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 15,
+    "unique_items_used": 35,
+    "execution_time": 0.055799245834350586
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 114.97999999999999,
+    "player_scores": {
+      "Player10": 2.948205128205128
+    },
+    "player_contributions": {
+      "Player_e8d36499": 4,
+      "Player_3c1971d0": 4,
+      "Player_79bfe861": 4,
+      "Player_d6fa1e51": 4,
+      "Player_9d3c4f02": 3,
+      "Player_51f76e77": 3,
+      "Player_f91dafbf": 3,
+      "Player_316b22ff": 5,
+      "Player_eafc8279": 4,
+      "Player_1d207450": 5
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.05980062484741211
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 106.1,
+    "player_scores": {
+      "Player10": 2.6525
+    },
+    "player_contributions": {
+      "Player_522e2db0": 4,
+      "Player_c2d6347c": 3,
+      "Player_03101cda": 5,
+      "Player_24e22d2b": 5,
+      "Player_5f87eba1": 5,
+      "Player_05ebcebb": 3,
+      "Player_d83da3ec": 5,
+      "Player_5cee5980": 3,
+      "Player_e4a7de1a": 4,
+      "Player_64068f51": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06450915336608887
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 99.96000000000001,
+    "player_scores": {
+      "Player10": 2.9400000000000004
+    },
+    "player_contributions": {
+      "Player_253462ec": 3,
+      "Player_98b5072a": 3,
+      "Player_c45735b4": 4,
+      "Player_b5d52d44": 4,
+      "Player_a9eff7b8": 3,
+      "Player_9e94223a": 3,
+      "Player_db7738cc": 3,
+      "Player_1d95cdc6": 3,
+      "Player_e62ea55b": 4,
+      "Player_45d8e718": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 16,
+    "unique_items_used": 34,
+    "execution_time": 0.052820444107055664
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 115.38,
+    "player_scores": {
+      "Player10": 2.9584615384615383
+    },
+    "player_contributions": {
+      "Player_2c5683fa": 4,
+      "Player_bb4872e5": 4,
+      "Player_c155f875": 7,
+      "Player_68450f88": 4,
+      "Player_3188542a": 3,
+      "Player_95ceb379": 4,
+      "Player_07f792e2": 3,
+      "Player_10b0b7c5": 3,
+      "Player_a7b23f63": 3,
+      "Player_3cb53387": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06011033058166504
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 104.32,
+    "player_scores": {
+      "Player10": 2.819459459459459
+    },
+    "player_contributions": {
+      "Player_4af8cd82": 4,
+      "Player_39e49bfe": 4,
+      "Player_a1846c2e": 3,
+      "Player_427d3ce3": 3,
+      "Player_3681cb4c": 3,
+      "Player_7fd218d0": 4,
+      "Player_80b88904": 5,
+      "Player_8455b581": 4,
+      "Player_82b5feaa": 3,
+      "Player_11ef4708": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 13,
+    "unique_items_used": 37,
+    "execution_time": 0.06187248229980469
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 117.53999999999999,
+    "player_scores": {
+      "Player10": 2.9385
+    },
+    "player_contributions": {
+      "Player_2f003ec7": 3,
+      "Player_aae41c26": 4,
+      "Player_f0065439": 5,
+      "Player_fc36eeb9": 4,
+      "Player_fb190302": 4,
+      "Player_ab8fcd2b": 4,
+      "Player_d176a221": 5,
+      "Player_ead29c64": 5,
+      "Player_d804c9e8": 3,
+      "Player_56ffdff2": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06199836730957031
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 117.28,
+    "player_scores": {
+      "Player10": 3.0071794871794872
+    },
+    "player_contributions": {
+      "Player_82b48c1a": 4,
+      "Player_7ac84ec5": 4,
+      "Player_c4a5ca0e": 3,
+      "Player_025e59b2": 5,
+      "Player_a71ee4aa": 6,
+      "Player_250f339d": 4,
+      "Player_8d89afea": 4,
+      "Player_22de87b2": 3,
+      "Player_652f0391": 3,
+      "Player_ef1cb262": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.06145977973937988
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 121.60000000000001,
+    "player_scores": {
+      "Player10": 3.117948717948718
+    },
+    "player_contributions": {
+      "Player_d97096fc": 4,
+      "Player_7b61cecc": 4,
+      "Player_7158a40a": 4,
+      "Player_66f25bf9": 4,
+      "Player_c2c5e3d9": 5,
+      "Player_862dc6fd": 3,
+      "Player_97e1d4cf": 3,
+      "Player_b4bd5749": 4,
+      "Player_4a1893f9": 4,
+      "Player_483fa16c": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.060515642166137695
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.56,
+    "player_scores": {
+      "Player10": 2.5271794871794873
+    },
+    "player_contributions": {
+      "Player_ed61797c": 3,
+      "Player_b3736118": 4,
+      "Player_793d40ff": 4,
+      "Player_32d5f0e2": 4,
+      "Player_ffb25f2f": 4,
+      "Player_ab31c937": 4,
+      "Player_c6525d81": 4,
+      "Player_cdce5e80": 4,
+      "Player_ce5bce15": 4,
+      "Player_aa6e8764": 4
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 11,
+    "unique_items_used": 39,
+    "execution_time": 0.059814453125
+  },
+  {
+    "config": {
+      "altruism_prob": 0.6,
+      "tau_margin": 0.1,
+      "epsilon_fresh": 0.05,
+      "epsilon_mono": 0.05,
+      "seed": 241,
+      "players": {
+        "p10": 10
+      },
+      "subjects": 20,
+      "memory_size": 10,
+      "conversation_length": 50
+    },
+    "total_score": 98.48000000000002,
+    "player_scores": {
+      "Player10": 2.4620000000000006
+    },
+    "player_contributions": {
+      "Player_1c0476ac": 4,
+      "Player_9aee4e4e": 5,
+      "Player_53e10094": 6,
+      "Player_a4020511": 3,
+      "Player_f7653f22": 4,
+      "Player_9047c453": 4,
+      "Player_1e9887d6": 3,
+      "Player_1206cb1f": 3,
+      "Player_94562e7c": 5,
+      "Player_b7f228be": 3
+    },
+    "conversation_length": 50,
+    "early_termination": false,
+    "pause_count": 10,
+    "unique_items_used": 40,
+    "execution_time": 0.06304001808166504
+  }
+]
