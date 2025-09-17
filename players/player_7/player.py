@@ -1,6 +1,7 @@
 from models.player import GameContext, Item, Player, PlayerSnapshot
 import statistics
 
+
 class Player7(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super().__init__(snapshot, ctx)
@@ -59,38 +60,34 @@ class Player7(Player):
 		for item in eligible:
 			subject = self.preferences[self.most_preferred(item)]
 			times_mentioned = subject_count[subject]
-			pref_index = self.preferences.index(
-				subject
-			)
+			pref_index = self.preferences.index(subject)
 			# get index of subject in preferences list
 			# formatted long if using copilot
-			if (
-				times_mentioned in range(1, 3)
-				and (
-					pref_index < highest_pref_index  # if item is higher in preference list, choose it
-					or (pref_index == highest_pref_index and item.importance > importance) #if two items have the same subject, say the more important one
-				)
+			if times_mentioned in range(1, 3) and (
+				pref_index < highest_pref_index  # if item is higher in preference list, choose it
+				or (
+					pref_index == highest_pref_index and item.importance > importance
+				)  # if two items have the same subject, say the more important one
 			):
 				chosen_item = item
 				importance = item.importance
 				highest_pref_index = pref_index
 
-
 		### new code below
 		# calculate average importance of remaining items
 		avg = statistics.mean([item.importance for item in remaining]) if remaining else 0
 
-		#calculate median importance of remaining items
+		# calculate median importance of remaining items
 		med = statistics.median([item.importance for item in remaining]) if remaining else 0
 
-		#if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
+		# if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
 			for item in self.memory_bank:
-				if self.most_preferred(item) <= K and item.importance > .5:
+				if self.most_preferred(item) <= K and item.importance > 0.5:
 					chosen_item = item
 					return chosen_item
 			return None  # pause if no item found
-		
+
 		return chosen_item if chosen_item else None
 
 		### old code below
@@ -101,18 +98,15 @@ class Player7(Player):
 		# 			chosen_item = item
 		# 			importance = item.importance
 		# # Return item with highest importance that is not in history.
-		
-	
-	def most_preferred(self,item:Item)->int:
+
+	def most_preferred(self, item: Item) -> int:
 		# return the most preferred subject in the item
 		return min([self.preferences.index(s) for s in item.subjects])
-	
-	def dynamic_threshold(self,history:list[Item])->int:
+
+	def dynamic_threshold(self, history: list[Item]) -> int:
 		# return a dynamic threshold based on the history length
 		said = len(self.contributed_items)
-		progress = min(1, said/ (max(1,len(self.memory_bank)) ))  # 0→1
+		progress = min(1, said / (max(1, len(self.memory_bank))))  # 0→1
 		S = len(self.preferences)
 		K = int(S * (0.50 + 0.40 * progress)) - 1  # 50% -> 90% as bank shrinks
 		return max(0, min(S - 1, K))
-
-
