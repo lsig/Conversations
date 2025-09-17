@@ -11,6 +11,6 @@ def weights_gradient_descent(
 	subprocess.run(['uv', 'run', 'python', 'main.py'] + args)
 
 	# Fix it being null since it's not implemented, and won't pass uv run ruff check
-	gradients=0
+	gradients = 0
 
 	return weights - learning_rate * gradients
