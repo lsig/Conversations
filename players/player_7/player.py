@@ -57,6 +57,8 @@ class Player7(Player):
 
 		# look through memory bank, find item in top half of preference list that has been mentioned recently and has highest importance
 		for item in eligible:
+			if item in history:
+				continue
 			subject = self.preferences[self.most_preferred(item)]
 			times_mentioned = subject_count[subject]
 			pref_index = self.preferences.index(subject)
@@ -82,6 +84,8 @@ class Player7(Player):
 		# if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
 			for item in self.memory_bank:
+				if item in history:
+					continue
 				if self.most_preferred(item) <= K and item.importance > 0.5:
 					chosen_item = item
 					return chosen_item
