@@ -32,6 +32,32 @@ class Player5(Player):
 		self.score_engine = None
 		self.preferences = snapshot.preferences
 
+		# Track other subjects talked about: player id -> Counter(subject -> count)
+		self.external_subjects = {}
+
+	def update_external_subjects(self, history: list[Item]) -> None:
+		""" Update the counter for external subjects mentioned by other players """
+		# Note down what's been said by everyone
+		for item in history:
+			# skip pauses
+			if item is None:
+				continue
+			if item.player_id == self.snapshot.id:
+				continue
+			# exclude stuff we said
+			if item not in self.external_subjects:
+				self.external_subjects[item.player_id] = Counter()
+			for subject in item.subjects:
+				self.external_subjects[item.player_id][subject] += 1
+
+	def predict_group_preference(self) -> Counter:
+		""" Predict what subjects other external players prefer """
+		combined = Counter()
+		# Combine everyone's preferences to see the group preference
+		for counter in self.external_subjects.values():
+			combined.update(counter)
+		return combined
+
 	def individual_score(self, item: Item) -> float:
 		"""Score based on player preferences."""
 		score = 0
@@ -72,6 +98,10 @@ class Player5(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if not self.memory_bank:
 			return None
+		
+		# Note down what's been said by everyone
+		self.update_external_subjects(history)
+		group_subject_preference = self.predict_group_preference()
 
 		# Create a temporary engine for shared scoring
 		self.score_engine = self_engine(
@@ -166,6 +196,15 @@ class Player5(Player):
 				1 for subject in item.subjects if subject not in subjects_post_pause
 			)
 			scores[item] += new_subject_count
+
+			# Adjust score based on the entire group's preferred subjects
+			for subject in item.subjects:
+				# No one else mentioned - bonus
+				if group_subject_preference[subject] == 0:
+					scores[item] += 1	# tune later
+				# repeated too much
+				elif group_subject_preference[subject] > 3:
+					scores[item] -= 1	# tune later
 
 		# Pick best
 		best_score = max(scores.values())
