@@ -12,7 +12,7 @@ from typing import Dict, Tuple
 
 from models.item import Item
 
-from .config import (
+from ..config import (
     COHERENCE_WEIGHT,
     COHERENCE_WINDOW,
     EWMA_ALPHA,
