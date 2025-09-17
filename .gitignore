@@ -11,3 +11,5 @@ wheels/
 
 # Misc
 .DS_Store
+players/player_10/results/
+simulation_results/
