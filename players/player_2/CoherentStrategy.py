@@ -23,6 +23,10 @@ class CoherentStrategy(BaseStrategy):
 		if num_p - 1 > c_len // 3:
 			self.obs_num = c_len // 3
 
+		# Don't propose if no items left
+		if len(player.sub_to_item) == 0:
+			return None
+
 		# Remove if proposal was accepted last turn
 		if turn_nr > 1 and history[-1] is not None and history[-1] == player.last_proposed_item:
 			last_proposed_subjects = tuple(sorted(list(player.last_proposed_item.subjects)))
