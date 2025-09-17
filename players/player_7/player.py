@@ -29,7 +29,7 @@ class Player7(Player):
 			# check history of last 5 items to see if preference has been mentioned recently and if it has skip
 			elif len(history) >= 5 and p not in history[:-5]:
 				for item in self.memory_bank:
-					# check if p is in the subejcts of an item, not in history, and greater importance than arbitrary theshold
+					# check if p is in the subjects of an item, not in history, and greater importance than arbitrary theshold
 					if p in item.subjects and item not in history and item.importance > 0.5:
 						return item
 					else:
@@ -47,7 +47,7 @@ class Player7(Player):
 				subject_count[subject] += 1
 
 		remaining = [it for it in self.memory_bank if it not in history]
-		K = self.dynamic_threshold(history)
+		K = self.dynamic_threshold()
 		eligible = [it for it in remaining if self.most_preferred(it) <= K]
 		if not eligible:  # safety valve
 			eligible = remaining
@@ -57,10 +57,9 @@ class Player7(Player):
 
 		# look through memory bank, find item in top half of preference list that has been mentioned recently and has highest importance
 		for item in eligible:
-			subject = self.preferences[self.most_preferred(item)]
+			subject = self.preferences[self.most_preferred(item)] # most preferred subject in item
 			times_mentioned = subject_count[subject]
-			pref_index = self.preferences.index(subject)
-			# get index of subject in preferences list
+			pref_index = self.most_preferred(item)
 			# formatted long if using copilot
 			if times_mentioned in range(1, 3) and (
 				pref_index < highest_pref_index  # if item is higher in preference list, choose it
@@ -84,30 +83,20 @@ class Player7(Player):
 			for item in self.memory_bank:
 				if item in history:
 					continue
-				if self.most_preferred(item) <= K and item.importance > 0.5:
+				if self.most_preferred(item) <= K and item.importance > 0.7:
 					chosen_item = item
 					return chosen_item
-			return None  # pause if no item found
-
 		return chosen_item if chosen_item else None
 
-		### old code below
-		# # If no item has been chosen so far, then loop through memory bank and find the item that has highest importance and is not in history.
-		# if chosen_item is None:
-		# 	for item in self.memory_bank:
-		# 		if item not in history and item.importance > importance:
-		# 			chosen_item = item
-		# 			importance = item.importance
-		# # Return item with highest importance that is not in history.
 
 	def most_preferred(self, item: Item) -> int:
-		# return the most preferred subject in the item
+		# return the index of the most preferred subject in the item
 		return min([self.preferences.index(s) for s in item.subjects])
 
-	def dynamic_threshold(self, history: list[Item]) -> int:
+	def dynamic_threshold(self) -> int:
 		# return a dynamic threshold based on the history length
 		said = len(self.contributed_items)
-		progress = min(1, said / (max(1, len(self.memory_bank))))  # 0→1
+		progress = min(1, said / (max(1, len(self.memory_bank))))  # 0->1
 		S = len(self.preferences)
-		K = int(S * (0.50 + 0.40 * progress)) - 1  # 50% -> 90% as bank shrinks
+		K = int(S * (0.50 + 0.30 * progress)) - 1  # 50% -> 80% as bank shrinks
 		return max(0, min(S - 1, K))
