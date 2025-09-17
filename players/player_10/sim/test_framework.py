@@ -213,6 +213,14 @@ class FlexibleTestRunner:
         all_results = []
         combination_count = 0
         total_combinations = self._count_combinations(config)
+        total_simulations = total_combinations * config.num_simulations
+        pbar = None
+        if config.print_progress and total_simulations > 0:
+            try:
+                from tqdm.auto import tqdm  # type: ignore
+                pbar = tqdm(total=total_simulations, desc="Simulations", leave=False)
+            except Exception:
+                pbar = None
         
         # Generate all parameter combinations
         for param_combo in self._generate_parameter_combinations(config):
@@ -233,7 +241,13 @@ class FlexibleTestRunner:
                     players=player_config,
                     subjects=config.subjects,
                     memory_size=config.memory_size,
-                    conversation_length=config.conversation_length
+                    conversation_length=config.conversation_length,
+                    min_samples_pid=param_combo.get('min_samples_pid', config.min_samples_values.values[0]),
+                    ewma_alpha=param_combo.get('ewma_alpha', config.ewma_alpha_values.values[0]),
+                    importance_weight=param_combo.get('importance_weight', config.importance_weights.values[0]),
+                    coherence_weight=param_combo.get('coherence_weight', config.coherence_weights.values[0]),
+                    freshness_weight=param_combo.get('freshness_weight', config.freshness_weights.values[0]),
+                    monotony_weight=param_combo.get('monotony_weight', config.monotony_weights.values[0])
                 )
                 
                 # Run simulations for this combination
@@ -241,6 +255,11 @@ class FlexibleTestRunner:
                     sim_config.seed = config.base_seed + combination_count * config.num_simulations + sim_idx
                     result = self.simulator.run_single_simulation(sim_config)
                     all_results.append(result)
+                    if pbar is not None:
+                        pbar.update(1)
+
+        if pbar is not None:
+            pbar.close()
         
         self.results = all_results
         
