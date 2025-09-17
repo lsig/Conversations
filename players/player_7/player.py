@@ -1,5 +1,5 @@
 from models.player import GameContext, Item, Player, PlayerSnapshot
-#import statistics
+# import statistics
 
 
 class Player7(Player):
@@ -75,10 +75,10 @@ class Player7(Player):
 
 		### new code below
 		# calculate average importance of remaining items
-		#avg = statistics.mean([item.importance for item in remaining]) if remaining else 0
+		# avg = statistics.mean([item.importance for item in remaining]) if remaining else 0
 
 		# calculate median importance of remaining items
-		#med = statistics.median([item.importance for item in remaining]) if remaining else 0
+		# med = statistics.median([item.importance for item in remaining]) if remaining else 0
 
 		# if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
