@@ -13,8 +13,17 @@ importance_weight = 0
 
 
 class Player9(Player):
+
+
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super().__init__(snapshot, ctx)
+		
+		self.starting_threshold = 1.8
+		self.t1 = 1.05
+		self.t2 = 1.1
+		self.t3 = 1.2
+		self.t4 = 1.5
+		self.t5 = 3
 
 	"""the important function where all the abstraction occurs!
 
@@ -25,6 +34,15 @@ class Player9(Player):
 	"""
 
 	def propose_item(self, history: list[Item]) -> Item | None:
+		#conv length long = small decrease
+		#many players = small decrease
+		#memorybank left lots = small decrease
+		if self.check_one_pause(history):
+			ratio = (self.remaining_memory(history) * self.number_of_players) / (self.conversation_length - len(history))
+			if ratio > 1:
+				self.starting_threshold = self.starting_threshold - (self.starting_threshold/((self.conversation_length - len(history))))
+				self.starting_threshold = max(self.starting_threshold, 1)
+
 		history_score = self.calculate_history_score(history)
 		item_scores = self.calculate_greedy(history_score, history)  # [item, score]
 
@@ -35,6 +53,8 @@ class Player9(Player):
 
 		if not item_scores:  # just an edge case in case our memory is empty
 			return None
+		
+		#print(item_scores[1], threshold)
 
 		if item_scores[1] > threshold:
 			return item_scores[0]
@@ -60,6 +80,10 @@ class Player9(Player):
 
 		return iteration_weight * 0.1
 
+	def check_one_pause(self, history: list[Item]) -> bool:
+		# print (history)
+		return len(history) >= 1 and history[-1] is None
+
 	def check_two_pause(self, history: list[Item]) -> bool:
 		# print (history)
 		return len(history) >= 2 and history[-1] is None and history[-2] is None
@@ -72,25 +96,40 @@ class Player9(Player):
 	"""
 
 	def calculate_threshold(self, history_score, history: list[Item]) -> float:
-		num_players = self.number_of_players
-		hist_depth = 5 * num_players
-		turn_one_threshold = -1000
+		
+		if self.check_one_pause(history):
+			return 2
 
 		if history == []:
-			return turn_one_threshold
+			return -1000
+		
+		
+		#mem * playernum : conversation length remaining
+		ratio = (self.remaining_memory(history) * self.number_of_players) / (self.conversation_length - len(history))
+		if ratio > 2:
+			return self.starting_threshold
+		elif ratio > 1.5:
+			return self.starting_threshold / self.t1
+		elif ratio > 1:
+			return self.starting_threshold / self.t2
+		elif ratio > 0.75:
+			return self.starting_threshold / self.t3
+		elif ratio > 0.5:
+			return self.starting_threshold / self.t4
+		else:
+			return self.starting_threshold / self.t5
+	
+	def remaining_memory(self, history: list[Item]) -> int:
+		"""
+		Returns how many items the player still has available to say
+		(total memory length - number of times this player has already spoken).
+		"""
+		# total number of items in memory bank
+		total_memory = len(self.memory_bank)
 
-		history_without_recent = history[:-hist_depth]
-
-		score_without_recent_history = self.calculate_history_score(history_without_recent)
-
-		score_delta = history_score - score_without_recent_history
-		avg_score_per_turn = score_delta / (len(history) - len(history_without_recent))
-
-		# part 2 not implemented yet since we don't have access to # of players and stuff
-		# part 3 not implemented yet
-
-		threshold = avg_score_per_turn
-		return max(threshold, 0)
+		# count how many items from history belong to this player
+		used = sum(1 for item in history if item in self.memory_bank)
+		return len(self.memory_bank) - used
 
 	"""Calculates the score impact contributed by an item to the total score
 
