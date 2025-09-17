@@ -29,6 +29,7 @@ This document defines: parameters, CLI usage (run + analyze), and the mechanism.
 Notes
 - Results JSON is written to `--output-dir` unless `--no-save` is used.
 - For multiple configurations (ranges × players), the runner executes all combinations and persists a single timestamped JSON per run.
+ - Strategy descriptions: see `players/player_10/docs/STRATEGIES.md`.
 
 ### Mechanism (concise)
 - Flexible runner builds a cartesian product of parameter ranges and player configurations.
