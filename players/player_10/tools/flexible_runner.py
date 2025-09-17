@@ -102,6 +102,10 @@ def create_custom_test_from_args(args) -> TestConfiguration:
     if args.memory_size:
         builder.memory_size(args.memory_size)
     
+    # Parallel options
+    if args.parallel:
+        builder.parallel(True, args.workers)
+
     # Extended ranges
     if args.min_samples:
         builder.min_samples_range(args.min_samples)
@@ -173,6 +177,8 @@ Examples:
     parser.add_argument('--conversation-length', type=int, help='Conversation length')
     parser.add_argument('--subjects', type=int, help='Number of subjects')
     parser.add_argument('--memory-size', type=int, help='Memory size')
+    parser.add_argument('--parallel', action='store_true', help='Run simulations in parallel across CPU cores')
+    parser.add_argument('--workers', type=int, help='Number of worker processes (defaults to CPU count)')
     
     # Output settings
     parser.add_argument('--output-dir', help='Output directory for results')
