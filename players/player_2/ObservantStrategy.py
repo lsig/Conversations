@@ -1,5 +1,3 @@
-import random
-
 from models.item import Item
 from models.player import Player
 from players.player_2.BaseStrategy import BaseStrategy
