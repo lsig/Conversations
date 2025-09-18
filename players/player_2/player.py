@@ -1,6 +1,6 @@
 from models.player import GameContext, Item, Player, PlayerSnapshot
 from players.player_2.BaseStrategy import BaseStrategy
-from players.player_2.CoherentStrategy import CoherentStrategy
+from players.player_2.ObservantStrategy import ObservantStrategy
 
 
 class Player2(Player):
@@ -20,7 +20,7 @@ class Player2(Player):
 		return self.current_strategy.propose_item(self, history)
 
 	def _choose_strategy(self):
-		self.current_strategy = CoherentStrategy()
+		self.current_strategy = ObservantStrategy(self)
 		# if self.subject_num / self.memory_bank_size <= 0.5:
 		# 	self.current_strategy = Strategy1()
 		# else:
