@@ -59,7 +59,7 @@ class CoherentStrategy(BaseStrategy):
 				return None
 
 		# go for freshness
-		if history[-1] is None:
+		if turn_nr > 1 and history[-1] is None:
 			return self._freshness(player, history)
 
 		else:
