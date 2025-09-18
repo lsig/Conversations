@@ -47,7 +47,7 @@ class Player7(Player):
 				subject_count[subject] += 1
 
 		remaining = [it for it in self.memory_bank if it not in history]
-		K = self.dynamic_threshold()
+		K = self.dynamic_threshold(history)
 		eligible = [it for it in remaining if self.most_preferred(it) <= K]
 		if not eligible:  # safety valve
 			eligible = remaining
@@ -71,12 +71,6 @@ class Player7(Player):
 				importance = item.importance
 				highest_pref_index = pref_index
 
-		### new code below
-		# calculate average importance of remaining items
-		# avg = statistics.mean([item.importance for item in remaining]) if remaining else 0
-
-		# calculate median importance of remaining items
-		# med = statistics.median([item.importance for item in remaining]) if remaining else 0
 
 		# if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
@@ -93,10 +87,10 @@ class Player7(Player):
 		# return the index of the most preferred subject in the item
 		return min([self.preferences.index(s) for s in item.subjects])
 
-	def dynamic_threshold(self) -> int:
+	def dynamic_threshold(self,history) -> int:
 		# return a dynamic threshold based on the history length
-		said = len(self.contributed_items)
-		progress = min(1, said / (max(1, len(self.memory_bank))))  # 0->1
+		progress = min(1, len(self.contributed_items) / (max(1, len(self.memory_bank)))) # 0->1
 		S = len(self.preferences)
-		K = int(S * (0.50 + 0.30 * progress)) - 1  # 50% -> 80% as bank shrinks
+		K = int(S * (0.30 + 0.40 * progress)) - 1  # 30% -> 90% as bank shrinks
+		print(K)
 		return max(0, min(S - 1, K))
