@@ -14,6 +14,9 @@ class Player2(Player):
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 		self.scores_per_player: dict = {}
+		self.number_of_players: int = self.ctx.num_players
+		self.conversation_length: int = self.ctx.conversation_length
+		self._compute_strategy_features() 
 		self._choose_strategy()
 
 	def propose_item(self, history: list[Item]) -> Item | None:
@@ -106,3 +109,57 @@ class Player2(Player):
 
 		# Sorted according to number of items in memory bank
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
+
+	def _choose_strategy(self):
+			self.current_strategy = ObservantStrategy(self)
+
+	def _compute_strategy_features(self):
+		"""Compute minimal signals as attributes for picking Observant vs Inobservant."""
+		P = self.number_of_players
+		B = self.memory_bank_size
+		L = max(1, self.conversation_length)
+		S = max(1, self.subject_num)
+
+        # Core knob: how crowded the game is with items per turn
+		self.density: float = (P * B) / L
+
+        # Inventory structure & importance stats
+		n_single = 0
+		n_pair = 0
+		imp_sum = 0.0
+		imp_max = 0.0
+		counts_per_subject: Counter[int] = Counter()
+		
+		for it in self.memory_bank:
+			k = len(it.subjects)
+			if k == 1:
+				n_single += 1
+			elif k == 2:
+				n_pair += 1
+
+			imp_sum += it.importance
+			if it.importance > imp_max:
+				imp_max = it.importance
+				
+			for s in it.subjects:
+				counts_per_subject[s] += 1
+				
+		self.n_single: int = n_single
+		self.n_pair: int = n_pair
+		self.two_subject_ratio: float = (n_pair / B) if B else 0.0
+		self.avg_importance: float = (imp_sum / B) if B else 0.0
+		self.max_importance: float = imp_max
+
+        # Freshness & coherence capacity
+		self.counts_per_subject: Counter[int] = counts_per_subject
+		self.coverage_ratio: float = (len(counts_per_subject) / S) if S else 0.0  # breadth across subjects
+		self.self_coherence_capacity: int = sum(1 for c in counts_per_subject.values() if c >= 2)
+
+        # Two-subject bridges that are supported by extra items on at least one side
+		bridge_ready_pairs = 0
+		for key, items in self.sub_to_item.items():
+			if len(key) == 2:
+				a, b = key
+				if counts_per_subject[a] >= 2 or counts_per_subject[b] >= 2:
+					bridge_ready_pairs += len(items)
+		self.bridge_ready_pairs: int = bridge_ready_pairs
