@@ -1,5 +1,8 @@
+from collections import Counter
+
 from models.player import GameContext, Item, Player, PlayerSnapshot
 from players.player_2.BaseStrategy import BaseStrategy
+from players.player_2.InobservantStrategy import InobservantStrategy
 from players.player_2.ObservantStrategy import ObservantStrategy
 
 
@@ -14,21 +17,23 @@ class Player2(Player):
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 		self.scores_per_player: dict = {}
-		self.number_of_players: int = self.ctx.num_players
-		self.conversation_length: int = self.ctx.conversation_length
+		self.number_of_players: int = ctx.number_of_players
+		self.conversation_length: int = ctx.conversation_length
 		self._compute_strategy_features() 
 		self._choose_strategy()
 
 	def propose_item(self, history: list[Item]) -> Item | None:
 		self.get_group_scores_per_turn(history)
 		negative_players = self.get_negative_score_players()
-		return ObservantStrategy()
+		print(f"Negative score players: {negative_players}")
+		return self.current_strategy.propose_item(self, history)
 
 	def get_negative_score_players(self):
 		# Returns a list of player_ids whose average group score per turn spoken is negative.
 		negative_players = []
 		for pid, scores in self.scores_per_player.items():
 			if scores and (sum(scores) / len(scores)) < 0:
+				print(f"Player {pid} has negative average score: {sum(scores) / len(scores)}")
 				negative_players.append(pid)
 		return negative_players
 
@@ -111,7 +116,8 @@ class Player2(Player):
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
 
 	def _choose_strategy(self):
-			self.current_strategy = ObservantStrategy(self)
+			# TODO
+			self.current_strategy = InobservantStrategy(self)
 
 	def _compute_strategy_features(self):
 		"""Compute minimal signals as attributes for picking Observant vs Inobservant."""
