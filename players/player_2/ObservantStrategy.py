@@ -11,7 +11,7 @@ class ObservantStrategy(BaseStrategy):
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
 		turn_nr = len(history) + 1
 		num_p = self.player.number_of_players
-		print(f"Turn number: {turn_nr}")
+		# print(f"Turn number: {turn_nr}")
 
 		# Don't propose if no items left
 		if len(player.sub_to_item) == 0:
@@ -63,7 +63,7 @@ class ObservantStrategy(BaseStrategy):
 			return proposed_item
 
 		else:
-			print("Proposing coherently")
+			# print("Proposing coherently")
 			proposed_item = self._propose_coherently(player, history)
 			return proposed_item
 
@@ -84,7 +84,7 @@ class ObservantStrategy(BaseStrategy):
 		context = self._get_context(history)
 
 		context_subs_sorted = self._get_subjects_counts_sorted(context, player)
-		print(f"Context subjects sorted: {context_subs_sorted}")
+		# print(f"Context subjects sorted: {context_subs_sorted}")
 		# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 		# If there are no items in memory bank that match the subjects in context, then pause
 		for subs, subs_count in context_subs_sorted:
@@ -141,9 +141,9 @@ class ObservantStrategy(BaseStrategy):
 				if len(filtered_dict[key]) > sub_length:
 					sub_length = len(filtered_dict[key])
 					sub_key = key
-			# TODO OUPUT ITEM WITH HIGHEST IMPORTANCE!!!!!!!
-			player.last_proposed_item = filtered_dict[sub_key][0]
-			return player.last_proposed_item
+			most_valuable_item = max(filtered_dict[sub_key], key=lambda item: self._get_imp_pref_score(item, player))
+			player.last_proposed_item = most_valuable_item
+			return most_valuable_item
 		# otherwise if there were two options - propose "greedily" to prevent a premature conversation end
 		if len(history) > 1 and history[-2] is None and history[-1] is None:
 			return self._propose_possible_coherence(player)

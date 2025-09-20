@@ -4,23 +4,11 @@ from players.player_2.BaseStrategy import BaseStrategy
 
 
 class InobservantStrategy(BaseStrategy):
-    # this is the case where we have a large number of bad actor players that mess up the game -> this strategy is called
-    # Inobservant is more agressive than Observant - it handles pauses, but wants to keep the convo going if possible
-    # random players, random pause players, and others that say random items - chances are - score will be quite low if they are allowed to speak
-    # pause (slight chance) - always suggest an item, ideally FRESH, then by COHERENCE possibility, to start a story
-    # previous item (not ours) - always (?) suggest an item if it can lower the coherence score to 0 in the window
-    # otherwise stay silent??
-    # ideal (preference in code - memory bank with multiple items) - start a story and keep talking for as long as possible
-    # previous item (ours) - try to be coherent, otherwise start a new topic that is PREFERRED - not good to lose the 50% chance of speaking
-    # other considerations:
-        # conversation length is long - random players will always suggest items, even if they used them already, so convo could go to end
-        # if we run out of items, the score could be very low
-        # may need to 'rest' for certain periods - but for how long????
-        # mitigated with an observation period first (sort of)
-        # should we take breaks?????? - have a story, then pause for some fraction of the conversation (based on memory bank length)
-        # then keep going
-        # say length is L --> and memory bank is B. How should we spread out -> Want to say 3 items for a story, get a relatively good coherence
-        # B/3 is possible number of "good" stories --> so size of break is L/3/B
+    def __init__(self, player: Player) -> None:
+        super().__init__(player)
+        self.min_imp_pref_score = 0.5
+        self.trimester = 1
+
     def propose_item(self, player: Player, history: list[Item]) -> Item | None:
         turn_nr = len(history) + 1
         num_p = self.player.number_of_players
@@ -28,6 +16,10 @@ class InobservantStrategy(BaseStrategy):
         # Don't propose if no items left
         if len(player.sub_to_item) == 0:
             return None
+        
+        # update the current trimester
+        if turn_nr > self.trimester * (player.conversation_length + 2)// 3:
+            self.trimester += 1
         
         # Remove if proposal was accepted last turn
         if turn_nr > 1 and history[-1] is not None and history[-1] == player.last_proposed_item:
@@ -56,10 +48,16 @@ class InobservantStrategy(BaseStrategy):
 				# in observation period and other people are talking - so don't propose anything
                 return None
         
-        # go for freshness after a pause if possible
+        # go for freshness after a pause if possible - always - even if in a bad trimester
         if turn_nr > 1 and history[-1] is None:
             proposed_item = self._propose_freshly(player, history)
             return proposed_item
+        
+        # space out usage by saving items for later trimesters, unless 2 pauses occur - then go for it
+        unused_size = len(player.sub_to_item)
+        if unused_size < player.memory_bank_size*(3 - self.trimester) // 3:
+            return None
+        
         else:
             # go for coherence when possible to do so
             proposed_item = self._propose_coherently(player, history)
@@ -69,6 +67,13 @@ class InobservantStrategy(BaseStrategy):
         player.sub_to_item[subjects].remove(player.last_proposed_item)
         if len(player.sub_to_item[subjects]) == 0:
             del player.sub_to_item[subjects]
+    
+    def _get_context(self, history: list[Item]) -> list[Item]:
+        context = history[-3:]
+		# Context doesn't extend over pause
+        if None in context:
+            context = context[context.index(None) + 1 :]
+        return context
     
     # propose freshly - if there is a pause - immediately attempt to take convo back if possible
     # finds item to maximize freshness
@@ -80,7 +85,8 @@ class InobservantStrategy(BaseStrategy):
         for sub in history[-5:]:
             if sub is not None:
                 prev_subs.append(sub)
-		# filter out all items with subjects that were previously mentioned in past 5 turns
+		
+        # filter out all items with subjects that were previously mentioned in past 5 turns
         for sub in prev_subs:
             filtered_dict = dict(filter(lambda x: sub not in x[0], filtered_dict.items()))
 		
@@ -92,15 +98,15 @@ class InobservantStrategy(BaseStrategy):
                 if len(filtered_dict[key]) > sub_length:
                     sub_length = len(filtered_dict[key])
                     sub_key = key
-			# TODO: Output item from this subject with highest importance
-            player.last_proposed_item = filtered_dict[sub_key][0]
-            return player.last_proposed_item
-		# otherwise propose an option that will allow a story to be told
+            most_valuable_item = max(filtered_dict[sub_key], key=lambda item: self._get_imp_pref_score(item, player))
+            player.last_proposed_item = most_valuable_item
+            return most_valuable_item
+		
+        # otherwise propose an option that will allow a story to be told
         else:
             return self._propose_possible_coherence(player)
     
-    # TODO - fix???? Should ouput all items? Should not matter because it just iterates through the subjects of sub_to_item???
-	# proposes item with the highest probability of future coherence 
+    # always propose item that hopefully can maximize future coherence + with the most importance + preference score
     def _propose_possible_coherence(self, player) -> Item | None:
         _, next_items = next(iter(player.sub_to_item.items()))
 
@@ -113,6 +119,42 @@ class InobservantStrategy(BaseStrategy):
     
     # proposes an item that is coherent
     def _propose_coherently(self, player, history) -> Item | None:
-        # stub
+        context = self._get_context(history)
+
+        context_subs_sorted = self._get_subjects_counts_sorted(context, player)
+		# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
+		# If there are no items in memory bank that match the subjects in context, then pause
+        for subs, subs_count in context_subs_sorted:
+			# If a subject already occurred thrice then we don't want to be monotonous
+			# if subject was repeated 3 times even if contained in 2 subject item
+            if subs_count < 3:
+                items_with_subs = player.sub_to_item.get(subs, []).copy()
+				# If there is only one subject, also get items with two subjects including that subject
+                if len(subs) == 1:
+					# print(f"Also look for items with subject {subs} and another subject")
+                    items_with_subs.extend(
+						[
+							item
+							for items_subs, items in player.sub_to_item.items()
+							if subs[0] in items_subs
+							for item in items
+						]
+					)
+
+				# If the subject only occurred once in the context and we only have one item with this subject, propose it if it meets the threshold, or we said the last item
+                if subs_count == 1 and len(items_with_subs) == 1 and (items_with_subs[0].importance > self.min_imp_pref_score  or (history[-1] is not None and history[-1].player_id == player.id)):
+                    player.last_proposed_item = items_with_subs[0]
+                    return items_with_subs[0]
+                
+                # If we have an item with fitting subjects, propose the most valuable one 
+                if items_with_subs:
+                    most_valuable_item = max(
+						items_with_subs, key=lambda item: self._get_imp_pref_score(item, player)
+					)
+                    player.last_proposed_item = most_valuable_item
+                    return most_valuable_item
+
         return None
+    
+    
 
