@@ -82,6 +82,8 @@ class Player7(Player):
 		# if no item is coherent and preferred we say something preferred and important > 0.5 if you cant then pause
 		if chosen_item is None:
 			for item in self.memory_bank:
+				if item in history:
+					continue
 				if self.most_preferred(item) <= K and item.importance > 0.5:
 					chosen_item = item
 					return chosen_item
