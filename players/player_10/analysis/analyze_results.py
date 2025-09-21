@@ -8,6 +8,7 @@ to understand the performance of different Player10 configurations.
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from typing import Any
 
 from ..sim.monte_carlo import MonteCarloSimulator, SimulationResult
 
@@ -24,6 +25,7 @@ class ResultsAnalyzer:
 		"""
 		self.simulator = MonteCarloSimulator()
 		self.results: list[SimulationResult] = []
+		self.metadata: dict[str, Any] = {}
 
 		if results_file:
 			self.load_results(results_file)
@@ -31,6 +33,7 @@ class ResultsAnalyzer:
 	def load_results(self, filename: str):
 		"""Load results from a JSON file."""
 		self.results = self.simulator.load_results(filename)
+		self.metadata = self.simulator.last_metadata
 		print(f'Loaded {len(self.results)} simulation results')
 
 	def create_dataframe(self) -> pd.DataFrame:
@@ -45,13 +48,21 @@ class ResultsAnalyzer:
 				'epsilon_mono': result.config.epsilon_mono,
 				'seed': result.config.seed,
 				'total_score': result.total_score,
-				'player10_score': result.player_scores.get('Player10', 0),
+				'player10_score': result.player10_total_mean,
+				'player10_individual': result.player10_individual_mean,
+				'player10_rank': result.player10_rank_mean,
 				'conversation_length': result.conversation_length,
 				'early_termination': result.early_termination,
 				'pause_count': result.pause_count,
 				'unique_items_used': result.unique_items_used,
 				'execution_time': result.execution_time,
 			}
+
+			# Include shared score components when available
+			for component, value in result.score_breakdown.items():
+				if component == 'total':
+					continue
+				row[f'shared_{component}'] = value
 			data.append(row)
 
 		return pd.DataFrame(data)
@@ -236,6 +247,16 @@ class ResultsAnalyzer:
 		print(
 			f'Player10 Score - Mean: {df["player10_score"].mean():.2f}, Std: {df["player10_score"].std():.2f}'
 		)
+		if 'player10_individual' in df:
+			print(
+				f'Player10 Individual - Mean: {df["player10_individual"].mean():.2f}, '
+				f'Std: {df["player10_individual"].std():.2f}'
+			)
+		if 'player10_rank' in df:
+			print(
+				f'Player10 Rank - Mean: {df["player10_rank"].mean():.2f}, '
+				f'Std: {df["player10_rank"].std():.2f}'
+			)
 		print(
 			f'Conversation Length - Mean: {df["conversation_length"].mean():.1f}, Std: {df["conversation_length"].std():.1f}'
 		)
@@ -243,47 +264,78 @@ class ResultsAnalyzer:
 
 		# Best configurations
 		print('\n=== TOP 10 CONFIGURATIONS ===')
+		agg_map = {
+			'total_score': ['mean', 'std', 'count'],
+			'player10_score': 'mean',
+		}
+		if 'player10_rank' in df:
+			agg_map['player10_rank'] = 'mean'
+		if 'player10_individual' in df:
+			agg_map['player10_individual'] = 'mean'
+
 		top_configs = (
 			df.groupby(['altruism_prob', 'tau_margin', 'epsilon_fresh', 'epsilon_mono'])
-			.agg({'total_score': ['mean', 'std', 'count'], 'player10_score': 'mean'})
+			.agg(agg_map)
 			.round(3)
 		)
 
-		top_configs.columns = ['total_mean', 'total_std', 'count', 'p10_mean']
+		new_columns = ['total_mean', 'total_std', 'count', 'p10_mean']
+		if 'player10_rank' in agg_map:
+			new_columns.append('p10_rank_mean')
+		if 'player10_individual' in agg_map:
+			new_columns.append('p10_individual_mean')
+		top_configs.columns = new_columns
 		top_configs = top_configs.sort_values('total_mean', ascending=False).head(10)
 
 		for i, (config, row) in enumerate(top_configs.iterrows(), 1):
 			altruism, tau, fresh, mono = config
-			print(
-				f'{i:2d}. Altruism: {altruism:.1f}, Tau: {tau:.2f}, '
-				f'Fresh: {fresh:.2f}, Mono: {mono:.2f} -> '
-				f'Total: {row["total_mean"]:.2f}±{row["total_std"]:.2f}, '
-				f'P10: {row["p10_mean"]:.2f}'
-			)
+			parts = [
+				f'{i:2d}. Altruism: {altruism:.1f}',
+				f'Tau: {tau:.2f}',
+				f'Fresh: {fresh:.2f}',
+				f'Mono: {mono:.2f}',
+				f'Total: {row["total_mean"]:.2f}±{row["total_std"]:.2f}',
+				f'P10: {row["p10_mean"]:.2f}',
+			]
+			if 'p10_rank_mean' in row:
+				parts.append(f'P10 Rank: {row["p10_rank_mean"]:.2f}')
+			if 'p10_individual_mean' in row:
+				parts.append(f'P10 Individual: {row["p10_individual_mean"]:.2f}')
+			print(' -> '.join(parts))
 
 		# Altruism analysis
 		print('\n=== ALTRUISM ANALYSIS ===')
-		altruism_stats = (
-			df.groupby('altruism_prob')
-			.agg(
-				{
-					'total_score': ['mean', 'std'],
-					'player10_score': ['mean', 'std'],
-					'conversation_length': 'mean',
-					'early_termination': 'mean',
-				}
-			)
-			.round(3)
-		)
+		agg_map = {
+			'total_score': ['mean', 'std'],
+			'player10_score': ['mean', 'std'],
+			'conversation_length': 'mean',
+			'early_termination': 'mean',
+		}
+		if 'player10_rank' in df:
+			agg_map['player10_rank'] = ['mean', 'std']
+		if 'player10_individual' in df:
+			agg_map['player10_individual'] = ['mean', 'std']
+
+		altruism_stats = df.groupby('altruism_prob').agg(agg_map).round(3)
 
 		for prob in sorted(df['altruism_prob'].unique()):
 			stats = altruism_stats.loc[prob]
-			print(
-				f'Altruism {prob:.1f}: Total={stats[("total_score", "mean")]:.2f}±{stats[("total_score", "std")]:.2f}, '
-				f'P10={stats[("player10_score", "mean")]:.2f}±{stats[("player10_score", "std")]:.2f}, '
-				f'Length={stats[("conversation_length", "mean")]:.1f}, '
-				f'EarlyTerm={stats[("early_termination", "mean")]:.2f}'
-			)
+			parts = [
+				f'Altruism {prob:.1f}:',
+				f'Total={stats[("total_score", "mean")]:.2f}±{stats[("total_score", "std")]:.2f}',
+				f'P10={stats[("player10_score", "mean")]:.2f}±{stats[("player10_score", "std")]:.2f}',
+				f'Length={stats[("conversation_length", "mean")]:.1f}',
+				f'EarlyTerm={stats[("early_termination", "mean")]:.2f}',
+			]
+			if ('player10_rank', 'mean') in stats:
+				parts.append(
+					f'P10 Rank={stats[("player10_rank", "mean")]:.2f}±{stats[("player10_rank", "std")]:.2f}'
+				)
+			if ('player10_individual', 'mean') in stats:
+				parts.append(
+					f'P10 Ind={stats[("player10_individual", "mean")]:.2f}±{stats[("player10_individual", "std")]:.2f}'
+				)
+			print(' '.join(parts))
 
 
 def main():

@@ -5,14 +5,28 @@ This module provides a flexible way to define and run custom test configurations
 without being limited to predefined test types.
 """
 
+import re
 import sys
 import time
+from datetime import datetime
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 from .monte_carlo import MonteCarloSimulator, SimulationConfig, SimulationResult
 from .parallel import execute_in_parallel
+from ..agent.config import (
+	ALTRUISM_USE_PROB,
+	TAU_MARGIN,
+	EPSILON_FRESH,
+	EPSILON_MONO,
+	MIN_SAMPLES_PID,
+	EWMA_ALPHA,
+	IMPORTANCE_WEIGHT,
+	COHERENCE_WEIGHT,
+	FRESHNESS_WEIGHT,
+	MONOTONY_WEIGHT,
+)
 
 # Try to import tqdm once at module load and force-enable it when available
 try:
@@ -40,22 +54,24 @@ class TestConfiguration:
 	# Parameter ranges to test
 	altruism_probs: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[0.0, 0.2, 0.5, 1.0], name='altruism_prob', description='Altruism probability'
+			values=[ALTRUISM_USE_PROB],
+			name='altruism_prob',
+			description='Altruism probability',
 		)
 	)
 	tau_margins: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[0.05], name='tau_margin', description='Tau margin'
+			values=[TAU_MARGIN], name='tau_margin', description='Tau margin'
 		)
 	)
 	epsilon_fresh_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[0.05], name='epsilon_fresh', description='Epsilon fresh'
+			values=[EPSILON_FRESH], name='epsilon_fresh', description='Epsilon fresh'
 		)
 	)
 	epsilon_mono_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[0.05], name='epsilon_mono', description='Epsilon mono'
+			values=[EPSILON_MONO], name='epsilon_mono', description='Epsilon mono'
 		)
 	)
 
@@ -70,7 +86,7 @@ class TestConfiguration:
 	base_seed: int = 42
 
 	# Output settings
-	output_dir: str = 'simulation_results'
+	output_dir: str = 'players/player_10/results'
 	save_results: bool = True
 	print_progress: bool = True
 	# Parallel execution controls
@@ -79,34 +95,34 @@ class TestConfiguration:
 	# Extended knobs (optional ranges)
 	min_samples_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[3],
+			values=[MIN_SAMPLES_PID],
 			name='min_samples_pid',
 			description='Min samples per player for trusted mean',
 		)
 	)
 	ewma_alpha_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[0.10], name='ewma_alpha', description='EWMA alpha'
+			values=[EWMA_ALPHA], name='ewma_alpha', description='EWMA alpha'
 		)
 	)
 	importance_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[1.0], name='importance_weight', description='Importance weight'
+			values=[IMPORTANCE_WEIGHT], name='importance_weight', description='Importance weight'
 		)
 	)
 	coherence_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[1.0], name='coherence_weight', description='Coherence weight'
+			values=[COHERENCE_WEIGHT], name='coherence_weight', description='Coherence weight'
 		)
 	)
 	freshness_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[1.0], name='freshness_weight', description='Freshness weight'
+			values=[FRESHNESS_WEIGHT], name='freshness_weight', description='Freshness weight'
 		)
 	)
 	monotony_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
-			values=[1.0], name='monotony_weight', description='Monotony weight'
+			values=[MONOTONY_WEIGHT], name='monotony_weight', description='Monotony weight'
 		)
 	)
 
@@ -231,7 +247,7 @@ class TestBuilder:
 class FlexibleTestRunner:
 	"""Flexible test runner that can execute any test configuration."""
 
-	def __init__(self, output_dir: str = 'simulation_results'):
+	def __init__(self, output_dir: str = 'players/player_10/results'):
 		self.output_dir = Path(output_dir)
 		self.output_dir.mkdir(exist_ok=True)
 		self.simulator = MonteCarloSimulator(str(self.output_dir))
@@ -276,14 +292,17 @@ class FlexibleTestRunner:
 		if config.description:
 			print(f'Description: {config.description}')
 
-		print(f'Parameter combinations: {self._count_combinations(config)}')
-		print(f'Total simulations: {self._count_combinations(config) * config.num_simulations}')
+		combination_total = self._count_combinations(config)
+		total_simulations = combination_total * config.num_simulations
+		run_started = datetime.now()
+
+		print(f'Parameter combinations: {combination_total}')
+		print(f'Total simulations: {total_simulations}')
 		print()
 
 		all_results = []
 		combination_count = 0
-		total_combinations = self._count_combinations(config)
-		total_simulations = total_combinations * config.num_simulations
+		total_combinations = combination_total
 		pbar = None
 		if config.print_progress and total_simulations > 0:
 			if tqdm is not None:
@@ -310,26 +329,25 @@ class FlexibleTestRunner:
 
 				if config.print_progress:
 					# Keep progress bar as the main output; no extra lines
-					a = param_combo['altruism_prob']
-					t = param_combo['tau_margin']
-					ef = param_combo['epsilon_fresh']
-					em = param_combo['epsilon_mono']
-					postfix = (
-						f'combo {combination_count}/{total_combinations} '
-						f'a={a:.2f},τ={t:.2f},εf={ef:.2f},εm={em:.2f} players={player_config}'
-					)
-					if pbar is not None:
-						try:
-							pbar.set_description('Simulations')
-							pbar.set_postfix_str(postfix)
-						except Exception:
-							pass
-					else:
-						# Minimal inline fallback without creating new lines
-						sys.stdout.write('\r' + postfix + ' ' * 10)
-						sys.stdout.flush()
+						a = param_combo['altruism_prob']
+						t = param_combo['tau_margin']
+						ef = param_combo['epsilon_fresh']
+						em = param_combo['epsilon_mono']
+						postfix = (
+							f'combo {combination_count}/{total_combinations} '
+							f'a={a:.2f},τ={t:.2f},εf={ef:.2f},εm={em:.2f} players={player_config}'
+						)
+						if pbar is not None:
+							try:
+								pbar.set_description('Simulations')
+								pbar.set_postfix_str(postfix)
+							except Exception:
+								pass
+						else:
+							# Minimal inline fallback without creating new lines
+							sys.stdout.write('\r' + postfix + ' ' * 10)
+							sys.stdout.flush()
 
-				# Create simulation config
 				sim_config = SimulationConfig(
 					altruism_prob=param_combo['altruism_prob'],
 					tau_margin=param_combo['tau_margin'],
@@ -358,7 +376,6 @@ class FlexibleTestRunner:
 					),
 				)
 
-				# Run simulations for this combination
 				if config.parallel:
 					task_args = self._build_task_args(sim_config, config, combination_count)
 					for result in execute_in_parallel(task_args, workers=config.workers):
@@ -381,10 +398,18 @@ class FlexibleTestRunner:
 		self.results = all_results
 
 		if config.save_results:
-			filename = f'{config.name}_{int(time.time())}.json'
+			timestamp_label = run_started.strftime('%Y%m%d_%H%M%S')
+			name_slug = self._slugify_name(config.name)
+			filename = f'{timestamp_label}_{name_slug}.json'
+			metadata = self._build_metadata(
+				config=config,
+				filename=filename,
+				run_started=run_started,
+				total_combinations=total_combinations,
+				total_simulations=total_simulations,
+			)
 			self.simulator.results = all_results
-			self.simulator.save_results(filename)
-			print(f'Results saved to: {filename}')
+			self.simulator.save_results(filename, metadata=metadata)
 
 		print(f'Test completed: {len(all_results)} simulations')
 		return all_results
@@ -456,6 +481,57 @@ class FlexibleTestRunner:
 												)
 
 		return combinations
+
+	@staticmethod
+	def _slugify_name(name: str | None) -> str:
+		value = (name or 'run').strip().lower()
+		value = re.sub(r'[^a-z0-9_-]+', '-', value)
+		value = value.strip('-')
+		return value or 'run'
+
+	def _build_metadata(
+		self,
+		config: TestConfiguration,
+		filename: str,
+		run_started: datetime,
+		total_combinations: int,
+		total_simulations: int,
+	) -> dict[str, Any]:
+		"""Create a metadata summary describing this run."""
+		return {
+			'run_name': config.name,
+			'description': config.description,
+			'generated_at': run_started.isoformat(),
+			'output_dir': str(self.output_dir),
+			'filename': filename,
+			'cli_command': ' '.join(sys.argv),
+			'base_seed': config.base_seed,
+			'parallel': config.parallel,
+			'workers': config.workers,
+			'parameter_combinations': total_combinations,
+			'simulations_per_configuration': config.num_simulations,
+			'total_simulations': total_simulations,
+			'player_configs': config.player_configs,
+			'conversation_length': config.conversation_length,
+			'subjects': config.subjects,
+			'memory_size': config.memory_size,
+			'ranges': {
+				'altruism_prob': list(config.altruism_probs.values),
+				'tau_margin': list(config.tau_margins.values),
+				'epsilon_fresh': list(config.epsilon_fresh_values.values),
+				'epsilon_mono': list(config.epsilon_mono_values.values),
+				'min_samples_pid': list(config.min_samples_values.values),
+				'ewma_alpha': list(config.ewma_alpha_values.values),
+				'importance_weight': list(config.importance_weights.values),
+				'coherence_weight': list(config.coherence_weights.values),
+				'freshness_weight': list(config.freshness_weights.values),
+				'monotony_weight': list(config.monotony_weights.values),
+			},
+			'flags': {
+				'save_results': config.save_results,
+				'print_progress': config.print_progress,
+			},
+		}
 
 
 # Predefined test configurations for common use cases

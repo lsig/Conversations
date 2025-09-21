@@ -148,9 +148,10 @@ class Player5(Player):
 			shared_score = round(shared_score['shared'], 4)
 			self_score = round(self_score, 4)
 
-			print(
-				f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
-			)
+			# Temporarily silence noisy per-item scoring output during simulations.
+			# print(
+			# 		f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
+			# )
 
 			total_ranking.append((item, shared_score + self_score))
 			shared_ranking.append((item, shared_score))

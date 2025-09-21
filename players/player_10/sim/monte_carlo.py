@@ -9,9 +9,10 @@ import json
 import random
 import time
 from collections import defaultdict
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
+from importlib import import_module
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 
 from core.engine import Engine
 from models.player import Player
@@ -24,7 +25,6 @@ from ..agent.config import (
 	MIN_SAMPLES_PID,
 	MONOTONY_WEIGHT,
 )
-from ..agent.player import Player10
 
 
 @dataclass
@@ -62,15 +62,24 @@ class SimulationResult:
 	pause_count: int
 	unique_items_used: int
 	execution_time: float
+	score_breakdown: dict[str, float] = field(default_factory=dict)
+	player_metrics: dict[str, dict[str, Any]] = field(default_factory=dict)
+	player10_total_mean: Optional[float] = None
+	player10_individual_mean: Optional[float] = None
+	player10_rank_mean: Optional[float] = None
+	player10_instances: int = 0
+	best_total_score: float = 0.0
+	player10_gap_to_best: Optional[float] = None
 
 
 class MonteCarloSimulator:
 	"""Monte Carlo simulator for testing Player10 strategies."""
 
-	def __init__(self, output_dir: str = 'simulation_results'):
+	def __init__(self, output_dir: str = 'players/player_10/results'):
 		self.output_dir = Path(output_dir)
 		self.output_dir.mkdir(exist_ok=True)
 		self.results: list[SimulationResult] = []
+		self.last_metadata: dict[str, Any] = {}
 
 	def run_single_simulation(self, config: SimulationConfig) -> SimulationResult:
 		"""
@@ -91,8 +100,8 @@ class MonteCarloSimulator:
 		self._update_player10_config(config)
 
 		try:
-			# Create players
-			players = self._create_players(config.players)
+			# Create players and track metadata for post-run analysis
+			players, player_meta = self._create_players(config.players)
 
 			# Create engine
 			engine = Engine(
@@ -108,7 +117,9 @@ class MonteCarloSimulator:
 			simulation_results = engine.run(players)
 
 			# Extract results
-			result = self._extract_results(config, simulation_results, time.time() - start_time)
+			result = self._extract_results(
+				config, simulation_results, time.time() - start_time, player_meta
+			)
 
 			return result
 
@@ -224,7 +235,31 @@ class MonteCarloSimulator:
 		config_scores = []
 		for config_key, results in config_groups.items():
 			scores = [r.total_score for r in results]
-			player10_scores = [r.player_scores.get('Player10', 0) for r in results]
+			player10_totals = [r.player10_total_mean for r in results if r.player10_total_mean is not None]
+			player10_individuals = [
+				r.player10_individual_mean for r in results if r.player10_individual_mean is not None
+			]
+			player10_ranks = [r.player10_rank_mean for r in results if r.player10_rank_mean is not None]
+			player10_gaps = [r.player10_gap_to_best for r in results if r.player10_gap_to_best is not None]
+			best_totals = [r.best_total_score for r in results]
+
+			score_components: dict[str, list[float]] = defaultdict(list)
+			for result in results:
+				for component, value in result.score_breakdown.items():
+					if component == 'total':
+						continue
+					score_components[component].append(value)
+
+			def _stat(values: list[float]) -> dict[str, float]:
+				if not values:
+					return {'mean': 0.0, 'std': 0.0, 'min': 0.0, 'max': 0.0, 'count': 0}
+				return {
+					'mean': sum(values) / len(values),
+					'std': self._calculate_std(values),
+					'min': min(values),
+					'max': max(values),
+					'count': len(values),
+				}
 
 			summary = {
 				'config': {
@@ -238,19 +273,22 @@ class MonteCarloSimulator:
 					'std': self._calculate_std(scores),
 					'min': min(scores),
 					'max': max(scores),
+					'count': len(scores),
 				},
-				'player10_score': {
-					'mean': sum(player10_scores) / len(player10_scores),
-					'std': self._calculate_std(player10_scores),
-					'min': min(player10_scores),
-					'max': max(player10_scores),
-				},
+				'player10_score': _stat(player10_totals),
+				'player10_individual': _stat(player10_individuals),
+				'player10_rank': _stat(player10_ranks),
+				'player10_gap_to_best': _stat(player10_gaps),
+				'best_total_score': _stat(best_totals),
 				'conversation_metrics': {
 					'avg_length': sum(r.conversation_length for r in results) / len(results),
 					'early_termination_rate': sum(r.early_termination for r in results)
 					/ len(results),
 					'avg_pause_count': sum(r.pause_count for r in results) / len(results),
 					'avg_unique_items': sum(r.unique_items_used for r in results) / len(results),
+				},
+				'score_components': {
+					component: _stat(values) for component, values in score_components.items()
 				},
 			}
 
@@ -265,7 +303,7 @@ class MonteCarloSimulator:
 
 		return analysis
 
-	def save_results(self, filename: str = None) -> str:
+	def save_results(self, filename: str = None, metadata: dict[str, Any] | None = None) -> str:
 		"""
 		Save simulation results to a JSON file.
 
@@ -295,11 +333,25 @@ class MonteCarloSimulator:
 					'pause_count': result.pause_count,
 					'unique_items_used': result.unique_items_used,
 					'execution_time': result.execution_time,
+					'score_breakdown': result.score_breakdown,
+					'player_metrics': result.player_metrics,
+					'player10_total_mean': result.player10_total_mean,
+					'player10_individual_mean': result.player10_individual_mean,
+					'player10_rank_mean': result.player10_rank_mean,
+					'player10_instances': result.player10_instances,
+					'best_total_score': result.best_total_score,
+					'player10_gap_to_best': result.player10_gap_to_best,
 				}
 			)
 
+		payload = {
+			'metadata': metadata or {},
+			'results': serializable_results,
+		}
+		self.last_metadata = payload['metadata']
+
 		with open(filepath, 'w') as f:
-			json.dump(serializable_results, f, indent=2)
+			json.dump(payload, f, indent=2)
 
 		print(f'Results saved to: {filepath}')
 		return str(filepath)
@@ -324,8 +376,15 @@ class MonteCarloSimulator:
 		with open(filepath) as f:
 			data = json.load(f)
 
+		if isinstance(data, dict) and 'results' in data:
+			raw_results = data['results']
+			self.last_metadata = data.get('metadata', {})
+		else:
+			raw_results = data
+			self.last_metadata = {}
+
 		results = []
-		for item in data:
+		for item in raw_results:
 			config = SimulationConfig(**item['config'])
 			result = SimulationResult(
 				config=config,
@@ -337,33 +396,86 @@ class MonteCarloSimulator:
 				pause_count=item['pause_count'],
 				unique_items_used=item['unique_items_used'],
 				execution_time=item['execution_time'],
+				score_breakdown=item.get('score_breakdown', {}),
+				player_metrics=item.get('player_metrics', {}),
+				player10_total_mean=item.get('player10_total_mean'),
+				player10_individual_mean=item.get('player10_individual_mean'),
+				player10_rank_mean=item.get('player10_rank_mean'),
+				player10_instances=item.get('player10_instances', 0),
+				best_total_score=item.get('best_total_score', 0.0),
+				player10_gap_to_best=item.get('player10_gap_to_best'),
 			)
 			results.append(result)
 
 		self.results = results
 		return results
 
-	def _create_players(self, player_config: dict[str, int]) -> list[type[Player]]:
-		"""Create player instances based on configuration."""
-		from players.player_0.player import Player0
-		from players.player_1.player import Player1
-		from players.player_2.player import Player2
-		from players.random_player import RandomPlayer
-
-		players = []
-		player_classes = {
-			'p0': Player0,
-			'p1': Player1,
-			'p2': Player2,
-			'p10': Player10,
-			'pr': RandomPlayer,
-		}
+	def _create_players(
+		self, player_config: dict[str, int]
+	) -> tuple[list[type[Player]], list[dict[str, str]]]:
+		"""Resolve player classes from config entries and record metadata."""
+		players: list[type[Player]] = []
+		metadata: list[dict[str, str]] = []
+		resolved: dict[str, type[Player]] = {}
 
 		for player_type, count in player_config.items():
-			if player_type in player_classes:
-				players.extend([player_classes[player_type]] * count)
+			if count <= 0:
+				continue
 
-		return players
+			if player_type not in resolved:
+				resolved[player_type] = self._resolve_player_class(player_type)
+
+			player_cls = resolved[player_type]
+			for _ in range(count):
+				players.append(player_cls)
+				metadata.append(
+					{
+						'alias': player_type,
+						'class_name': player_cls.__name__,
+						'module': player_cls.__module__,
+					}
+				)
+
+		return players, metadata
+
+	@staticmethod
+	def _resolve_player_class(player_type: str) -> type[Player]:
+		"""Dynamically import the requested player class."""
+		alias_map = {
+			'pr': ('players.random_player', 'RandomPlayer'),
+			'pause': ('players.pause_player', 'PausePlayer'),
+			'random_pause': ('players.random_pause_player', 'RandomPausePlayer'),
+			'p10': ('players.player_10.agent.player', 'Player10'),
+		}
+
+		if player_type in alias_map:
+			module_path, class_name = alias_map[player_type]
+		elif player_type.startswith('p') and player_type[1:].isdigit():
+			module_path = f"players.player_{player_type[1:]}.player"
+			class_name = f"Player{int(player_type[1:])}"
+		else:
+			raise ValueError(f"Unknown player type '{player_type}' in configuration.")
+
+		try:
+			module = import_module(module_path)
+		except ModuleNotFoundError as exc:
+			raise ValueError(
+				f"Module '{module_path}' not found for player type '{player_type}'."
+			) from exc
+
+		try:
+			player_cls = getattr(module, class_name)
+		except AttributeError as exc:
+			raise ValueError(
+				f"Player class '{class_name}' not found in module '{module_path}'."
+			) from exc
+
+		if not issubclass(player_cls, Player):
+			raise TypeError(
+				f"Resolved class '{class_name}' for '{player_type}' is not a Player subtype."
+			)
+
+		return player_cls
 
 	def _update_player10_config(self, config: SimulationConfig):
 		"""Temporarily update Player10 configuration."""
@@ -386,45 +498,125 @@ class MonteCarloSimulator:
 		# For isolation, each run sets values explicitly before it starts.
 
 	def _extract_results(
-		self, config: SimulationConfig, simulation_results: Any, execution_time: float
+		self,
+		config: SimulationConfig,
+		simulation_results: Any,
+		execution_time: float,
+		player_meta: list[dict[str, str]],
 	) -> SimulationResult:
 		"""Extract results from engine simulation output."""
 		# Extract data from simulation results dictionary
 		history = simulation_results.get('history', [])
 		score_breakdown = simulation_results.get('score_breakdown', {})
 		scores = simulation_results.get('scores', {})
+		raw_player_scores = scores.get('player_scores', [])
 
-		# Calculate total score from score breakdown
-		total_score = sum(score_breakdown.values()) if score_breakdown else 0.0
+		# Total shared score comes directly from the breakdown
+		total_score = score_breakdown.get('total', 0.0)
 
-		# Calculate player scores (individual contributions)
-		player_scores = {}
-		# For now, use a simple approach - we'll improve this later
-		if 'individual_scores' in scores:
-			for player_id_str, score in scores['individual_scores'].items():
-				player_scores[f'Player_{player_id_str[:8]}'] = score
-		else:
-			# Fallback: distribute total score equally among players
-			num_players = len(
-				[item for item in history if item is not None and hasattr(item, 'player_id')]
+		# Prepare per-player metrics
+		player_metrics: dict[str, dict[str, Any]] = {}
+		player_scores: dict[str, float] = {}
+		id_to_label: dict[str, str] = {}
+		label_counts: dict[str, int] = defaultdict(int)
+
+		player10_totals: list[float] = []
+		player10_individuals: list[float] = []
+		player10_ranks: list[float] = []
+		player10_gaps: list[float] = []
+
+		# First pass: gather totals for ranking
+		player_entries: list[dict[str, Any]] = []
+		for idx, player_data in enumerate(raw_player_scores):
+			score_data = player_data.get('scores', {})
+			total = float(score_data.get('total', 0.0))
+			individual = float(score_data.get('individual', 0.0))
+			shared = float(score_data.get('shared', total_score))
+			player_id = str(player_data.get('id'))
+
+			meta = player_meta[idx] if idx < len(player_meta) else {}
+			class_name = meta.get('class_name', 'UnknownPlayer')
+			alias = meta.get('alias', class_name.lower())
+
+			player_entries.append(
+				{
+					'id': player_id,
+					'class_name': class_name,
+					'alias': alias,
+					'total': total,
+					'individual': individual,
+					'shared': shared,
+				}
 			)
-			if num_players > 0:
-				avg_score = total_score / num_players
-				player_scores['Player10'] = avg_score
+
+		# Compute rankings (1 = best). Use strict comparison to preserve ties.
+		totals = [entry['total'] for entry in player_entries]
+		best_total = max(totals) if totals else 0.0
+		for entry in player_entries:
+			rank = 1 + sum(1 for value in totals if value > entry['total'])
+			entry['rank'] = rank
+
+		# Build labeled metrics and aggregate Player10 stats
+		for entry in player_entries:
+			base_label = entry['class_name']
+			label_counts[base_label] += 1
+			label = (
+				base_label
+				if label_counts[base_label] == 1
+				else f"{base_label}#{label_counts[base_label]}"
+			)
+
+			id_to_label[entry['id']] = label
+
+			player_metrics[label] = {
+				'class_name': entry['class_name'],
+				'alias': entry['alias'],
+				'total': entry['total'],
+				'individual': entry['individual'],
+				'shared': entry['shared'],
+				'rank': entry['rank'],
+			}
+			player_scores[label] = entry['total']
+
+			if entry['class_name'] == 'Player10':
+				player10_totals.append(entry['total'])
+				player10_individuals.append(entry['individual'])
+				player10_ranks.append(entry['rank'])
+				player10_gaps.append(best_total - entry['total'])
 
 		# Calculate player contributions
-		player_contributions = {}
-		# Count contributions by player
-		player_contribution_counts = {}
+		player_contribution_counts: dict[str, int] = defaultdict(int)
 		for item in history:
 			if item is not None and hasattr(item, 'player_id'):
 				player_id = str(item.player_id)
-				player_contribution_counts[player_id] = (
-					player_contribution_counts.get(player_id, 0) + 1
-				)
+				label = id_to_label.get(player_id)
+				if label is None:
+					label = f'Player_{player_id[:8]}'
+				player_contribution_counts[label] += 1
 
-		for player_id, count in player_contribution_counts.items():
-			player_contributions[f'Player_{player_id[:8]}'] = count
+		player_contributions = {
+			label: player_contribution_counts.get(label, 0)
+			for label in player_metrics
+		}
+
+		# Legacy convenience entry for Player10 mean total score (if present)
+		if player10_totals:
+			player_scores['Player10'] = sum(player10_totals) / len(player10_totals)
+
+		player10_total_mean = (
+			sum(player10_totals) / len(player10_totals) if player10_totals else None
+		)
+		player10_individual_mean = (
+			sum(player10_individuals) / len(player10_individuals)
+			if player10_individuals
+			else None
+		)
+		player10_rank_mean = (
+			sum(player10_ranks) / len(player10_ranks) if player10_ranks else None
+		)
+		player10_gap_mean = (
+			sum(player10_gaps) / len(player10_gaps) if player10_gaps else None
+		)
 
 		# Calculate conversation metrics
 		conversation_length = len(history)
@@ -447,6 +639,14 @@ class MonteCarloSimulator:
 			pause_count=pause_count,
 			unique_items_used=len(unique_items),
 			execution_time=execution_time,
+			score_breakdown=score_breakdown,
+			player_metrics=player_metrics,
+			player10_total_mean=player10_total_mean,
+			player10_individual_mean=player10_individual_mean,
+			player10_rank_mean=player10_rank_mean,
+			player10_instances=len(player10_totals),
+			best_total_score=best_total,
+			player10_gap_to_best=player10_gap_mean,
 		)
 
 	def _calculate_std(self, values: list[float]) -> float:
