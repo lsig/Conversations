@@ -15,7 +15,7 @@ importance_weight = 0
 class Player9(Player):
 
 
-	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
 		super().__init__(snapshot, ctx)
 		
 		self.starting_threshold = 1.8
@@ -43,10 +43,9 @@ class Player9(Player):
 				self.starting_threshold = self.starting_threshold - (self.starting_threshold/((self.conversation_length - len(history))))
 				self.starting_threshold = max(self.starting_threshold, 1)
 
-		history_score = self.calculate_history_score(history)
-		item_scores = self.calculate_greedy(history_score, history)  # [item, score]
+		item_scores = self.calculate_greedy(history)  # [item, score]
 
-		threshold = self.calculate_threshold(history_score, history)
+		threshold = self.calculate_threshold(history)
 		# threshold_weight = self.threshold_weight_adjustment() #uncomment this to add threshold weighting
 		threshold = threshold * (1 + threshold_weight)
 		# print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
@@ -95,7 +94,7 @@ class Player9(Player):
 	3. Determine the threshold using the two things we calculated in part 1 & 2
 	"""
 
-	def calculate_threshold(self, history_score, history: list[Item]) -> float:
+	def calculate_threshold(self, history: list[Item]) -> float:
 		
 		if self.check_one_pause(history):
 			return 2
@@ -131,27 +130,19 @@ class Player9(Player):
 		used = sum(1 for item in history if item in self.memory_bank)
 		return len(self.memory_bank) - used
 
-	"""Calculates the score impact contributed by an item to the total score
+	"""Calculates the score contribution of a specific turn at a given index in the history
 
-	1. Calculates the total score without the item
-	2. Calculates the total score with the item
-	3. Calculates the delta between the total score with the item and the total score without the item
-	4. Return the delta
+	1. Takes a history and an index
+	2. Calculates the score contribution of the item at that specific index
+	3. Returns the score contribution
 	"""
 
-	def calculate_item_score(self, item, history_score, history: list[Item]) -> tuple[Item, float]:
-		history_score_with_item = self.calculate_history_score(history + [item])
-		delta = history_score_with_item - history_score
+	def calculate_turn_score(self, history: list[Item], index: int) -> float:
+		if index >= len(history) or not history[index]:
+			return 0.0
 
-		return item, delta
-
-	"""Calculates the total score of a history of items
-
-	1. For each item in the history, calculate the freshness score, coherence score, importance score, and nonmonotonousness score, and individual score with the consideration of repeated items
-	2. Returns the total score
-	"""
-
-	def calculate_history_score(self, history: list[Item]) -> float:
+		current_item = history[index]
+		
 		# Returns the freshness score of an item
 		def calculate_freshness_score(i: int, current_item: Item) -> float:
 			if i == 0 or history[i - 1] is not None:
@@ -206,47 +197,34 @@ class Player9(Player):
 
 			return 0.0
 
-		unique_items = (
-			set()
-		)  # keeps track of unique items in the history, used to track repeated items
-
-		total_score = 0.0
+		# Check if this item is repeated in the history
+		repeated = any(history[i] and history[i].id == current_item.id for i in range(index))
+		
+		# Calculate individual components
 		coherence_score = 0.0
 		freshness_score = 0.0
 		importance_score = 0.0
 		nonmonotonousness = 0.0
 		individual_score = 0.0
 
-		for i, current_item in enumerate(history):
-			if not current_item:  # when there is a pause
-				continue
+		if not repeated:
+			importance_score = current_item.importance
+			coherence_score = calculate_coherence_score(index, current_item)
+			freshness_score = calculate_freshness_score(index, current_item)
+		
+		nonmonotonousness = calculate_nonmonotonousness_score(index, current_item, repeated)
 
-			if current_item.id in unique_items:  # if the item is repeated
-				nonmonotonousness += calculate_nonmonotonousness_score(
-					i, current_item, repeated=True
-				)
+		# Calculate individual score
+		bonuses = [
+			1 - (self.preferences.index(s) / len(self.preferences))
+			for s in current_item.subjects
+		]
 
-			else:  # if the item is not repeated
-				importance_score += current_item.importance
-				coherence_score += calculate_coherence_score(i, current_item)
-				freshness_score += calculate_freshness_score(i, current_item)
-				nonmonotonousness += calculate_nonmonotonousness_score(
-					i, current_item, repeated=False
-				)
+		if bonuses:
+			individual_score = sum(bonuses) / len(bonuses)
 
-				unique_items.add(current_item.id)
-
-			# Calculates the individual score of an item
-			bonuses = [
-				1 - (self.preferences.index(s) / len(self.preferences))
-				for s in current_item.subjects
-			]
-
-			if bonuses:
-				individual_score += sum(bonuses) / len(bonuses)
-
-		# Calculates the total score of the history
-		total_score = (
+		# Return total score contribution
+		return (
 			coherence_score
 			+ freshness_score
 			+ importance_score
@@ -254,7 +232,69 @@ class Player9(Player):
 			+ individual_score
 		)
 
-		return total_score
+	"""Calculates the score impact contributed by an item to the total score
+
+	1. Calculates the direct score contribution of the new item
+	2. Calculates how the new item affects the coherence scores of existing items
+	3. Returning the total delta
+	"""
+
+	def calculate_item_score(self, item, history: list[Item]) -> tuple[Item, float]:
+		# Calculate the direct score contribution of adding this item
+		new_history = history + [item]
+		direct_score = self.calculate_turn_score(new_history, len(new_history) - 1)
+		
+		# Calculate how this new item affects the coherence of existing items
+		# Only items in the last 4 positions can be affected (due to coherence window)
+		coherence_impact = 0.0
+		items_to_check = min(4, len(history))
+		
+		for i in range(len(history) - items_to_check, len(history)):
+			if history[i] is None:
+				continue
+				
+			# Calculate old coherence score (without the new item)
+			old_coherence = self.calculate_coherence_for_item_at_index(history, i)
+			
+			# Calculate new coherence score (with the new item)
+			new_coherence = self.calculate_coherence_for_item_at_index(new_history, i)
+			
+			coherence_impact += (new_coherence - old_coherence)
+		
+		total_delta = direct_score + coherence_impact
+		return item, total_delta
+	
+	def calculate_coherence_for_item_at_index(self, history: list[Item], index: int) -> float:
+		"""Helper method to calculate coherence score for a specific item at a specific index."""
+		if index >= len(history) or not history[index]:
+			return 0.0
+			
+		current_item = history[index]
+		context_items = []
+
+		# Look at previous items (up to 4 back)
+		for j in range(index - 1, max(-1, index - 4), -1):
+			if history[j] is None:
+				break
+			context_items.append(history[j])
+
+		# Look at future items (up to 4 forward)
+		for j in range(index + 1, min(len(history), index + 4)):
+			if history[j] is None or history[j] == current_item:
+				break
+			context_items.append(history[j])
+
+		context_subject_counts = Counter(s for item in context_items for s in item.subjects)
+		score = 0.0
+
+		if not all(subject in context_subject_counts for subject in current_item.subjects):
+			score -= 1.0
+
+		if all(context_subject_counts.get(s, 0) >= 2 for s in current_item.subjects):
+			score += 1.0
+
+		return score
+
 
 	"""Calculate the fitness score using the greedy algorithm! Should be changed for optimization
 	
@@ -264,12 +304,12 @@ class Player9(Player):
 	
 	"""
 
-	def calculate_greedy(self, history_score, history: list[Item]) -> tuple[Item, float] | None:
+	def calculate_greedy(self, history: list[Item]) -> tuple[Item, float] | None:
 		if not self.memory_bank:
 			return None
 
 		item_scores = [
-			self.calculate_item_score(item, history_score, history) for item in self.memory_bank
+			self.calculate_item_score(item, history) for item in self.memory_bank
 		]
 		item_scores.sort(key=lambda x: x[1], reverse=True)
 		return item_scores[0]  # returns BEST item with its score
