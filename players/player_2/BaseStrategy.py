@@ -50,6 +50,14 @@ class BaseStrategy(ABC):
 					count += len(items)
 		return count
 
+	def _get_pref_score(self, item: Item, player: Player) -> float:
+
+		item_bonuses = [
+			1 - (player.preferences.index(sub)) / player.subject_num for sub in item.subjects
+		]
+		final_bonus = sum(item_bonuses) / len(item_bonuses)
+		return final_bonus
+	
 	def _get_imp_pref_score(self, item: Item, player: Player) -> float:
 		"""Calculate overall score of an item based on its importance and individual bonuses."""
 

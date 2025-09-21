@@ -4,9 +4,11 @@ from players.player_2.BaseStrategy import BaseStrategy
 
 
 class ObservantStrategy(BaseStrategy):
-	def __init__(self, player: Player) -> None:
+	def __init__(self, player: Player, min_threshold: float = 1) -> None:
 		super().__init__(player)
-		self.min_imp_pref_score = 1
+		self.min_imp_pref_score = min_threshold
+		self.min_pref_score = 0.5
+		self.trimester = 1
 
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
 		turn_nr = len(history) + 1
@@ -16,6 +18,10 @@ class ObservantStrategy(BaseStrategy):
 		# Don't propose if no items left
 		if len(player.sub_to_item) == 0:
 			return None
+		
+		# update the current trimester
+		if turn_nr > self.trimester * (player.conversation_length + 2)// 3:
+			self.trimester += 1      
 
 		# Remove if proposal was accepted last turn
 		if turn_nr > 1 and history[-1] is not None and history[-1] == player.last_proposed_item:
@@ -56,12 +62,17 @@ class ObservantStrategy(BaseStrategy):
 			if num_p > 2 and (turn_nr == 1 or (turn_nr > 1 and history[-1] is not None)):
 				# in observation period and other people are talking - so don't propose anything
 				return None
-
+		
 		# go for freshness after a pause if possible
 		if turn_nr > 1 and history[-1] is None:
 			proposed_item = self._propose_freshly(player, history)
 			return proposed_item
-
+		
+		# space out usage by saving items for later trimesters, unless 2 pauses occur - then go for it
+		unused_size = sum(len(v) for v in player.sub_to_item.values())
+		if unused_size < player.memory_bank_size*(3 - self.trimester) // 3 and history[-1] is not None and history[-1].player_id != player.id:
+			return None
+		
 		else:
 			# print("Proposing coherently")
 			proposed_item = self._propose_coherently(player, history)
@@ -105,7 +116,7 @@ class ObservantStrategy(BaseStrategy):
 					)
 
 				# If the subject only occurred once in the context and we only have one item with this subject, propose it only if it meets a minimum score threshold
-				if subs_count == 1 and len(items_with_subs) == 1 and items_with_subs[0].importance > self.min_imp_pref_score:
+				if subs_count == 1 and len(items_with_subs) == 1 and self._get_imp_pref_score(items_with_subs[0], player) > self.min_imp_pref_score and self._get_pref_score(items_with_subs[0], player) > self.min_pref_score:
 					player.last_proposed_item = items_with_subs[0]
 					return items_with_subs[0]
 
@@ -119,9 +130,7 @@ class ObservantStrategy(BaseStrategy):
 				
 		return None
 				
-				
-	# finds item to maximize freshness
-	# make a copy and sort? Probably a better idea
+
 	def _propose_freshly(self, player, history) -> Item | None:
 		# collect all subjects in previous 5 turns in prev_subs
 		prev_subs = []
@@ -149,8 +158,7 @@ class ObservantStrategy(BaseStrategy):
 			return self._propose_possible_coherence(player)
 		return None
 
-	# TODO - fix? Should ouput all items? Just sorts the coherent items first????
-	# proposes item with the highest probability of future coherence 
+
 	def _propose_possible_coherence(self, player) -> Item | None:
 		_, coherent_items = next(iter(player.sub_to_item.items()))
 

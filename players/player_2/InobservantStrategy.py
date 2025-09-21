@@ -6,7 +6,7 @@ from players.player_2.BaseStrategy import BaseStrategy
 class InobservantStrategy(BaseStrategy):
     def __init__(self, player: Player) -> None:
         super().__init__(player)
-        self.min_imp_pref_score = 0.5
+        self.min_imp_pref_score = 0
         self.trimester = 1
 
     def propose_item(self, player: Player, history: list[Item]) -> Item | None:
