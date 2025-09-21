@@ -35,6 +35,53 @@ class Player5(Player):
 		# Track other subjects talked about: player id -> Counter(subject -> count)
 		self.external_subjects = {}
 
+		# Pausing strategy thresholds - tune later to be more dynamic
+		self.pause_threshold = 0.5
+		self.pause_count = 0
+
+	def count_consecutive_pauses(self, history: list[Item]) -> int:
+		"""Count number of consecutive pauses to avoid 3 in a row"""
+		count = 0
+		for item in reversed(history):
+			if item is None:
+				count += 1
+			else:
+				break
+
+		return count
+	
+	def freshness_pause_bonus(self, history: list[Item]) -> bool:
+		"""Check the expected bonus if we were to choose to pause for freshness"""
+		if len(history) < 5:
+			return False
+		
+		past_subjects = set()
+		for item in history[-5:]:
+			if item is not None:
+				past_subjects.update(item.subjects)
+
+		# check if we have anything new to contribue
+		for item in self.memory_bank[:10]:
+			new_subjects = [subject for subject in item.subjects if subject not in past_subjects]
+			if len(new_subjects) >= 1:
+				return True
+			
+		return False
+
+	def monotony_pause_bonus(self, history: list[Item]) -> bool:
+		"""Check the expected bonus if we were to choose to pause for monotony"""
+		if len(history) < 3:
+			return False
+		
+		past_subjects = []
+		for item in history[-3:]:
+			if item is not None:
+				past_subjects.extend(item.subjects)
+
+		subject_frequencies = Counter(past_subjects)
+		# monotonoy = 3+ same subjects
+		return any(count >= 3 for count in subject_frequencies.values())
+	
 	def update_external_subjects(self, history: list[Item]) -> None:
 		"""Update the counter for external subjects mentioned by other players"""
 		# Note down what's been said by everyone
@@ -98,6 +145,29 @@ class Player5(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if not self.memory_bank:
 			return None
+		
+		# check if should pause based on freshness or monotony
+		best_item = self.memory_bank[0]
+		base_value = best_item.importance + self.individual_score(best_item)
+
+		future_bonus = 0
+		if self.freshness_pause_bonus(history):
+			future_bonus += max(1.0, 0.5 * base_value)
+		if self.monotony_pause_bonus(history):
+			future_bonus += max(1.0, 0.5 * base_value)
+
+		# calculate exepcted current best item score
+		if self.memory_bank:
+			expected = self.individual_score(self.memory_bank[0]) + self.memory_bank[0].importance
+		else:
+			expected = 0
+
+		# scale pause value by turns left to discourage late-game pauses
+		turns_left = self.conversation_length - len(history)
+		effective_pause_value = future_bonus * (turns_left / (turns_left + 5))
+		# tune this value dynamically better in future
+		if effective_pause_value > 0.85 * expected:
+			return None
 
 		# Note down what's been said by everyone
 		self.update_external_subjects(history)
@@ -148,9 +218,9 @@ class Player5(Player):
 			shared_score = round(shared_score['shared'], 4)
 			self_score = round(self_score, 4)
 
-			print(
-				f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
-			)
+			#print(
+			#	f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
+			#)
 
 			total_ranking.append((item, shared_score + self_score))
 			shared_ranking.append((item, shared_score))
