@@ -18,16 +18,16 @@ class Player2(Player):
 		self.current_strategy: BaseStrategy = None
 		self.turn_nr: int = 0
 		self.min_threshold: float = 1.0
-		
+
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 		self.scores_per_player: dict = {}
 
-		self._compute_strategy_features() 
+		self._compute_strategy_features()
 		self._choose_strategy()
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		print(f"turn {self.turn_nr+1}, our id: {self.player_id}")
+		# print(f"turn {self.turn_nr+1}, our id: {self.player_id}")
 		self.turn_nr += 1
 		self._get_group_scores_per_turn(history)
 
@@ -59,7 +59,6 @@ class Player2(Player):
 		for j in range(i - 2, max(-2, i - 5), -1):
 			if history[j] is None:
 				break
-			print(f"adding {history[j]} to context")
 			context_items.append(history[j])
 
 		context_subject_counts = Counter(s for item in context_items for s in item.subjects)
@@ -74,11 +73,8 @@ class Player2(Player):
 		return score
 
 	# Taken and adapted from engine.py
-	def _calculate_nonmonotonousness_score(
-		self, i: int, current_item: Item, history
-	) -> float:
-		
-		for item in history[:i-1]:
+	def _calculate_nonmonotonousness_score(self, i: int, current_item: Item, history) -> float:
+		for item in history[: i - 1]:
 			if item and item.id == current_item.id:
 				return -1.0
 
@@ -97,14 +93,14 @@ class Player2(Player):
 	def _get_group_scores_per_turn(self, history):
 		if len(history) == 0 or history[-1] is None:
 			return None
-		
+
 		item = history[-1]
-		pid = item.player_id 
+		pid = item.player_id
 
 		importance = item.importance
-		coherence = self._calculate_coherence_score(self.turn_nr-1, item, history)
-		freshness = self._calculate_freshness_score(self.turn_nr-1, item, history)
-		nonmono = self._calculate_nonmonotonousness_score(self.turn_nr-1, item, history)
+		coherence = self._calculate_coherence_score(self.turn_nr - 1, item, history)
+		freshness = self._calculate_freshness_score(self.turn_nr - 1, item, history)
+		nonmono = self._calculate_nonmonotonousness_score(self.turn_nr - 1, item, history)
 		importance = item.importance if nonmono != -1.0 else 0.0
 
 		group_score = importance + coherence + freshness + nonmono
@@ -125,7 +121,7 @@ class Player2(Player):
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
 
 	def _choose_strategy(self):
-			self.current_strategy = ObservantStrategy(self, min_threshold=1.5)
+		self.current_strategy = ObservantStrategy(self, min_threshold=1.5)
 
 	def _compute_strategy_features(self):
 		"""Compute minimal signals as attributes for picking Observant vs Inobservant."""
@@ -134,16 +130,16 @@ class Player2(Player):
 		L = max(1, self.conversation_length)
 		S = max(1, self.subject_num)
 
-        # Core knob: how crowded the game is with items per turn
+		# Core knob: how crowded the game is with items per turn
 		self.density: float = (P * B) / L
 
-        # Inventory structure & importance stats
+		# Inventory structure & importance stats
 		n_single = 0
 		n_pair = 0
 		imp_sum = 0.0
 		imp_max = 0.0
 		counts_per_subject: Counter[int] = Counter()
-		
+
 		for it in self.memory_bank:
 			k = len(it.subjects)
 			if k == 1:
@@ -154,22 +150,24 @@ class Player2(Player):
 			imp_sum += it.importance
 			if it.importance > imp_max:
 				imp_max = it.importance
-				
+
 			for s in it.subjects:
 				counts_per_subject[s] += 1
-				
+
 		self.n_single: int = n_single
 		self.n_pair: int = n_pair
 		self.two_subject_ratio: float = (n_pair / B) if B else 0.0
 		self.avg_importance: float = (imp_sum / B) if B else 0.0
 		self.max_importance: float = imp_max
 
-        # Freshness & coherence capacity
+		# Freshness & coherence capacity
 		self.counts_per_subject: Counter[int] = counts_per_subject
-		self.coverage_ratio: float = (len(counts_per_subject) / S) if S else 0.0  # breadth across subjects
+		self.coverage_ratio: float = (
+			(len(counts_per_subject) / S) if S else 0.0
+		)  # breadth across subjects
 		self.self_coherence_capacity: int = sum(1 for c in counts_per_subject.values() if c >= 2)
 
-        # Two-subject bridges that are supported by extra items on at least one side
+		# Two-subject bridges that are supported by extra items on at least one side
 		bridge_ready_pairs = 0
 		for key, items in self.sub_to_item.items():
 			if len(key) == 2:

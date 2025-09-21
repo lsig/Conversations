@@ -5,13 +5,13 @@ from models.item import Item
 from models.player import Player
 
 
-class BaseStrategy(ABC): 
+class BaseStrategy(ABC):
 	def __init__(self, player: Player) -> None:
 		super().__init__()
 		self.player: Player = player
 		self.obs_num: int = self._init_obs_num()
-		self.min_imp_pref_score : float = 0
-	
+		self.min_imp_pref_score: float = 0
+
 	def _init_obs_num(self):
 		num_p = self.player.number_of_players
 		c_len = self.player.conversation_length
@@ -51,13 +51,12 @@ class BaseStrategy(ABC):
 		return count
 
 	def _get_pref_score(self, item: Item, player: Player) -> float:
-
 		item_bonuses = [
 			1 - (player.preferences.index(sub)) / player.subject_num for sub in item.subjects
 		]
 		final_bonus = sum(item_bonuses) / len(item_bonuses)
 		return final_bonus
-	
+
 	def _get_imp_pref_score(self, item: Item, player: Player) -> float:
 		"""Calculate overall score of an item based on its importance and individual bonuses."""
 

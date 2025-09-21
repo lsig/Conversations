@@ -12,7 +12,6 @@ class Strategy1(BaseStrategy):
 
 		# If last proposed item was accepted, remove it from memory bank and sub_to_item
 		if turn_nr > 1 and history[-1] == player.last_proposed_item:
-
 			last_proposed_subjects = tuple(sorted(list(player.last_proposed_item.subjects)))
 			player.memory_bank.remove(player.last_proposed_item)
 			player.sub_to_item[last_proposed_subjects].remove(player.last_proposed_item)
