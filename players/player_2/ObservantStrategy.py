@@ -13,7 +13,6 @@ class ObservantStrategy(BaseStrategy):
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
 		turn_nr = len(history) + 1
 		num_p = self.player.number_of_players
-		# print(f"Turn number: {turn_nr}")
 
 		# Don't propose if no items left
 		if len(player.sub_to_item) == 0:
@@ -74,7 +73,6 @@ class ObservantStrategy(BaseStrategy):
 			return None
 		
 		else:
-			# print("Proposing coherently")
 			proposed_item = self._propose_coherently(player, history)
 			return proposed_item
 
@@ -95,7 +93,6 @@ class ObservantStrategy(BaseStrategy):
 		context = self._get_context(history)
 
 		context_subs_sorted = self._get_subjects_counts_sorted(context, player)
-		# print(f"Context subjects sorted: {context_subs_sorted}")
 		# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 		# If there are no items in memory bank that match the subjects in context, then pause
 		for subs, subs_count in context_subs_sorted:
@@ -105,7 +102,6 @@ class ObservantStrategy(BaseStrategy):
 				items_with_subs = player.sub_to_item.get(subs, []).copy()
 				# If there is only one subject, also get items with two subjects including that subject
 				if len(subs) == 1:
-					# print(f"Also look for items with subject {subs} and another subject")
 					items_with_subs.extend(
 						[
 							item
