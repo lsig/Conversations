@@ -11,16 +11,18 @@ class Player2(Player):
 		self.snapshot = snapshot
 		self.subject_num: int = len(self.preferences)
 		self.memory_bank_size: int = len(self.memory_bank)
+		self.number_of_players: int = ctx.number_of_players
+		self.conversation_length: int = ctx.conversation_length
+
+		self.player_id: int = snapshot.id
 		self.current_strategy: BaseStrategy = None
 		self.turn_nr: int = 0
 		self.min_threshold: float = 1.0
-		self.player_id: int = snapshot.id
-
+		
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 		self.scores_per_player: dict = {}
-		self.number_of_players: int = ctx.number_of_players
-		self.conversation_length: int = ctx.conversation_length
+
 		self._compute_strategy_features() 
 		self._choose_strategy()
 
@@ -28,19 +30,18 @@ class Player2(Player):
 		print(f"turn {self.turn_nr+1}, our id: {self.player_id}")
 		self.turn_nr += 1
 		self._get_group_scores_per_turn(history)
-		negative_players = self.get_negative_score_players()
+
 		return self.current_strategy.propose_item(self, history)
 
-	def get_negative_score_players(self):
+	def _get_negative_score_players(self):
 		negative_players = []
 		for pid, scores in self.scores_per_player.items():
 			if scores and (sum(scores) / len(scores)) < 0:
-				
 				negative_players.append(pid)
 		return negative_players
-	
-	# Taken from engine.py
-	def __calculate_freshness_score(self, i: int, current_item: Item, history) -> float:
+
+	# Taken and adapted from engine.py
+	def _calculate_freshness_score(self, i: int, current_item: Item, history) -> float:
 		if i == 0 or history[i - 2] is not None:
 			return 0.0
 
@@ -51,8 +52,8 @@ class Player2(Player):
 
 		return float(len(novel_subjects))
 
-	# Taken from engine.py
-	def __calculate_coherence_score(self, i: int, current_item: Item, history) -> float:
+	# Taken and adapted from engine.py
+	def _calculate_coherence_score(self, i: int, current_item: Item, history) -> float:
 		context_items = []
 
 		for j in range(i - 2, max(-2, i - 5), -1):
@@ -72,8 +73,8 @@ class Player2(Player):
 
 		return score
 
-	# Taken from engine.py
-	def __calculate_nonmonotonousness_score(
+	# Taken and adapted from engine.py
+	def _calculate_nonmonotonousness_score(
 		self, i: int, current_item: Item, history
 	) -> float:
 		
@@ -99,12 +100,13 @@ class Player2(Player):
 		
 		item = history[-1]
 		pid = item.player_id 
+
 		importance = item.importance
-		coherence = self.__calculate_coherence_score(self.turn_nr-1, item, history)
-		freshness = self.__calculate_freshness_score(self.turn_nr-1, item, history)
-		nonmono = self.__calculate_nonmonotonousness_score(self.turn_nr-1, item, history)
+		coherence = self._calculate_coherence_score(self.turn_nr-1, item, history)
+		freshness = self._calculate_freshness_score(self.turn_nr-1, item, history)
+		nonmono = self._calculate_nonmonotonousness_score(self.turn_nr-1, item, history)
 		importance = item.importance if nonmono != -1.0 else 0.0
-		print(f"imp {importance} fresh {freshness} nonmono {nonmono} coh {coherence}")
+
 		group_score = importance + coherence + freshness + nonmono
 		if pid not in self.scores_per_player:
 			self.scores_per_player[pid] = []
