@@ -1,5 +1,6 @@
-from models.player import GameContext, Item, Player, PlayerSnapshot
 from collections import defaultdict
+
+from models.player import GameContext, Item, Player, PlayerSnapshot
 
 
 class Player7(Player):
@@ -139,8 +140,7 @@ class Player7(Player):
 
 		# analyze continuation patterns for the current transition
 		# ex: if history = [A, B, C] analyze transition from B -> C
-		if len(history) >= 2:
-			if history[-2] is not None and history[-1] is not None:
+		if len(history) >= 2 and history[-2] is not None and history[-1] is not None:
 				previous_subjects = set(history[-2].subjects)
 				current_subjects = set(history[-1].subjects)
 
