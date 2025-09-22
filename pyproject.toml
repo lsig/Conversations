@@ -7,6 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "pygame>=2.6.1",
     "openai",
+    "ruff>=0.12.8",
 ]
 
 [tool.ruff]
