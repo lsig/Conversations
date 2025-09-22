@@ -53,9 +53,6 @@ class Player7(Player):
 					subject_count[subject] += 1
 
 		remaining = [it for it in self.memory_bank if it not in history]
-		
-		if not remaining:
-			return None  
 			
 		K = self.dynamic_threshold(history)
 		eligible = [it for it in remaining if self.most_preferred(it) <= K]
@@ -198,10 +195,14 @@ class Player7(Player):
 		# return the index of the most preferred subject in the item
 		return min([self.preferences.index(s) for s in item.subjects if s in self.preferences])
 
-
-	def dynamic_threshold(self, history) -> int:
+	
+	def dynamic_threshold(self, history: list) -> int:
 		# return a dynamic threshold based on the history length
-		progress = min(1, len(self.contributed_items) / (max(1, len(self.memory_bank)))) # 0->1
 		S = len(self.preferences)
-		K = int(S * (0.30 + 0.40 * progress)) - 1  # 30% -> 70% as bank shrinks
+		L = self.conversation_length
+		turns = len(history)
+		progress = turns / L
+		t = 0.5 if progress >= 0.85 else 0.5 + 0.35 * progress
+		K = int(S * t) -1
 		return max(0, min(S - 1, K))
+
