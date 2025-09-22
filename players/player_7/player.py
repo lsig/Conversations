@@ -141,30 +141,30 @@ class Player7(Player):
 		# analyze continuation patterns for the current transition
 		# ex: if history = [A, B, C] analyze transition from B -> C
 		if len(history) >= 2 and history[-2] is not None and history[-1] is not None:
-				previous_subjects = set(history[-2].subjects)
-				current_subjects = set(history[-1].subjects)
+			previous_subjects = set(history[-2].subjects)
+			current_subjects = set(history[-1].subjects)
 
-				# Subjects that got continued or dropped in this transition
-				continued_subjects = set()
+			# Subjects that got continued or dropped in this transition
+			continued_subjects = set()
 
-				for subject in previous_subjects:
-					if subject in current_subjects:
-						continued_subjects.add(subject)
+			for subject in previous_subjects:
+				if subject in current_subjects:
+					continued_subjects.add(subject)
 
-				dropped_subjects = set()
+			dropped_subjects = set()
 
-				for subject in previous_subjects:
-					if subject not in current_subjects:
-						dropped_subjects.add(subject)
+			for subject in previous_subjects:
+				if subject not in current_subjects:
+					dropped_subjects.add(subject)
 
-				# can be adjusted, might need better metric
-				recency_weight = 0.2  # weight recent transitions more
+			# can be adjusted, might need better metric
+			recency_weight = 0.2  # weight recent transitions more
 
-				for subject in continued_subjects:
-					self.game_subject_relevance[subject] += recency_weight * 1.0
+			for subject in continued_subjects:
+				self.game_subject_relevance[subject] += recency_weight * 1.0
 
-				for subject in dropped_subjects:
-					self.game_subject_relevance[subject] += recency_weight * -0.3
+			for subject in dropped_subjects:
+				self.game_subject_relevance[subject] += recency_weight * -0.3
 
 		# analyze new cluster patterns in the last 3 items
 		self.analyze_subject_clusters(history)
