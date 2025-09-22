@@ -1,6 +1,8 @@
 import json
 import random
 
+import numpy as np
+
 from core.engine import Engine
 from core.utils import CustomEncoder
 from models.cli import settings
@@ -26,6 +28,7 @@ from ui.gui import run_gui
 def main():
 	args = settings()
 	random.seed(args.seed)
+	np.random.seed(args.seed)
 
 	players: list[type[Player]] = (
 		[RandomPlayer] * args.players['pr']
