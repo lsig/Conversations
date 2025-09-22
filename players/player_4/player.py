@@ -203,10 +203,10 @@ class Player4(Player):
 		# print(best_score)
 		# print(history)
 		max_possible = 1.0 + 2.0 + 1.5  # importance + pause + coherence
-		threshold = max_possible * 0.3
+		threshold = 1
 		if len(history) != 0 and best_score < threshold:
 			return None
-
+           
 		# All with best score
 		tied = [it for s, it in scored if s == best_score]
 
