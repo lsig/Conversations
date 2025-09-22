@@ -42,12 +42,12 @@ def select_players(num_players, available_players=(1, 2, 3, 4, 5, 6, 7, 8, 9), p
 	Optionally guarantee 1 slot for 'pr' (random player).
 
 	Args:
-	    num_players (int): total slots to allocate.
-	    available_players (list[int]): list of player numbers (e.g. [1,2,3,5,8]).
-	    pr (bool): whether to include a 'pr' random player.
+    num_players (int): total slots to allocate.
+    available_players (list[int]): list of player numbers (e.g. [1,2,3,5,8]).
+    pr (bool): whether to include a 'pr' random player.
 
 	Returns:
-	    list[str]: CLI args like ["--player", "p1", "2", ...].
+	list[str]: CLI args like ["--player", "p1", "2", ...].
 	"""
 
 	if available_players is None:
