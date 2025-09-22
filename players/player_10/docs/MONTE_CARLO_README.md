@@ -4,6 +4,7 @@ This document defines: parameters, CLI usage (run + analyze), and the mechanism.
 
 ### Parameters (by name)
 - Test identity:
+  - `--name <str>`: optional test label (defaults to an auto-stamped name)
   - `--name <str>`: test label (required unless `--predefined`)
   - `--predefined {altruism,random2,random5,random10,scalability,parameter_sweep,mixed}`
 - Ranges:
@@ -18,11 +19,19 @@ This document defines: parameters, CLI usage (run + analyze), and the mechanism.
   - `--conversation-length <int>` (default 50)
   - `--subjects <int>` (default 20)
   - `--memory-size <int>` (default 10)
+  - `--output-dir <dir>` (default `players/player_10/results`)
   - `--output-dir <dir>` (default simulation_results)
   - `--no-save`: do not write results JSON
   - `--quiet`: suppress progress
 
 ### CLI usage
+- Run: `python -m players.player_10.tools.run [--predefined ... | --name ...] [params]`
+- Analyze: `python -m players.player_10.tools.analyze <results.json> [--analysis] [--plot {altruism,heatmap,distributions}] [--save <png>]`
+
+Notes
+- Parameter defaults mirror the values defined in `players/player_10/agent/config.py` (e.g., `ALTRUISM_USE_PROB`, `TAU_MARGIN`).
+- Results JSON is written to `--output-dir` (default `players/player_10/results`) unless `--no-save` is used.
+- Filenames are prefixed with the run timestamp, and each JSON now contains a top-level `metadata` block summarizing the configuration (ranges, players, seeds, CLI command) followed by the `results` list.
 - Run: `python -m players.player_10.tools.flex [--predefined ... | --name ...] [params]`
 - Analyze: `python -m players.player_10.tools.analyze <results.json> [--analysis] [--plot {altruism,heatmap,distributions}] [--save <png>]`
 

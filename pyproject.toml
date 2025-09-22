@@ -8,6 +8,8 @@ dependencies = [
     "pygame>=2.6.1",
     "openai",
     "ruff>=0.12.8",
+    "numpy>=2.3.3",
+    "torch>=2.8.0",
 ]
 
 [tool.ruff]
