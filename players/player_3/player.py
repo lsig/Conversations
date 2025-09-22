@@ -1,5 +1,6 @@
+from models.player import GameContext, PlayerSnapshot
 from players.player_3.bst_player_presets import BayesianTreeBeamSearchPlayer
-from models.player import GameContext, Item, Player, PlayerSnapshot
+
 
 class Player3(BayesianTreeBeamSearchPlayer):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
@@ -10,5 +11,5 @@ class Player3(BayesianTreeBeamSearchPlayer):
 			initial_competition_rate=0.5,
 			depth=1,
 			breadth=None,
-			static_threhold=0.5
+			static_threhold=0.5,
 		)
