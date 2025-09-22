@@ -15,7 +15,7 @@ from players.player_6.player import Player6
 from players.player_7.player import Player7
 from players.player_8.player import Player8
 from players.player_9.player import Player9
-from players.player_10.player import Player10
+from players.player_10 import Player10
 from players.player_11.player import Player11
 from players.random_pause_player import RandomPausePlayer
 from players.random_player import RandomPlayer
