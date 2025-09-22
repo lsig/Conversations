@@ -5,7 +5,6 @@ from players.player_2.BaseStrategy import BaseStrategy
 from players.player_2.ObservantStrategy import ObservantStrategy
 
 
-
 class Player2(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super().__init__(snapshot, ctx)
@@ -23,7 +22,6 @@ class Player2(Player):
 
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
-
 
 		self._compute_strategy_features()
 		self._choose_strategy()
@@ -177,4 +175,3 @@ class Player2(Player):
 				if counts_per_subject[a] >= 2 or counts_per_subject[b] >= 2:
 					bridge_ready_pairs += len(items)
 		self.bridge_ready_pairs: int = bridge_ready_pairs
-
