@@ -1,8 +1,7 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
 from models.player import GameContext, Item, Player, PlayerSnapshot
 
-from collections import defaultdict
 # import uuid
 # import random
 
@@ -125,7 +124,7 @@ class Player6(Player):
 
 				epsilon = 0.01
 				preference_score = 0
-				best_ranked = item
+				# best_ranked = item
 
 				for i in item.subjects:
 					preference_score += 1 - (self.preferences.index(i) / len(self.preferences))
