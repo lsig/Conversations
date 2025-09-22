@@ -235,12 +235,20 @@ class MonteCarloSimulator:
 		config_scores = []
 		for config_key, results in config_groups.items():
 			scores = [r.total_score for r in results]
-			player10_totals = [r.player10_total_mean for r in results if r.player10_total_mean is not None]
-			player10_individuals = [
-				r.player10_individual_mean for r in results if r.player10_individual_mean is not None
+			player10_totals = [
+				r.player10_total_mean for r in results if r.player10_total_mean is not None
 			]
-			player10_ranks = [r.player10_rank_mean for r in results if r.player10_rank_mean is not None]
-			player10_gaps = [r.player10_gap_to_best for r in results if r.player10_gap_to_best is not None]
+			player10_individuals = [
+				r.player10_individual_mean
+				for r in results
+				if r.player10_individual_mean is not None
+			]
+			player10_ranks = [
+				r.player10_rank_mean for r in results if r.player10_rank_mean is not None
+			]
+			player10_gaps = [
+				r.player10_gap_to_best for r in results if r.player10_gap_to_best is not None
+			]
 			best_totals = [r.best_total_score for r in results]
 
 			score_components: dict[str, list[float]] = defaultdict(list)
@@ -451,8 +459,8 @@ class MonteCarloSimulator:
 		if player_type in alias_map:
 			module_path, class_name = alias_map[player_type]
 		elif player_type.startswith('p') and player_type[1:].isdigit():
-			module_path = f"players.player_{player_type[1:]}.player"
-			class_name = f"Player{int(player_type[1:])}"
+			module_path = f'players.player_{player_type[1:]}.player'
+			class_name = f'Player{int(player_type[1:])}'
 		else:
 			raise ValueError(f"Unknown player type '{player_type}' in configuration.")
 
@@ -563,7 +571,7 @@ class MonteCarloSimulator:
 			label = (
 				base_label
 				if label_counts[base_label] == 1
-				else f"{base_label}#{label_counts[base_label]}"
+				else f'{base_label}#{label_counts[base_label]}'
 			)
 
 			id_to_label[entry['id']] = label
@@ -595,8 +603,7 @@ class MonteCarloSimulator:
 				player_contribution_counts[label] += 1
 
 		player_contributions = {
-			label: player_contribution_counts.get(label, 0)
-			for label in player_metrics
+			label: player_contribution_counts.get(label, 0) for label in player_metrics
 		}
 
 		# Legacy convenience entry for Player10 mean total score (if present)
@@ -607,16 +614,10 @@ class MonteCarloSimulator:
 			sum(player10_totals) / len(player10_totals) if player10_totals else None
 		)
 		player10_individual_mean = (
-			sum(player10_individuals) / len(player10_individuals)
-			if player10_individuals
-			else None
+			sum(player10_individuals) / len(player10_individuals) if player10_individuals else None
 		)
-		player10_rank_mean = (
-			sum(player10_ranks) / len(player10_ranks) if player10_ranks else None
-		)
-		player10_gap_mean = (
-			sum(player10_gaps) / len(player10_gaps) if player10_gaps else None
-		)
+		player10_rank_mean = sum(player10_ranks) / len(player10_ranks) if player10_ranks else None
+		player10_gap_mean = sum(player10_gaps) / len(player10_gaps) if player10_gaps else None
 
 		# Calculate conversation metrics
 		conversation_length = len(history)

@@ -118,6 +118,8 @@ def main():
 	# simulator2, analyzer = example_detailed_analysis()
 
 	print('\n' + '=' * 50)
+
+
 print("Examples completed! Check the 'players/player_10/results' directory for saved results.")
 
 

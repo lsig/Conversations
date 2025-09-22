@@ -203,7 +203,6 @@ def create_custom_test_from_args(args) -> TestConfiguration:
 	return builder.build()
 
 
-
 def main():
 	"""Main command-line interface."""
 	parser = argparse.ArgumentParser(
@@ -245,9 +244,7 @@ Examples:
 	)
 
 	meta_group = parser.add_argument_group('run metadata')
-	meta_group.add_argument(
-		'--description', help='|Optional note recorded in the metadata block.'
-	)
+	meta_group.add_argument('--description', help='|Optional note recorded in the metadata block.')
 
 	range_defaults = _DEFAULT_CONFIG
 	range_group = parser.add_argument_group('parameter ranges')
@@ -255,61 +252,61 @@ Examples:
 		'--altruism',
 		nargs='+',
 		type=float,
-		help=f"|Altruism probabilities to evaluate.\n|Default: {_format_values(range_defaults.altruism_probs.values)}",
+		help=f'|Altruism probabilities to evaluate.\n|Default: {_format_values(range_defaults.altruism_probs.values)}',
 	)
 	range_group.add_argument(
 		'--tau',
 		nargs='+',
 		type=float,
-		help=f"|Tau margins for the altruism gate.\n|Default: {_format_values(range_defaults.tau_margins.values)}",
+		help=f'|Tau margins for the altruism gate.\n|Default: {_format_values(range_defaults.tau_margins.values)}',
 	)
 	range_group.add_argument(
 		'--epsilon-fresh',
 		nargs='+',
 		type=float,
-		help=f"|Freshness adjustments applied after pauses.\n|Default: {_format_values(range_defaults.epsilon_fresh_values.values)}",
+		help=f'|Freshness adjustments applied after pauses.\n|Default: {_format_values(range_defaults.epsilon_fresh_values.values)}',
 	)
 	range_group.add_argument(
 		'--epsilon-mono',
 		nargs='+',
 		type=float,
-		help=f"|Monotony adjustments to the altruism gate.\n|Default: {_format_values(range_defaults.epsilon_mono_values.values)}",
+		help=f'|Monotony adjustments to the altruism gate.\n|Default: {_format_values(range_defaults.epsilon_mono_values.values)}',
 	)
 	range_group.add_argument(
 		'--min-samples',
 		nargs='+',
 		type=int,
-		help=f"|Samples required before trusting per-player averages.\n|Default: {_format_values(range_defaults.min_samples_values.values)}",
+		help=f'|Samples required before trusting per-player averages.\n|Default: {_format_values(range_defaults.min_samples_values.values)}',
 	)
 	range_group.add_argument(
 		'--ewma',
 		nargs='+',
 		type=float,
-		help=f"|EWMA alpha values for performance tracking.\n|Default: {_format_values(range_defaults.ewma_alpha_values.values)}",
+		help=f'|EWMA alpha values for performance tracking.\n|Default: {_format_values(range_defaults.ewma_alpha_values.values)}',
 	)
 	range_group.add_argument(
 		'--w-importance',
 		nargs='+',
 		type=float,
-		help=f"|Importance weight multipliers.\n|Default: {_format_values(range_defaults.importance_weights.values)}",
+		help=f'|Importance weight multipliers.\n|Default: {_format_values(range_defaults.importance_weights.values)}',
 	)
 	range_group.add_argument(
 		'--w-coherence',
 		nargs='+',
 		type=float,
-		help=f"|Coherence weight multipliers.\n|Default: {_format_values(range_defaults.coherence_weights.values)}",
+		help=f'|Coherence weight multipliers.\n|Default: {_format_values(range_defaults.coherence_weights.values)}',
 	)
 	range_group.add_argument(
 		'--w-freshness',
 		nargs='+',
 		type=float,
-		help=f"|Freshness weight multipliers.\n|Default: {_format_values(range_defaults.freshness_weights.values)}",
+		help=f'|Freshness weight multipliers.\n|Default: {_format_values(range_defaults.freshness_weights.values)}',
 	)
 	range_group.add_argument(
 		'--w-monotony',
 		nargs='+',
 		type=float,
-		help=f"|Monotony weight multipliers.\n|Default: {_format_values(range_defaults.monotony_weights.values)}",
+		help=f'|Monotony weight multipliers.\n|Default: {_format_values(range_defaults.monotony_weights.values)}',
 	)
 
 	player_group = parser.add_argument_group('player setup & schedule')
@@ -317,8 +314,8 @@ Examples:
 		'--players',
 		nargs='+',
 		help=(
-			f"|Player configuration overrides as JSON (e.g., '{{\"p10\": 8, \"pr\": 2}}').\n"
-			f"|Default: {_DEFAULT_CONFIG.player_configs}"
+			f'|Player configuration overrides as JSON (e.g., \'{{"p10": 8, "pr": 2}}\').\n'
+			f'|Default: {_DEFAULT_CONFIG.player_configs}'
 		),
 	)
 	player_group.add_argument(
@@ -495,44 +492,38 @@ Examples:
 		print('-' * 110)
 
 		for i, config_result in enumerate(analysis['best_configurations'], 1):
-				altruism, tau, fresh, mono = config_result['config']
-				total_score = config_result['mean_score']
+			altruism, tau, fresh, mono = config_result['config']
+			total_score = config_result['mean_score']
 
-				# Get additional stats from config_summaries
-				config_key = str(config_result['config'])
-				if config_key in analysis['config_summaries']:
-					summary = analysis['config_summaries'][config_key]
-					p10_score = summary['player10_score']['mean']
-					std = summary['total_score']['std']
-					count = summary['total_score'].get('count', config.num_simulations)
-					rank_stats = summary.get('player10_rank', {})
-					gap_stats = summary.get('player10_gap_to_best', {})
-					rank_mean = rank_stats.get('mean')
-					rank_std = rank_stats.get('std', 0.0)
-					rank_count = rank_stats.get('count', 0)
-					gap_mean = gap_stats.get('mean')
-					gap_std = gap_stats.get('std', 0.0)
-					gap_count = gap_stats.get('count', 0)
-					p10_rank_str = (
-						f"{rank_mean:.2f}±{rank_std:.2f}"
-						if rank_count else 'n/a'
-					)
-					gap_str = (
-						f"{gap_mean:.2f}±{gap_std:.2f}"
-						if gap_count else 'n/a'
-					)
-				else:
-					p10_score = 0.0
-					std = 0.0
-					count = config.num_simulations
-					p10_rank_str = 'n/a'
-					gap_str = 'n/a'
+			# Get additional stats from config_summaries
+			config_key = str(config_result['config'])
+			if config_key in analysis['config_summaries']:
+				summary = analysis['config_summaries'][config_key]
+				p10_score = summary['player10_score']['mean']
+				std = summary['total_score']['std']
+				count = summary['total_score'].get('count', config.num_simulations)
+				rank_stats = summary.get('player10_rank', {})
+				gap_stats = summary.get('player10_gap_to_best', {})
+				rank_mean = rank_stats.get('mean')
+				rank_std = rank_stats.get('std', 0.0)
+				rank_count = rank_stats.get('count', 0)
+				gap_mean = gap_stats.get('mean')
+				gap_std = gap_stats.get('std', 0.0)
+				gap_count = gap_stats.get('count', 0)
+				p10_rank_str = f'{rank_mean:.2f}±{rank_std:.2f}' if rank_count else 'n/a'
+				gap_str = f'{gap_mean:.2f}±{gap_std:.2f}' if gap_count else 'n/a'
+			else:
+				p10_score = 0.0
+				std = 0.0
+				count = config.num_simulations
+				p10_rank_str = 'n/a'
+				gap_str = 'n/a'
 
-				print(
-					f'{i:<4} {altruism:<8.1f} {tau:<6.2f} {fresh:<6.2f} {mono:<6.2f} '
-					f'{total_score:<12.2f} {p10_score:<11.2f} {std:<8.2f} '
-					f'{p10_rank_str:<12} {gap_str:<12} {count:<5}'
-				)
+			print(
+				f'{i:<4} {altruism:<8.1f} {tau:<6.2f} {fresh:<6.2f} {mono:<6.2f} '
+				f'{total_score:<12.2f} {p10_score:<11.2f} {std:<8.2f} '
+				f'{p10_rank_str:<12} {gap_str:<12} {count:<5}'
+			)
 
 		# Print detailed configuration table
 		print('\n=== DETAILED CONFIGURATION TABLE ===')
@@ -557,13 +548,15 @@ Examples:
 				rank_count = rank_stats.get('count', 0)
 				rank_str = (
 					f'{rank_stats.get("mean", 0.0):.2f}±{rank_stats.get("std", 0.0):.2f}'
-					if rank_count else 'n/a'
+					if rank_count
+					else 'n/a'
 				)
 				gap_stats = summary.get('player10_gap_to_best', {})
 				gap_count = gap_stats.get('count', 0)
 				gap_detail = (
 					f'{gap_stats.get("mean", 0.0):.2f}±{gap_stats.get("std", 0.0):.2f}'
-					if gap_count else 'n/a'
+					if gap_count
+					else 'n/a'
 				)
 				conv_len = f'{summary["conversation_metrics"]["avg_length"]:.1f}'
 				pauses = f'{summary["conversation_metrics"]["avg_pause_count"]:.1f}'
@@ -604,16 +597,12 @@ Examples:
 				)
 				rank_stats = summary.get('player10_rank', {})
 				if rank_stats.get('count', 0):
-					print(
-						f'   Player10 Rank: {rank_stats["mean"]:.2f} ± {rank_stats["std"]:.2f}'
-					)
+					print(f'   Player10 Rank: {rank_stats["mean"]:.2f} ± {rank_stats["std"]:.2f}')
 				else:
 					print('   Player10 Rank: n/a')
 				gap_stats = summary.get('player10_gap_to_best', {})
 				if gap_stats.get('count', 0):
-					print(
-						f'   Gap to Best: {gap_stats["mean"]:.2f} ± {gap_stats["std"]:.2f}'
-					)
+					print(f'   Gap to Best: {gap_stats["mean"]:.2f} ± {gap_stats["std"]:.2f}')
 				else:
 					print('   Gap to Best: n/a')
 				print(
@@ -669,14 +658,10 @@ Examples:
 				print(f'\n[{i}] {label}')
 				rank_mean = row['p10_rank_mean']
 				rank_std = row['p10_rank_std'] if row['p10_rank_std'] is not None else 0.0
-				rank_text = (
-					f'{rank_mean:.2f} ± {rank_std:.2f}' if rank_mean is not None else 'n/a'
-				)
+				rank_text = f'{rank_mean:.2f} ± {rank_std:.2f}' if rank_mean is not None else 'n/a'
 				gap_mean = row['gap_mean']
 				gap_std = row['gap_std'] if row['gap_std'] is not None else 0.0
-				gap_text = (
-					f'{gap_mean:.2f} ± {gap_std:.2f}' if gap_mean is not None else 'n/a'
-				)
+				gap_text = f'{gap_mean:.2f} ± {gap_std:.2f}' if gap_mean is not None else 'n/a'
 				print(
 					'  Scores: '
 					f'total {row["mean"]:.2f} ± {row["std"]:.2f} | '

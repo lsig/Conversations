@@ -329,24 +329,24 @@ class FlexibleTestRunner:
 
 				if config.print_progress:
 					# Keep progress bar as the main output; no extra lines
-						a = param_combo['altruism_prob']
-						t = param_combo['tau_margin']
-						ef = param_combo['epsilon_fresh']
-						em = param_combo['epsilon_mono']
-						postfix = (
-							f'combo {combination_count}/{total_combinations} '
-							f'a={a:.2f},τ={t:.2f},εf={ef:.2f},εm={em:.2f} players={player_config}'
-						)
-						if pbar is not None:
-							try:
-								pbar.set_description('Simulations')
-								pbar.set_postfix_str(postfix)
-							except Exception:
-								pass
-						else:
-							# Minimal inline fallback without creating new lines
-							sys.stdout.write('\r' + postfix + ' ' * 10)
-							sys.stdout.flush()
+					a = param_combo['altruism_prob']
+					t = param_combo['tau_margin']
+					ef = param_combo['epsilon_fresh']
+					em = param_combo['epsilon_mono']
+					postfix = (
+						f'combo {combination_count}/{total_combinations} '
+						f'a={a:.2f},τ={t:.2f},εf={ef:.2f},εm={em:.2f} players={player_config}'
+					)
+					if pbar is not None:
+						try:
+							pbar.set_description('Simulations')
+							pbar.set_postfix_str(postfix)
+						except Exception:
+							pass
+					else:
+						# Minimal inline fallback without creating new lines
+						sys.stdout.write('\r' + postfix + ' ' * 10)
+						sys.stdout.flush()
 
 				sim_config = SimulationConfig(
 					altruism_prob=param_combo['altruism_prob'],

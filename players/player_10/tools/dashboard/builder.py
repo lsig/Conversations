@@ -24,8 +24,7 @@ def _slugify(value: str | None) -> str:
 
 def _format_stat(name: str, value: str | int | float) -> str:
 	return (
-		f'<div class="card"><div class="label">{name}</div>'
-		f'<div class="value">{value}</div></div>'
+		f'<div class="card"><div class="label">{name}</div><div class="value">{value}</div></div>'
 	)
 
 
@@ -123,7 +122,7 @@ def generate_dashboard(
 			go.Bar(
 				x=labels,
 				y=total_means,
-				text=[f"±{row['std']:.2f}" for row in top_rows],
+				text=[f'±{row["std"]:.2f}' for row in top_rows],
 				textposition='outside',
 				marker=dict(color='#3867d6'),
 			)
@@ -139,7 +138,7 @@ def generate_dashboard(
 			{
 				'title': 'Top Parameterizations',
 				'description': 'Mean total score (±σ) for the leading parameter sets. '
-					'Track how tuning shifts impact headline performance.',
+				'Track how tuning shifts impact headline performance.',
 				'html': pio.to_html(
 					fig_top,
 					include_plotlyjs='cdn',
@@ -152,7 +151,7 @@ def generate_dashboard(
 		)
 
 	if rank_values:
-		fig_rank = go.Figure(go.Histogram(x=rank_values, nbinsx=min(10, len(set(rank_values)))) )
+		fig_rank = go.Figure(go.Histogram(x=rank_values, nbinsx=min(10, len(set(rank_values)))))
 		fig_rank.update_layout(
 			title='Player10 Finishing Rank Distribution',
 			xaxis_title='Average finishing rank (1 = best)',
@@ -228,7 +227,7 @@ def generate_dashboard(
 	total_simulations = analysis.get('total_simulations', len(results))
 	unique_configs = analysis.get('unique_configurations', len(aggregated))
 	best_entry = next(iter(analysis.get('best_configurations', [])), None)
-	best_score = f"{best_entry['mean_score']:.2f}" if best_entry else 'n/a'
+	best_score = f'{best_entry["mean_score"]:.2f}' if best_entry else 'n/a'
 	avg_rank = _format_number(sum(rank_values) / len(rank_values)) if rank_values else 'n/a'
 	avg_gap = _format_number(sum(gap_values) / len(gap_values)) if gap_values else 'n/a'
 	mean_total = _format_number(sum(total_scores) / len(total_scores)) if total_scores else 'n/a'
@@ -249,15 +248,15 @@ def generate_dashboard(
 
 	table_json = json.dumps(table_rows)
 	charts_html = ''.join(
-	(
-		'<div class="figure-wrapper">'
-		+ f'<h2>{section["title"]}</h2>'
-		+ f'<p class="figure-description">{section["description"]}</p>'
-		+ section['html']
-		+ '</div>'
+		(
+			'<div class="figure-wrapper">'
+			+ f'<h2>{section["title"]}</h2>'
+			+ f'<p class="figure-description">{section["description"]}</p>'
+			+ section['html']
+			+ '</div>'
+		)
+		for section in chart_sections
 	)
-	for section in chart_sections
-)
 
 	html = f"""
 <!DOCTYPE html>
@@ -457,6 +456,7 @@ def generate_dashboard(
 	if open_browser:
 		try:
 			import webbrowser
+
 			webbrowser.open(output_path.resolve().as_uri())
 		except Exception:
 			pass
