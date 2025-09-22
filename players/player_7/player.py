@@ -126,7 +126,7 @@ class Player7(Player):
 			item_relevance_scores.append(norm_relevance)
 
 		# return average relevance score for this item's subjects
-		return sum(item_relevance_scores) / len(item_relevance_scores) if item_relevance_scores else 0.0
+		return sum(item_relevance_scores) / len(item_relevance_scores)
 
 	def update_game_preferences(self, history: list[Item]) -> None:
 		if len(history) == 0:
