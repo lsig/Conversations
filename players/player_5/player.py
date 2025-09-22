@@ -49,12 +49,12 @@ class Player5(Player):
 				break
 
 		return count
-	
+
 	def freshness_pause_bonus(self, history: list[Item]) -> bool:
 		"""Check the expected bonus if we were to choose to pause for freshness"""
 		if len(history) < 5:
 			return False
-		
+
 		past_subjects = set()
 		for item in history[-5:]:
 			if item is not None:
@@ -65,14 +65,14 @@ class Player5(Player):
 			new_subjects = [subject for subject in item.subjects if subject not in past_subjects]
 			if len(new_subjects) >= 1:
 				return True
-			
+
 		return False
 
 	def monotony_pause_bonus(self, history: list[Item]) -> bool:
 		"""Check the expected bonus if we were to choose to pause for monotony"""
 		if len(history) < 3:
 			return False
-		
+
 		past_subjects = []
 		for item in history[-3:]:
 			if item is not None:
@@ -81,7 +81,7 @@ class Player5(Player):
 		subject_frequencies = Counter(past_subjects)
 		# monotonoy = 3+ same subjects
 		return any(count >= 3 for count in subject_frequencies.values())
-	
+
 	def update_external_subjects(self, history: list[Item]) -> None:
 		"""Update the counter for external subjects mentioned by other players"""
 		# Note down what's been said by everyone
@@ -145,7 +145,7 @@ class Player5(Player):
 	def propose_item(self, history: list[Item]) -> Item | None:
 		if not self.memory_bank:
 			return None
-		
+
 		# check if should pause based on freshness or monotony
 		best_item = self.memory_bank[0]
 		base_value = best_item.importance + self.individual_score(best_item)
@@ -156,7 +156,7 @@ class Player5(Player):
 		if self.monotony_pause_bonus(history):
 			future_bonus += max(1.0, 0.5 * base_value)
 
-		# calculate exepcted current best item score
+		# calcula te exepcted current best item score
 		if self.memory_bank:
 			expected = self.individual_score(self.memory_bank[0]) + self.memory_bank[0].importance
 		else:
@@ -218,9 +218,9 @@ class Player5(Player):
 			shared_score = round(shared_score['shared'], 4)
 			self_score = round(self_score, 4)
 
-			#print(
-			#	f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
-			#)
+			# print(
+			# f'Score for {item.subjects}: {shared_score}, {self_score}, total: {round(shared_score + self_score, 4)}'
+			# )
 
 			total_ranking.append((item, shared_score + self_score))
 			shared_ranking.append((item, shared_score))
