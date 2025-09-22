@@ -88,8 +88,7 @@ class Player7(Player):
 
 	def calculate_item_score(self, item: Item, pref_index: int) -> float:
 		# personal preference component (higher is better, so invert the index)
-		max_pref_index = len(self.preferences) - 1
-		personal_pref_score = 1.0 - (pref_index / max_pref_index) if max_pref_index > 0 else 1.0
+		personal_pref_score = 1.0 - (pref_index / (len(self.preferences) - 1))
 		
 		# item importance component
 		importance_score = item.importance
@@ -119,7 +118,7 @@ class Player7(Player):
 		for subject in item.subjects:
 			# get the relevance score for this subject
 			relevance = self.game_subject_relevance.get(subject, 0.0)
-			mentions = self.game_subject_mentions.get(subject, 1)
+			mentions = self.game_subject_mentions.get(subject, 0)
 			
 			# normalize by how often it's been mentioned (avoid division by zero)
 			# punish subjects that are over-mentioned for entire game
