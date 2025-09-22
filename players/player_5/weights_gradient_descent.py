@@ -37,17 +37,17 @@ def run_and_parse(
 
 def select_players(num_players, available_players=(1, 2, 3, 4, 5, 6, 7, 8, 9), pr=False):
 	"""
-	Randomly assign num_players slots among a given list of players.
-	Guarantee that player 5 gets at least one slot.
-	Optionally guarantee 1 slot for 'pr' (random player).
+	    Randomly assign num_players slots among a given list of players.
+	    Guarantee that player 5 gets at least one slot.
+	    Optionally guarantee 1 slot for 'pr' (random player).
 
-	Args:
-    num_players (int): total slots to allocate.
-    available_players (list[int]): list of player numbers (e.g. [1,2,3,5,8]).
-    pr (bool): whether to include a 'pr' random player.
+	    Args:
+	num_players (int): total slots to allocate.
+	available_players (list[int]): list of player numbers (e.g. [1,2,3,5,8]).
+	pr (bool): whether to include a 'pr' random player.
 
-	Returns:
-	list[str]: CLI args like ["--player", "p1", "2", ...].
+	    Returns:
+	    list[str]: CLI args like ["--player", "p1", "2", ...].
 	"""
 
 	if available_players is None:
