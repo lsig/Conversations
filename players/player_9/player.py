@@ -127,7 +127,8 @@ class Player9(Player):
 		total_memory = len(self.memory_bank)
 
 		# count how many items from history belong to this player
-		used = sum(1 for item in history if item in self.memory_bank)
+		memory_bank_set = set(self.memory_bank)
+		used = sum(1 for item in history if item in memory_bank_set)
 		return len(self.memory_bank) - used
 
 	"""Calculates the score contribution of a specific turn at a given index in the history
@@ -307,9 +308,11 @@ class Player9(Player):
 	def calculate_greedy(self, history: list[Item]) -> tuple[Item, float] | None:
 		if not self.memory_bank:
 			return None
+		
+		return max(
+   			(self.calculate_item_score(item, history) for item in self.memory_bank),
+    		key=lambda x: x[1],
+    		default=None
+		)
 
-		item_scores = [
-			self.calculate_item_score(item, history) for item in self.memory_bank
-		]
-		item_scores.sort(key=lambda x: x[1], reverse=True)
-		return item_scores[0]  # returns BEST item with its score
+		
