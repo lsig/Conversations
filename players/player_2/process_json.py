@@ -48,8 +48,9 @@ if __name__ == '__main__':
 	labels = {}
 	for idx, _total in indexed_totals:
 		pid = player_scores[idx - 1]['id']
-		name = id_to_name.get(pid, f'Player{idx}')
-		labels[idx] = f'{idx}:{name}'
+		short_id = str(pid)[-6:] if pid else str(idx)
+		name = id_to_name.get(pid, f'Unknown-{short_id}')
+		labels[idx] = f'{name}'
 
 	# Sort by total desc, then by index asc to break ties deterministically
 	sorted_indices = [idx for idx, _ in sorted(indexed_totals, key=lambda x: (-x[1], x[0]))]
