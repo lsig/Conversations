@@ -34,6 +34,7 @@ class Strategy1(BaseStrategy):
 		# Do the same if in the previous turn there was a pause
 		if turn_nr == 1 or turn_nr > 1 and history[-1] is None:
 			# Get the items with the most frequent occurring subject in memory bank
+
 			_, coherent_items = next(iter(player.sub_to_item.items()))
 
 			# Pick the most valuable item
@@ -61,6 +62,7 @@ class Strategy1(BaseStrategy):
 					items_with_subs = player.sub_to_item.get(subs, []).copy()
 					# If there is only one subject, also get items with two subjects including that subject
 					if len(subs) == 1:
+
 						items_with_subs.extend(
 							[
 								item
@@ -76,6 +78,7 @@ class Strategy1(BaseStrategy):
 							items_with_subs, key=lambda item: self._get_imp_pref_score(item, player)
 						)
 						player.last_proposed_item = most_valuable_item
+
 
 						return most_valuable_item
 

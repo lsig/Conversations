@@ -6,6 +6,7 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 class Player4(Player):
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super().__init__(snapshot, ctx)
+		self.ctx = ctx
 
 	@staticmethod
 	def _is_pause(x: Item | None) -> bool:
@@ -46,10 +47,69 @@ class Player4(Player):
 			if x is None:
 				break
 			out.append(x)
-			if count == k:
+			if count + 1 == k:
 				break
 		out.reverse()
 		return out
+
+	def _preference_bonus(self, item: Item) -> float:
+		"""
+		Average of (1 - k/|S|) over the item's subjects, where k is 1-based rank
+		in self.preferences (a permutation of all subjects). Unknown subjects -> 0.
+		Only called when history ends with a pause.
+		"""
+		S = len(self.preferences)
+		if S == 0 or not item.subjects:
+			return 0.0
+
+		def subj_bonus(s: int) -> float:
+			# worst-case (unknown) -> k = S -> 1 - S/S = 0
+			k = self.preferences.index(s) + 1 if s in self.preferences else S
+			return 1.0 - (k / S)
+
+		bonuses = [subj_bonus(s) for s in item.subjects]
+		return sum(bonuses) / len(bonuses)
+
+	def _coherence_prev3_score(self, item: Item, history: list[Item | None]) -> float:
+		"""
+		Coherence over the previous up to 3 non-pause items:
+			- Hot-streak penalty: if any subject in `item` appears in *each* of the last 3 -> -1.0
+			- Otherwise, reward based on total matched frequency across prev-3:
+				sum_match/len(item.subjects)
+				sum_match >= 4  -> +1.5   (e.g., 2+2)
+				sum_match == 3  -> +1.0   (e.g., 2+1)
+				sum_match == 2  -> +0.5
+				sum_match == 1  -> +0.25
+				else            ->  0.0
+		The window does not cross pauses.
+		"""
+		prev3 = self._take_preceding_block(history, 3)
+		if not prev3 or not item.subjects:
+			return 0.0
+
+		# Hot-streak penalty (subject present in all three previous items)
+		if len(prev3) == 3:
+			sets = [set(it.subjects) for it in prev3]
+			common_all3 = sets[0] & sets[1] & sets[2]
+			if any(s in common_all3 for s in item.subjects):
+				return -1.0
+		"""if sum_match >= 4:
+		elif sum_match == 3:
+			return 1.0
+		elif sum_match == 2:
+			return 0.5
+		elif sum_match == 1:
+			return 0.25
+		else:
+			return 0.0"""
+		# Count subject frequencies across prev-3
+		counts = Counter()
+		for it in prev3:
+			counts.update(it.subjects)
+
+		# Total matched frequency across candidate subjects
+		sum_match = sum(counts.get(s, 0) for s in item.subjects)
+		return sum_match / len(item.subjects)
 
 	def _preference_tiebreak_key(self, item: Item) -> tuple[int, int, str]:
 		"""
@@ -108,7 +168,7 @@ class Player4(Player):
 			context_items = self._take_preceding_block(history, 3)
 			subj_counts = self._subjects_in(context_items)
 
-			if item.subjects:
+			if item.subjects and context_items:
 				# If any subject of I is never mentioned in CI -> -1
 				if any(subj_counts.get(s, 0) == 0 for s in item.subjects):
 					score -= 1.0
@@ -116,6 +176,8 @@ class Player4(Player):
 				elif all(subj_counts.get(s, 0) >= 2 for s in item.subjects):
 					score += 1.0
 
+		score += self._preference_bonus(item)
+		score += self._coherence_prev3_score(item, history)
 		return score
 
 	# ------------ selection
@@ -138,6 +200,12 @@ class Player4(Player):
 		if not scored:
 			return None
 		best_score = max(s for s, _ in scored)
+		# print(best_score)
+		# print(history)
+		max_possible = 1.0 + 2.0 + 1.5  # importance + pause + coherence
+		threshold = max_possible * 0.3
+		if len(history) != 0 and best_score < threshold:
+			return None
 
 		# All with best score
 		tied = [it for s, it in scored if s == best_score]
