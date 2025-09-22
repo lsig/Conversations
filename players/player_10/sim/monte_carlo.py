@@ -9,8 +9,12 @@ import json
 import random
 import time
 from collections import defaultdict
+<<<<<<< HEAD
 from dataclasses import asdict, dataclass, field
 from importlib import import_module
+=======
+from dataclasses import asdict, dataclass
+>>>>>>> lsig/main
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +29,10 @@ from ..agent.config import (
 	MIN_SAMPLES_PID,
 	MONOTONY_WEIGHT,
 )
+<<<<<<< HEAD
+=======
+from ..agent.player import Player10
+>>>>>>> lsig/main
 
 
 @dataclass
@@ -62,6 +70,7 @@ class SimulationResult:
 	pause_count: int
 	unique_items_used: int
 	execution_time: float
+<<<<<<< HEAD
 	score_breakdown: dict[str, float] = field(default_factory=dict)
 	player_metrics: dict[str, dict[str, Any]] = field(default_factory=dict)
 	player10_total_mean: float | None = None
@@ -70,16 +79,25 @@ class SimulationResult:
 	player10_instances: int = 0
 	best_total_score: float = 0.0
 	player10_gap_to_best: float | None = None
+=======
+>>>>>>> lsig/main
 
 
 class MonteCarloSimulator:
 	"""Monte Carlo simulator for testing Player10 strategies."""
 
+<<<<<<< HEAD
 	def __init__(self, output_dir: str = 'players/player_10/results'):
 		self.output_dir = Path(output_dir)
 		self.output_dir.mkdir(exist_ok=True)
 		self.results: list[SimulationResult] = []
 		self.last_metadata: dict[str, Any] = {}
+=======
+	def __init__(self, output_dir: str = 'simulation_results'):
+		self.output_dir = Path(output_dir)
+		self.output_dir.mkdir(exist_ok=True)
+		self.results: list[SimulationResult] = []
+>>>>>>> lsig/main
 
 	def run_single_simulation(self, config: SimulationConfig) -> SimulationResult:
 		"""
@@ -100,8 +118,13 @@ class MonteCarloSimulator:
 		self._update_player10_config(config)
 
 		try:
+<<<<<<< HEAD
 			# Create players and track metadata for post-run analysis
 			players, player_meta = self._create_players(config.players)
+=======
+			# Create players
+			players = self._create_players(config.players)
+>>>>>>> lsig/main
 
 			# Create engine
 			engine = Engine(
@@ -117,9 +140,13 @@ class MonteCarloSimulator:
 			simulation_results = engine.run(players)
 
 			# Extract results
+<<<<<<< HEAD
 			result = self._extract_results(
 				config, simulation_results, time.time() - start_time, player_meta
 			)
+=======
+			result = self._extract_results(config, simulation_results, time.time() - start_time)
+>>>>>>> lsig/main
 
 			return result
 
@@ -235,6 +262,7 @@ class MonteCarloSimulator:
 		config_scores = []
 		for config_key, results in config_groups.items():
 			scores = [r.total_score for r in results]
+<<<<<<< HEAD
 			player10_totals = [
 				r.player10_total_mean for r in results if r.player10_total_mean is not None
 			]
@@ -268,6 +296,9 @@ class MonteCarloSimulator:
 					'max': max(values),
 					'count': len(values),
 				}
+=======
+			player10_scores = [r.player_scores.get('Player10', 0) for r in results]
+>>>>>>> lsig/main
 
 			summary = {
 				'config': {
@@ -281,6 +312,7 @@ class MonteCarloSimulator:
 					'std': self._calculate_std(scores),
 					'min': min(scores),
 					'max': max(scores),
+<<<<<<< HEAD
 					'count': len(scores),
 				},
 				'player10_score': _stat(player10_totals),
@@ -288,6 +320,15 @@ class MonteCarloSimulator:
 				'player10_rank': _stat(player10_ranks),
 				'player10_gap_to_best': _stat(player10_gaps),
 				'best_total_score': _stat(best_totals),
+=======
+				},
+				'player10_score': {
+					'mean': sum(player10_scores) / len(player10_scores),
+					'std': self._calculate_std(player10_scores),
+					'min': min(player10_scores),
+					'max': max(player10_scores),
+				},
+>>>>>>> lsig/main
 				'conversation_metrics': {
 					'avg_length': sum(r.conversation_length for r in results) / len(results),
 					'early_termination_rate': sum(r.early_termination for r in results)
@@ -295,9 +336,12 @@ class MonteCarloSimulator:
 					'avg_pause_count': sum(r.pause_count for r in results) / len(results),
 					'avg_unique_items': sum(r.unique_items_used for r in results) / len(results),
 				},
+<<<<<<< HEAD
 				'score_components': {
 					component: _stat(values) for component, values in score_components.items()
 				},
+=======
+>>>>>>> lsig/main
 			}
 
 			analysis['config_summaries'][str(config_key)] = summary
@@ -311,7 +355,11 @@ class MonteCarloSimulator:
 
 		return analysis
 
+<<<<<<< HEAD
 	def save_results(self, filename: str = None, metadata: dict[str, Any] | None = None) -> str:
+=======
+	def save_results(self, filename: str = None) -> str:
+>>>>>>> lsig/main
 		"""
 		Save simulation results to a JSON file.
 
@@ -341,6 +389,7 @@ class MonteCarloSimulator:
 					'pause_count': result.pause_count,
 					'unique_items_used': result.unique_items_used,
 					'execution_time': result.execution_time,
+<<<<<<< HEAD
 					'score_breakdown': result.score_breakdown,
 					'player_metrics': result.player_metrics,
 					'player10_total_mean': result.player10_total_mean,
@@ -360,6 +409,13 @@ class MonteCarloSimulator:
 
 		with open(filepath, 'w') as f:
 			json.dump(payload, f, indent=2)
+=======
+				}
+			)
+
+		with open(filepath, 'w') as f:
+			json.dump(serializable_results, f, indent=2)
+>>>>>>> lsig/main
 
 		print(f'Results saved to: {filepath}')
 		return str(filepath)
@@ -384,6 +440,7 @@ class MonteCarloSimulator:
 		with open(filepath) as f:
 			data = json.load(f)
 
+<<<<<<< HEAD
 		if isinstance(data, dict) and 'results' in data:
 			raw_results = data['results']
 			self.last_metadata = data.get('metadata', {})
@@ -393,6 +450,10 @@ class MonteCarloSimulator:
 
 		results = []
 		for item in raw_results:
+=======
+		results = []
+		for item in data:
+>>>>>>> lsig/main
 			config = SimulationConfig(**item['config'])
 			result = SimulationResult(
 				config=config,
@@ -404,6 +465,7 @@ class MonteCarloSimulator:
 				pause_count=item['pause_count'],
 				unique_items_used=item['unique_items_used'],
 				execution_time=item['execution_time'],
+<<<<<<< HEAD
 				score_breakdown=item.get('score_breakdown', {}),
 				player_metrics=item.get('player_metrics', {}),
 				player10_total_mean=item.get('player10_total_mean'),
@@ -412,12 +474,15 @@ class MonteCarloSimulator:
 				player10_instances=item.get('player10_instances', 0),
 				best_total_score=item.get('best_total_score', 0.0),
 				player10_gap_to_best=item.get('player10_gap_to_best'),
+=======
+>>>>>>> lsig/main
 			)
 			results.append(result)
 
 		self.results = results
 		return results
 
+<<<<<<< HEAD
 	def _create_players(
 		self, player_config: dict[str, int]
 	) -> tuple[list[type[Player]], list[dict[str, str]]]:
@@ -484,6 +549,29 @@ class MonteCarloSimulator:
 			)
 
 		return player_cls
+=======
+	def _create_players(self, player_config: dict[str, int]) -> list[type[Player]]:
+		"""Create player instances based on configuration."""
+		from players.player_0.player import Player0
+		from players.player_1.player import Player1
+		from players.player_2.player import Player2
+		from players.random_player import RandomPlayer
+
+		players = []
+		player_classes = {
+			'p0': Player0,
+			'p1': Player1,
+			'p2': Player2,
+			'p10': Player10,
+			'pr': RandomPlayer,
+		}
+
+		for player_type, count in player_config.items():
+			if player_type in player_classes:
+				players.extend([player_classes[player_type]] * count)
+
+		return players
+>>>>>>> lsig/main
 
 	def _update_player10_config(self, config: SimulationConfig):
 		"""Temporarily update Player10 configuration."""
@@ -506,17 +594,22 @@ class MonteCarloSimulator:
 		# For isolation, each run sets values explicitly before it starts.
 
 	def _extract_results(
+<<<<<<< HEAD
 		self,
 		config: SimulationConfig,
 		simulation_results: Any,
 		execution_time: float,
 		player_meta: list[dict[str, str]],
+=======
+		self, config: SimulationConfig, simulation_results: Any, execution_time: float
+>>>>>>> lsig/main
 	) -> SimulationResult:
 		"""Extract results from engine simulation output."""
 		# Extract data from simulation results dictionary
 		history = simulation_results.get('history', [])
 		score_breakdown = simulation_results.get('score_breakdown', {})
 		scores = simulation_results.get('scores', {})
+<<<<<<< HEAD
 		raw_player_scores = scores.get('player_scores', [])
 
 		# Total shared score comes directly from the breakdown
@@ -618,6 +711,40 @@ class MonteCarloSimulator:
 		)
 		player10_rank_mean = sum(player10_ranks) / len(player10_ranks) if player10_ranks else None
 		player10_gap_mean = sum(player10_gaps) / len(player10_gaps) if player10_gaps else None
+=======
+
+		# Calculate total score from score breakdown
+		total_score = sum(score_breakdown.values()) if score_breakdown else 0.0
+
+		# Calculate player scores (individual contributions)
+		player_scores = {}
+		# For now, use a simple approach - we'll improve this later
+		if 'individual_scores' in scores:
+			for player_id_str, score in scores['individual_scores'].items():
+				player_scores[f'Player_{player_id_str[:8]}'] = score
+		else:
+			# Fallback: distribute total score equally among players
+			num_players = len(
+				[item for item in history if item is not None and hasattr(item, 'player_id')]
+			)
+			if num_players > 0:
+				avg_score = total_score / num_players
+				player_scores['Player10'] = avg_score
+
+		# Calculate player contributions
+		player_contributions = {}
+		# Count contributions by player
+		player_contribution_counts = {}
+		for item in history:
+			if item is not None and hasattr(item, 'player_id'):
+				player_id = str(item.player_id)
+				player_contribution_counts[player_id] = (
+					player_contribution_counts.get(player_id, 0) + 1
+				)
+
+		for player_id, count in player_contribution_counts.items():
+			player_contributions[f'Player_{player_id[:8]}'] = count
+>>>>>>> lsig/main
 
 		# Calculate conversation metrics
 		conversation_length = len(history)
@@ -640,6 +767,7 @@ class MonteCarloSimulator:
 			pause_count=pause_count,
 			unique_items_used=len(unique_items),
 			execution_time=execution_time,
+<<<<<<< HEAD
 			score_breakdown=score_breakdown,
 			player_metrics=player_metrics,
 			player10_total_mean=player10_total_mean,
@@ -648,6 +776,8 @@ class MonteCarloSimulator:
 			player10_instances=len(player10_totals),
 			best_total_score=best_total,
 			player10_gap_to_best=player10_gap_mean,
+=======
+>>>>>>> lsig/main
 		)
 
 	def _calculate_std(self, values: list[float]) -> float:

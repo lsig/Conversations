@@ -5,6 +5,7 @@ This module provides a flexible way to define and run custom test configurations
 without being limited to predefined test types.
 """
 
+<<<<<<< HEAD
 import re
 import sys
 from dataclasses import dataclass, field
@@ -24,6 +25,14 @@ from ..agent.config import (
 	MONOTONY_WEIGHT,
 	TAU_MARGIN,
 )
+=======
+import sys
+import time
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+>>>>>>> lsig/main
 from .monte_carlo import MonteCarloSimulator, SimulationConfig, SimulationResult
 from .parallel import execute_in_parallel
 
@@ -53,24 +62,40 @@ class TestConfiguration:
 	# Parameter ranges to test
 	altruism_probs: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[ALTRUISM_USE_PROB],
 			name='altruism_prob',
 			description='Altruism probability',
+=======
+			values=[0.0, 0.2, 0.5, 1.0], name='altruism_prob', description='Altruism probability'
+>>>>>>> lsig/main
 		)
 	)
 	tau_margins: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[TAU_MARGIN], name='tau_margin', description='Tau margin'
+=======
+			values=[0.05], name='tau_margin', description='Tau margin'
+>>>>>>> lsig/main
 		)
 	)
 	epsilon_fresh_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[EPSILON_FRESH], name='epsilon_fresh', description='Epsilon fresh'
+=======
+			values=[0.05], name='epsilon_fresh', description='Epsilon fresh'
+>>>>>>> lsig/main
 		)
 	)
 	epsilon_mono_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[EPSILON_MONO], name='epsilon_mono', description='Epsilon mono'
+=======
+			values=[0.05], name='epsilon_mono', description='Epsilon mono'
+>>>>>>> lsig/main
 		)
 	)
 
@@ -85,7 +110,11 @@ class TestConfiguration:
 	base_seed: int = 42
 
 	# Output settings
+<<<<<<< HEAD
 	output_dir: str = 'players/player_10/results'
+=======
+	output_dir: str = 'simulation_results'
+>>>>>>> lsig/main
 	save_results: bool = True
 	print_progress: bool = True
 	# Parallel execution controls
@@ -94,34 +123,58 @@ class TestConfiguration:
 	# Extended knobs (optional ranges)
 	min_samples_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[MIN_SAMPLES_PID],
+=======
+			values=[3],
+>>>>>>> lsig/main
 			name='min_samples_pid',
 			description='Min samples per player for trusted mean',
 		)
 	)
 	ewma_alpha_values: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[EWMA_ALPHA], name='ewma_alpha', description='EWMA alpha'
+=======
+			values=[0.10], name='ewma_alpha', description='EWMA alpha'
+>>>>>>> lsig/main
 		)
 	)
 	importance_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[IMPORTANCE_WEIGHT], name='importance_weight', description='Importance weight'
+=======
+			values=[1.0], name='importance_weight', description='Importance weight'
+>>>>>>> lsig/main
 		)
 	)
 	coherence_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[COHERENCE_WEIGHT], name='coherence_weight', description='Coherence weight'
+=======
+			values=[1.0], name='coherence_weight', description='Coherence weight'
+>>>>>>> lsig/main
 		)
 	)
 	freshness_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[FRESHNESS_WEIGHT], name='freshness_weight', description='Freshness weight'
+=======
+			values=[1.0], name='freshness_weight', description='Freshness weight'
+>>>>>>> lsig/main
 		)
 	)
 	monotony_weights: ParameterRange = field(
 		default_factory=lambda: ParameterRange(
+<<<<<<< HEAD
 			values=[MONOTONY_WEIGHT], name='monotony_weight', description='Monotony weight'
+=======
+			values=[1.0], name='monotony_weight', description='Monotony weight'
+>>>>>>> lsig/main
 		)
 	)
 
@@ -246,7 +299,11 @@ class TestBuilder:
 class FlexibleTestRunner:
 	"""Flexible test runner that can execute any test configuration."""
 
+<<<<<<< HEAD
 	def __init__(self, output_dir: str = 'players/player_10/results'):
+=======
+	def __init__(self, output_dir: str = 'simulation_results'):
+>>>>>>> lsig/main
 		self.output_dir = Path(output_dir)
 		self.output_dir.mkdir(exist_ok=True)
 		self.simulator = MonteCarloSimulator(str(self.output_dir))
@@ -291,17 +348,27 @@ class FlexibleTestRunner:
 		if config.description:
 			print(f'Description: {config.description}')
 
+<<<<<<< HEAD
 		combination_total = self._count_combinations(config)
 		total_simulations = combination_total * config.num_simulations
 		run_started = datetime.now()
 
 		print(f'Parameter combinations: {combination_total}')
 		print(f'Total simulations: {total_simulations}')
+=======
+		print(f'Parameter combinations: {self._count_combinations(config)}')
+		print(f'Total simulations: {self._count_combinations(config) * config.num_simulations}')
+>>>>>>> lsig/main
 		print()
 
 		all_results = []
 		combination_count = 0
+<<<<<<< HEAD
 		total_combinations = combination_total
+=======
+		total_combinations = self._count_combinations(config)
+		total_simulations = total_combinations * config.num_simulations
+>>>>>>> lsig/main
 		pbar = None
 		if config.print_progress and total_simulations > 0:
 			if tqdm is not None:
@@ -347,6 +414,10 @@ class FlexibleTestRunner:
 						sys.stdout.write('\r' + postfix + ' ' * 10)
 						sys.stdout.flush()
 
+<<<<<<< HEAD
+=======
+				# Create simulation config
+>>>>>>> lsig/main
 				sim_config = SimulationConfig(
 					altruism_prob=param_combo['altruism_prob'],
 					tau_margin=param_combo['tau_margin'],
@@ -375,6 +446,10 @@ class FlexibleTestRunner:
 					),
 				)
 
+<<<<<<< HEAD
+=======
+				# Run simulations for this combination
+>>>>>>> lsig/main
 				if config.parallel:
 					task_args = self._build_task_args(sim_config, config, combination_count)
 					for result in execute_in_parallel(task_args, workers=config.workers):
@@ -397,6 +472,7 @@ class FlexibleTestRunner:
 		self.results = all_results
 
 		if config.save_results:
+<<<<<<< HEAD
 			timestamp_label = run_started.strftime('%Y%m%d_%H%M%S')
 			name_slug = self._slugify_name(config.name)
 			filename = f'{timestamp_label}_{name_slug}.json'
@@ -409,6 +485,12 @@ class FlexibleTestRunner:
 			)
 			self.simulator.results = all_results
 			self.simulator.save_results(filename, metadata=metadata)
+=======
+			filename = f'{config.name}_{int(time.time())}.json'
+			self.simulator.results = all_results
+			self.simulator.save_results(filename)
+			print(f'Results saved to: {filename}')
+>>>>>>> lsig/main
 
 		print(f'Test completed: {len(all_results)} simulations')
 		return all_results
@@ -481,6 +563,7 @@ class FlexibleTestRunner:
 
 		return combinations
 
+<<<<<<< HEAD
 	@staticmethod
 	def _slugify_name(name: str | None) -> str:
 		value = (name or 'run').strip().lower()
@@ -532,6 +615,8 @@ class FlexibleTestRunner:
 			},
 		}
 
+=======
+>>>>>>> lsig/main
 
 # Predefined test configurations for common use cases
 def create_altruism_comparison_test() -> TestConfiguration:

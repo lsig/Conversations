@@ -26,7 +26,10 @@ class ResultsAnalyzer:
 		"""
 		self.simulator = MonteCarloSimulator()
 		self.results: list[SimulationResult] = []
+<<<<<<< HEAD
 		self.metadata: dict[str, Any] = {}
+=======
+>>>>>>> lsig/main
 
 		if results_file:
 			self.load_results(results_file)
@@ -34,7 +37,10 @@ class ResultsAnalyzer:
 	def load_results(self, filename: str):
 		"""Load results from a JSON file."""
 		self.results = self.simulator.load_results(filename)
+<<<<<<< HEAD
 		self.metadata = self.simulator.last_metadata
+=======
+>>>>>>> lsig/main
 		print(f'Loaded {len(self.results)} simulation results')
 
 	def create_dataframe(self) -> pd.DataFrame:
@@ -49,21 +55,28 @@ class ResultsAnalyzer:
 				'epsilon_mono': result.config.epsilon_mono,
 				'seed': result.config.seed,
 				'total_score': result.total_score,
+<<<<<<< HEAD
 				'player10_score': result.player10_total_mean,
 				'player10_individual': result.player10_individual_mean,
 				'player10_rank': result.player10_rank_mean,
+=======
+				'player10_score': result.player_scores.get('Player10', 0),
+>>>>>>> lsig/main
 				'conversation_length': result.conversation_length,
 				'early_termination': result.early_termination,
 				'pause_count': result.pause_count,
 				'unique_items_used': result.unique_items_used,
 				'execution_time': result.execution_time,
 			}
+<<<<<<< HEAD
 
 			# Include shared score components when available
 			for component, value in result.score_breakdown.items():
 				if component == 'total':
 					continue
 				row[f'shared_{component}'] = value
+=======
+>>>>>>> lsig/main
 			data.append(row)
 
 		return pd.DataFrame(data)
@@ -248,6 +261,7 @@ class ResultsAnalyzer:
 		print(
 			f'Player10 Score - Mean: {df["player10_score"].mean():.2f}, Std: {df["player10_score"].std():.2f}'
 		)
+<<<<<<< HEAD
 		if 'player10_individual' in df:
 			print(
 				f'Player10 Individual - Mean: {df["player10_individual"].mean():.2f}, '
@@ -258,6 +272,8 @@ class ResultsAnalyzer:
 				f'Player10 Rank - Mean: {df["player10_rank"].mean():.2f}, '
 				f'Std: {df["player10_rank"].std():.2f}'
 			)
+=======
+>>>>>>> lsig/main
 		print(
 			f'Conversation Length - Mean: {df["conversation_length"].mean():.1f}, Std: {df["conversation_length"].std():.1f}'
 		)
@@ -265,6 +281,7 @@ class ResultsAnalyzer:
 
 		# Best configurations
 		print('\n=== TOP 10 CONFIGURATIONS ===')
+<<<<<<< HEAD
 		agg_map = {
 			'total_score': ['mean', 'std', 'count'],
 			'player10_score': 'mean',
@@ -286,10 +303,20 @@ class ResultsAnalyzer:
 		if 'player10_individual' in agg_map:
 			new_columns.append('p10_individual_mean')
 		top_configs.columns = new_columns
+=======
+		top_configs = (
+			df.groupby(['altruism_prob', 'tau_margin', 'epsilon_fresh', 'epsilon_mono'])
+			.agg({'total_score': ['mean', 'std', 'count'], 'player10_score': 'mean'})
+			.round(3)
+		)
+
+		top_configs.columns = ['total_mean', 'total_std', 'count', 'p10_mean']
+>>>>>>> lsig/main
 		top_configs = top_configs.sort_values('total_mean', ascending=False).head(10)
 
 		for i, (config, row) in enumerate(top_configs.iterrows(), 1):
 			altruism, tau, fresh, mono = config
+<<<<<<< HEAD
 			parts = [
 				f'{i:2d}. Altruism: {altruism:.1f}',
 				f'Tau: {tau:.2f}',
@@ -337,6 +364,38 @@ class ResultsAnalyzer:
 					f'P10 Ind={stats[("player10_individual", "mean")]:.2f}±{stats[("player10_individual", "std")]:.2f}'
 				)
 			print(' '.join(parts))
+=======
+			print(
+				f'{i:2d}. Altruism: {altruism:.1f}, Tau: {tau:.2f}, '
+				f'Fresh: {fresh:.2f}, Mono: {mono:.2f} -> '
+				f'Total: {row["total_mean"]:.2f}±{row["total_std"]:.2f}, '
+				f'P10: {row["p10_mean"]:.2f}'
+			)
+
+		# Altruism analysis
+		print('\n=== ALTRUISM ANALYSIS ===')
+		altruism_stats = (
+			df.groupby('altruism_prob')
+			.agg(
+				{
+					'total_score': ['mean', 'std'],
+					'player10_score': ['mean', 'std'],
+					'conversation_length': 'mean',
+					'early_termination': 'mean',
+				}
+			)
+			.round(3)
+		)
+
+		for prob in sorted(df['altruism_prob'].unique()):
+			stats = altruism_stats.loc[prob]
+			print(
+				f'Altruism {prob:.1f}: Total={stats[("total_score", "mean")]:.2f}±{stats[("total_score", "std")]:.2f}, '
+				f'P10={stats[("player10_score", "mean")]:.2f}±{stats[("player10_score", "std")]:.2f}, '
+				f'Length={stats[("conversation_length", "mean")]:.1f}, '
+				f'EarlyTerm={stats[("early_termination", "mean")]:.2f}'
+			)
+>>>>>>> lsig/main
 
 
 def main():

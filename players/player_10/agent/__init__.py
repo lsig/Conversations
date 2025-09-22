@@ -1,5 +1,5 @@
-from .player import Player10
+from .player import Player10Agent
 
 __all__ = [
-	'Player10',
+	'Player10Agent',
 ]
