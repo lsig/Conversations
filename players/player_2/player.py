@@ -21,12 +21,6 @@ class Player2(Player):
 		self.turn_nr: int = 0
 		self.min_threshold: float = 1.0
 
-		self.turn_nr: int = 0
-		self.min_threshold: float = 1.0
-
-		self.turn_nr: int = 0
-		self.min_threshold: float = 1.0
-
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 
