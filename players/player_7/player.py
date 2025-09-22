@@ -19,8 +19,7 @@ class Player7(Player):
 
 		self.update_game_preferences(history)
 
-		# if its first turn or previous was a pause
-		if len(history) == 0 or history[-1] is None:
+		if history[-1] is None:
 			return self.pause(history)
 		else:
 			return self.play(history)
