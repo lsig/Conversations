@@ -13,11 +13,9 @@ importance_weight = 0
 
 
 class Player9(Player):
-
-
 	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
 		super().__init__(snapshot, ctx)
-		
+
 		self.starting_threshold = 1.8
 		self.t1 = 1.05
 		self.t2 = 1.1
@@ -34,13 +32,17 @@ class Player9(Player):
 	"""
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		#conv length long = small decrease
-		#many players = small decrease
-		#memorybank left lots = small decrease
+		# conv length long = small decrease
+		# many players = small decrease
+		# memorybank left lots = small decrease
 		if self.check_one_pause(history):
-			ratio = (self.remaining_memory(history) * self.number_of_players) / (self.conversation_length - len(history))
+			ratio = (self.remaining_memory(history) * self.number_of_players) / (
+				self.conversation_length - len(history)
+			)
 			if ratio > 1:
-				self.starting_threshold = self.starting_threshold - (self.starting_threshold/((self.conversation_length - len(history))))
+				self.starting_threshold = self.starting_threshold - (
+					self.starting_threshold / (self.conversation_length - len(history))
+				)
 				self.starting_threshold = max(self.starting_threshold, 1)
 
 		item_scores = self.calculate_greedy(history)  # [item, score]
@@ -52,8 +54,8 @@ class Player9(Player):
 
 		if not item_scores:  # just an edge case in case our memory is empty
 			return None
-		
-		#print(item_scores[1], threshold)
+
+		# print(item_scores[1], threshold)
 
 		if item_scores[1] > threshold:
 			return item_scores[0]
@@ -95,16 +97,16 @@ class Player9(Player):
 	"""
 
 	def calculate_threshold(self, history: list[Item]) -> float:
-		
 		if self.check_one_pause(history):
 			return 2
 
 		if history == []:
 			return -1000
-		
-		
-		#mem * playernum : conversation length remaining
-		ratio = (self.remaining_memory(history) * self.number_of_players) / (self.conversation_length - len(history))
+
+		# mem * playernum : conversation length remaining
+		ratio = (self.remaining_memory(history) * self.number_of_players) / (
+			self.conversation_length - len(history)
+		)
 		if ratio > 2:
 			return self.starting_threshold
 		elif ratio > 1.5:
@@ -117,14 +119,12 @@ class Player9(Player):
 			return self.starting_threshold / self.t4
 		else:
 			return self.starting_threshold / self.t5
-	
+
 	def remaining_memory(self, history: list[Item]) -> int:
 		"""
 		Returns how many items the player still has available to say
 		(total memory length - number of times this player has already spoken).
 		"""
-		# total number of items in memory bank
-		total_memory = len(self.memory_bank)
 
 		# count how many items from history belong to this player
 		memory_bank_set = set(self.memory_bank)
@@ -143,7 +143,7 @@ class Player9(Player):
 			return 0.0
 
 		current_item = history[index]
-		
+
 		# Returns the freshness score of an item
 		def calculate_freshness_score(i: int, current_item: Item) -> float:
 			if i == 0 or history[i - 1] is not None:
@@ -200,7 +200,7 @@ class Player9(Player):
 
 		# Check if this item is repeated in the history
 		repeated = any(history[i] and history[i].id == current_item.id for i in range(index))
-		
+
 		# Calculate individual components
 		coherence_score = 0.0
 		freshness_score = 0.0
@@ -212,13 +212,12 @@ class Player9(Player):
 			importance_score = current_item.importance
 			coherence_score = calculate_coherence_score(index, current_item)
 			freshness_score = calculate_freshness_score(index, current_item)
-		
+
 		nonmonotonousness = calculate_nonmonotonousness_score(index, current_item, repeated)
 
 		# Calculate individual score
 		bonuses = [
-			1 - (self.preferences.index(s) / len(self.preferences))
-			for s in current_item.subjects
+			1 - (self.preferences.index(s) / len(self.preferences)) for s in current_item.subjects
 		]
 
 		if bonuses:
@@ -244,32 +243,32 @@ class Player9(Player):
 		# Calculate the direct score contribution of adding this item
 		new_history = history + [item]
 		direct_score = self.calculate_turn_score(new_history, len(new_history) - 1)
-		
+
 		# Calculate how this new item affects the coherence of existing items
 		# Only items in the last 4 positions can be affected (due to coherence window)
 		coherence_impact = 0.0
 		items_to_check = min(4, len(history))
-		
+
 		for i in range(len(history) - items_to_check, len(history)):
 			if history[i] is None:
 				continue
-				
+
 			# Calculate old coherence score (without the new item)
 			old_coherence = self.calculate_coherence_for_item_at_index(history, i)
-			
+
 			# Calculate new coherence score (with the new item)
 			new_coherence = self.calculate_coherence_for_item_at_index(new_history, i)
-			
-			coherence_impact += (new_coherence - old_coherence)
-		
+
+			coherence_impact += new_coherence - old_coherence
+
 		total_delta = direct_score + coherence_impact
 		return item, total_delta
-	
+
 	def calculate_coherence_for_item_at_index(self, history: list[Item], index: int) -> float:
 		"""Helper method to calculate coherence score for a specific item at a specific index."""
 		if index >= len(history) or not history[index]:
 			return 0.0
-			
+
 		current_item = history[index]
 		context_items = []
 
@@ -296,7 +295,6 @@ class Player9(Player):
 
 		return score
 
-
 	"""Calculate the fitness score using the greedy algorithm! Should be changed for optimization
 	
 	1. Takes an entire list of items
@@ -308,11 +306,9 @@ class Player9(Player):
 	def calculate_greedy(self, history: list[Item]) -> tuple[Item, float] | None:
 		if not self.memory_bank:
 			return None
-		
-		return max(
-   			(self.calculate_item_score(item, history) for item in self.memory_bank),
-    		key=lambda x: x[1],
-    		default=None
-		)
 
-		
+		return max(
+			(self.calculate_item_score(item, history) for item in self.memory_bank),
+			key=lambda x: x[1],
+			default=None,
+		)
