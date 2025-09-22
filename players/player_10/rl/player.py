@@ -1,18 +1,17 @@
-import uuid
+import os
+import sys
+
 import numpy as np
 import torch
 import torch.nn as nn
-from typing import Optional, List, Tuple
-
-import sys
-import os
 
 # Add the project root to the path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.append(project_root)
 
-from models.item import Item
-from models.player import GameContext, Player, PlayerSnapshot
+# Import after path setup
+from models.item import Item  # noqa: E402
+from models.player import GameContext, Player, PlayerSnapshot  # noqa: E402
 
 
 class RLPolicyNetwork(nn.Module):
@@ -52,10 +51,10 @@ class RLPlayer(Player):
 		self.policy_network = RLPolicyNetwork(observation_dim, action_dim)
 
 		# For training mode (when action is set externally)
-		self._current_action: Optional[int] = None
+		self._current_action: int | None = None
 		self._training_mode = False
 
-	def _encode_item(self, item: Optional[Item]) -> np.ndarray:
+	def _encode_item(self, item: Item | None) -> np.ndarray:
 		"""Encode an item into a fixed-size vector (same as environment)."""
 		if item is None:
 			# Return zero vector for None items
@@ -72,7 +71,7 @@ class RLPlayer(Player):
 
 		return np.concatenate([subject_vector, importance_vector])
 
-	def _encode_history(self, history: List[Item]) -> np.ndarray:
+	def _encode_history(self, history: list[Item]) -> np.ndarray:
 		"""Encode conversation history into observation vector (same as environment)."""
 		history_vector = np.zeros(
 			self.max_history_length * (len(self.subjects) + 1), dtype=np.float32
@@ -122,7 +121,7 @@ class RLPlayer(Player):
 
 		return context_vector
 
-	def _get_observation(self, history: List[Item]) -> np.ndarray:
+	def _get_observation(self, history: list[Item]) -> np.ndarray:
 		"""Get current observation state (same encoding as environment)."""
 		history_obs = self._encode_history(history)
 		memory_obs = self._encode_memory_bank()
@@ -131,7 +130,7 @@ class RLPlayer(Player):
 
 		return np.concatenate([history_obs, memory_obs, preferences_obs, context_obs])
 
-	def propose_item(self, history: List[Item]) -> Optional[Item]:
+	def propose_item(self, history: list[Item]) -> Item | None:
 		"""Propose item using neural network policy (standard player API)."""
 		if self._training_mode and self._current_action is not None:
 			# Training mode: use externally set action

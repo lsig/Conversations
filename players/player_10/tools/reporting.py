@@ -6,12 +6,11 @@ explanations, and build short labels for parameterizations.
 
 from __future__ import annotations
 
-from collections import defaultdict
 import math
+from collections import defaultdict
 from typing import Any
 
 from ..sim.test_framework import ParameterRange, TestConfiguration
-
 
 _BASELINE_CONFIG = TestConfiguration(name='baseline_snapshot')
 
@@ -90,10 +89,9 @@ def parameter_label(meta: dict[str, Any], baseline: dict[str, Any] | None = None
 			if _float_differs(value, base):
 				delta = value - base
 				tokens.append(f'{short}{delta:+.{precision}f}')
-		elif kind == 'int' and isinstance(value, int) and isinstance(base, int):
-			if value != base:
-				delta = value - base
-				tokens.append(f'{short}{delta:+d}')
+		elif kind == 'int' and isinstance(value, int) and isinstance(base, int) and value != base:
+			delta = value - base
+			tokens.append(f'{short}{delta:+d}')
 
 	if normalize_players(meta.get('players', {})) != normalize_players(baseline.get('players', {})):
 		tokens.append('Players')
@@ -114,10 +112,9 @@ def difference_lines(meta: dict[str, Any], baseline: dict[str, Any] | None = Non
 				delta_fmt = f'{delta:+.{precision}f}'
 				base_fmt = f'{base:.{precision}f}'
 				lines.append(f'{label}: {value_fmt} ({delta_fmt} vs {base_fmt})')
-		elif kind == 'int' and isinstance(value, int) and isinstance(base, int):
-			if value != base:
-				delta = value - base
-				lines.append(f'{label}: {value} ({delta:+d} vs {base})')
+		elif kind == 'int' and isinstance(value, int) and isinstance(base, int) and value != base:
+			delta = value - base
+			lines.append(f'{label}: {value} ({delta:+d} vs {base})')
 
 	players_current = meta.get('players', {})
 	players_default = baseline.get('players', {})

@@ -12,7 +12,7 @@ from collections import defaultdict
 from dataclasses import asdict, dataclass, field
 from importlib import import_module
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 from core.engine import Engine
 from models.player import Player
@@ -64,12 +64,12 @@ class SimulationResult:
 	execution_time: float
 	score_breakdown: dict[str, float] = field(default_factory=dict)
 	player_metrics: dict[str, dict[str, Any]] = field(default_factory=dict)
-	player10_total_mean: Optional[float] = None
-	player10_individual_mean: Optional[float] = None
-	player10_rank_mean: Optional[float] = None
+	player10_total_mean: float | None = None
+	player10_individual_mean: float | None = None
+	player10_rank_mean: float | None = None
 	player10_instances: int = 0
 	best_total_score: float = 0.0
-	player10_gap_to_best: Optional[float] = None
+	player10_gap_to_best: float | None = None
 
 
 class MonteCarloSimulator:

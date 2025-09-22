@@ -2,21 +2,21 @@
 Evaluation player that loads a trained DQN model and uses it for inference.
 """
 
-import torch
-import numpy as np
 import glob
 import os
-from typing import Optional, List
-
 import sys
-import os
+
+import numpy as np
+import torch
 
 # Add the project root to the path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.append(project_root)
 
-from models.player import Player, PlayerSnapshot, GameContext, Item
-from .player import RLPlayer
+# Import after path setup
+from models.player import GameContext, Item, PlayerSnapshot  # noqa: E402
+
+from .player import RLPlayer  # noqa: E402
 
 
 class EvalPlayer(RLPlayer):
@@ -26,17 +26,17 @@ class EvalPlayer(RLPlayer):
 		self,
 		snapshot: PlayerSnapshot,
 		ctx: GameContext,
-		model_path: Optional[str] = None,
+		model_path: str | None = None,
 		device: str = 'cpu',
 	):
 		"""
 		Initialize evaluation player with a trained model.
 
 		Args:
-		    snapshot: Player snapshot
-		    ctx: Game context
-		    model_path: Path to the trained model file (if None, auto-loads latest)
-		    device: Device to run inference on
+			snapshot: Player snapshot
+			ctx: Game context
+			model_path: Path to the trained model file (if None, auto-loads latest)
+			device: Device to run inference on
 		"""
 		self.device = torch.device(device)
 		print(f'🔍 EvalPlayer using device: {self.device}')
@@ -159,7 +159,7 @@ class EvalPlayer(RLPlayer):
 			self.policy_network.eval()
 
 			print(f'✅ Successfully loaded model from {self.model_path}')
-			print(f'📊 Model details:')
+			print('📊 Model details:')
 			print(f'   - Observation dimension: {self.obs_dim}')
 			print(f'   - Action dimension: {self.action_dim}')
 			print(
@@ -171,15 +171,15 @@ class EvalPlayer(RLPlayer):
 			print(f'❌ Error loading model weights from {self.model_path}: {e}')
 			raise
 
-	def propose_item(self, history: List[Item]) -> Optional[Item]:
+	def propose_item(self, history: list[Item]) -> Item | None:
 		"""
 		Propose an item using the trained neural network.
 
 		Args:
-		    history: Conversation history
+			history: Conversation history
 
 		Returns:
-		    Proposed item or None (for pause)
+			Proposed item or None (for pause)
 		"""
 		# Get observation from the environment
 		observation = self._get_observation(history)
@@ -216,7 +216,7 @@ class EvalPlayer(RLPlayer):
 def create_eval_player(
 	snapshot: PlayerSnapshot,
 	ctx: GameContext,
-	model_path: Optional[str] = None,
+	model_path: str | None = None,
 	device: str = 'cpu',
 ) -> EvalPlayer:
 	"""Factory function to create an evaluation player."""

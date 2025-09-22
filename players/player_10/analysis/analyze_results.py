@@ -5,10 +5,11 @@ This module provides tools to analyze simulation results and create visualizatio
 to understand the performance of different Player10 configurations.
 """
 
+from typing import Any
+
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from typing import Any
 
 from ..sim.monte_carlo import MonteCarloSimulator, SimulationResult
 

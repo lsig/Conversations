@@ -2,33 +2,29 @@
 Player registry for randomly selecting opponents during training.
 """
 
+import os
 import random
 import sys
-from typing import List, Type, Dict, Any
-
-import sys
-import os
 
 # Add the project root to the path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.append(project_root)
 
-from models.player import Player, PlayerSnapshot, GameContext
-
-# Import all available player types
-from players.random_player import RandomPlayer
-from players.pause_player import PausePlayer
-from players.random_pause_player import RandomPausePlayer
-from players.player_0.player import Player0
-from players.player_1.player import Player1
-from players.player_2.player import Player2
-from players.player_3.player import Player3
-from players.player_4.player import Player4
-from players.player_5.player import Player5
-from players.player_6.player import Player6
-from players.player_7.player import Player7
-from players.player_8.player import Player8
-from players.player_9.player import Player9
+# Import after path setup
+from models.player import GameContext, Player, PlayerSnapshot  # noqa: E402
+from players.pause_player import PausePlayer  # noqa: E402
+from players.player_0.player import Player0  # noqa: E402
+from players.player_1.player import Player1  # noqa: E402
+from players.player_2.player import Player2  # noqa: E402
+from players.player_3.player import Player3  # noqa: E402
+from players.player_4.player import Player4  # noqa: E402
+from players.player_5.player import Player5  # noqa: E402
+from players.player_6.player import Player6  # noqa: E402
+from players.player_7.player import Player7  # noqa: E402
+from players.player_8.player import Player8  # noqa: E402
+from players.player_9.player import Player9  # noqa: E402
+from players.random_pause_player import RandomPausePlayer  # noqa: E402
+from players.random_player import RandomPlayer  # noqa: E402
 
 
 class PlayerRegistry:
@@ -36,7 +32,7 @@ class PlayerRegistry:
 
 	def __init__(self):
 		# Define available player classes with their names
-		self.player_classes: Dict[str, Type[Player]] = {
+		self.player_classes: dict[str, type[Player]] = {
 			'RandomPlayer': RandomPlayer,
 			'PausePlayer': PausePlayer,
 			'RandomPausePlayer': RandomPausePlayer,
@@ -68,24 +64,24 @@ class PlayerRegistry:
 			'Player9': Player9,
 		}
 
-	def get_random_player_class(self) -> Type[Player]:
+	def get_random_player_class(self) -> type[Player]:
 		"""Get a random player class."""
 		return random.choice(list(self.working_players.values()))
 
-	def get_random_player_classes(self, count: int) -> List[Type[Player]]:
+	def get_random_player_classes(self, count: int) -> list[type[Player]]:
 		"""Get multiple random player classes."""
 		return [self.get_random_player_class() for _ in range(count)]
 
-	def get_player_names(self) -> List[str]:
+	def get_player_names(self) -> list[str]:
 		"""Get list of all available player names."""
 		return list(self.working_players.keys())
 
-	def get_player_class(self, name: str) -> Type[Player]:
+	def get_player_class(self, name: str) -> type[Player]:
 		"""Get a specific player class by name."""
 		return self.working_players[name]
 
 	def create_player_instance(
-		self, player_class: Type[Player], snapshot: PlayerSnapshot, ctx: GameContext
+		self, player_class: type[Player], snapshot: PlayerSnapshot, ctx: GameContext
 	) -> Player:
 		"""Create an instance of a player class."""
 		try:
@@ -105,14 +101,14 @@ class PlayerRegistry:
 player_registry = PlayerRegistry()
 
 
-def get_random_opponents(count: int = 9) -> List[Type[Player]]:
+def get_random_opponents(count: int = 9) -> list[type[Player]]:
 	"""Get random opponent player classes."""
 	return player_registry.get_random_player_classes(count)
 
 
 def create_opponent_instances(
-	opponent_classes: List[Type[Player]], snapshots: List[PlayerSnapshot], ctx: GameContext
-) -> List[Player]:
+	opponent_classes: list[type[Player]], snapshots: list[PlayerSnapshot], ctx: GameContext
+) -> list[Player]:
 	"""Create instances of opponent players."""
 	opponents = []
 	for i, player_class in enumerate(opponent_classes):

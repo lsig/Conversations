@@ -28,7 +28,6 @@ from .reporting import (
 	summarize_parameterizations,
 )
 
-
 _DEFAULT_CONFIG = TestConfiguration(name='cli_defaults')
 
 
@@ -43,7 +42,7 @@ def _std(values: list[float]) -> float:
 
 def _format_values(value) -> str:
 	"""Return a compact string representation for defaults."""
-	if isinstance(value, (list, tuple, set)):
+	if isinstance(value, list | tuple | set):
 		return ', '.join(str(v) for v in value)
 	return str(value)
 

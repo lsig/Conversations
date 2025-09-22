@@ -1,30 +1,29 @@
 # DQN for Conversation Environment
+import argparse
 import os
 import random
+import sys
 import time
 from dataclasses import dataclass
 
-import gymnasium as gym
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-import argparse
 from torch.utils.tensorboard import SummaryWriter
-
-import sys
-import os
 
 # Add the project root to the path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.append(project_root)
 
-from stable_baselines3.common.buffers import ReplayBuffer
-from .environment import ConversationRLEnv
-from .player import RLPlayer
-from .player_registry import get_random_opponents, create_opponent_instances
-from models.player import Player
+# Import after path setup
+from stable_baselines3.common.buffers import ReplayBuffer  # noqa: E402
+
+from models.player import Player  # noqa: E402
+
+from .environment import ConversationRLEnv  # noqa: E402
+from .player_registry import get_random_opponents  # noqa: E402
 
 
 @dataclass
@@ -167,8 +166,7 @@ if __name__ == '__main__':
 	writer = SummaryWriter(f'runs/{run_name}')
 	writer.add_text(
 		'hyperparameters',
-		'|param|value|\n|-|-|\n%s'
-		% ('\n'.join([f'|{key}|{value}|' for key, value in vars(args).items()])),
+		f'|param|value|\n|-|-|\n{chr(10).join([f"|{key}|{value}|" for key, value in vars(args).items()])}',
 	)
 
 	# Seeding
@@ -315,7 +313,7 @@ if __name__ == '__main__':
 			# Update target network
 			if global_step % args.target_network_frequency == 0:
 				for target_network_param, q_network_param in zip(
-					target_network.parameters(), q_network.parameters()
+					target_network.parameters(), q_network.parameters(), strict=False
 				):
 					target_network_param.data.copy_(
 						args.tau * q_network_param.data

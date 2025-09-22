@@ -1,22 +1,22 @@
+import os
+import random
+import sys
+import uuid
+from typing import Any
+
 import gymnasium as gym
 import numpy as np
-import random
-import uuid
-from typing import Any, Dict, List, Optional, Tuple, Union
-from collections import Counter
-from dataclasses import asdict
-
-import sys
-import os
 
 # Add the project root to the path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
 sys.path.append(project_root)
 
-from core.engine import Engine
-from models.item import Item
-from models.player import GameContext, Player, PlayerSnapshot
-from .player import RLPlayer
+# Import after path setup
+from core.engine import Engine  # noqa: E402
+from models.item import Item  # noqa: E402
+from models.player import Player  # noqa: E402
+
+from .player import RLPlayer  # noqa: E402
 
 
 class ConversationRLEnv(gym.Env):
@@ -31,13 +31,13 @@ class ConversationRLEnv(gym.Env):
 
 	def __init__(
 		self,
-		opponent_players: List[type[Player]],
+		opponent_players: list[type[Player]],
 		player_count: int = 4,
 		subjects: int = 20,
 		memory_size: int = 10,
 		conversation_length: int = 20,
 		max_history_length: int = 50,
-		seed: Optional[int] = None,
+		seed: int | None = None,
 	):
 		super().__init__()
 
@@ -75,7 +75,7 @@ class ConversationRLEnv(gym.Env):
 		# Initialize engine and agent
 		self._initialize_engine()
 
-	def seed(self, seed: Optional[int] = None) -> None:
+	def seed(self, seed: int | None = None) -> None:
 		"""Set random seed for reproducibility."""
 		if seed is not None:
 			random.seed(seed)
@@ -122,7 +122,7 @@ class ConversationRLEnv(gym.Env):
 		else:
 			raise RuntimeError('No players found in engine')
 
-	def _encode_item(self, item: Optional[Item]) -> np.ndarray:
+	def _encode_item(self, item: Item | None) -> np.ndarray:
 		"""Encode an item into a fixed-size vector."""
 		if item is None:
 			# Return zero vector for None items
@@ -220,8 +220,8 @@ class ConversationRLEnv(gym.Env):
 		return proposals
 
 	def reset(
-		self, seed: Optional[int] = None, options: Optional[Dict[str, Any]] = None
-	) -> Tuple[np.ndarray, Dict[str, Any]]:
+		self, seed: int | None = None, options: dict[str, Any] | None = None
+	) -> tuple[np.ndarray, dict[str, Any]]:
 		"""Reset the environment to initial state."""
 		if seed is not None:
 			self.seed(seed)
@@ -240,7 +240,7 @@ class ConversationRLEnv(gym.Env):
 
 		return observation, info
 
-	def step(self, action: int) -> Tuple[np.ndarray, float, bool, bool, Dict[str, Any]]:
+	def step(self, action: int) -> tuple[np.ndarray, float, bool, bool, dict[str, Any]]:
 		"""Execute one step in the environment using proper engine turn logic."""
 		# Validate action
 		if not self.action_space.contains(action):
@@ -299,7 +299,7 @@ class ConversationRLEnv(gym.Env):
 
 		return observation, reward, terminated, False, info
 
-	def _calculate_agent_reward(self, item: Optional[Item]) -> float:
+	def _calculate_agent_reward(self, item: Item | None) -> float:
 		"""Calculate reward for the agent's action."""
 		if item is None:
 			return 0.0
@@ -314,7 +314,7 @@ class ConversationRLEnv(gym.Env):
 		"""Get the policy network for training."""
 		return self.agent_player.get_policy_network()
 
-	def set_opponent_classes(self, opponent_classes: List[type[Player]]):
+	def set_opponent_classes(self, opponent_classes: list[type[Player]]):
 		"""Update the opponent player classes."""
 		self.opponent_players = opponent_classes
 		# Reinitialize the engine with new opponents
