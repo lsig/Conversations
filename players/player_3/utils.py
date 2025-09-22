@@ -1,7 +1,7 @@
 from collections import Counter
-
 # from models.player import Item
 from models.item import Item
+
 
 DEFAULT_DISCOUNT_RATE = 0.9
 DEFAULT_CONTEXT_LENGTH = 10
@@ -9,9 +9,9 @@ DEFAULT_CONTEXT_LENGTH = 10
 
 class ConversationScorer:
 	"""Handles all score calculations for conversation items."""
-
+	
 	def __init__(self, player_preferences: list[int], competition_rate=0.5):
-		self.competition_rate = competition_rate
+		self.competition_rate = competition_rate 
 		self.player_preferences = player_preferences
 
 	def set_competition_rate(self, rate: float) -> None:
@@ -26,9 +26,7 @@ class ConversationScorer:
 		if position == 0 or history[position - 1] is not None:
 			return 0.0
 
-		prior_items = (
-			item for item in history[max(0, position - 6) : position - 1] if item is not None
-		)
+		prior_items = (item for item in history[max(0, position - 6) : position - 1] if item is not None)
 		prior_subjects = {s for item in prior_items for s in item.subjects}
 
 		novel_subjects = [s for s in item.subjects if s not in prior_subjects]
@@ -38,33 +36,31 @@ class ConversationScorer:
 	def calculate_coherence_score(self, item: Item, position: int, history: list[Item]) -> float:
 		"""Calculate coherence score (based on Engine's logic)."""
 		context_items = []
-
-		# past
+		
+		# past 
 		for j in range(position - 1, max(-1, position - 4), -1):
 			if history[j] is None:
 				break
 			context_items.append(history[j])
-
+		
 		# ORIGINAL (future context was included in BST scorer, but engine uses past-only):
 		# for j in range(position + 1, min(len(history), position + 4)):
 		# 	if history[j] is None:
 		# 		break
 		# 	context_items.append(history[j])
-
+		
 		context_subject_counts = Counter(s for item in context_items for s in item.subjects)
 		score = 0.0
-
+		
 		if not all(subject in context_subject_counts for subject in item.subjects):
 			score -= 1.0
-
+		
 		if all(context_subject_counts.get(s, 0) >= 2 for s in item.subjects):
 			score += 1.0
-
+		
 		return score
 
-	def calculate_nonmonotonousness_score(
-		self, item: Item, position: int, history: list[Item], repeated: bool
-	) -> float:
+	def calculate_nonmonotonousness_score(self, item: Item, position: int, history: list[Item], repeated: bool) -> float:
 		"""Calculate nonmonotonousness score (based on Engine's logic)."""
 		if repeated:
 			return -1.0
@@ -82,11 +78,9 @@ class ConversationScorer:
 			return -1.0
 
 		return 0.0
-
-	# past coherence update because of the new item.
-	def calculate_others_coherence_score_update(
-		self, item: Item, position: int, history: list[Item]
-	) -> float:
+	
+	# past coherence update because of the new item. 
+	def calculate_others_coherence_score_update(self, item: Item, position: int, history: list[Item]) -> float:
 		"""Calculate how adding this item affects coherence scores of past items."""
 		# used calculate_self_coherence_score, appended wrong variable, and summed with fixed range(3)
 		original_scores = []
@@ -95,7 +89,7 @@ class ConversationScorer:
 				continue
 			original_score = self.calculate_coherence_score(history[i], i, history)
 			original_scores.append(original_score)
-
+		
 		new_scores = []
 		history.append(item)
 		for i in range(max(0, position - 3), position):
@@ -104,9 +98,9 @@ class ConversationScorer:
 			new_score = self.calculate_coherence_score(history[i], i, history)
 			new_scores.append(new_score)
 		history.pop()
-
+  
 		# Sum differences safely over aligned pairs
-		return sum(ns - os for ns, os in zip(new_scores, original_scores, strict=False))
+		return sum(ns - os for ns, os in zip(new_scores, original_scores))
 
 	def calculate_individual_score(self, item: Item) -> float:
 		"""Calculate individual score based on player preferences (based on Engine's logic)."""
@@ -132,16 +126,12 @@ class ConversationScorer:
 		else:
 			importance = item.importance
 			# ORIGINAL (BST added retroactive update):
-			coherence = self.calculate_coherence_score(
-				item, position, history
-			) + self.calculate_others_coherence_score_update(item, position, history)
+			coherence = self.calculate_coherence_score(item, position, history) + self.calculate_others_coherence_score_update(item, position, history)
 			# coherence = self.calculate_coherence_score(item, position, history)
 			freshness = self.calculate_freshness_score(item, position, history)
 
-		nonmonotonousness = self.calculate_nonmonotonousness_score(
-			item, position, history, is_repeated
-		)
-
+		nonmonotonousness = self.calculate_nonmonotonousness_score(item, position, history, is_repeated)
+		
 		# Total shared score (do not include retroactive coherence updates to match Engine)
 		shared_total = importance + coherence + freshness + nonmonotonousness
 		return shared_total
@@ -152,24 +142,20 @@ class ConversationScorer:
 
 		# Total shared score
 		shared_total = self.calculate_shared_score(item, history)
-
+  
 		return shared_total + individual
-
+	
 	def evaluate(self, item, history: list[Item]):
 		individual_score = self.calculate_individual_score(item)
 		shared_score = self.calculate_shared_score(item, history)
 		weighted_score = (
-			self.competition_rate * individual_score + (1 - self.competition_rate) * shared_score
-		)
+				self.competition_rate * individual_score + 
+				(1 - self.competition_rate) * shared_score
+			)
 		return weighted_score
 
-	def calculate_expected_score(
-		self,
-		history: list[Item],
-		mode: str = 'discount_average',
-		context_length: int = DEFAULT_CONTEXT_LENGTH,
-		discount_rate: float = DEFAULT_DISCOUNT_RATE,
-	) -> float:
+
+	def calculate_expected_score(self, history: list[Item], mode: str = "discount_average", context_length: int = DEFAULT_CONTEXT_LENGTH, discount_rate: float = DEFAULT_DISCOUNT_RATE) -> float:
 		"""
 		Compute an expected score from recent history using this scorer.
 
@@ -178,9 +164,9 @@ class ConversationScorer:
 
 		context_length controls how many most-recent turns to consider.
 		"""
-		if mode == 'average':
+		if mode == "average":
 			discount_rate = 0
-
+   
 		if not history:
 			return 0.0
 
@@ -208,8 +194,10 @@ class ConversationScorer:
 		sum_ws = 0.0
 		base = max(0.0, min(1.0, 1.0 - discount_rate))
 		for rank, s in scored:
-			w = base**rank
+			w = base ** rank
 			sum_w += w
 			sum_ws += w * s
 
 		return sum_ws / sum_w if sum_w > 0 else 0.0
+
+
