@@ -1,4 +1,5 @@
 import json
+import random
 
 from core.engine import Engine
 from core.utils import CustomEncoder
@@ -24,6 +25,7 @@ from ui.gui import run_gui
 
 def main():
 	args = settings()
+	random.seed(args.seed)
 
 	players: list[type[Player]] = (
 		[RandomPlayer] * args.players['pr']
@@ -49,7 +51,6 @@ def main():
 		subjects=args.subjects,
 		memory_size=args.memory_size,
 		conversation_length=args.length,
-		seed=args.seed,
 	)
 
 	if args.gui:

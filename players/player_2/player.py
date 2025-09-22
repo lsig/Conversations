@@ -16,6 +16,13 @@ class Player2(Player):
 
 		self.player_id: int = snapshot.id
 		self.current_strategy: BaseStrategy = None
+		self.scores_per_player = {}
+
+		self.turn_nr: int = 0
+		self.min_threshold: float = 1.0
+
+		self.turn_nr: int = 0
+		self.min_threshold: float = 1.0
 
 		self.turn_nr: int = 0
 		self.min_threshold: float = 1.0
