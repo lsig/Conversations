@@ -147,7 +147,7 @@ class ObservantStrategy(BaseStrategy):
 					most_valuable_item = max(
 						items_with_subs, key=lambda item: self._get_imp_pref_score(item, player)
 					)
-					print(f'propose item {most_valuable_item}')
+
 					player.last_proposed_item = most_valuable_item
 					return most_valuable_item
 
