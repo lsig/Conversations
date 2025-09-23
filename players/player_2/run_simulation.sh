@@ -31,6 +31,18 @@ for ((i=1; i<=sim_num; i++)); do
     touch $tmp_json_file
     $PYEXE $PYFLAGS main.py --player p2 1 --player pr 2 --length $length --subjects $subjects --memory_size $memory_size  --seed $i > $tmp_json_file
 
+    # Persist full JSON per simulation with parameters for later analysis
+    out_json="${csv_file%.csv}_sim${i}.json"
+    $PYEXE $PYFLAGS players/player_2/attach_metadata.py \
+        --in "$tmp_json_file" \
+        --out "$out_json" \
+        --length "$length" \
+        --subjects "$subjects" \
+        --memory_size "$memory_size" \
+        --seed "$i" \
+        --players "$players_num" \
+        --player_args "--player p2 1 --player pr 2"
+
     # Process JSON
     $PYEXE $PYFLAGS players/player_2/process_json.py \
         --file $tmp_json_file \
