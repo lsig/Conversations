@@ -11,6 +11,7 @@ sim_num=$1
 csv_file=$2
 
 tmp_json_file="tmp.json"
+touch $tmp_json_file
 
 # Detect Python 3 interpreter (Linux/macOS/Windows Python Launcher)
 PYEXE=""
@@ -159,7 +160,7 @@ for ((i=1; i<=sim_num; i++)); do
     echo "Players: p1:$p1_count p2:$p2_count p3:$p3_count p4:$p4_count p5:$p5_count p6:$p6_count p7:$p7_count p8:$p8_count p9:$p9_count p10:$p10_count pr:$pr_count prp:$prp_count pp:$pp_count"
     
     touch $tmp_json_file
-    $PYEXE $PYFLAGS main.py $player_args --length $length --subjects $subjects --memory_size $memory_size --seed $seed > $tmp_json_file
+    $PYEXE $PYFLAGS main.py $player_args --length $length --subjects $subjects --memory_size $memory_size --seed $seed | tail -n +3 > $tmp_json_file
 
 
     # Process JSON
