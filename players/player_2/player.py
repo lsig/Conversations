@@ -35,7 +35,7 @@ class Player2(Player):
 
 	def _choose_strategy(self):
 		self.current_strategy = ObservantStrategy(self, min_threshold=1.5)
-	
+
 	def _init_sub_to_item(self):
 		sub_to_item = {}
 		for item in self.memory_bank:
@@ -46,7 +46,7 @@ class Player2(Player):
 
 		# Sorted according to number of items in memory bank
 		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
-		
+
 	# Taken and adapted from engine.py
 	def _calculate_freshness_score(self, i: int, current_item: Item, history) -> float:
 		if i == 0 or history[i - 2] is not None:
@@ -122,7 +122,7 @@ class Player2(Player):
 			if scores and (sum(scores) / len(scores)) < 0:
 				negative_players.append(pid)
 		return negative_players
-	
+
 	def _compute_strategy_features(self):
 		"""Compute minimal signals as attributes for picking Observant vs Inobservant."""
 		P = self.number_of_players

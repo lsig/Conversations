@@ -9,7 +9,9 @@ class ObservantStrategy(BaseStrategy):
 		self.min_imp_pref_score = min_threshold
 		self.min_pref_score = 0.5
 		self.trimester = 1
-		self.memory_size_avg_turns_ratio = player.memory_bank_size / (player.conversation_length / player.number_of_players)
+		self.memory_size_avg_turns_ratio = player.memory_bank_size / (
+			player.conversation_length / player.number_of_players
+		)
 		self.memory_size_avg_turns_threshold = 2
 
 	def propose_item(self, player: Player, history: list[Item]) -> Item | None:
@@ -105,19 +107,21 @@ class ObservantStrategy(BaseStrategy):
 		# Go through all subjects in context, sorted according to frequency in context and then by number of items in own memory bank
 		# If there are no items in memory bank that match the subjects in context, then pause
 		for subs, subs_count in context_subs_sorted:
-
 			# If a single subject occurrs at least three times in context, and a two-subject item contains that subject, artificially increase the count of two-subject items
 			if subs_count == 3 and len(subs) == 1:
 				for idx, subs_count_tup in enumerate(context_subs_sorted):
 					if len(subs_count_tup[0]) == 2 and subs[0] in subs_count_tup[0]:
 						context_subs_sorted[idx] = (subs_count_tup[0], subs_count_tup[1] + 3)
-						
+
 			# If a subject already occurred thrice then we don't want to be monotonous
 			# if subject was repeated 3 times even if contained in 2 subject item
 			if subs_count < 3:
 				items_with_subs = player.sub_to_item.get(subs, []).copy()
 				# If there is only one subject, also get items with two subjects including that subject
-				if self.memory_size_avg_turns_ratio < self.memory_size_avg_turns_threshold and len(subs) == 1:
+				if (
+					self.memory_size_avg_turns_ratio < self.memory_size_avg_turns_threshold
+					and len(subs) == 1
+				):
 					items_with_subs.extend(
 						[
 							item
@@ -143,7 +147,7 @@ class ObservantStrategy(BaseStrategy):
 					most_valuable_item = max(
 						items_with_subs, key=lambda item: self._get_imp_pref_score(item, player)
 					)
-					print(f"propose item {most_valuable_item}")
+					print(f'propose item {most_valuable_item}')
 					player.last_proposed_item = most_valuable_item
 					return most_valuable_item
 
