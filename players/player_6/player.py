@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 
 from models.player import GameContext, Item, Player, PlayerSnapshot
 
@@ -9,6 +9,16 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 class Player6(Player):
 	def _init_(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
 		super()._init_(snapshot, ctx)
+
+	# def __game_context(ctx, history, i: int):
+	# 	L = ctx.conversation_length
+	# 	P = ctx.number_of_players
+	# 	n = len(history)
+	# 	#for items in history:
+	# 	prior_items = (item for item in history[max(0, n - 6) : n - 1] if item is not None)
+	# 	prior_subjects = {s for item in prior_items for s in item.subjects}
+
+	# 	last_three_items = [history[j] for j in range(n - i, n)]
 
 	def __calculate_freshness_score(self, history, i: int, current_item: Item) -> float:
 		if i == 0 or history[i - 1] is not None:
@@ -67,64 +77,69 @@ class Player6(Player):
 		return current_item.importance
 
 	def propose_item(self, history: list[Item]) -> Item | None:
+		weight_nonMon = 2.0
 		best_item: Item = None
-		best_score = 0
+		best_score = -0.1
 		n = len(history)
-		id_list = []
-		if history is not None:
-			for idh in history:
-				if idh is not None:
-					id_list.append(idh.id)
-		# print(id_list)
-		for item in self.memory_bank:
-			repeated = False
-			if item.id in id_list:
-				repeated = True
-			history.append(item)
-			individual_score = 0
-			freshness_score = self.__calculate_freshness_score(history, n, item)
-			nonmonotonousness_score = self.__calculate_nonmonotonousness_score(
-				history, n, item, repeated
-			)
-			current_item_score = 0
-			coherence_score = self.__calculate_coherence_score(history, n, item)
 
-			# print('*'*20)
-			# print(f"ITEM: {item}")
-			# print(f"INDIVIDUAL SCORE: {individual_score}")
-			# print(f"FRESHNESS SCORE: {freshness_score}")
-			# print(f"NONMONO SCORE: {nonmonotonousness_score}")
-			# print(f"TOTAL COHERENCE SCORE: {coherence_score}")
-			# print('*'*20)
+		# check if it is the first item in the conversation
+		subject_dict = defaultdict(int)
+		first_importance = float('-inf')
+		if n == 0:
+			for items in self.memory_bank:
+				for subject in items.subjects:
+					subject_dict[subject] += 1
 
-			current_item_score = (
-				individual_score + coherence_score + freshness_score + nonmonotonousness_score
-			)
-			if current_item_score > best_score:
-				best_score = current_item_score
-				best_item = item
-			history.pop(-1)
+			max_freq = max(subject_dict.values())
+			tied_subjects = [sub for sub, count in subject_dict.items() if count == max_freq]
+			best_subject = min(tied_subjects, key=lambda s: self.preferences.index(s))
 
-		# print('%'*20)
+			for item in self.memory_bank:
+				if best_subject in item.subjects and item.importance > first_importance:
+					first_importance = item.importance
+					best_item = item
+
+		else:
+			id_list = []
+			contributed_items = []
+			if history is not None:
+				for idh in history:
+					if idh is not None:
+						id_list.append(idh.id)
+			# print(id_list)
+			for item in self.memory_bank:
+				repeated = False
+				if item.id in id_list:
+					repeated = True
+					contributed_items.append(item.id)
+				history.append(item)
+				freshness_score = self.__calculate_freshness_score(history, n, item)
+				nonmonotonousness_score = weight_nonMon * self.__calculate_nonmonotonousness_score(
+					history, n, item, repeated
+				)
+				current_item_score = 0
+				coherence_score = self.__calculate_coherence_score(history, n, item)
+
+				current_item_score = coherence_score + freshness_score + nonmonotonousness_score
+
+				epsilon = 0.01
+				preference_score = 0
+				# best_ranked = item
+
+				for i in item.subjects:
+					preference_score += 1 - (self.preferences.index(i) / len(self.preferences))
+				preference_score = preference_score / len(item.subjects)
+
+				if current_item_score > best_score:
+					best_score = current_item_score
+					best_item = item
+
+				elif abs(current_item_score - best_score) < epsilon:
+					if best_item is not None and current_item_score + preference_score > best_score:
+						best_score = current_item_score
+						best_item = item
+
+				history.pop(-1)
+
 		item = best_item
-		repeated = False
-		# print(f"BEST_ITEM: {item}")
-		if item is not None:
-			if item.id in id_list:
-				repeated = True
-			history.append(item)
-			individual_score = 0
-			freshness_score = self.__calculate_freshness_score(history, n, item)
-			nonmonotonousness_score = self.__calculate_nonmonotonousness_score(
-				history, n, item, repeated
-			)
-			current_item_score = 0
-			coherence_score = self.__calculate_coherence_score(history, n, item)
-
-			# print(f"INDIVIDUAL SCORE: {individual_score}")
-			# print(f"FRESHNESS SCORE: {freshness_score}")
-			# print(f"NONMONO SCORE: {nonmonotonousness_score}")
-			# print(f"TOTAL COHERENCE SCORE: {coherence_score}")
-			history.pop(-1)
-			# print('%'*20)
 		return best_item

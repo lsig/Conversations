@@ -1,4 +1,17 @@
-from models.player import GameContext, Item, Player, PlayerSnapshot
+from collections import Counter
+from uuid import UUID
+
+from models.item import Item
+from models.player import GameContext, Player, PlayerSnapshot
+
+v = [
+	3.509549936829426,
+	3.6661804644288427,
+	2.657774084696876,
+	4.354161981052706,
+	2.4502569274937183,
+	0,
+]
 
 
 class Player8(Player):
@@ -17,115 +30,159 @@ class Player8(Player):
 
 	@staticmethod
 	def subjects_from_items(items: list[Item]) -> set[int]:
-		return {subject for item in items if item is not None for subject in item.subjects}
+		return [subject for item in items if item is not None for subject in item.subjects]
 
 	@staticmethod
 	def filter_unused(items: list[Item], history: list[Item]) -> list[Item]:
 		return [item for item in items if item not in history]
 
-	def get_fresh_items(self, history: list[Item]) -> list[Item]:
-		fresh_items = []
-		prev_subjects = self.get_last_n_subjects(history, 5)
-		for item in self.memory_bank:
-			for subject in item.subjects:
-				fresh_subject = subject not in prev_subjects
-				used = item in history
-				if fresh_subject and not used and item not in fresh_items:
-					fresh_items.append(item)
-		return fresh_items
+	@staticmethod
+	def play_probability(item: Item, history: list[Item], number_of_players: int, player_id: UUID):
+		if not item:
+			return 0
+		if not history:
+			return 1 / number_of_players
 
-	def get_most_important_item(self, items: list[Item]) -> Item | None:
+		items_contributed = Player8.compute_player_counts(history)
+		if not items_contributed:
+			return 1 / number_of_players
+
+		_, min_contri_score = min(items_contributed.items(), key=lambda x: x[1])
+		min_contri_players = [
+			player_id
+			for player_id, contrib in items_contributed.items()
+			if contrib == min_contri_score
+		]
+		res = 1001
+		if player_id in min_contri_players:
+			res = 1 / len(min_contri_players)
+		if history[-1] and player_id == history[-1].player_id:
+			res = max(0.5, res)
+
+		if res == 1001:
+			res = 1 / (number_of_players)
+		return res
+
+	@staticmethod
+	def compute_bonuses(
+		item: Item, history: list[Item], monotonic_subjects: list[int], preferences: list[int]
+	) -> list[float]:
+		if not item:  # pause shortcut
+			return [1, 0, 0, 0, 0, 0]
+
+		def repetition_bonus():
+			return -2 if item in history else 0
+
+		def preference_bonus():
+			return Player8.preference_score(preferences, item)
+
+		def importance_bonus():
+			return item.importance
+
+		def freshness_bonus():
+			if not Player8.was_last_round_pause(history):
+				return 0
+			prev_subjects = Player8.get_last_n_subjects(history, 6)
+			for s in item.subjects:
+				if s not in prev_subjects:
+					return 1
+			return 0
+
+		def coherence_bonus():
+			context_subjects = set(Player8.current_context(history))
+			return Player8.coherence_score(item, context_subjects)
+
+		def monotonic_bonus():
+			if not item:
+				return 0
+			return sum(-1 for s in item.subjects if s in monotonic_subjects)
+
+		return [
+			freshness_bonus() * v[0],
+			coherence_bonus() * v[1],
+			monotonic_bonus() * v[2],
+			repetition_bonus() * v[3],
+			importance_bonus() * v[4],
+			preference_bonus() * v[5],
+		]
+
+	@staticmethod
+	def compute_player_counts(history: list[Item]) -> dict[UUID, int]:
+		counts = {}
+		for item in history:
+			if item is None:
+				continue
+			pid = item.player_id
+			counts[pid] = counts.get(pid, 0) + 1
+		return counts
+
+	@staticmethod
+	def get_most_important_item(items: list[Item]) -> Item | None:
 		if not items:
 			return None
 		return max(items, key=lambda item: item.importance)
 
-	"""
-		These subjects have already appeared twice before and are best to avoid, on the current try
-	"""
+	@staticmethod
+	def monotonic_subjects(history: list[Item]) -> list[int]:
+		monotonic_subjects = []
 
-	def monotonic_subjects(self, history: list[Item]) -> list[Item]:
-		sub1, sub2 = set(), set()
-
-		if len(history) >= 2:
-			sub1 = set(self.subjects_from_items(history[-1:]))
-			sub2 = set(self.subjects_from_items(history[-2:-1]))
-
-		monotonic_subjects = list(sub1 & sub2)
+		if len(history) >= 3:
+			counter = Counter(Player8.subjects_from_items(history[-3:]))
+			for x, y in counter.items():
+				if y > 2:
+					monotonic_subjects.append(x)
 		return monotonic_subjects
 
-	def get_on_subject_items(
-		self, items: list[Item], history: list[Item], monotonic_subjects: list[int]
-	) -> list[Item]:
-		context_subjects = self.get_last_n_subjects(history, 3)
-		on_subject_items = []
+	@staticmethod
+	def coherence_score(item: Item, context_subjects: list[Item]):
+		coherence_score = -1
 
-		for item in items:
-			for subject in item.subjects:
-				item_has_current_subject = subject in context_subjects
-				item_is_monotonic = subject in monotonic_subjects
+		if len(item.subjects) == 1:
+			coherence_score += (item.subjects[0] in context_subjects) * 2
+		if len(item.subjects) == 2:
+			coherence_score += item.subjects[0] in context_subjects
+			coherence_score += item.subjects[1] in context_subjects
 
-				if (
-					item_has_current_subject
-					and not item_is_monotonic
-					and item not in on_subject_items
-				):
-					on_subject_items.append(item)
-
-		return on_subject_items
-
-	def get_preferred_item_order(self) -> list[Item]:
-		S = len(self.preferences)
-
-		ranked_items = []
-		for item in self.memory_bank:
-			if not item.subjects:
-				continue
-			avg_bonus = sum(1 - (self.preferences[s] / S) for s in item.subjects) / len(
-				item.subjects
-			)
-			ranked_items.append((avg_bonus, item))
-
-		ranked_items.sort(reverse=True, key=lambda x: x[0])
-		return [item for _, item in ranked_items]
-
-	def get_first_unused_item(self, items: list[Item], history: list[Item]) -> Item | None:
-		return next(iter(self.filter_unused(items, history)), None)
+		return coherence_score
 
 	@staticmethod
-	def filter_monotonic_items(subjects: list[int], items: list[Item]) -> list[Item]:
-		return [item for item in items if not (set(subjects) & set(item.subjects))]
+	def current_context(history: list[Item]):
+		context_subjects: list[int] = []
+		for i in range(-1, -3, -1):
+			if len(history) >= -i and history[i]:
+				for subject in history[i].subjects:
+					context_subjects.append(subject)
+			else:
+				break
+
+		return context_subjects
+
+	@staticmethod
+	def preference_score(preferences: list[int], item: Item):
+		return sum(1 - (preferences[s] / len(preferences)) for s in item.subjects) / len(
+			item.subjects
+		)
+
+	@staticmethod
+	def get_first_unused_item(items: list[Item], history: list[Item]) -> Item | None:
+		return next(iter(Player8.filter_unused(items, history)), None)
+
+	@staticmethod
+	def filter_monotonic_items(monotonic_subjects: list[int], items: list[Item]) -> list[Item]:
+		return [item for item in items if not len(set(monotonic_subjects) & set(item.subjects))]
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		unused_items = self.filter_unused(self.memory_bank, history)
-		preferred_item_order = self.get_preferred_item_order()
+		if None not in self.memory_bank:
+			self.memory_bank.append(None)
+
 		monotonic_subjects = self.monotonic_subjects(history)
 
-		candidates = [
-			# 1. Most important on-subject
-			lambda: self.get_most_important_item(
-				self.get_on_subject_items(unused_items, history, monotonic_subjects)
-			),
-			# 2. Fresh item after pause
-			lambda: self.get_most_important_item(self.get_fresh_items(history))
-			if self.was_last_round_pause(history)
-			else None,
-			# 3. Fresh preferred
-			lambda: self.get_first_unused_item(
-				self.filter_monotonic_items(monotonic_subjects, preferred_item_order),
-				history,
-			),
-			# 4. Most important unused
-			lambda: self.get_most_important_item(
-				self.filter_monotonic_items(monotonic_subjects, unused_items)
-			),
-			# 5. Most important overall
-			lambda: self.get_most_important_item(
-				self.filter_monotonic_items(monotonic_subjects, self.memory_bank)
-			),
+		evaluated_items = [
+			(item, sum(self.compute_bonuses(item, history, monotonic_subjects, self.preferences)))
+			for candidate in self.memory_bank
+			if (item := candidate) is not None
 		]
 
-		for candidate in candidates:
-			item = candidate()
-			if item is not None:
-				return item
-		return None
+		best_item, best_bonus = max(evaluated_items, key=lambda x: x[1])
+
+		return best_item if best_bonus >= 0 else None

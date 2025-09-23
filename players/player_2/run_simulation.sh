@@ -39,4 +39,12 @@ for ((i=1; i<=sim_num; i++)); do
         --memory_size $memory_size \
         --seed $i \
         --players $players_num >> $csv_file
+#     uv run python main.py --player p2 1 --player pr 2 --length $length --subjects $subjects --memory_size $memory_size  --seed $i > $tmp_json_file
+
+#     # Delete first two line
+#     sed -i '' '1,2d' $tmp_json_file
+
+#     # Process JSON
+#     echo "total,shared,individual" >> $csv_file
+#     python players/player_2/process_json.py --file $tmp_json_file --length $length --players $players_num >> $csv_file
 done

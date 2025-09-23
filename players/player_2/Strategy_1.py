@@ -34,6 +34,7 @@ class Strategy1(BaseStrategy):
 		# Do the same if in the previous turn there was a pause
 		if turn_nr == 1 or turn_nr > 1 and history[-1] is None:
 			# Get the items with the most frequent occurring subject in memory bank
+
 			_, coherent_items = next(iter(player.sub_to_item.items()))
 
 			# Pick the most valuable item
