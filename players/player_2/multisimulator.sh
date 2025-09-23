@@ -12,6 +12,20 @@ csv_file=$2
 
 tmp_json_file="tmp.json"
 
+# Detect Python 3 interpreter (Linux/macOS/Windows Python Launcher)
+PYEXE=""
+PYFLAGS=""
+if command -v python3 >/dev/null 2>&1; then
+    PYEXE="python3"
+elif command -v python >/dev/null 2>&1; then
+    PYEXE="python"
+elif command -v py >/dev/null 2>&1; then
+    PYEXE="py"
+    PYFLAGS="-3"
+else
+    echo "Error: Python 3 not found on PATH" >&2
+    exit 1
+fi
 
 for ((i=1; i<=sim_num; i++)); do
     # Randomize parameters
@@ -145,17 +159,14 @@ for ((i=1; i<=sim_num; i++)); do
     echo "Players: p1:$p1_count p2:$p2_count p3:$p3_count p4:$p4_count p5:$p5_count p6:$p6_count p7:$p7_count p8:$p8_count p9:$p9_count p10:$p10_count pr:$pr_count prp:$prp_count pp:$pp_count"
     
     touch $tmp_json_file
-    uv run python main.py $player_args --length $length --subjects $subjects --memory_size $memory_size --seed $seed > $tmp_json_file
+    $PYEXE $PYFLAGS main.py $player_args --length $length --subjects $subjects --memory_size $memory_size --seed $seed > $tmp_json_file
 
-
-    # Remove first two lines if present (Linux/WSL compatible)
-    sed -i '1,2d' $tmp_json_file
 
     # Process JSON
     if [ $i -eq 1 ]; then
         echo "length,subjects,memory_size,seed,total_players,total,shared,individual,rankings" > $csv_file
     fi
-    python players/player_2/process_json.py \
+    $PYEXE $PYFLAGS players/player_2/process_json.py \
         --file $tmp_json_file \
         --length $length \
         --subjects $subjects \
