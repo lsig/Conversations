@@ -27,7 +27,7 @@ from .logic.scoring import PlayerPerformanceTracker, calculate_canonical_delta, 
 from .logic.strategies import AltruismStrategy, OriginalStrategy
 
 
-class Player10(Player):
+class Player10Agent(Player):
 	"""
 	Hybrid policy with optional altruism layer:
 
