@@ -56,7 +56,7 @@ class Player3(Player):
 			# In Zip, do a quick check to make sure the
 
 			item = self.zipper_player.propose_item(history)
-			if item is None and len(history) > 1 and history[-1] is None:
+			if item is None and len(history) > 2 and history[-1] is None and history[-2] is None:
 				self.mode = 'BAY'
 				item = self.bst_player.propose_item(history)
 
