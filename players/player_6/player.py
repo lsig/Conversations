@@ -62,7 +62,7 @@ class Player6(Player):
 			return -1.0
 
 		return 0.0
-	
+
 	def __calculate_preference_score(self, current_item: Item):
 		item_score = 0.0
 		preferences = self.preferences
@@ -100,16 +100,17 @@ class Player6(Player):
 						return 0.0
 
 				def item_pref(it) -> float:
-					subs = getattr(it, "subjects", []) or []
+					subs = getattr(it, 'subjects', []) or []
 					if not subs:
 						return -1.0
 					return sum(subj_pref(s) for s in subs) / len(subs)
 
-				return max(self.memory_bank, key=lambda it: (item_pref(it), getattr(it, "importance", 0.0)))
+				return max(
+					self.memory_bank, key=lambda it: (item_pref(it), getattr(it, 'importance', 0.0))
+				)
 
 			except Exception:
 				return self.memory_bank[-1]
-
 
 		else:
 			id_list = []
@@ -141,7 +142,7 @@ class Player6(Player):
 				for i in item.subjects:
 					preference_score += 1 - (self.preferences.index(i) / len(self.preferences))
 				preference_score = preference_score / len(item.subjects)
-				
+
 				if current_item_score > best_score:
 					best_score = current_item_score
 					best_item = item
