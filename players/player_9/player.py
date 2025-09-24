@@ -46,16 +46,10 @@ class Player9(Player):
 				self.starting_threshold = max(self.starting_threshold, 1)
 
 		item_scores = self.calculate_greedy(history)  # [item, score]
-
 		threshold = self.calculate_threshold(history)
-		# threshold_weight = self.threshold_weight_adjustment() #uncomment this to add threshold weighting
-		threshold = threshold * (1 + threshold_weight)
-		# print ("threshold: " + str(threshold) + "   score: " + str(item_scores[1]))
 
 		if not item_scores:  # just an edge case in case our memory is empty
 			return None
-
-		# print(item_scores[1], threshold)
 
 		if item_scores[1] > threshold:
 			return item_scores[0]
@@ -68,18 +62,6 @@ class Player9(Player):
 			if item_scores[1] > last_turn_threshold:
 				return item_scores[0]
 		return None
-
-	"""Adjusts the threshold based on the number of turns and players in the game
-
-	1. The longer the conversation, the higher the threshold (uses 10 turns as default)
-	"""
-
-	def threshold_weight_adjustment(self) -> int:
-		default_iterations = 10
-		total_iterations = self.conversation_length
-		iteration_weight = (total_iterations - default_iterations) / default_iterations
-
-		return iteration_weight * 0.1
 
 	def check_one_pause(self, history: list[Item]) -> bool:
 		# print (history)
