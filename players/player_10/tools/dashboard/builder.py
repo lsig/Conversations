@@ -221,6 +221,7 @@ def _format_axis_value(value):
 		return formatted.rstrip('0').rstrip('.')
 	return str(value)
 
+
 def generate_dashboard(
 	results,
 	analysis,
@@ -308,7 +309,6 @@ def generate_dashboard(
 	chart_sections: list[dict[str, str]] = []
 
 	if top_rows:
-
 		fig_top = go.Figure()
 		rank_labels: list[str] = []
 		for idx, row in enumerate(top_rows, start=1):
@@ -636,7 +636,6 @@ def generate_dashboard(
 				),
 			},
 		)
-
 
 	total_simulations = analysis.get('total_simulations', len(results))
 	unique_configs = analysis.get('unique_configurations', len(aggregated))
