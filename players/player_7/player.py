@@ -79,13 +79,17 @@ class Player7(Player):
 
 			item_score = self.calculate_item_score(item, pref_index)
 
-			if item_score > best_score or (item_score == best_score and chosen_item and len(item.subjects) > len(chosen_item.subjects)):
+			if item_score > best_score or (
+				item_score == best_score
+				and chosen_item
+				and len(item.subjects) > len(chosen_item.subjects)
+			):
 				chosen_item = item
 				best_score = item_score
-		
+
 		if chosen_item is None:
 			return None
-		
+
 		# avoid repeating the same subject 3 times in a row
 		last3 = [s for i in history[-3:] if i for s in i.subjects]
 		if len(last3) >= 3:
