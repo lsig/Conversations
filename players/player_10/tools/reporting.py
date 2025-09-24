@@ -10,16 +10,43 @@ import math
 from collections import defaultdict
 from typing import Any
 
-from ..sim.test_framework import ParameterRange, TestConfiguration
+try:
+	from ..sim.test_framework import (
+		ParameterRange,
+		TestConfiguration,
+	)
+except ModuleNotFoundError:
+	ParameterRange = None  # type: ignore
+	TestConfiguration = None  # type: ignore
+	_BASELINE_CONFIG = None
+else:
+	_BASELINE_CONFIG = TestConfiguration(name='baseline_snapshot')
 
-_BASELINE_CONFIG = TestConfiguration(name='baseline_snapshot')
 
-
-def _first(range_field: ParameterRange) -> Any:
-	return range_field.values[0] if range_field.values else None
+def _first(range_field) -> Any:
+	if range_field is None:
+		return None
+	return range_field.values[0] if getattr(range_field, 'values', None) else None
 
 
 def _capture_baseline_meta() -> dict[str, Any]:
+	if _BASELINE_CONFIG is None:
+		return {
+			'altruism_prob': 0.0,
+			'tau_margin': 0.0,
+			'epsilon_fresh': 0.0,
+			'epsilon_mono': 0.0,
+			'min_samples_pid': 5,
+			'ewma_alpha': 0.0,
+			'importance_weight': 1.0,
+			'coherence_weight': 1.0,
+			'freshness_weight': 1.0,
+			'monotony_weight': 1.0,
+			'conversation_length': 0,
+			'subjects': 0,
+			'memory_size': 0,
+			'players': {},
+		}
 	players = dict(_BASELINE_CONFIG.player_configs[0]) if _BASELINE_CONFIG.player_configs else {}
 	return {
 		'altruism_prob': _first(_BASELINE_CONFIG.altruism_probs),

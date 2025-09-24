@@ -8,6 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+.ruff-venv
 
 # Misc
 .DS_Store
