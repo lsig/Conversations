@@ -8,7 +8,6 @@ from core.utils import CustomEncoder
 from models.cli import settings
 from models.player import Player
 from players.pause_player import PausePlayer
-from players.player_0.player import Player0
 from players.player_1.player import Player1
 from players.player_2.player import Player2
 from players.player_3.player import Player3
@@ -19,7 +18,6 @@ from players.player_7.player import Player7
 from players.player_8.player import Player8
 from players.player_9.player import Player9
 from players.player_10 import Player10
-from players.player_11.player import Player11
 from players.random_pause_player import RandomPausePlayer
 from players.random_player import RandomPlayer
 from ui.gui import run_gui
@@ -34,7 +32,6 @@ def main():
 		[RandomPlayer] * args.players['pr']
 		+ [PausePlayer] * args.players['pp']
 		+ [RandomPausePlayer] * args.players['prp']
-		+ [Player0] * args.players['p0']
 		+ [Player1] * args.players['p1']
 		+ [Player2] * args.players['p2']
 		+ [Player3] * args.players['p3']
@@ -45,7 +42,6 @@ def main():
 		+ [Player8] * args.players['p8']
 		+ [Player9] * args.players['p9']
 		+ [Player10] * args.players['p10']
-		+ [Player11] * args.players['p11']
 	)
 
 	engine = Engine(
