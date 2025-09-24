@@ -7,18 +7,8 @@ from models.player import GameContext, Item, Player, PlayerSnapshot
 
 
 class Player6(Player):
-	def _init_(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:  # noqa: F821
-		super()._init_(snapshot, ctx)
-
-	# def __game_context(ctx, history, i: int):
-	# 	L = ctx.conversation_length
-	# 	P = ctx.number_of_players
-	# 	n = len(history)
-	# 	#for items in history:
-	# 	prior_items = (item for item in history[max(0, n - 6) : n - 1] if item is not None)
-	# 	prior_subjects = {s for item in prior_items for s in item.subjects}
-
-	# 	last_three_items = [history[j] for j in range(n - i, n)]
+	def __init__(self, snapshot: PlayerSnapshot, ctx: GameContext) -> None:
+		super().__init__(snapshot, ctx)
 
 	def __calculate_freshness_score(self, history, i: int, current_item: Item) -> float:
 		if i == 0 or history[i - 1] is not None:
@@ -72,6 +62,22 @@ class Player6(Player):
 			return -1.0
 
 		return 0.0
+	
+	def __calculate_preference_score(self, current_item: Item):
+		item_score = 0.0
+		preferences = self.preferences
+		if current_item is None:
+			return item_score
+
+		bonuses = [
+			1 - preferences.index(s) / len(preferences)
+			for s in current_item.subjects
+			if s in preferences
+		]
+		if bonuses:
+			item_score += sum(bonuses) / len(bonuses)
+
+		return item_score
 
 	def __calculate_individual_score(self, current_item: Item) -> float:
 		return current_item.importance
@@ -82,22 +88,28 @@ class Player6(Player):
 		best_score = -0.1
 		n = len(history)
 
-		# check if it is the first item in the conversation
-		subject_dict = defaultdict(int)
-		first_importance = float('-inf')
 		if n == 0:
-			for items in self.memory_bank:
-				for subject in items.subjects:
-					subject_dict[subject] += 1
+			try:
+				if not self.memory_bank:
+					return None
 
-			max_freq = max(subject_dict.values())
-			tied_subjects = [sub for sub, count in subject_dict.items() if count == max_freq]
-			best_subject = min(tied_subjects, key=lambda s: self.preferences.index(s))
+				def subj_pref(s: str) -> float:
+					try:
+						return 1.0 - (self.preferences.index(s) / len(self.preferences))
+					except (ValueError, ZeroDivisionError):
+						return 0.0
 
-			for item in self.memory_bank:
-				if best_subject in item.subjects and item.importance > first_importance:
-					first_importance = item.importance
-					best_item = item
+				def item_pref(it) -> float:
+					subs = getattr(it, "subjects", []) or []
+					if not subs:
+						return -1.0
+					return sum(subj_pref(s) for s in subs) / len(subs)
+
+				return max(self.memory_bank, key=lambda it: (item_pref(it), getattr(it, "importance", 0.0)))
+
+			except Exception:
+				return self.memory_bank[-1]
+
 
 		else:
 			id_list = []
@@ -129,7 +141,7 @@ class Player6(Player):
 				for i in item.subjects:
 					preference_score += 1 - (self.preferences.index(i) / len(self.preferences))
 				preference_score = preference_score / len(item.subjects)
-
+				
 				if current_item_score > best_score:
 					best_score = current_item_score
 					best_item = item
