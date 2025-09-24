@@ -61,11 +61,13 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+
     { name = "numpy" },
     { name = "openai" },
     { name = "pygame", specifier = ">=2.6.1" },
     { name = "ruff", specifier = ">=0.12.8" },
     { name = "torch" },
+
 ]
 
 [package.metadata.requires-dev]

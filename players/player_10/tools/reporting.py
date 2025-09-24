@@ -47,6 +47,7 @@ def _capture_baseline_meta() -> dict[str, Any]:
 			'memory_size': 0,
 			'players': {},
 		}
+
 	players = dict(_BASELINE_CONFIG.player_configs[0]) if _BASELINE_CONFIG.player_configs else {}
 	return {
 		'altruism_prob': _first(_BASELINE_CONFIG.altruism_probs),

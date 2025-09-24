@@ -74,13 +74,8 @@ class Player4(Player):
 		"""
 		Coherence over the previous up to 3 non-pause items:
 			- Hot-streak penalty: if any subject in `item` appears in *each* of the last 3 -> -1.0
-			- Otherwise, reward based on total matched frequency across prev-3:
+			- Otherwise, reward based on total matched frequency across prev-3 for each subject:
 				sum_match/len(item.subjects)
-				sum_match >= 4  -> +1.5   (e.g., 2+2)
-				sum_match == 3  -> +1.0   (e.g., 2+1)
-				sum_match == 2  -> +0.5
-				sum_match == 1  -> +0.25
-				else            ->  0.0
 		The window does not cross pauses.
 		"""
 		prev3 = self._take_preceding_block(history, 3)
@@ -93,15 +88,6 @@ class Player4(Player):
 			common_all3 = sets[0] & sets[1] & sets[2]
 			if any(s in common_all3 for s in item.subjects):
 				return -1.0
-		"""if sum_match >= 4:
-		elif sum_match == 3:
-			return 1.0
-		elif sum_match == 2:
-			return 0.5
-		elif sum_match == 1:
-			return 0.25
-		else:
-			return 0.0"""
 		# Count subject frequencies across prev-3
 		counts = Counter()
 		for it in prev3:
@@ -200,9 +186,7 @@ class Player4(Player):
 		if not scored:
 			return None
 		best_score = max(s for s, _ in scored)
-		# print(best_score)
-		# print(history)
-		# max_possible = 1.0 + 2.0 + 1.5  # importance + pause + coherence
+
 		threshold = 1
 		if len(history) != 0 and best_score < threshold:
 			return None
@@ -212,6 +196,6 @@ class Player4(Player):
 
 		choice = tied[0] if len(tied) == 1 else min(tied, key=self._preference_tiebreak_key)
 
-		# Track contribution if you care downstream
+		# Track contribution
 		self.contributed_items.append(choice)
 		return choice
