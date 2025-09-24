@@ -21,4 +21,7 @@ simulation_results/
 # Jupyter notebooks
 *.ipynb
 
+# Syncthing temporary files
+.syncthing.*.tmp
+
 .ruff-venv
