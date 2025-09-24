@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
@@ -34,6 +35,193 @@ def _format_number(value: float | None, digits: int = 2) -> str:
 	return f'{value:.{digits}f}'
 
 
+COLORWAY = [
+	'#3867d6',
+	'#fa8231',
+	'#20bf6b',
+	'#a55eea',
+	'#fed330',
+	'#fc5c65',
+	'#2d98da',
+]
+
+COMPONENT_LABELS = {
+	'importance': 'Importance',
+	'coherence': 'Coherence',
+	'freshness': 'Freshness',
+	'nonmonotonousness': 'Monotony relief',
+}
+
+
+def _config_value(result, attr: str):
+	config = getattr(result, 'config', None)
+	if config is None:
+		return None
+	if hasattr(config, attr):
+		return getattr(config, attr)
+	if isinstance(config, dict):
+		return config.get(attr)
+	return None
+
+
+def _metric_value(result, metric: str):
+	if metric == 'total_score':
+		return getattr(result, 'total_score', None)
+	if metric == 'player10_score':
+		return getattr(result, 'player10_total_mean', None)
+	if metric == 'player10_individual':
+		return getattr(result, 'player10_individual_mean', None)
+	if metric == 'early_termination':
+		value = getattr(result, 'early_termination', None)
+		if value is None:
+			return None
+		try:
+			return float(value)
+		except (TypeError, ValueError):
+			return None
+	return getattr(result, metric, None)
+
+
+def _compute_heatmap_data(results, row_attr: str, col_attr: str, metric: str):
+	matrix = defaultdict(lambda: defaultdict(list))
+	rows: set = set()
+	cols: set = set()
+	for result in results:
+		row_value = _config_value(result, row_attr)
+		col_value = _config_value(result, col_attr)
+		metric_value = _metric_value(result, metric)
+		if row_value is None or col_value is None or metric_value is None:
+			continue
+		matrix[row_value][col_value].append(float(metric_value))
+		rows.add(row_value)
+		cols.add(col_value)
+	if not rows or not cols:
+		return None
+	row_order = sorted(rows)
+	col_order = sorted(cols)
+	grid: list[list[float | None]] = []
+	for row_value in row_order:
+		row_data: list[float | None] = []
+		for col_value in col_order:
+			bucket = matrix.get(row_value, {}).get(col_value, [])
+			if bucket:
+				row_data.append(sum(bucket) / len(bucket))
+			else:
+				row_data.append(None)
+		grid.append(row_data)
+	return row_order, col_order, grid
+
+
+def _collect_scores_by_altruism(results):
+	buckets = defaultdict(lambda: {'total': [], 'player10': []})
+	for result in results:
+		altruism = _config_value(result, 'altruism_prob')
+		if altruism is None:
+			continue
+		total_value = _metric_value(result, 'total_score')
+		if total_value is not None:
+			buckets[altruism]['total'].append(float(total_value))
+		p10_value = _metric_value(result, 'player10_score')
+		if p10_value is not None:
+			buckets[altruism]['player10'].append(float(p10_value))
+	if not buckets:
+		return None
+	return dict(sorted(buckets.items()))
+
+
+def _component_means_by_altruism(results):
+	sums = defaultdict(lambda: defaultdict(float))
+	counts = defaultdict(lambda: defaultdict(int))
+	for result in results:
+		altruism = _config_value(result, 'altruism_prob')
+		breakdown = getattr(result, 'score_breakdown', None) or {}
+		if altruism is None:
+			continue
+		for key in COMPONENT_LABELS:
+			value = breakdown.get(key)
+			if value is None:
+				continue
+			try:
+				value = float(value)
+			except (TypeError, ValueError):
+				continue
+			sums[altruism][key] += value
+			counts[altruism][key] += 1
+	if not sums:
+		return None
+	altruism_values = sorted(sums.keys())
+	component_series: dict[str, list[float]] = {key: [] for key in COMPONENT_LABELS}
+	for altruism in altruism_values:
+		for key in COMPONENT_LABELS:
+			count = counts[altruism].get(key, 0)
+			if count:
+				component_series[key].append(sums[altruism][key] / count)
+			else:
+				component_series[key].append(0.0)
+	return altruism_values, component_series
+
+
+def _aggregate_pareto_points(results):
+	groups = defaultdict(
+		lambda: {
+			'total_sum': 0.0,
+			'total_count': 0,
+			'p10_sum': 0.0,
+			'p10_count': 0,
+			'early_sum': 0.0,
+			'early_count': 0,
+		}
+	)
+	for result in results:
+		key = (
+			_config_value(result, 'altruism_prob'),
+			_config_value(result, 'tau_margin'),
+			_config_value(result, 'epsilon_fresh'),
+			_config_value(result, 'epsilon_mono'),
+		)
+		if any(value is None for value in key):
+			continue
+		total_value = _metric_value(result, 'total_score')
+		if total_value is not None:
+			groups[key]['total_sum'] += float(total_value)
+			groups[key]['total_count'] += 1
+		p10_value = _metric_value(result, 'player10_individual')
+		if p10_value is not None:
+			groups[key]['p10_sum'] += float(p10_value)
+			groups[key]['p10_count'] += 1
+		early_value = _metric_value(result, 'early_termination')
+		if early_value is not None:
+			groups[key]['early_sum'] += float(early_value)
+			groups[key]['early_count'] += 1
+	points: list[dict[str, float | int | None]] = []
+	for key, data in groups.items():
+		if not data['total_count'] or not data['p10_count']:
+			continue
+		altruism, tau, fresh, mono = key
+		point = {
+			'altruism': altruism,
+			'tau': tau,
+			'fresh': fresh,
+			'mono': mono,
+			'total': data['total_sum'] / data['total_count'],
+			'player10': data['p10_sum'] / data['p10_count'],
+			'early': (data['early_sum'] / data['early_count']) if data['early_count'] else None,
+			'runs': data['total_count'],
+		}
+		points.append(point)
+	if not points:
+		return None
+	points.sort(key=lambda item: (item['altruism'], item['tau'], item['fresh'], item['mono']))
+	return points
+
+
+def _format_axis_value(value):
+	if isinstance(value, float):
+		formatted = f'{value:.3f}' if abs(value) < 1 else f'{value:.2f}'
+		return formatted.rstrip('0').rstrip('.')
+	return str(value)
+
+
 def generate_dashboard(
 	results,
 	analysis,
@@ -45,12 +233,14 @@ def generate_dashboard(
 	try:
 		import plotly.graph_objects as go
 		import plotly.io as pio
+		from plotly.subplots import make_subplots
 	except ImportError:
 		return None
 
 	output_dir = Path(output_dir)
 	output_dir.mkdir(parents=True, exist_ok=True)
 
+	analysis = analysis or {}
 	aggregated = summarize_parameterizations(results)
 	table_rows: list[dict] = []
 	for row in aggregated:
@@ -116,23 +306,48 @@ def generate_dashboard(
 	chart_sections: list[dict[str, str]] = []
 
 	if top_rows:
-		labels = [parameter_label(row['meta']) for row in top_rows]
-		total_means = [row['mean'] for row in top_rows]
-		fig_top = go.Figure(
-			go.Bar(
-				x=labels,
-				y=total_means,
-				text=[f'±{row["std"]:.2f}' for row in top_rows],
-				textposition='outside',
-				marker=dict(color='#3867d6'),
+		fig_top = go.Figure()
+		rank_labels: list[str] = []
+		for idx, row in enumerate(top_rows, start=1):
+			full_label = parameter_label(row['meta'])
+			mean_value = row['mean']
+			std_value = row.get('std', 0.0)
+			rank_label = f'#{idx}'
+			rank_labels.append(rank_label)
+			fig_top.add_trace(
+				go.Bar(
+					x=[mean_value],
+					y=[rank_label],
+					orientation='h',
+					name=full_label,
+					marker=dict(color=COLORWAY[(idx - 1) % len(COLORWAY)]),
+					text=[f'{mean_value:.2f} ± {std_value:.2f}'],
+					textposition='outside',
+					customdata=[[full_label, std_value]],
+					hovertemplate=(
+						'%{customdata[0]}<br>Mean: %{x:.2f}<br>Std: %{customdata[1]:.2f}<extra></extra>'
+					),
+				)
 			)
-		)
 		fig_top.update_layout(
 			title='Top Parameterizations by Total Score',
-			xaxis_title='Parameterization label',
-			yaxis_title='Mean total score',
+			xaxis_title='Mean total score',
+			yaxis_title='Rank',
+			yaxis=dict(categoryorder='array', categoryarray=rank_labels),
+			margin=dict(l=0, r=20, t=60, b=40),
+			height=max(320, 90 * len(rank_labels)),
 			uniformtext_minsize=10,
-			uniformtext_mode='show',
+			uniformtext_mode='hide',
+			legend=dict(
+				title='Parameterization label',
+				yanchor='top',
+				y=1.0,
+				xanchor='left',
+				x=1.02,
+				bgcolor='rgba(255,255,255,0.85)',
+				bordercolor='rgba(0,0,0,0.1)',
+				borderwidth=1,
+			),
 		)
 		chart_sections.append(
 			{
@@ -220,6 +435,201 @@ def generate_dashboard(
 					config={'displaylogo': False},
 					default_width='100%',
 					default_height='360px',
+				),
+			},
+		)
+
+	# Enhanced analysis sections derived from notebook utilities
+	heatmap_data = _compute_heatmap_data(results, 'altruism_prob', 'tau_margin', 'total_score')
+	if heatmap_data:
+		row_values, col_values, matrix = heatmap_data
+		y_labels = [_format_axis_value(value) for value in row_values]
+		x_labels = [_format_axis_value(value) for value in col_values]
+		fig_heatmap = go.Figure(
+			go.Heatmap(
+				z=matrix,
+				x=x_labels,
+				y=y_labels,
+				colorscale='Viridis',
+				colorbar={'title': 'Mean total score'},
+			)
+		)
+		fig_heatmap.update_layout(
+			title='Total Score Heatmap',
+			xaxis_title='Tau margin',
+			yaxis_title='Altruism probability',
+			margin={'l': 80, 'r': 40, 't': 60, 'b': 60},
+		)
+		chart_sections.append(
+			{
+				'title': 'Parameter Heatmap',
+				'description': 'Average total score for each altruism/tau combination helps spot sweet spots quickly.',
+				'html': pio.to_html(
+					fig_heatmap,
+					include_plotlyjs=False,
+					full_html=False,
+					config={'displaylogo': False},
+					default_width='100%',
+					default_height='420px',
+				),
+			},
+		)
+
+	score_buckets = _collect_scores_by_altruism(results)
+	if score_buckets:
+		fig_dist = make_subplots(rows=1, cols=2, subplot_titles=('Total score', 'Player10 score'))
+		for idx, (prob, values) in enumerate(score_buckets.items()):
+			label = f'altruism {prob:.2f}' if isinstance(prob, float) else f'altruism {prob}'
+			color = COLORWAY[idx % len(COLORWAY)]
+			if values['total']:
+				fig_dist.add_trace(
+					go.Histogram(
+						x=values['total'],
+						name=label,
+						legendgroup=label,
+						marker={'color': color},
+						opacity=0.55,
+						nbinsx=20,
+						showlegend=True,
+					),
+					row=1,
+					col=1,
+				)
+			if values['player10']:
+				fig_dist.add_trace(
+					go.Histogram(
+						x=values['player10'],
+						name=label,
+						legendgroup=label,
+						marker={'color': color},
+						opacity=0.55,
+						nbinsx=20,
+						showlegend=False,
+					),
+					row=1,
+					col=2,
+				)
+		fig_dist.update_layout(
+			title_text='Score Distributions by Altruism',
+			barmode='overlay',
+			legend={'orientation': 'h', 'y': 1.12, 'x': 0.5, 'xanchor': 'center'},
+			xaxis_title='Total score',
+			xaxis2_title='Player10 score',
+			yaxis_title='Frequency',
+			margin={'l': 60, 'r': 20, 't': 80, 'b': 60},
+		)
+		chart_sections.append(
+			{
+				'title': 'Score Distributions',
+				'description': 'Histogram overlays reveal how each altruism setting shifts total and individual score shapes.',
+				'html': pio.to_html(
+					fig_dist,
+					include_plotlyjs=False,
+					full_html=False,
+					config={'displaylogo': False},
+					default_width='100%',
+					default_height='420px',
+				),
+			},
+		)
+
+	component_data = _component_means_by_altruism(results)
+	if component_data:
+		altruism_values, component_series = component_data
+		labels = [_format_axis_value(value) for value in altruism_values]
+		fig_components = go.Figure()
+		for idx, (comp_key, comp_label) in enumerate(COMPONENT_LABELS.items()):
+			values = component_series.get(comp_key, [])
+			if not values:
+				continue
+			fig_components.add_trace(
+				go.Bar(
+					x=labels,
+					y=values,
+					name=comp_label,
+					marker={'color': COLORWAY[idx % len(COLORWAY)]},
+				)
+			)
+		fig_components.update_layout(
+			title='Shared Component Breakdown',
+			barmode='stack',
+			xaxis_title='Altruism probability',
+			yaxis_title='Mean shared score',
+			legend={'orientation': 'h', 'y': 1.1, 'x': 0.5, 'xanchor': 'center'},
+			margin={'l': 60, 'r': 20, 't': 80, 'b': 60},
+		)
+		chart_sections.append(
+			{
+				'title': 'Shared Components',
+				'description': 'Stacks quantify how shared scoring components vary with altruism levels.',
+				'html': pio.to_html(
+					fig_components,
+					include_plotlyjs=False,
+					full_html=False,
+					config={'displaylogo': False},
+					default_width='100%',
+					default_height='420px',
+				),
+			},
+		)
+
+	pareto_points = _aggregate_pareto_points(results)
+	if pareto_points:
+		customdata = [
+			[
+				_format_axis_value(point['altruism']),
+				_format_axis_value(point['tau']),
+				_format_axis_value(point['fresh']),
+				_format_axis_value(point['mono']),
+				(f'{point["early"]:.1%}' if point['early'] is not None else 'n/a'),
+				point['runs'],
+			]
+			for point in pareto_points
+		]
+		fig_pareto = go.Figure(
+			go.Scatter(
+				x=[point['player10'] for point in pareto_points],
+				y=[point['total'] for point in pareto_points],
+				mode='markers',
+				marker={
+					'size': 10,
+					'color': [point['altruism'] for point in pareto_points],
+					'colorscale': 'Viridis',
+					'showscale': True,
+					'colorbar': {'title': 'Altruism p'},
+				},
+				text=['ET>0.3' if (point['early'] or 0) > 0.3 else '' for point in pareto_points],
+				textposition='top center',
+				customdata=customdata,
+				hovertemplate=(
+					'Player10 mean: %{x:.2f}<br>'
+					'Total mean: %{y:.2f}<br>'
+					'Altruism: %{customdata[0]}<br>'
+					'Tau margin: %{customdata[1]}<br>'
+					'Epsilon fresh: %{customdata[2]}<br>'
+					'Epsilon mono: %{customdata[3]}<br>'
+					'Early termination: %{customdata[4]}<br>'
+					'Runs: %{customdata[5]}<extra></extra>'
+				),
+			)
+		)
+		fig_pareto.update_layout(
+			title='Pareto: Player10 vs Total Score',
+			xaxis_title='Player10 individual mean',
+			yaxis_title='Total score mean',
+			margin={'l': 60, 'r': 20, 't': 60, 'b': 60},
+		)
+		chart_sections.append(
+			{
+				'title': 'Pareto Trade-off',
+				'description': 'Scatter highlights where individual gains align with team score, colored by altruism.',
+				'html': pio.to_html(
+					fig_pareto,
+					include_plotlyjs=False,
+					full_html=False,
+					config={'displaylogo': False},
+					default_width='100%',
+					default_height='420px',
 				),
 			},
 		)
