@@ -220,8 +220,6 @@ def _format_axis_value(value):
 		formatted = f'{value:.3f}' if abs(value) < 1 else f'{value:.2f}'
 		return formatted.rstrip('0').rstrip('.')
 	return str(value)
-
-
 def generate_dashboard(
 	results,
 	analysis,

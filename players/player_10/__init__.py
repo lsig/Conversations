@@ -21,4 +21,7 @@ __all__ = [
 	'EvalPlayer',
 	'create_eval_player',
 	'Player10Agent',
+	'EvalPlayer',
+	'create_eval_player',
+	'Player10Agent',
 ]
