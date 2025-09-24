@@ -17,3 +17,8 @@ simulation_results/
 
 # Result files
 *.json
+
+# Jupyter notebooks
+*.ipynb
+
+.ruff-venv
