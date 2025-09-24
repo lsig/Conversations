@@ -244,6 +244,7 @@ class Engine:
 			)
 
 			final_player_data = asdict(snapshot)
+			final_player_data['name'] = self.player_names[snapshot.id]
 			final_player_data['scores'] = {
 				'total': conversation_quality,
 				'shared': shared_score,
