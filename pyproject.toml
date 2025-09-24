@@ -10,6 +10,7 @@ dependencies = [
     "ruff>=0.12.8",
     "numpy",
     "torch",
+
 ]
 
 [tool.ruff]

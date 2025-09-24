@@ -15,10 +15,7 @@ class Engine:
 		subjects: int,
 		memory_size: int,
 		conversation_length: int,
-		seed: int,
 	) -> None:
-		random.seed(seed)
-
 		self.subjects = [i for i in range(subjects)]
 		self.memory_size = memory_size
 		self.conversation_length = conversation_length
