@@ -66,7 +66,6 @@ class ScoreEngine:
 
 
 class Player5(Player):
-
 	MIN_CANDIDATES_COUNT = 10
 	CANDIDATE_FRACTION = 0.5
 
