@@ -79,11 +79,8 @@ class Player7(Player):
 
 			item_score = self.calculate_item_score(item, pref_index)
 
-			if item_score > best_score or (
-				item_score == best_score
-				and chosen_item
-				and len(item.subjects) > len(chosen_item.subjects)
-			):
+
+			if item_score > best_score or (item_score == best_score and chosen_item and len(item.subjects) > len(chosen_item.subjects)):
 				chosen_item = item
 				best_score = item_score
 

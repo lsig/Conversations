@@ -15,10 +15,7 @@ class Engine:
 		subjects: int,
 		memory_size: int,
 		conversation_length: int,
-		seed: int,
 	) -> None:
-		random.seed(seed)
-
 		self.subjects = [i for i in range(subjects)]
 		self.memory_size = memory_size
 		self.conversation_length = conversation_length
@@ -159,11 +156,13 @@ class Engine:
 			return 0.0
 
 		last_three_items = [self.history[j] for j in range(i - 3, i)]
-		if all(
-			item and any(s in item.subjects for s in current_item.subjects)
-			for item in last_three_items
-		):
-			return -1.0
+
+		if any(item is None for item in last_three_items):
+			return 0.0
+
+		for subject in current_item.subjects:
+			if all(subject in item.subjects for item in last_three_items):
+				return -1.0
 
 		return 0.0
 
