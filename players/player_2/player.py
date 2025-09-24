@@ -21,9 +21,6 @@ class Player2(Player):
 		self.turn_nr: int = 0
 		self.min_threshold: float = 1.0
 
-		self.turn_nr: int = 0
-		self.min_threshold: float = 1.0
-
 		self.sub_to_item: dict = self._init_sub_to_item()
 		self.last_proposed_item: Item = None
 
@@ -31,18 +28,24 @@ class Player2(Player):
 		self._choose_strategy()
 
 	def propose_item(self, history: list[Item]) -> Item | None:
-		# print(f"turn {self.turn_nr+1}, our id: {self.player_id}")
 		self.turn_nr += 1
 		self._get_group_scores_per_turn(history)
 
 		return self.current_strategy.propose_item(self, history)
 
-	def _get_negative_score_players(self):
-		negative_players = []
-		for pid, scores in self.scores_per_player.items():
-			if scores and (sum(scores) / len(scores)) < 0:
-				negative_players.append(pid)
-		return negative_players
+	def _choose_strategy(self):
+		self.current_strategy = ObservantStrategy(self, min_threshold=1.5)
+
+	def _init_sub_to_item(self):
+		sub_to_item = {}
+		for item in self.memory_bank:
+			subjects = tuple(sorted(list(item.subjects)))
+			if subjects not in sub_to_item:
+				sub_to_item[subjects] = []
+			sub_to_item[subjects].append(item)
+
+		# Sorted according to number of items in memory bank
+		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
 
 	# Taken and adapted from engine.py
 	def _calculate_freshness_score(self, i: int, current_item: Item, history) -> float:
@@ -113,19 +116,12 @@ class Player2(Player):
 		self.scores_per_player[pid].append(group_score)
 		return None
 
-	def _init_sub_to_item(self):
-		sub_to_item = {}
-		for item in self.memory_bank:
-			subjects = tuple(sorted(list(item.subjects)))
-			if subjects not in sub_to_item:
-				sub_to_item[subjects] = []
-			sub_to_item[subjects].append(item)
-
-		# Sorted according to number of items in memory bank
-		return dict(sorted(sub_to_item.items(), key=lambda x: len(x[1]), reverse=True))
-
-	def _choose_strategy(self):
-		self.current_strategy = ObservantStrategy(self, min_threshold=1.5)
+	def _get_negative_score_players(self):
+		negative_players = []
+		for pid, scores in self.scores_per_player.items():
+			if scores and (sum(scores) / len(scores)) < 0:
+				negative_players.append(pid)
+		return negative_players
 
 	def _compute_strategy_features(self):
 		"""Compute minimal signals as attributes for picking Observant vs Inobservant."""
