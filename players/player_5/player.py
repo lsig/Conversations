@@ -1,8 +1,9 @@
+import json
+import math
+import os.path
 from collections import Counter
 
 from models.player import GameContext, Item, Player, PlayerSnapshot
-import math, json
-import os.path
 
 
 class ScoreEngine:
@@ -65,10 +66,6 @@ class ScoreEngine:
 
 
 class Player5(Player):
-	"""
-	Weights order (length == 5):
-	  [individual, coherence, freshness, importance, nonmonotonousness]
-	"""
 
 	MIN_CANDIDATES_COUNT = 10
 	CANDIDATE_FRACTION = 0.5
@@ -95,9 +92,9 @@ class Player5(Player):
 		script_directory_os = os.path.dirname(script_path_os)
 		json_file = os.path.join(script_directory_os, json_file)
 		try:
-			with open(json_file, 'r') as f:
+			with open(json_file) as f:
 				data = json.load(f)
-		except Exception as e:
+		except Exception:
 			return None
 
 		# if file stores a single dict, wrap in list
@@ -123,7 +120,7 @@ class Player5(Player):
 		bonuses = [1 - prefs.index(s) / len(prefs) for s in item.subjects if s in prefs]
 		return float(sum(bonuses) / len(bonuses)) if bonuses else 0.0
 
-	def _combine(self, pairs: list[tuple[Item, dict]], w=[0.5, 1, 1, 0.5, 1]) -> Item | None:
+	def _combine(self, pairs: list[tuple[Item, dict]], w) -> Item | None:
 		if w is None:
 			w = [0.5, 1, 1, 0.5, 1]
 
