@@ -48,8 +48,11 @@ class ZipperPlayer(Player):
 
 		temp_subject_count = max(max(self.memory_bank, key=lambda x: x.subjects).subjects)
 
-		if temp_subject_count % 2 == 1:
+		if temp_subject_count % 2 == 1 and temp_subject_count > 3:
 			temp_subject_count -= 1
+
+		if temp_subject_count == 0:
+			temp_subject_count = 1
 
 		TotalBlocks = memory * players / 2
 
