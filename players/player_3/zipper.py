@@ -58,6 +58,9 @@ class ZipperPlayer(Player):
 
 		blocks_per_subject = TotalBlocks / temp_subject_count
 
+		if blocks_per_subject == 0:
+			blocks_per_subject = 1
+
 		at_least_4 = 5 / blocks_per_subject
 
 		optimal = (length * 1.3) / temp_subject_count / blocks_per_subject
